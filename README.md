@@ -15,7 +15,7 @@ human approves every send.
 |---|---|
 | **Live app** | <!-- LIVE_URL -->[https://gigbid-gamma.vercel.app](https://gigbid-gamma.vercel.app)<!-- /LIVE_URL --> |
 | **Reviewer login** | `reviewer@gigbid.app` (password supplied with the submission, persona: AI/ML engineer) |
-| **3-minute video** | <!-- VIDEO_URL -->_to be added_<!-- /VIDEO_URL --> |
+| **3-minute video** | <!-- VIDEO_URL -->[youtu.be/qhSZ7C5TvDA](https://youtu.be/qhSZ7C5TvDA)<!-- /VIDEO_URL --> |
 | **Write-up** | <!-- WRITEUP_URL -->_to be added_<!-- /WRITEUP_URL --> |
 | **Portfolio MCP server** | [`mcp_servers/portfolio`](mcp_servers/portfolio/README.md), installable with `uvx` |
 
