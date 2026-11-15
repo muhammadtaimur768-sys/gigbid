@@ -5,7 +5,11 @@ work, and drafts proposals in which every claim is backed by the freelancer's ow
 human approves every send.
 
 <!-- DEMO_GIF: replace with docs/images/demo.gif (30 seconds: inbox -> evidence-backed draft -> approve -> client reply) -->
-![GigBid demo](docs/images/demo.gif)
+![GigBid job inbox](docs/images/inbox.png)
+
+| Job detail | Pipeline | Analytics |
+|---|---|---|
+| ![](docs/images/job_detail.png) | ![](docs/images/pipeline.png) | ![](docs/images/analytics.png) |
 
 | | |
 |---|---|
