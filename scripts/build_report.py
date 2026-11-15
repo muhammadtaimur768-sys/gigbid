@@ -11,7 +11,7 @@ import csv
 import glob
 import json
 import statistics as st
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 import yaml
@@ -259,7 +259,7 @@ def build():
     arch = jload("arch_comparison.json")
     tg = jload("tool_granularity.json")
     rag = jload("rag_results.json")
-    abl = jload("rag_ablation.json")
+    jload("rag_ablation.json")
     corpus = jload("rag_corpus_stats.json")
     rag_table_md = (RES / "rag_table.md").read_text()
     js = judge_stats()
@@ -358,7 +358,7 @@ def build():
                    "Recall@5 = 0 because 150 past proposals per persona paraphrase job titles and outrank all proof items, so an "
                    "evidence-type routing component <font face='Courier'>ev</font> (search case studies and repos only) was added "
                    "and ablated like every other component."))
-    by_var = {r["variant"]: r for r in rag.get("summary", rag.get("macro", []))} if isinstance(rag.get("summary", None), list) else None
+    {r["variant"]: r for r in rag.get("summary", rag.get("macro", []))} if isinstance(rag.get("summary", None), list) else None
     # parse the generated markdown table (written by evals/runners/make_results_table.py from rag_results.json)
     lines = [ln for ln in rag_table_md.splitlines() if ln.startswith("|")]
     main = []
@@ -415,7 +415,7 @@ def build():
     # judge
     story.append(P("<b>Judge calibration (B4).</b>", H2))
     if js.get("n"):
-        raw = js["raw"]
+        js["raw"]
         kv = js.get("kappa_verdict")
         sp = js.get("spearman")
         hv, jv = js["human_verdicts"], js["judge_verdicts"]
@@ -501,7 +501,7 @@ def build():
 
     # ---------------------------------------------------------------- 6
     story.append(P("6. The change request (2 November policy update)", H1))
-    upd = yaml.safe_load((ROOT / "data" / "policy_pack" / "updates" / "2026-11-02.yaml").read_text())
+    yaml.safe_load((ROOT / "data" / "policy_pack" / "updates" / "2026-11-02.yaml").read_text())
     n_lines = len((ROOT / "data" / "policy_pack" / "updates" / "2026-11-02.yaml").read_text().splitlines())
     story.append(P("<b>What changed.</b> Bidding on a job posted less than an hour ago costs +2 Connects (early-bird surcharge), "
                    "and cover letters over 2,500 characters are rejected. <b>What was edited.</b> One data file, "
