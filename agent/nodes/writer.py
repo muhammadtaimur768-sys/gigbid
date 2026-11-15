@@ -92,44 +92,95 @@ def _evidence_lines(fit: dict, n: int) -> list[tuple[str, str, str]]:
     return out
 
 
+def _item_meta(persona: str) -> dict:
+    """item_id -> portfolio metadata (title, client_industry, date) from the persona manifest."""
+    import json
+    from pathlib import Path
+
+    p = Path(__file__).resolve().parents[2] / "data" / "personas" / persona / "manifest.json"
+    try:
+        return {m["id"]: m for m in json.loads(p.read_text())}
+    except Exception:
+        return {}
+
+
+def _evidence_by_item(fit: dict, n: int) -> list[tuple[str, list[str], str]]:
+    """(item_id, [requirements it proves], best verbatim snippet) for the strongest items."""
+    order, reqs, snips = [], {}, {}
+    for m in sorted(fit.get("matches") or [], key=lambda m: {"strong": 0, "partial": 1, "none": 2}[m["strength"]]):
+        if m["strength"] == "none":
+            continue
+        for ev in (m.get("evidence") or [])[:2]:
+            iid = ev["item_id"]
+            if iid not in reqs:
+                order.append(iid)
+                reqs[iid], snips[iid] = [], _clean_snippet(ev.get("snippet", ""), m["requirement"])
+            if m["requirement"] not in reqs[iid]:
+                reqs[iid].append(m["requirement"])
+    return [(i, reqs[i], snips[i]) for i in order[:n]]
+
+
+def _short_req(r: str) -> str:
+    r = re.sub(r"^(experience with|deliver(ing)?|knowledge of|strong|proven)\s+(a |an |the )?", "", r.strip().rstrip("."), flags=re.I)
+    return r[:1].lower() + r[1:] if r else r
+
+
+def _join(xs: list[str]) -> str:
+    xs = [x for x in xs if x]
+    return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1] if xs else ""
+
+
 def heuristic_letter(state: dict, strategy: dict, feedback: list[str], rules: list[str]) -> tuple[str, list[dict]]:
+    """Deterministic fallback writer (no LLM). Plain sentences built from portfolio metadata; the one
+    outcome sentence per item is quoted verbatim from the evidence so the verifier can check it."""
     job, spec, fit, price = state["job"], state.get("job_spec") or {}, state.get("fit") or {}, state.get("price") or {}
+    meta = _item_meta(state.get("persona") or "aiml")
     n_ev = int(strategy.get("evidence_items", 3))
     if "prefer_shorter" in rules:
         n_ev = max(1, n_ev - 1)
     if any("evidence" in f.lower() or "requirement" in f.lower() for f in feedback):
         n_ev += 1
-    lines = _evidence_lines(fit, n_ev)
+    items = _evidence_by_item(fit, n_ev)
     reqs = [r["text"] for r in spec.get("requirements") or []][:3] or list(job.get("skills_required") or [])[:3]
     title = job.get("title", "this project")
-    main = reqs[0] if reqs else title
+    main = _short_req(reqs[0]) if reqs else "getting the core of it right"
     if strategy.get("opening") == "question":
-        opening = f"Is getting {main.lower().rstrip('.')} working reliably the part that matters most for \"{title}\"?"
+        opening = f"Is {main} the part of \"{title}\" you are most worried about? It is usually where projects like this slip."
     else:
-        dels = [d.lstrip("- ").rstrip(".") for d in (spec.get("deliverables") or []) if len(d) < 120][:3]
-        what = f" ({', '.join(dels)})" if dels else ""
-        opening = (f"You want \"{title}\" delivered{what}, and the part that decides success is usually "
-                   f"{main.lower().rstrip('.')}.")
+        opening = (f"Reading your brief for \"{title}\", the part that will make or break it is {main}. "
+                   "That is work I have shipped before, and here is the closest proof.")
     body = []
-    for req, snip, iid in lines:
-        body.append(f"On {req.rstrip('.').lower()}: {snip.rstrip('.')} [{iid}].")
+    for iid, covers, snip in items:
+        m = meta.get(iid, {})
+        name = m.get("title") or iid
+        ind = m.get("client_industry") or ""
+        who = (f"for {'an' if ind[:1].lower() in 'aeiou' else 'a'} {ind} client" if ind else "for a client")
+        year = f" in {str(m['date'])[:4]}" if m.get("date") else ""
+        kind = "built" if m.get("type") != "repo" else "wrote"
+        line = f"I {kind} {name} {who}{year}, which involved {_join([_short_req(c) for c in covers[:3]])}"
+        if snip and len(snip) <= 220 and not snip.lower().startswith(("the code in", "&&")):
+            line += f". {snip.rstrip('.')}"
+        body.append(line + f" [{iid}].")
     if not body:
-        body.append("I have read the brief closely and would start by confirming the scope and success criteria with you.")
-    plan = ("My plan: confirm the scope and acceptance criteria in a short call, deliver a first working version early, "
-            "then iterate with you on the details.")
+        body.append("I would start by confirming the scope and what success looks like for you before writing any code.")
+    plan = ("I would start with a short call to pin down scope and what \"done\" means, ship a first working version early, "
+            "and iterate with you from there.")
     if strategy.get("length") == "short":
-        plan = "I would start with a short scoping call and send a first working version early."
+        plan = "I would start with a short scoping call and get a first working version to you early."
     hidden = spec.get("hidden_needs") or []
     if hidden and strategy.get("length") != "short":
-        plan += f" I will also cover {hidden[0]}."
-    unit = "/hr" if price.get("budget_type") == "hourly" else " fixed"
-    price_line = f"I propose ${price.get('amount', 0):g}{unit} for this scope." if price else ""
-    close = "Could you share what a successful first milestone looks like for you?"
+        plan += f" I would also make sure we cover {hidden[0].rstrip('.').lower()}."
+    unit = "/hr" if price.get("budget_type") == "hourly" else " for the fixed scope"
+    price_line = f"My rate for this would be ${price.get('amount', 0):g}{unit}." if price else ""
+    close = "What would a successful first milestone look like for you?"
     text = "\n\n".join([opening, " ".join(body), plan, (price_line + " " + close).strip()])
     answers = []
     for q in job.get("screening_questions") or []:
-        ev = lines[0] if lines else None
-        ans = (f"Yes. {ev[1].rstrip('.')} [{ev[2]}]." if ev else "Happy to discuss this in detail on a call.")
+        if items:
+            iid = items[0][0]
+            ans = f"The most relevant example is {meta.get(iid, {}).get('title', iid)} [{iid}]; happy to walk you through it on a call."
+        else:
+            ans = "Happy to go through this in detail on a short call."
         answers.append({"question": q, "answer": ans[:600]})
     return apply_style(text, rules), answers
 
