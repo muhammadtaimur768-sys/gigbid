@@ -1,0 +1,139 @@
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  PYTHON_VERSION: "3.11"
+  NODE_VERSION: "22"
+  UV_VERSION: "0.8.17"
+  LLM_PROVIDER: heuristic
+  GIGSIM_ERROR_RATE: "0"
+  FASTEMBED_CACHE_PATH: data/processed/models
+  PYTHONPATH: ${{ github.workspace }}
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: ${{ env.UV_VERSION }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: ruff
+        run: uvx ruff@0.13.0 check --output-format=github .
+
+  guards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # gitleaks scans the full history
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install pyyaml==6.0.2
+      - name: gigsim/ unchanged (checksums)
+        run: python scripts/check_gigsim_unchanged.py
+      - name: gigsim/ untouched in this PR
+        if: github.event_name == 'pull_request'
+        run: |
+          changed=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- gigsim/ || true)
+          if [ -n "$changed" ]; then echo "gigsim/ must not be modified:"; echo "$changed"; exit 1; fi
+      - name: prompts live only in agent/prompts
+        run: python scripts/check_prompts_location.py
+      - name: README numbers trace to evals/results
+        run: python scripts/check_readme_numbers.py
+      - name: no secrets (regex)
+        run: python scripts/check_secrets.py
+      - name: no secrets (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: ${{ env.UV_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: pyproject.toml
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: install
+        run: uv pip install --system -e ".[dev]"
+      - name: cache embedding models
+        uses: actions/cache@v4
+        with:
+          path: data/processed/models
+          key: fastembed-${{ hashFiles('rag/**/*.py', 'agent/config.yaml') }}
+          restore-keys: fastembed-
+      - name: start GigSim
+        run: |
+          python -m gigsim.seed
+          nohup python -m uvicorn gigsim.app:app --port 8100 > gigsim.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8100/health && break; sleep 1; done
+      - name: unit
+        run: python -m pytest -q tests/unit mcp_servers
+      - name: contract (MCP tool-schema snapshots)
+        run: python -m pytest -q tests/contract
+      - name: integration (graphs against GigSim)
+        env:
+          GIGSIM_URL: http://127.0.0.1:8100
+        run: python -m pytest -q tests/integration
+      - name: GigSim log
+        if: failure()
+        run: tail -n 200 gigsim.log || true
+
+  e2e:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - name: typecheck
+        run: npm run typecheck
+      - name: install browsers
+        run: npx playwright install --with-deps chromium
+      - name: playwright
+        run: npx playwright test
+      - name: upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: apps/web/playwright-report/
+          retention-days: 30
+
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: docker compose config is valid
+        run: |
+          docker compose -f infra/docker-compose.yml config --quiet
+          docker compose config --quiet

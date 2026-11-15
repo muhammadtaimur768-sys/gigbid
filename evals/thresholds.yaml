@@ -1,0 +1,53 @@
+# CI eval gates (read by scripts/check_eval_thresholds.py, run by .github/workflows/eval.yml).
+#
+# These are declared gate settings, not measured results. Each gate reads one metric from a
+# results JSON that the smoke runners write:
+#   python -m evals.runners.decision_eval --smoke 30 --profile heuristic
+#   python -m evals.runners.rag_eval --smoke 30
+#
+# A gate fails when
+#   - the metric is below `min` / above `max` (absolute floor/ceiling), or
+#   - a baseline file exists and the metric moved the wrong way by more than `max_drop` /
+#     `max_rise` relative to the committed baseline (regression gate).
+# `keys` is a list of dotted paths tried in order, so the gate survives small schema changes.
+# Record a baseline from a trusted main-branch run with:
+#   python scripts/check_eval_thresholds.py --write-baseline
+
+baseline_file: evals/results/smoke_baseline.json
+
+gates:
+  - name: bid_skip_f1
+    description: bid-or-skip F1 on the 30-job smoke set must not drop
+    file: evals/results/smoke_decision.json
+    keys: [overall.bid_skip_f1, bid_skip_f1, overall.f1, metrics.bid_skip_f1]
+    min: 0.50
+    max_drop: 0.05
+
+  - name: scam_recall
+    description: planted scams must keep being caught
+    file: evals/results/smoke_decision.json
+    keys: [overall.scam_recall, scam_recall, overall.scam.recall, metrics.scam_recall]
+    min: 0.50
+    max_drop: 0.10
+
+  - name: unsupported_claims_per_proposal
+    description: unsupported claims (after verification) must not rise
+    file: evals/results/smoke_decision.json
+    keys: [overall.unsupported_claims_per_proposal, unsupported_claims_per_proposal,
+           overall.unsupported_after, metrics.unsupported_claims_per_proposal]
+    max: 1.0
+    max_rise: 0.25
+    optional: true   # only present when the smoke run drafts proposals
+
+  - name: evidence_recall_at_5
+    description: retrieval Recall@5 against gold evidence must not drop
+    file: evals/results/smoke_rag.json
+    keys: [overall.recall_at_5, recall_at_5, overall.recall@5, metrics.recall_at_5]
+    min: 0.20
+    max_drop: 0.05
+
+  - name: ndcg_at_10
+    description: retrieval nDCG@10 must not drop
+    file: evals/results/smoke_rag.json
+    keys: [overall.ndcg_at_10, ndcg_at_10, overall.ndcg@10, metrics.ndcg_at_10]
+    max_drop: 0.05

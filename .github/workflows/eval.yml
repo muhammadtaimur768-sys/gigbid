@@ -1,0 +1,64 @@
+name: eval
+
+# 30-job smoke eval on every pull request. Fails if bid-or-skip F1 / scam recall / retrieval
+# metrics drop, or unsupported claims rise, past the gates in evals/thresholds.yaml.
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths: ["agent/**", "rag/**", "evals/**", "data/policy_pack/**"]
+
+concurrency:
+  group: eval-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  PYTHON_VERSION: "3.11"
+  UV_VERSION: "0.8.17"
+  LLM_PROVIDER: heuristic
+  GIGSIM_ERROR_RATE: "0"
+  FASTEMBED_CACHE_PATH: data/processed/models
+  PYTHONPATH: ${{ github.workspace }}
+
+jobs:
+  smoke-eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: ${{ env.UV_VERSION }}
+          enable-cache: true
+          cache-dependency-glob: pyproject.toml
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: install
+        run: uv pip install --system -e ".[dev]"
+      - name: cache embedding models
+        uses: actions/cache@v4
+        with:
+          path: data/processed/models
+          key: fastembed-${{ hashFiles('rag/**/*.py', 'agent/config.yaml') }}
+          restore-keys: fastembed-
+      - name: seed GigSim
+        run: python -m gigsim.seed
+      - name: decision smoke eval (30 jobs, heuristic profile)
+        run: python -m evals.runners.decision_eval --smoke 30 --profile heuristic
+      - name: retrieval smoke eval (30 jobs)
+        run: python -m evals.runners.rag_eval --smoke 30
+      - name: threshold gate
+        run: python scripts/check_eval_thresholds.py --summary "$GITHUB_STEP_SUMMARY"
+      - name: upload smoke results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-eval-results
+          path: |
+            evals/results/smoke_*.json
+          retention-days: 30

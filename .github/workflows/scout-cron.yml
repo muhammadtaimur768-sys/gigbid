@@ -1,0 +1,29 @@
+name: scheduled-scout
+
+# The deployed single-host app has no long-lived worker, so scheduled scouting is triggered
+# from here: POST /api/cron/scout every 30 minutes (interval justified in docs/RUNBOOK.md).
+# The endpoint is idempotent: jobs already analysed are skipped, so a duplicate trigger is harmless.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: trigger scout
+        env:
+          PUBLIC_BASE_URL: ${{ vars.PUBLIC_BASE_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -z "$PUBLIC_BASE_URL" ] || [ -z "$CRON_SECRET" ]; then
+            echo "PUBLIC_BASE_URL (repo variable) or CRON_SECRET (secret) not set; skipping"; exit 0
+          fi
+          curl -fsS --retry 3 --retry-delay 10 -X POST \
+            -H "Authorization: Bearer $CRON_SECRET" \
+            "$PUBLIC_BASE_URL/api/cron/scout"

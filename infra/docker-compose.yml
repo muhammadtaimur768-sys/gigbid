@@ -1,0 +1,269 @@
+# GigBid local stack. From the repo root: `docker compose up --build`
+# (the root docker-compose.yml includes this file) or `make up`.
+#
+# Services: web (nginx + SPA) -> api (FastAPI + LangGraph) -> mcp-* (MCP servers) -> gigsim
+#           worker (Arq) on redis; postgres (pgvector) for checkpoints, store, traces, app data;
+#           ollama for the open model profile (model pulled once by ollama-pull).
+#
+# All secrets come from ../.env (copy .env.example). Values below are local-only defaults.
+
+name: gigbid
+
+x-python-env: &python-env
+  # Shared database: GigBid tables, LangGraph checkpoints/store, trace_events, and GigSim's gs_ tables.
+  DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-gigbid}:${POSTGRES_PASSWORD:-gigbid}@postgres:5432/${POSTGRES_DB:-gigbid}
+  REDIS_URL: redis://redis:6379/0
+  GIGSIM_URL: http://gigsim:8100
+  MCP_PORTFOLIO_URL: http://mcp-portfolio:8201/mcp
+  MCP_MARKETPLACE_URL: http://mcp-marketplace:8202/mcp
+  MCP_WORKSPACE_URL: http://mcp-workspace:8203/mcp
+  OLLAMA_BASE_URL: http://ollama:11434
+  FASTEMBED_CACHE_PATH: /app/data/processed/models
+  MCP_AUDIT_PATH: /app/data/processed/audit.log
+
+x-env-file: &env-file
+  - path: ../.env
+    required: false
+
+x-healthy: &healthy
+  condition: service_healthy
+
+services:
+  # ---------------------------------------------------------------- data stores
+  postgres:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-gigbid}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-gigbid}
+      POSTGRES_DB: ${POSTGRES_DB:-gigbid}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/001-init.sql:ro
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7.4.5-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # ---------------------------------------------------------------- open models
+  ollama:
+    image: ollama/ollama:0.11.10
+    restart: unless-stopped
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "${OLLAMA_PORT:-11434}:11434"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  # One-shot: pulls the open-profile model(s) into the shared volume, then exits.
+  ollama-pull:
+    image: ollama/ollama:0.11.10
+    depends_on:
+      ollama: *healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      OLLAMA_MODELS_TO_PULL: ${OLLAMA_MODELS_TO_PULL:-qwen2.5:7b-instruct-q4_K_M}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        for m in $$OLLAMA_MODELS_TO_PULL; do
+          echo "pulling $$m"; ollama pull "$$m" || exit 1
+        done
+    restart: "no"
+
+  # ---------------------------------------------------------------- marketplace simulator
+  gigsim:
+    build:
+      context: ..
+      dockerfile: infra/docker/gigsim.Dockerfile
+    image: gigbid/gigsim:local
+    restart: unless-stopped
+    env_file: *env-file
+    environment:
+      GIGSIM_DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-gigbid}:${POSTGRES_PASSWORD:-gigbid}@postgres:5432/${POSTGRES_DB:-gigbid}
+      GIGSIM_ERROR_RATE: ${GIGSIM_ERROR_RATE:-0.02}
+      GIGSIM_POLICY_UPDATE: ${GIGSIM_POLICY_UPDATE:-1}
+      GIGSIM_CLIENT_LLM: ${GIGSIM_CLIENT_LLM:-0}
+      OLLAMA_BASE_URL: http://ollama:11434
+    depends_on:
+      postgres: *healthy
+    ports:
+      - "${GIGSIM_PORT:-8100}:8100"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8100/health', timeout=3).status == 200 else 1)"]
+      interval: 10s
+      timeout: 4s
+      start_period: 30s
+      retries: 6
+
+  # ---------------------------------------------------------------- MCP servers (one image)
+  mcp-portfolio:
+    build: &mcp-build
+      context: ..
+      dockerfile: infra/docker/mcp.Dockerfile
+    image: gigbid/mcp:local
+    command: ["portfolio"]
+    restart: unless-stopped
+    env_file: *env-file
+    environment:
+      <<: *python-env
+      MCP_HOST: 0.0.0.0
+      MCP_PORTFOLIO_PORT: "8201"
+      MCP_HEALTH_PORT: "8201"
+      MCP_PORTFOLIO_TOKEN: ${MCP_PORTFOLIO_TOKEN:-local-dev-portfolio-token}
+      PORTFOLIO_PERSONA: ${PORTFOLIO_PERSONA:-aiml}
+    volumes:
+      - processed:/app/data/processed
+    depends_on:
+      postgres: *healthy
+    ports:
+      - "8201:8201"
+    healthcheck: &mcp-health
+      test: ["CMD", "python", "-c", "import os,sys,urllib.request; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:%s/health' % os.environ['MCP_HEALTH_PORT'], timeout=3).status == 200 else 1)"]
+      interval: 10s
+      timeout: 4s
+      start_period: 60s   # first start builds the embedding index
+      retries: 10
+
+  mcp-marketplace:
+    build: *mcp-build
+    image: gigbid/mcp:local
+    command: ["marketplace"]
+    restart: unless-stopped
+    env_file: *env-file
+    environment:
+      <<: *python-env
+      MCP_HOST: 0.0.0.0
+      MCP_MARKETPLACE_PORT: "8202"
+      MCP_HEALTH_PORT: "8202"
+      MCP_PORTFOLIO_TOKEN: ${MCP_PORTFOLIO_TOKEN:-local-dev-portfolio-token}
+      MCP_MARKETPLACE_TOKEN: ${MCP_MARKETPLACE_TOKEN:-local-dev-marketplace-token}
+      MCP_WORKSPACE_TOKEN: ${MCP_WORKSPACE_TOKEN:-local-dev-workspace-token}
+      MARKETPLACE_MODE: ${MARKETPLACE_MODE:-gigsim}
+    volumes:
+      - processed:/app/data/processed
+    depends_on:
+      gigsim: *healthy
+    ports:
+      - "8202:8202"
+    healthcheck: *mcp-health
+
+  mcp-workspace:
+    build: *mcp-build
+    image: gigbid/mcp:local
+    command: ["workspace"]
+    restart: unless-stopped
+    env_file: *env-file
+    environment:
+      <<: *python-env
+      MCP_HOST: 0.0.0.0
+      MCP_WORKSPACE_PORT: "8203"
+      MCP_HEALTH_PORT: "8203"
+      MCP_WORKSPACE_TOKEN: ${MCP_WORKSPACE_TOKEN:-local-dev-workspace-token}
+    volumes:
+      - processed:/app/data/processed
+    ports:
+      - "8203:8203"
+    healthcheck: *mcp-health
+
+  # ---------------------------------------------------------------- GigBid application
+  api:
+    build:
+      context: ..
+      dockerfile: infra/docker/api.Dockerfile
+    image: gigbid/api:local
+    restart: unless-stopped
+    env_file: *env-file
+    environment:
+      <<: *python-env
+      RUN_MODE: ${RUN_MODE:-worker}
+      MCP_PORTFOLIO_TOKEN: ${MCP_PORTFOLIO_TOKEN:-local-dev-portfolio-token}
+      MCP_MARKETPLACE_TOKEN: ${MCP_MARKETPLACE_TOKEN:-local-dev-marketplace-token}
+      MCP_WORKSPACE_TOKEN: ${MCP_WORKSPACE_TOKEN:-local-dev-workspace-token}
+      MOUNT_GIGSIM: "0"
+      MOUNT_MCP: "0"
+    volumes:
+      - processed:/app/data/processed
+    depends_on:
+      postgres: *healthy
+      redis: *healthy
+      mcp-portfolio: *healthy
+      mcp-marketplace: *healthy
+      mcp-workspace: *healthy
+      ollama:
+        condition: service_started
+    ports:
+      - "${API_PORT:-8000}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=4).status == 200 else 1)"]
+      interval: 15s
+      timeout: 5s
+      start_period: 40s
+      retries: 5
+
+  worker:
+    build:
+      context: ..
+      dockerfile: infra/docker/worker.Dockerfile
+    image: gigbid/worker:local
+    restart: unless-stopped
+    env_file: *env-file
+    environment:
+      <<: *python-env
+      RUN_MODE: worker
+      MCP_PORTFOLIO_TOKEN: ${MCP_PORTFOLIO_TOKEN:-local-dev-portfolio-token}
+      MCP_MARKETPLACE_TOKEN: ${MCP_MARKETPLACE_TOKEN:-local-dev-marketplace-token}
+      MCP_WORKSPACE_TOKEN: ${MCP_WORKSPACE_TOKEN:-local-dev-workspace-token}
+      SCOUT_INTERVAL_MINUTES: ${SCOUT_INTERVAL_MINUTES:-30}
+    volumes:
+      - processed:/app/data/processed
+    depends_on:
+      redis: *healthy
+      api: *healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import os,redis; redis.Redis.from_url(os.environ['REDIS_URL']).ping()"]
+      interval: 20s
+      timeout: 5s
+      start_period: 20s
+      retries: 5
+
+  web:
+    build:
+      context: ..
+      dockerfile: infra/docker/web.Dockerfile
+    image: gigbid/web:local
+    restart: unless-stopped
+    depends_on:
+      api: *healthy
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    healthcheck:
+      test: ["CMD", "wget", "-qO", "/dev/null", "http://127.0.0.1/healthz"]
+      interval: 15s
+      timeout: 4s
+      retries: 5
+
+volumes:
+  pgdata:
+  redisdata:
+  ollama:
+  processed:

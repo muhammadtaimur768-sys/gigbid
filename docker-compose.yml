@@ -1,0 +1,4 @@
+# Root entry point so `docker compose up --build` works from the repository root.
+# The real definition lives in infra/docker-compose.yml.
+include:
+  - infra/docker-compose.yml

@@ -1,0 +1,41 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# generated data (indexes, sqlite DBs, model caches, audit logs)
+data/processed/*
+!data/processed/.gitkeep
+*.db
+*.sqlite3
+*.log
+
+# web
+node_modules/
+apps/web/dist/
+apps/web/playwright-report/
+apps/web/test-results/
+apps/web/blob-report/
+apps/web/.vite/
+
+# deploy / editors / OS
+.vercel/
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
