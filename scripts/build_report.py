@@ -183,9 +183,13 @@ def bullets(items):
 
 # ----------------------------------------------------------------------------- diagram
 def bid_graph_diagram() -> Drawing:
-    W, H = 175 * mm, 70 * mm
+    """Bid graph figure with orthogonal edges (no edge crosses a box)."""
+    import math
+
+    W, H = 175 * mm, 78 * mm
     d = Drawing(W, H)
-    box_c, edge_c = colors.HexColor("#e6edf4"), colors.HexColor("#14324f")
+    box_c, edge_c = colors.HexColor("#e6f2f0"), colors.HexColor("#0b4741")
+    par_c, appr_c, term_c = colors.HexColor("#fff4dc"), colors.HexColor("#fde2e2"), colors.white
 
     def box(x, y, w, h, text, fill=box_c, size=6.6):
         d.add(Rect(x, y, w, h, fillColor=fill, strokeColor=edge_c, strokeWidth=0.6, rx=2, ry=2))
@@ -193,55 +197,73 @@ def bid_graph_diagram() -> Drawing:
         for k, ln in enumerate(lines):
             d.add(String(x + w / 2, y + h / 2 + (len(lines) / 2 - k - 0.8) * (size + 1), ln,
                          fontName="Helvetica", fontSize=size, textAnchor="middle"))
-        return (x, y, w, h)
 
-    def arrow(x1, y1, x2, y2, dash=None):
+    def seg(x1, y1, x2, y2, dash=None):
         ln = Line(x1, y1, x2, y2, strokeColor=edge_c, strokeWidth=0.6)
         if dash:
             ln.strokeDashArray = dash
         d.add(ln)
-        import math
-        a = math.atan2(y2 - y1, x2 - x1)
-        s = 3
+
+    def head(x1, y1, x2, y2):
+        a, s = math.atan2(y2 - y1, x2 - x1), 3
         d.add(Polygon([x2, y2, x2 - s * math.cos(a - 0.4), y2 - s * math.sin(a - 0.4),
                        x2 - s * math.cos(a + 0.4), y2 - s * math.sin(a + 0.4)], fillColor=edge_c, strokeColor=edge_c))
 
-    bw, bh = 21 * mm, 8 * mm
-    y_top = H - 22 * mm
-    box(2, y_top, bw, bh, "Scout\n(intake)")
-    par_x = 2 + bw + 8 * mm
+    def path(pts, dash=None):
+        for (x1, y1), (x2, y2) in zip(pts, pts[1:]):
+            seg(x1, y1, x2, y2, dash)
+        head(*pts[-2], *pts[-1])
+
+    def label(x, y, t, anchor="middle"):
+        d.add(String(x, y, t, fontName="Helvetica-Oblique", fontSize=5.8, textAnchor=anchor, fillColor=edge_c))
+
+    bw, bh = 24 * mm, 8 * mm
+    # row 1: Scout -> parallel fan-out -> Decide -> END
+    yc = H - 20 * mm                       # centre line of row 1
+    sx, px, dx = 2, 2 + bw + 12 * mm, 2 + 2 * bw + 24 * mm
+    ex = dx + bw + 14 * mm
+    box(sx, yc - bh / 2, bw, bh, "Scout\n(intake)")
+    fx = sx + bw + 6 * mm                  # fan-out split x
+    jx = px + bw + 6 * mm                  # join x
+    seg(sx + bw, yc, fx, yc)
     for k, name in enumerate(["Job Analyst", "Risk Assessor", "Fit Matcher"]):
-        box(par_x, y_top + (1 - k) * (bh + 2.5 * mm) - 0 * mm, bw, bh, name, fill=colors.HexColor("#fff4dc"))
-        arrow(2 + bw, y_top + bh / 2, par_x, y_top + (1 - k) * (bh + 2.5 * mm) + bh / 2)
-    dec_x = par_x + bw + 8 * mm
-    box(dec_x, y_top, bw, bh, "Decide\nskip/watch/bid")
-    for k in range(3):
-        arrow(par_x + bw, y_top + (1 - k) * (bh + 2.5 * mm) + bh / 2, dec_x, y_top + bh / 2)
-    end_x = dec_x + bw + 8 * mm
-    box(end_x, y_top + bh + 3 * mm, bw * 0.8, bh * 0.8, "END (skip/watch)", fill=colors.white, size=6)
-    arrow(dec_x + bw, y_top + bh * 0.8, end_x, y_top + bh + 3 * mm + bh * 0.4, dash=[2, 1.5])
-    # second row
-    y2 = y_top - 26 * mm
-    xs = []
-    names = ["Pricing\nStrategist", "Proposal\nWriter", "Claim\nverifier", "Critic\n(<=2 loops)", "Compliance\nGuard",
+        cy = yc + (1 - k) * (bh + 3 * mm)
+        box(px, cy - bh / 2, bw, bh, name, fill=par_c)
+        path([(fx, yc), (fx, cy), (px, cy)])
+        seg(px + bw, cy, jx, cy)
+        seg(jx, cy, jx, yc)
+    path([(jx, yc), (dx, yc)])
+    label(fx - 1 * mm, yc + bh + 6.5 * mm, "parallel (Send)", anchor="end")
+    box(dx, yc - bh / 2, bw, bh, "Decide\nskip / watch / bid")
+    box(ex, yc - bh / 2, bw + 6 * mm, bh, "END\nskipped / watching", fill=term_c, size=6.2)
+    path([(dx + bw, yc), (ex, yc)], dash=[2, 1.5])
+    label((dx + bw + ex) / 2, yc + 1.5 * mm, "skip, watch")
+
+    # row 2: the proposal pipeline
+    y2 = yc - 30 * mm
+    names = ["Pricing\nStrategist", "Proposal\nWriter", "Claim\nverifier", "Critic", "Compliance\nGuard",
              "dry_run\npreview", "APPROVAL\ninterrupt()", "Submit\n(idempotent)"]
-    gap = (W - 4 - len(names) * bw * 0.86) / (len(names) - 1)
-    for k, n in enumerate(names):
-        x = 2 + k * (bw * 0.86 + gap)
-        fill = colors.HexColor("#fde2e2") if "APPROVAL" in n else box_c
-        box(x, y2, bw * 0.86, bh, n, fill=fill, size=6.1)
-        xs.append(x)
-    arrow(dec_x + bw / 2, y_top, xs[0] + bw * 0.43, y2 + bh)
+    w2 = bw * 0.82
+    gap = (W - 4 - len(names) * w2) / (len(names) - 1)
+    xs = [2 + k * (w2 + gap) for k in range(len(names))]
+    for x, n in zip(xs, names):
+        box(x, y2, w2, bh, n, fill=appr_c if "APPROVAL" in n else box_c, size=6.1)
     for k in range(len(xs) - 1):
-        arrow(xs[k] + bw * 0.86, y2 + bh / 2, xs[k + 1], y2 + bh / 2)
-    # critic loop back to writer
-    arrow(xs[3] + bw * 0.43, y2, xs[3] + bw * 0.43, y2 - 5 * mm, )
-    d.add(Line(xs[3] + bw * 0.43, y2 - 5 * mm, xs[1] + bw * 0.43, y2 - 5 * mm, strokeColor=edge_c, strokeWidth=0.6))
-    arrow(xs[1] + bw * 0.43, y2 - 5 * mm, xs[1] + bw * 0.43, y2)
-    d.add(String(xs[2] + bw * 0.43, y2 - 8 * mm, "revise (max 2 rounds)", fontName="Helvetica", fontSize=6, textAnchor="middle"))
-    # side states
-    box(xs[4] - 2 * mm, y2 - 14 * mm, bw * 1.2, bh * 0.8, "needs_attention /\ndead_letter", fill=colors.white, size=5.8)
-    d.add(String(W - 2, 2, "Marketplace writes only via the MarketplacePort -> Marketplace MCP -> GigSim | Upwork MCP",
+        path([(xs[k] + w2, y2 + bh / 2), (xs[k + 1], y2 + bh / 2)])
+    # bid: Decide bottom -> down -> left -> Pricing top (runs in the free band between rows)
+    mid = y2 + bh + 3.5 * mm
+    path([(dx + bw / 2, yc - bh / 2), (dx + bw / 2, mid), (xs[0] + w2 / 2, mid), (xs[0] + w2 / 2, y2 + bh)])
+    label(dx + bw / 2 + 1.5 * mm, mid + 1.5 * mm, "bid", anchor="start")
+    # critic loop back to writer (below the row)
+    lo = y2 - 6 * mm
+    path([(xs[3] + w2 / 2, y2), (xs[3] + w2 / 2, lo), (xs[1] + w2 / 2, lo), (xs[1] + w2 / 2, y2)])
+    label((xs[1] + xs[3] + w2) / 2, lo - 3 * mm, "revise (at most 2 rounds)")
+    # compliance block / budget exceeded -> needs_attention
+    nx, ny = xs[4] - 1 * mm, y2 - 17 * mm
+    box(nx, ny, w2 + 10 * mm, bh, "needs_attention /\ndead_letter", fill=term_c, size=6)
+    path([(xs[4] + w2 * 0.7, y2), (xs[4] + w2 * 0.7, ny + bh)], dash=[2, 1.5])
+    label(xs[4] + w2 * 0.7 + 1.5 * mm, y2 - 4 * mm, "block / budget", anchor="start")
+    d.add(String(W - 2, 2, "Marketplace writes only via MarketplacePort -> Marketplace MCP -> GigSim | Upwork MCP",
                  fontName="Helvetica-Oblique", fontSize=6.2, textAnchor="end"))
     return d
 
