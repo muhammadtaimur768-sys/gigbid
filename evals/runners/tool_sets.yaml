@@ -1,0 +1,171 @@
+# Tool sets for R&D question A (tool granularity). Every tool maps back to a canonical server tool
+# so predictions are scored on the same expected calls.
+#  fine:   many narrow tools (one per intent / filter)
+#  coarse: four multiplexed tools with an `action` enum and a free-form `params` object
+#  best:   the real server tools (schemas read live from the MCP servers) with rewritten descriptions
+
+fine:
+  - {name: search_jobs_by_category, maps_to: search_jobs, description: "Search open jobs in one category.",
+     parameters: {type: object, properties: {category: {type: string}}, required: [category]}}
+  - {name: search_jobs_by_keyword, maps_to: search_jobs, description: "Search open jobs by keyword.",
+     parameters: {type: object, properties: {q: {type: string}}, required: [q]}}
+  - {name: search_jobs_by_skills, maps_to: search_jobs, description: "Search open jobs requiring skills.",
+     parameters: {type: object, properties: {skills: {type: array, items: {type: string}}}, required: [skills]}}
+  - {name: list_recent_jobs, maps_to: search_jobs, description: "List the newest open jobs.",
+     parameters: {type: object, properties: {since: {type: string}, limit: {type: integer}}}}
+  - {name: get_job_details, maps_to: get_job, description: "Get a job's details.",
+     parameters: {type: object, properties: {job_id: {type: string}}, required: [job_id]}}
+  - {name: get_job_budget, maps_to: get_job, description: "Get a job's budget.",
+     parameters: {type: object, properties: {job_id: {type: string}}, required: [job_id]}}
+  - {name: get_job_screening_questions, maps_to: get_job, description: "Get a job's screening questions.",
+     parameters: {type: object, properties: {job_id: {type: string}}, required: [job_id]}}
+  - {name: get_job_client_id, maps_to: get_job, description: "Get the client id of a job.",
+     parameters: {type: object, properties: {job_id: {type: string}}, required: [job_id]}}
+  - {name: get_client_profile, maps_to: get_client_history, description: "Get a client's profile.",
+     parameters: {type: object, properties: {client_id: {type: string}}, required: [client_id]}}
+  - {name: get_client_reviews, maps_to: get_client_history, description: "Get reviews of a client.",
+     parameters: {type: object, properties: {client_id: {type: string}}, required: [client_id]}}
+  - {name: get_client_spend, maps_to: get_client_history, description: "Get a client's total spend and hires.",
+     parameters: {type: object, properties: {client_id: {type: string}}, required: [client_id]}}
+  - {name: get_connects_balance, maps_to: get_connects_balance, description: "Get Connects balance.",
+     parameters: {type: object, properties: {}}}
+  - {name: get_weekly_connects_spend, maps_to: get_connects_balance, description: "Get Connects spent this week.",
+     parameters: {type: object, properties: {}}}
+  - {name: list_threads, maps_to: list_threads, description: "List message threads.",
+     parameters: {type: object, properties: {}}}
+  - {name: list_unread_threads, maps_to: list_threads, description: "List unread message threads.",
+     parameters: {type: object, properties: {}}}
+  - {name: list_messages, maps_to: list_messages, description: "List messages in a thread.",
+     parameters: {type: object, properties: {thread_id: {type: string}}, required: [thread_id]}}
+  - {name: get_last_message, maps_to: list_messages, description: "Get the latest message in a thread.",
+     parameters: {type: object, properties: {thread_id: {type: string}}, required: [thread_id]}}
+  - {name: get_hourly_rate_stats, maps_to: get_market_stats, description: "Hourly rate quantiles for a category.",
+     parameters: {type: object, properties: {category: {type: string}}, required: [category]}}
+  - {name: get_fixed_price_stats, maps_to: get_market_stats, description: "Fixed price quantiles for a category.",
+     parameters: {type: object, properties: {category: {type: string}}, required: [category]}}
+  - {name: list_proposals, maps_to: list_proposals, description: "List my proposals.",
+     parameters: {type: object, properties: {}}}
+  - {name: list_proposals_by_status, maps_to: list_proposals, description: "List my proposals with a status.",
+     parameters: {type: object, properties: {status: {type: string}}, required: [status]}}
+  - {name: create_proposal_draft, maps_to: create_proposal_draft, description: "Save a proposal draft.",
+     parameters: {type: object, properties: {job_id: {type: string}, cover_letter: {type: string},
+                  bid_amount: {type: number}, idempotency_key: {type: string}},
+                  required: [job_id, cover_letter, bid_amount, idempotency_key]}}
+  - {name: submit_proposal, maps_to: submit_proposal, description: "Submit a proposal.",
+     parameters: {type: object, properties: {job_id: {type: string}, cover_letter: {type: string},
+                  bid_amount: {type: number}, idempotency_key: {type: string}},
+                  required: [job_id, cover_letter, bid_amount, idempotency_key]}}
+  - {name: preview_proposal_cost, maps_to: submit_proposal, fixed_args: {dry_run: true},
+     description: "Preview a proposal's Connects cost.",
+     parameters: {type: object, properties: {job_id: {type: string}, bid_amount: {type: number}},
+                  required: [job_id, bid_amount]}}
+  - {name: send_message, maps_to: send_message, description: "Send a message.",
+     parameters: {type: object, properties: {thread_id: {type: string}, body: {type: string},
+                  idempotency_key: {type: string}}, required: [thread_id, body, idempotency_key]}}
+  - {name: preview_message, maps_to: send_message, fixed_args: {dry_run: true}, description: "Preview a message.",
+     parameters: {type: object, properties: {thread_id: {type: string}, body: {type: string}},
+                  required: [thread_id, body]}}
+  - {name: search_case_studies, maps_to: search_evidence, description: "Search case studies.",
+     parameters: {type: object, properties: {requirement: {type: string}}, required: [requirement]}}
+  - {name: search_repos, maps_to: search_evidence, description: "Search code repositories.",
+     parameters: {type: object, properties: {requirement: {type: string}}, required: [requirement]}}
+  - {name: search_past_proposals, maps_to: search_evidence, description: "Search past proposals.",
+     parameters: {type: object, properties: {requirement: {type: string}}, required: [requirement]}}
+  - {name: search_reviews, maps_to: search_evidence, description: "Search client reviews.",
+     parameters: {type: object, properties: {requirement: {type: string}}, required: [requirement]}}
+  - {name: get_case_study, maps_to: get_case_study, description: "Get a case study.",
+     parameters: {type: object, properties: {id: {type: string}}, required: [id]}}
+  - {name: get_repo, maps_to: get_case_study, description: "Get a repository.",
+     parameters: {type: object, properties: {id: {type: string}}, required: [id]}}
+  - {name: list_skills, maps_to: list_skills, description: "List portfolio skills.",
+     parameters: {type: object, properties: {}}}
+  - {name: free_slots, maps_to: free_slots, description: "Find free calendar slots.",
+     parameters: {type: object, properties: {days: {type: integer}, duration_min: {type: integer}}}}
+  - {name: create_interview_hold, maps_to: create_interview_hold, description: "Hold a calendar slot.",
+     parameters: {type: object, properties: {start: {type: string}, end: {type: string}, title: {type: string},
+                  attendee: {type: string}, idempotency_key: {type: string}}}}
+  - {name: create_email_draft, maps_to: create_email_draft, description: "Create an email draft.",
+     parameters: {type: object, properties: {to: {type: string}, subject: {type: string}, body: {type: string},
+                  idempotency_key: {type: string}}}}
+
+coarse:
+  - name: marketplace_read
+    description: "Read marketplace data. action selects what to read; params holds its arguments."
+    dispatch: {search_jobs: search_jobs, get_job: get_job, client_history: get_client_history,
+               connects: get_connects_balance, threads: list_threads, messages: list_messages,
+               market_stats: get_market_stats, proposals: list_proposals}
+    parameters:
+      type: object
+      properties:
+        action: {type: string, enum: [search_jobs, get_job, client_history, connects, threads, messages,
+                                       market_stats, proposals]}
+        params: {type: object}
+      required: [action]
+  - name: marketplace_write
+    description: "Write to the marketplace: draft or submit a proposal, or send a message."
+    dispatch: {draft: create_proposal_draft, submit: submit_proposal, message: send_message}
+    parameters:
+      type: object
+      properties:
+        action: {type: string, enum: [draft, submit, message]}
+        params: {type: object}
+        dry_run: {type: boolean}
+        idempotency_key: {type: string}
+      required: [action, params]
+  - name: portfolio
+    description: "Query the freelancer portfolio."
+    dispatch: {search: search_evidence, get_item: get_case_study, skills: list_skills}
+    parameters:
+      type: object
+      properties:
+        action: {type: string, enum: [search, get_item, skills]}
+        params: {type: object}
+      required: [action]
+  - name: calendar
+    description: "Calendar and email: find free slots, hold a slot, draft an email."
+    dispatch: {free_slots: free_slots, hold: create_interview_hold, email_draft: create_email_draft}
+    parameters:
+      type: object
+      properties:
+        action: {type: string, enum: [free_slots, hold, email_draft]}
+        params: {type: object}
+      required: [action]
+
+best:
+  # rewritten descriptions: when to use, what it returns, argument formats with examples
+  search_jobs: >-
+    Find OPEN jobs in the live feed. Use for "find/search/show jobs". Pass category for a category name
+    (e.g. "Web Development"), q for free-text keywords (e.g. "rag chatbot"), skills as a list (e.g. ["react","sql"]).
+    Do not use for rate/pay questions (use get_market_stats).
+  get_job: >-
+    Full details of ONE job by id (e.g. "j-00033"): description, budget, screening questions, Connects cost and
+    client_id. Call this first when you need a job's client.
+  get_client_history: >-
+    A client's track record by client_id (e.g. "c-0052", found in get_job's client_id): spend, hires, rating,
+    payment verification, reviews. Use for trust questions.
+  get_connects_balance: "How many Connects the freelancer has left and spent this week. No arguments."
+  list_threads: "List all client conversations (threads) with unread counts. No arguments."
+  list_messages: "Read every message in one thread by thread_id (e.g. \"t-seed-aiml-1\")."
+  get_market_stats: >-
+    Typical pay for a category: hourly and fixed-price p25/p50/p75 from historical jobs. Use for
+    "what does X usually pay / typical rate". Argument: category name.
+  list_proposals: "List the freelancer's submitted proposals and their status. Optional status filter."
+  create_proposal_draft: >-
+    Save a proposal as a DRAFT (nothing sent, no Connects spent). Use when the user says draft / do not send.
+    Needs job_id, cover_letter (50-2500 chars), bid_amount, idempotency_key (any unique string, e.g. "draft-j-00012-1").
+  submit_proposal: >-
+    Submit a proposal (spends Connects). With dry_run=true it only PREVIEWS cost and payload; use dry_run=true
+    whenever the user asks for a preview, cost check or "without sending". Needs job_id, cover_letter,
+    bid_amount, idempotency_key.
+  send_message: >-
+    Send a reply in a client thread. Needs thread_id, body (the message text), idempotency_key (unique string).
+  get_marketplace_status: "Whether the marketplace backend is reachable. Only for health checks."
+  search_evidence: >-
+    Search the freelancer's PORTFOLIO (case studies, repos, past proposals, reviews) for proof of one requirement.
+    Put the requirement text in `requirement`; set `persona` if the request names one (e.g. "[persona=data]").
+  get_case_study: "Open one portfolio item by id (e.g. \"aiml-case-01\"). Set persona if named."
+  list_skills: "Skills the portfolio shows, with counts. Set persona if the request names one."
+  free_slots: "Find free calendar slots: days (look-ahead, default 5) and duration_min (default 30)."
+  list_holds: "List interview holds already on the calendar."
+  create_interview_hold: "Put a tentative interview hold on the calendar for a chosen free slot."
+  create_email_draft: "Save an email draft (never sent automatically)."

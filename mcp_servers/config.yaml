@@ -1,0 +1,53 @@
+# Tool-layer settings (MCP servers). Values here are read by mcp_servers/common/settings.py.
+# Env vars override where noted.
+ports:
+  portfolio: 8201
+  marketplace: 8202
+  workspace: 8203
+rate_limit:
+  # per-user token bucket; kept below GigSim's 60 req/min per token
+  capacity: 50
+  refill_per_minute: 50
+gigsim:
+  url_env: GIGSIM_URL
+  default_url: http://localhost:8100
+  token_env: GIGSIM_TOKEN
+  default_token: gs-aiml-token
+  timeout_s: 10.0
+  max_retries: 3
+  backoff_base_s: 0.5
+  backoff_max_s: 8.0
+upwork:
+  url: https://mcp.upwork.com/mcp
+  timeout_s: 20.0
+  # minimum seconds between scheduled read sweeps in live mode (no scraping-like polling)
+  min_read_interval_s: 900
+  tool_map: mcp_servers/marketplace/adapters/upwork_tool_map.yaml
+marketplace:
+  default_mode: gigsim      # gigsim | upwork ; env MARKETPLACE_MODE overrides
+audit:
+  path: data/processed/audit.log
+idempotency:
+  path: data/processed/mcp_idempotency.json
+workspace:
+  path: data/processed/workspace.json
+  work_day_start_hour: 9
+  work_day_end_hour: 17
+  timezone: UTC
+eval:
+  tool_granularity:
+    # provider: groq (OpenAI-compatible, key env GROQ_API_KEY) or ollama
+    provider: ollama
+    model: openai/gpt-oss-20b
+    base_url: https://api.groq.com/openai/v1
+    api_key_env: GROQ_API_KEY
+    ollama_model: qwen2.5:7b-instruct-q4_K_M
+    ollama_num_ctx: 8192      # largest tool set (best, full JSON schemas) does not fit the 4096 default
+    temperature: 0.0
+    max_turns: 3
+    sleep_s: 1.0
+    max_retries: 6
+    prompt: agent/prompts/tool_eval.md
+    tool_sets: evals/runners/tool_sets.yaml
+    dataset: evals/datasets/tool_tasks.jsonl
+    output: evals/results/tool_granularity.json

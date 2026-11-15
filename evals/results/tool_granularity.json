@@ -1,0 +1,2567 @@
+{
+  "question": "R&D A: does tool granularity change agent behaviour?",
+  "generated_at": "2026-11-15T15:47:35.535293+00:00",
+  "provider": "ollama",
+  "model": "qwen2.5:7b-instruct-q4_K_M",
+  "temperature": 0.0,
+  "dataset": "evals/datasets/tool_tasks.jsonl",
+  "n_tasks_planned": 20,
+  "task_ids": [
+    "tt-01",
+    "tt-03",
+    "tt-05",
+    "tt-07",
+    "tt-09",
+    "tt-11",
+    "tt-13",
+    "tt-15",
+    "tt-17",
+    "tt-19",
+    "tt-21",
+    "tt-23",
+    "tt-25",
+    "tt-27",
+    "tt-29",
+    "tt-31",
+    "tt-33",
+    "tt-35",
+    "tt-37",
+    "tt-39"
+  ],
+  "stride": 2,
+  "partial": false,
+  "tool_counts": {
+    "fine": 36,
+    "coarse": 4,
+    "best": 19
+  },
+  "metrics": {
+    "fine": {
+      "n": 20,
+      "errors": 0,
+      "tool_selection_accuracy": 0.75,
+      "tool_selection_recall": 0.85,
+      "argument_accuracy": 0.773,
+      "argument_accuracy_when_tool_correct": 1.0,
+      "tokens_per_task": 4037.2,
+      "input_tokens_per_task": 3970.3,
+      "output_tokens_per_task": 66.9,
+      "calls_per_task": 1.15,
+      "unexpected_write_rate": 0.0,
+      "unsafe_submit_count": 0,
+      "latency_s_per_task": 18.19
+    },
+    "coarse": {
+      "n": 20,
+      "errors": 0,
+      "tool_selection_accuracy": 0.6,
+      "tool_selection_recall": 0.7,
+      "argument_accuracy": 0.364,
+      "argument_accuracy_when_tool_correct": 0.538,
+      "tokens_per_task": 1248.4,
+      "input_tokens_per_task": 1179.0,
+      "output_tokens_per_task": 69.4,
+      "calls_per_task": 1.1,
+      "unexpected_write_rate": 0.0,
+      "unsafe_submit_count": 0,
+      "latency_s_per_task": 15.86
+    },
+    "best": {
+      "n": 20,
+      "errors": 0,
+      "tool_selection_accuracy": 0.85,
+      "tool_selection_recall": 0.85,
+      "argument_accuracy": 0.773,
+      "argument_accuracy_when_tool_correct": 1.0,
+      "tokens_per_task": 5411.7,
+      "input_tokens_per_task": 5341.4,
+      "output_tokens_per_task": 70.3,
+      "calls_per_task": 1.0,
+      "unexpected_write_rate": 0.0,
+      "unsafe_submit_count": 0,
+      "latency_s_per_task": 27.24
+    }
+  },
+  "method": "Up to max_turns model turns per task; tool results simulated with fixed payloads; predicted calls mapped to canonical server tools. tool_selection_accuracy = predicted tool set equals expected set; argument_accuracy = expected (key,value) pairs matched after normalisation, over all expected keys; tokens = provider-reported input+output tokens summed over turns.",
+  "per_task": [
+    {
+      "id": "tt-01",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "AI & Machine Learning"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "AI & Machine Learning"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_jobs_by_category",
+          "args": {
+            "category": "AI & Machine Learning"
+          }
+        }
+      ],
+      "tokens_in": 3693,
+      "tokens_out": 71,
+      "latency_s": 75.59,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-03",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "Data Analytics"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "Data Analytics"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_jobs_by_category",
+          "args": {
+            "category": "Data Analytics"
+          }
+        }
+      ],
+      "tokens_in": 3682,
+      "tokens_out": 68,
+      "latency_s": 11.8,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-05",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "q": "dashboard"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "q": "dashboard"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_jobs_by_keyword",
+          "args": {
+            "q": "dashboard"
+          }
+        }
+      ],
+      "tokens_in": 3683,
+      "tokens_out": 62,
+      "latency_s": 10.97,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-07",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "skills": "sql"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "skills": [
+              "sql"
+            ]
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_jobs_by_skills",
+          "args": {
+            "skills": [
+              "sql"
+            ]
+          }
+        }
+      ],
+      "tokens_in": 3686,
+      "tokens_out": 71,
+      "latency_s": 17.35,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-09",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00033"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00033"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_job_details",
+          "args": {
+            "job_id": "j-00033"
+          }
+        }
+      ],
+      "tokens_in": 3711,
+      "tokens_out": 77,
+      "latency_s": 19.25,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-11",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00001"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00001"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_job_details",
+          "args": {
+            "job_id": "j-00001"
+          }
+        }
+      ],
+      "tokens_in": 3711,
+      "tokens_out": 96,
+      "latency_s": 26.52,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-13",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00112"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00112"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_job_details",
+          "args": {
+            "job_id": "j-00112"
+          }
+        }
+      ],
+      "tokens_in": 3711,
+      "tokens_out": 93,
+      "latency_s": 22.05,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-15",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00117"
+          }
+        },
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "c-0033"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "j-00117"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_client_profile",
+          "args": {
+            "client_id": "j-00117"
+          }
+        }
+      ],
+      "tokens_in": 3685,
+      "tokens_out": 64,
+      "latency_s": 16.65,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-17",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00032"
+          }
+        },
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "c-0475"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "j-00032"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_client_profile",
+          "args": {
+            "client_id": "j-00032"
+          }
+        }
+      ],
+      "tokens_in": 3685,
+      "tokens_out": 78,
+      "latency_s": 17.68,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-19",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "list_proposals",
+          "args": {}
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_proposals",
+          "args": {
+            "status": "submitted"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "list_proposals_by_status",
+          "args": {
+            "status": "submitted"
+          }
+        }
+      ],
+      "tokens_in": 3634,
+      "tokens_out": 31,
+      "latency_s": 9.34,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 0,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-21",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-1"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-1"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-1"
+          }
+        }
+      ],
+      "tokens_in": 3658,
+      "tokens_out": 53,
+      "latency_s": 16.8,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-23",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-3"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-3"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-3"
+          }
+        }
+      ],
+      "tokens_in": 3658,
+      "tokens_out": 56,
+      "latency_s": 12.02,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-25",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "get_market_stats",
+          "args": {
+            "category": "Web Development"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_market_stats",
+          "args": {
+            "category": "Web Development"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_hourly_rate_stats",
+          "args": {
+            "category": "Web Development"
+          }
+        }
+      ],
+      "tokens_in": 3700,
+      "tokens_out": 41,
+      "latency_s": 12.01,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-27",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "retrieval-augmented generation over company documents"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "retrieval-augmented generation over company documents"
+          }
+        },
+        {
+          "tool": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_repos",
+          "args": {
+            "requirement": "retrieval-augmented generation over company documents"
+          }
+        },
+        {
+          "name": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "tokens_in": 5619,
+      "tokens_out": 74,
+      "latency_s": 18.26,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-29",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Stripe subscription billing"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Stripe subscription billing"
+          }
+        },
+        {
+          "tool": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_repos",
+          "args": {
+            "requirement": "Stripe subscription billing"
+          }
+        },
+        {
+          "name": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "tokens_in": 5590,
+      "tokens_out": 62,
+      "latency_s": 14.61,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-31",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Power BI executive dashboard"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Power BI executive dashboard"
+          }
+        },
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Power BI executive dashboard"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_repos",
+          "args": {
+            "requirement": "Power BI executive dashboard"
+          }
+        },
+        {
+          "name": "search_case_studies",
+          "args": {
+            "requirement": "Power BI executive dashboard"
+          }
+        }
+      ],
+      "tokens_in": 5596,
+      "tokens_out": 74,
+      "latency_s": 14.41,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-33",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "tokens_in": 3656,
+      "tokens_out": 40,
+      "latency_s": 6.96,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-35",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "list_skills",
+          "args": {}
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_skills",
+          "args": {}
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "list_skills",
+          "args": {}
+        }
+      ],
+      "tokens_in": 3637,
+      "tokens_out": 29,
+      "latency_s": 5.72,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 0,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-37",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00012"
+          }
+        },
+        {
+          "tool": "create_proposal_draft",
+          "args": {
+            "job_id": "j-00012"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "create_proposal_draft",
+          "args": {
+            "idempotency_key": "unique_key_123",
+            "job_id": "j-00012",
+            "cover_letter": "Dear Client, I am excited to apply for this job. With my extensive experience in [relevant skills], I am confident in my ability to deliver high-quality work. Let's discuss how I can contribute to your project.",
+            "bid_amount": 500
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "create_proposal_draft",
+          "args": {
+            "idempotency_key": "unique_key_123",
+            "job_id": "j-00012",
+            "cover_letter": "Dear Client, I am excited to apply for this job. With my extensive experience in [relevant skills], I am confident in my ability to deliver high-quality work. Let's discuss how I can contribute to your project.",
+            "bid_amount": 500
+          }
+        }
+      ],
+      "tokens_in": 3721,
+      "tokens_out": 130,
+      "latency_s": 24.35,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-39",
+      "set": "fine",
+      "expected": [
+        {
+          "tool": "free_slots",
+          "args": {
+            "days": 5,
+            "duration_min": 30
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "free_slots",
+          "args": {
+            "days": 5,
+            "duration_min": 30
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "free_slots",
+          "args": {
+            "days": 5,
+            "duration_min": 30
+          }
+        }
+      ],
+      "tokens_in": 3690,
+      "tokens_out": 68,
+      "latency_s": 11.48,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 2,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-01",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "AI & Machine Learning"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "AI & Machine Learning"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "search_jobs",
+            "params": {
+              "category": "AI & Machine Learning"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1132,
+      "tokens_out": 82,
+      "latency_s": 19.63,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-03",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "Data Analytics"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "Data Analytics"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "params": {
+              "category": "Data Analytics"
+            },
+            "action": "search_jobs"
+          }
+        }
+      ],
+      "tokens_in": 1121,
+      "tokens_out": 84,
+      "latency_s": 16.33,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-05",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "q": "dashboard"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "query": "dashboard"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "search_jobs",
+            "params": {
+              "query": "dashboard"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1122,
+      "tokens_out": 82,
+      "latency_s": 15.74,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-07",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "skills": "sql"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "query": "sql"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "params": {
+              "query": "sql"
+            },
+            "action": "search_jobs"
+          }
+        }
+      ],
+      "tokens_in": 1124,
+      "tokens_out": 82,
+      "latency_s": 15.5,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-09",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00033"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00033"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "get_job",
+            "params": {
+              "job_id": "j-00033"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1151,
+      "tokens_out": 82,
+      "latency_s": 13.33,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-11",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00001"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00001"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "get_job",
+            "params": {
+              "job_id": "j-00001"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1151,
+      "tokens_out": 82,
+      "latency_s": 13.97,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-13",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00112"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00112"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "get_job",
+            "params": {
+              "job_id": "j-00112"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1151,
+      "tokens_out": 82,
+      "latency_s": 12.0,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-15",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00117"
+          }
+        },
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "c-0033"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_client_history",
+          "args": {
+            "job_id": "j-00117"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "client_history",
+            "params": {
+              "job_id": "j-00117"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1118,
+      "tokens_out": 66,
+      "latency_s": 12.77,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-17",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00032"
+          }
+        },
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "c-0475"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_client_history",
+          "args": {
+            "job_id": "j-00032"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "client_history",
+            "params": {
+              "job_id": "j-00032"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1118,
+      "tokens_out": 66,
+      "latency_s": 13.35,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-19",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "list_proposals",
+          "args": {}
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_proposals",
+          "args": {}
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "proposals"
+          }
+        }
+      ],
+      "tokens_in": 1066,
+      "tokens_out": 37,
+      "latency_s": 11.18,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 0,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-21",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-1"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_threads",
+          "args": {
+            "thread_id": "t-seed-aiml-1",
+            "type": "message"
+          }
+        },
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-1"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "threads",
+            "params": {
+              "thread_id": "t-seed-aiml-1",
+              "type": "message"
+            }
+          }
+        },
+        {
+          "name": "marketplace_read",
+          "args": {
+            "params": {
+              "thread_id": "t-seed-aiml-1"
+            },
+            "action": "messages"
+          }
+        }
+      ],
+      "tokens_in": 1767,
+      "tokens_out": 105,
+      "latency_s": 24.52,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-23",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-3"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_threads",
+          "args": {
+            "thread_id": "t-seed-aiml-3",
+            "type": "message"
+          }
+        },
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-3"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "threads",
+            "params": {
+              "thread_id": "t-seed-aiml-3",
+              "type": "message"
+            }
+          }
+        },
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "messages",
+            "params": {
+              "thread_id": "t-seed-aiml-3"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1767,
+      "tokens_out": 105,
+      "latency_s": 29.07,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-25",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "get_market_stats",
+          "args": {
+            "category": "Web Development"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_market_stats",
+          "args": {}
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_read",
+          "args": {
+            "action": "market_stats"
+          }
+        }
+      ],
+      "tokens_in": 1128,
+      "tokens_out": 49,
+      "latency_s": 14.67,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-27",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "retrieval-augmented generation over company documents"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "query": "retrieval-augmented generation over company documents"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "portfolio",
+          "args": {
+            "params": {
+              "query": "retrieval-augmented generation over company documents"
+            },
+            "action": "get_item"
+          }
+        }
+      ],
+      "tokens_in": 1100,
+      "tokens_out": 55,
+      "latency_s": 14.53,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-29",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Stripe subscription billing"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "query": "Stripe subscription billing"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "portfolio",
+          "args": {
+            "action": "get_item",
+            "params": {
+              "query": "Stripe subscription billing"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1083,
+      "tokens_out": 51,
+      "latency_s": 11.82,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-31",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Power BI executive dashboard"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "query": "Power BI executive dashboard"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "portfolio",
+          "args": {
+            "action": "get_item",
+            "params": {
+              "query": "Power BI executive dashboard"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1082,
+      "tokens_out": 53,
+      "latency_s": 11.84,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-33",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "item_id": "aiml-case-01"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "portfolio",
+          "args": {
+            "params": {
+              "item_id": "aiml-case-01"
+            },
+            "action": "get_item"
+          }
+        }
+      ],
+      "tokens_in": 1089,
+      "tokens_out": 51,
+      "latency_s": 11.58,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-35",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "list_skills",
+          "args": {}
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_skills",
+          "args": {}
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "portfolio",
+          "args": {
+            "action": "skills"
+          }
+        }
+      ],
+      "tokens_in": 1071,
+      "tokens_out": 28,
+      "latency_s": 9.76,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 0,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-37",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00012"
+          }
+        },
+        {
+          "tool": "create_proposal_draft",
+          "args": {
+            "job_id": "j-00012"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "create_proposal_draft",
+          "args": {
+            "job_id": "j-00012",
+            "dry_run": true,
+            "idempotency_key": "unique_key_001"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "marketplace_write",
+          "args": {
+            "action": "draft",
+            "dry_run": true,
+            "idempotency_key": "unique_key_001",
+            "params": {
+              "job_id": "j-00012"
+            }
+          }
+        }
+      ],
+      "tokens_in": 1110,
+      "tokens_out": 72,
+      "latency_s": 21.37,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-39",
+      "set": "coarse",
+      "expected": [
+        {
+          "tool": "free_slots",
+          "args": {
+            "days": 5,
+            "duration_min": 30
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "free_slots",
+          "args": {}
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "calendar",
+          "args": {
+            "action": "free_slots",
+            "duration": 30,
+            "date_range": "next_5_days"
+          }
+        }
+      ],
+      "tokens_in": 1129,
+      "tokens_out": 74,
+      "latency_s": 24.3,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-01",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "AI & Machine Learning"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "AI & Machine Learning",
+            "limit": 10,
+            "offset": 0
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_jobs",
+          "args": {
+            "category": "AI & Machine Learning",
+            "limit": 10,
+            "offset": 0
+          }
+        }
+      ],
+      "tokens_in": 5360,
+      "tokens_out": 83,
+      "latency_s": 68.73,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-03",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "category": "Data Analytics"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "skills": [],
+            "category": "Data Analytics",
+            "q": ""
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_jobs",
+          "args": {
+            "skills": [],
+            "category": "Data Analytics",
+            "q": ""
+          }
+        }
+      ],
+      "tokens_in": 5346,
+      "tokens_out": 70,
+      "latency_s": 25.19,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-05",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "q": "dashboard"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "offset": 0,
+            "q": "dashboard",
+            "limit": 10
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_jobs",
+          "args": {
+            "offset": 0,
+            "q": "dashboard",
+            "limit": 10
+          }
+        }
+      ],
+      "tokens_in": 5350,
+      "tokens_out": 75,
+      "latency_s": 22.62,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-07",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "skills": "sql"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_jobs",
+          "args": {
+            "skills": [
+              "sql"
+            ]
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_jobs",
+          "args": {
+            "skills": [
+              "sql"
+            ]
+          }
+        }
+      ],
+      "tokens_in": 5344,
+      "tokens_out": 70,
+      "latency_s": 20.37,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-09",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00033"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00033"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_job",
+          "args": {
+            "job_id": "j-00033"
+          }
+        }
+      ],
+      "tokens_in": 5370,
+      "tokens_out": 91,
+      "latency_s": 31.15,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-11",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00001"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00001"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_job",
+          "args": {
+            "job_id": "j-00001"
+          }
+        }
+      ],
+      "tokens_in": 5370,
+      "tokens_out": 91,
+      "latency_s": 31.04,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-13",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00112"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00112"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_job",
+          "args": {
+            "job_id": "j-00112"
+          }
+        }
+      ],
+      "tokens_in": 5370,
+      "tokens_out": 91,
+      "latency_s": 33.1,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-15",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00117"
+          }
+        },
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "c-0033"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "c-00117"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_client_history",
+          "args": {
+            "client_id": "c-00117"
+          }
+        }
+      ],
+      "tokens_in": 5345,
+      "tokens_out": 64,
+      "latency_s": 22.87,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-17",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00032"
+          }
+        },
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "c-0475"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_client_history",
+          "args": {
+            "client_id": "c-00032"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_client_history",
+          "args": {
+            "client_id": "c-00032"
+          }
+        }
+      ],
+      "tokens_in": 5345,
+      "tokens_out": 70,
+      "latency_s": 25.14,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-19",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "list_proposals",
+          "args": {}
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_proposals",
+          "args": {}
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "list_proposals",
+          "args": {}
+        }
+      ],
+      "tokens_in": 5289,
+      "tokens_out": 31,
+      "latency_s": 12.03,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 0,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-21",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-1"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-1"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-1"
+          }
+        }
+      ],
+      "tokens_in": 5318,
+      "tokens_out": 56,
+      "latency_s": 18.18,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-23",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-3"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-3"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "list_messages",
+          "args": {
+            "thread_id": "t-seed-aiml-3"
+          }
+        }
+      ],
+      "tokens_in": 5318,
+      "tokens_out": 56,
+      "latency_s": 17.22,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-25",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "get_market_stats",
+          "args": {
+            "category": "Web Development"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_market_stats",
+          "args": {
+            "category": "Web Development"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_market_stats",
+          "args": {
+            "category": "Web Development"
+          }
+        }
+      ],
+      "tokens_in": 5358,
+      "tokens_out": 39,
+      "latency_s": 15.39,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-27",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "retrieval-augmented generation over company documents"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "retrieval-augmented generation over company documents",
+            "persona": "aiml"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_evidence",
+          "args": {
+            "requirement": "retrieval-augmented generation over company documents",
+            "persona": "aiml"
+          }
+        }
+      ],
+      "tokens_in": 5341,
+      "tokens_out": 68,
+      "latency_s": 24.76,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-29",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Stripe subscription billing"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Stripe subscription billing",
+            "persona": "fullstack"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_evidence",
+          "args": {
+            "requirement": "Stripe subscription billing",
+            "persona": "fullstack"
+          }
+        }
+      ],
+      "tokens_in": 5324,
+      "tokens_out": 61,
+      "latency_s": 26.09,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-31",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "requirement": "Power BI executive dashboard"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "search_evidence",
+          "args": {
+            "persona": "data",
+            "requirement": "Power BI executive dashboard"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "search_evidence",
+          "args": {
+            "persona": "data",
+            "requirement": "Power BI executive dashboard"
+          }
+        }
+      ],
+      "tokens_in": 5322,
+      "tokens_out": 74,
+      "latency_s": 37.08,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-33",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "id": "aiml-case-01"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "get_case_study",
+          "args": {
+            "id": "aiml-case-01",
+            "persona": "aiml"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "get_case_study",
+          "args": {
+            "id": "aiml-case-01",
+            "persona": "aiml"
+          }
+        }
+      ],
+      "tokens_in": 5321,
+      "tokens_out": 47,
+      "latency_s": 26.4,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 1,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-35",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "list_skills",
+          "args": {}
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "list_skills",
+          "args": {
+            "persona": "fullstack"
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "list_skills",
+          "args": {
+            "persona": "fullstack"
+          }
+        }
+      ],
+      "tokens_in": 5301,
+      "tokens_out": 33,
+      "latency_s": 17.73,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 0,
+      "arg_keys_ok": 0,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-37",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "get_job",
+          "args": {
+            "job_id": "j-00012"
+          }
+        },
+        {
+          "tool": "create_proposal_draft",
+          "args": {
+            "job_id": "j-00012"
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "create_proposal_draft",
+          "args": {
+            "job_id": "j-00012",
+            "cover_letter": "Specializing in AI-driven chatbot development, I bring a unique blend of technical expertise and creative problem-solving to your project. Let's collaborate to build a cutting-edge chatbot that exceeds your expectations.",
+            "bid_amount": 500,
+            "idempotency_key": "draft-j-00012-1",
+            "dry_run": true
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "create_proposal_draft",
+          "args": {
+            "job_id": "j-00012",
+            "cover_letter": "Specializing in AI-driven chatbot development, I bring a unique blend of technical expertise and creative problem-solving to your project. Let's collaborate to build a cutting-edge chatbot that exceeds your expectations.",
+            "bid_amount": 500,
+            "idempotency_key": "draft-j-00012-1",
+            "dry_run": true
+          }
+        }
+      ],
+      "tokens_in": 5386,
+      "tokens_out": 174,
+      "latency_s": 49.56,
+      "error": null,
+      "selection_exact": false,
+      "selection_recall": false,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 1,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    },
+    {
+      "id": "tt-39",
+      "set": "best",
+      "expected": [
+        {
+          "tool": "free_slots",
+          "args": {
+            "days": 5,
+            "duration_min": 30
+          }
+        }
+      ],
+      "predicted": [
+        {
+          "tool": "free_slots",
+          "args": {
+            "duration_min": 30,
+            "days": 5
+          }
+        }
+      ],
+      "raw_calls": [
+        {
+          "name": "free_slots",
+          "args": {
+            "duration_min": 30,
+            "days": 5
+          }
+        }
+      ],
+      "tokens_in": 5350,
+      "tokens_out": 62,
+      "latency_s": 20.11,
+      "error": null,
+      "selection_exact": true,
+      "selection_recall": true,
+      "arg_keys_total": 2,
+      "arg_keys_ok": 2,
+      "unexpected_writes": [],
+      "unsafe_submit": false
+    }
+  ]
+}

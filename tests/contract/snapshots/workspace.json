@@ -1,0 +1,436 @@
+{
+  "prompts": {
+    "schedule_interview": [
+      "client_name",
+      "duration_min"
+    ]
+  },
+  "resource_templates": [],
+  "resources": [
+    "workspace://holds"
+  ],
+  "tools": {
+    "create_email_draft": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "readOnlyHint": false,
+        "title": "Create email draft"
+      },
+      "description": "Save an email draft (never sent automatically). Requires idempotency_key; dry_run previews.",
+      "inputSchema": {
+        "properties": {
+          "body": {
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Body",
+            "type": "string"
+          },
+          "dry_run": {
+            "default": false,
+            "description": "Preview only; nothing is created.",
+            "title": "Dry Run",
+            "type": "boolean"
+          },
+          "idempotency_key": {
+            "description": "Unique key; retries never create duplicates.",
+            "pattern": "^[A-Za-z0-9_.:-]{8,128}$",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "subject": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Subject",
+            "type": "string"
+          },
+          "to": {
+            "maxLength": 254,
+            "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
+            "title": "To",
+            "type": "string"
+          }
+        },
+        "required": [
+          "to",
+          "subject",
+          "body",
+          "idempotency_key"
+        ],
+        "title": "create_email_draftArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "body": {
+            "title": "Body",
+            "type": "string"
+          },
+          "draft_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Draft Id"
+          },
+          "dry_run": {
+            "default": false,
+            "title": "Dry Run",
+            "type": "boolean"
+          },
+          "replayed": {
+            "default": false,
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "preview"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "to": {
+            "title": "To",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "to",
+          "subject",
+          "body"
+        ],
+        "title": "EmailDraftResult",
+        "type": "object"
+      }
+    },
+    "create_interview_hold": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "readOnlyHint": false,
+        "title": "Create tentative interview hold"
+      },
+      "description": "Put a tentative interview hold on the calendar (must be a free slot). Requires idempotency_key; dry_run previews.",
+      "inputSchema": {
+        "properties": {
+          "attendee": {
+            "description": "Client name or platform handle.",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Attendee",
+            "type": "string"
+          },
+          "dry_run": {
+            "default": false,
+            "description": "Preview only; nothing is created.",
+            "title": "Dry Run",
+            "type": "boolean"
+          },
+          "end": {
+            "description": "ISO-8601 end, after start, at most 4 hours later.",
+            "format": "date-time",
+            "title": "End",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "description": "Unique key; retries never create duplicates.",
+            "pattern": "^[A-Za-z0-9_.:-]{8,128}$",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "start": {
+            "description": "ISO-8601 start (UTC if no offset).",
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start",
+          "end",
+          "title",
+          "attendee",
+          "idempotency_key"
+        ],
+        "title": "create_interview_holdArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "properties": {
+          "attendee": {
+            "title": "Attendee",
+            "type": "string"
+          },
+          "dry_run": {
+            "default": false,
+            "title": "Dry Run",
+            "type": "boolean"
+          },
+          "end": {
+            "format": "date-time",
+            "title": "End",
+            "type": "string"
+          },
+          "hold_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Hold Id"
+          },
+          "replayed": {
+            "default": false,
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "tentative",
+              "preview"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "start",
+          "end",
+          "title",
+          "attendee"
+        ],
+        "title": "HoldResult",
+        "type": "object"
+      }
+    },
+    "free_slots": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "readOnlyHint": true,
+        "title": "Find free calendar slots"
+      },
+      "description": "Find free working-hour calendar slots for an interview.",
+      "inputSchema": {
+        "properties": {
+          "days": {
+            "default": 5,
+            "description": "Look-ahead in working days.",
+            "maximum": 14,
+            "minimum": 1,
+            "title": "Days",
+            "type": "integer"
+          },
+          "duration_min": {
+            "default": 30,
+            "description": "Slot length in minutes.",
+            "maximum": 240,
+            "minimum": 15,
+            "title": "Duration Min",
+            "type": "integer"
+          },
+          "from_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "First day to search (default: tomorrow).",
+            "title": "From Date"
+          },
+          "max_slots": {
+            "default": 10,
+            "maximum": 50,
+            "minimum": 1,
+            "title": "Max Slots",
+            "type": "integer"
+          }
+        },
+        "title": "free_slotsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "Slot": {
+            "properties": {
+              "end": {
+                "format": "date-time",
+                "title": "End",
+                "type": "string"
+              },
+              "start": {
+                "format": "date-time",
+                "title": "Start",
+                "type": "string"
+              }
+            },
+            "required": [
+              "start",
+              "end"
+            ],
+            "title": "Slot",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "duration_min": {
+            "title": "Duration Min",
+            "type": "integer"
+          },
+          "slots": {
+            "items": {
+              "$ref": "#/$defs/Slot"
+            },
+            "title": "Slots",
+            "type": "array"
+          },
+          "timezone": {
+            "title": "Timezone",
+            "type": "string"
+          }
+        },
+        "required": [
+          "timezone",
+          "duration_min",
+          "slots"
+        ],
+        "title": "FreeSlots",
+        "type": "object"
+      }
+    },
+    "list_holds": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false,
+        "readOnlyHint": true,
+        "title": "List interview holds"
+      },
+      "description": "List tentative interview holds already on the calendar.",
+      "inputSchema": {
+        "properties": {},
+        "title": "list_holdsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "HoldResult": {
+            "properties": {
+              "attendee": {
+                "title": "Attendee",
+                "type": "string"
+              },
+              "dry_run": {
+                "default": false,
+                "title": "Dry Run",
+                "type": "boolean"
+              },
+              "end": {
+                "format": "date-time",
+                "title": "End",
+                "type": "string"
+              },
+              "hold_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Hold Id"
+              },
+              "replayed": {
+                "default": false,
+                "title": "Replayed",
+                "type": "boolean"
+              },
+              "start": {
+                "format": "date-time",
+                "title": "Start",
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "tentative",
+                  "preview"
+                ],
+                "title": "Status",
+                "type": "string"
+              },
+              "title": {
+                "title": "Title",
+                "type": "string"
+              }
+            },
+            "required": [
+              "status",
+              "start",
+              "end",
+              "title",
+              "attendee"
+            ],
+            "title": "HoldResult",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "holds": {
+            "items": {
+              "$ref": "#/$defs/HoldResult"
+            },
+            "title": "Holds",
+            "type": "array"
+          }
+        },
+        "required": [
+          "holds"
+        ],
+        "title": "HoldList",
+        "type": "object"
+      }
+    }
+  }
+}

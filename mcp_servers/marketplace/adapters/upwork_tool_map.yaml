@@ -1,0 +1,56 @@
+# Maps GigBid marketplace-port methods onto tools of the official Upwork MCP server.
+# Tool names must match the live server's tools/list; UpworkLiveAdapter.verify_mapping() reports
+# any mapped tool the server does not expose. `args` renames our argument -> their argument.
+# `result_key` picks a field from the structured result; `fields` renames their field -> ours.
+# Every write method MUST map to a draft-creating tool (draft_only: true is enforced in code):
+# the user confirms drafts on Upwork, GigBid never submits or sends directly.
+server: upwork
+methods:
+  search_jobs:
+    tool: search_jobs
+    args: {q: query, category: category, skills: skills, limit: limit, offset: offset}
+    result_key: jobs
+    fields: {job_id: id, skills: skills_required}
+  get_job:
+    tool: get_job_details
+    args: {job_id: job_id}
+    fields: {job_id: id, skills: skills_required}
+  get_client_history:
+    tool: get_client_details
+    args: {client_id: client_id}
+  get_connects:
+    tool: get_connects_balance
+    args: {}
+    fields: {available: balance}
+  list_threads:
+    tool: list_message_rooms
+    args: {}
+    result_key: rooms
+    fields: {room_id: thread_id}
+  list_messages:
+    tool: list_room_messages
+    args: {thread_id: room_id}
+    result_key: messages
+    fields: {message_id: id, author_role: sender, text: body}
+  get_market_stats:
+    tool: null            # not offered by Upwork; computed from search results
+  list_proposals:
+    tool: list_proposals
+    args: {}
+    result_key: proposals
+    fields: {id: proposal_id}
+  create_proposal_draft:
+    tool: create_proposal_draft
+    draft_only: true
+    args: {job_id: job_id, cover_letter: cover_letter, bid_amount: charge_amount, screening_answers: answers}
+    fields: {id: draft_id}
+  submit_proposal:          # live mode never submits: same draft tool, user confirms on Upwork
+    tool: create_proposal_draft
+    draft_only: true
+    args: {job_id: job_id, cover_letter: cover_letter, bid_amount: charge_amount, screening_answers: answers}
+    fields: {id: draft_id}
+  send_message:
+    tool: create_message_draft
+    draft_only: true
+    args: {thread_id: room_id, body: text}
+    fields: {id: message_id}
