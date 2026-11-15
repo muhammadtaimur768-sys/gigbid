@@ -2,10 +2,10 @@
 """CI guard: every number in README.md traces to a file in evals/results/.
 
 Contract (light, by design):
-- Result tables live between generated markers that only evals/runners/make_results_table.py writes:
+- Result tables live between generated markers that only scripts/fill_readme.py writes:
 
       <!-- RESULTS:RAG -->
-      <!-- written by evals/runners/make_results_table.py from evals/results/rag_variants.json -->
+      <!-- written by scripts/fill_readme.py from evals/results/rag_variants.json -->
       | Variant | ... |
       <!-- /RESULTS:RAG -->
 
@@ -26,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
-GENERATOR = "evals/runners/make_results_table.py"
+GENERATOR = "scripts/fill_readme.py"
 OPEN_RE = re.compile(r"<!--\s*RESULTS:([A-Z0-9_]+)\s*-->")
 CLOSE_RE = re.compile(r"<!--\s*/RESULTS:([A-Z0-9_]+)\s*-->")
 STAMP_RE = re.compile(r"<!--\s*written by\s+" + re.escape(GENERATOR) + r"\b(.*?)-->", re.IGNORECASE | re.DOTALL)
@@ -116,7 +116,7 @@ def main() -> int:
     # 3. generator self-check, when available
     if blocks and (ROOT / GENERATOR).exists() and "--check" in (ROOT / GENERATOR).read_text(encoding="utf-8"):
         if importlib.util.find_spec("evals") is not None or (ROOT / "evals").is_dir():
-            res = subprocess.run([sys.executable, "-m", "evals.runners.make_results_table", "--check"], cwd=ROOT)
+            res = subprocess.run([sys.executable, str(ROOT / GENERATOR), "--check"], cwd=ROOT)
             if res.returncode != 0:
                 problems.append(f"{GENERATOR} --check: README tables differ from evals/results (regenerate, do not hand-edit)")
 

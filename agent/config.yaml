@@ -287,3 +287,12 @@ personas:
   default: aiml
   freelancer_ids: {aiml: fl-aiml, fullstack: fl-fullstack, data: fl-data}
   tokens: {aiml: gs-aiml-token, fullstack: gs-fullstack-token, data: gs-data-token}
+
+# Declared service-level budgets (E5). Measured values are reported against these in README and the report.
+slo:
+  job_analysed:
+    p95_latency_s: 30
+    cost_usd: 0.002
+  proposal:
+    p95_latency_s: 120
+    cost_usd: 0.005
