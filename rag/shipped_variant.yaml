@@ -1,0 +1,5 @@
+# Shipped retrieval variant, chosen by evals/results/rag_results.json (best macro nDCG@10 over the
+# three personas; see evals/results/rag_decision.md). agent/config.yaml `rag.variant` overrides this
+# when it is not null.
+rag:
+  variant: ev+v2+v5

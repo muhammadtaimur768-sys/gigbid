@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "generated_at": "2026-11-15T16:21:12+00:00",
+    "best": "ev+v2+v5",
+    "max_jobs": 60,
+    "personas": [
+      "aiml",
+      "fullstack",
+      "data"
+    ],
+    "command": "python -m evals.runners.ablation --best ev+v2+v5"
+  },
+  "ablation": [
+    {
+      "variant": "ev+v2+v5",
+      "personas": 3,
+      "recall@5": 0.6054,
+      "mrr": 0.9765,
+      "ndcg@10": 0.7768,
+      "p50_ms": 328.7967,
+      "p95_ms": 586.89,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.6054,
+      "recall@5_nskills>=4": 0.5316,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6329,
+      "ablation": "full",
+      "delta_recall@5": 0.0,
+      "delta_mrr": 0.0,
+      "delta_ndcg@10": 0.0
+    },
+    {
+      "variant": "v2+v5",
+      "personas": 3,
+      "recall@5": 0.0,
+      "mrr": 0.0043,
+      "ndcg@10": 0.0045,
+      "p50_ms": 75.7067,
+      "p95_ms": 178.7633,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.0,
+      "recall@5_nskills>=4": 0.0,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.0,
+      "ablation": "-ev (evidence-type routing (proof items only))",
+      "delta_recall@5": -0.6054,
+      "delta_mrr": -0.9722,
+      "delta_ndcg@10": -0.7723
+    },
+    {
+      "variant": "ev+v5",
+      "personas": 3,
+      "recall@5": 0.5639,
+      "mrr": 0.9665,
+      "ndcg@10": 0.7324,
+      "p50_ms": 152.1733,
+      "p95_ms": 266.25,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5639,
+      "recall@5_nskills>=4": 0.4824,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6068,
+      "ablation": "-v2 (hybrid BM25+dense (RRF))",
+      "delta_recall@5": -0.0415,
+      "delta_mrr": -0.01,
+      "delta_ndcg@10": -0.0444
+    },
+    {
+      "variant": "ev+v2",
+      "personas": 3,
+      "recall@5": 0.5941,
+      "mrr": 0.9353,
+      "ndcg@10": 0.7559,
+      "p50_ms": 512.9033,
+      "p95_ms": 1553.44,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5941,
+      "recall@5_nskills>=4": 0.5114,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6206,
+      "ablation": "-v5 (multi-vector items)",
+      "delta_recall@5": -0.0113,
+      "delta_mrr": -0.0412,
+      "delta_ndcg@10": -0.0209
+    },
+    {
+      "variant": "v0",
+      "personas": 3,
+      "recall@5": 0.0121,
+      "mrr": 0.0335,
+      "ndcg@10": 0.0253,
+      "p50_ms": 401.2533,
+      "p95_ms": 622.7133,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.0121,
+      "recall@5_nskills>=4": 0.026,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.0078,
+      "ablation": "baseline v0",
+      "delta_recall@5": -0.5933,
+      "delta_mrr": -0.943,
+      "delta_ndcg@10": -0.7515
+    }
+  ],
+  "per_persona": [
+    {
+      "ablation": "full",
+      "variant": "ev+v2+v5",
+      "persona": "aiml",
+      "recall@5": 0.565,
+      "mrr": 0.96,
+      "ndcg@10": 0.749,
+      "p95_ms": 444.03
+    },
+    {
+      "ablation": "-ev (evidence-type routing (proof items only))",
+      "variant": "v2+v5",
+      "persona": "aiml",
+      "recall@5": 0.0,
+      "mrr": 0.0022,
+      "ndcg@10": 0.0018,
+      "p95_ms": 178.92
+    },
+    {
+      "ablation": "-v2 (hybrid BM25+dense (RRF))",
+      "variant": "ev+v5",
+      "persona": "aiml",
+      "recall@5": 0.5267,
+      "mrr": 0.97,
+      "ndcg@10": 0.7056,
+      "p95_ms": 278.97
+    },
+    {
+      "ablation": "-v5 (multi-vector items)",
+      "variant": "ev+v2",
+      "persona": "aiml",
+      "recall@5": 0.5317,
+      "mrr": 0.96,
+      "ndcg@10": 0.7261,
+      "p95_ms": 1766.53
+    },
+    {
+      "ablation": "baseline v0",
+      "variant": "v0",
+      "persona": "aiml",
+      "recall@5": 0.0033,
+      "mrr": 0.0073,
+      "ndcg@10": 0.0045,
+      "p95_ms": 593.16
+    },
+    {
+      "ablation": "full",
+      "variant": "ev+v2+v5",
+      "persona": "fullstack",
+      "recall@5": 0.6889,
+      "mrr": 0.9792,
+      "ndcg@10": 0.8405,
+      "p95_ms": 812.62
+    },
+    {
+      "ablation": "-ev (evidence-type routing (proof items only))",
+      "variant": "v2+v5",
+      "persona": "fullstack",
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@10": 0.0,
+      "p95_ms": 271.46
+    },
+    {
+      "ablation": "-v2 (hybrid BM25+dense (RRF))",
+      "variant": "ev+v5",
+      "persona": "fullstack",
+      "recall@5": 0.6194,
+      "mrr": 0.9583,
+      "ndcg@10": 0.7746,
+      "p95_ms": 277.79
+    },
+    {
+      "ablation": "-v5 (multi-vector items)",
+      "variant": "ev+v2",
+      "persona": "fullstack",
+      "recall@5": 0.6993,
+      "mrr": 0.9479,
+      "ndcg@10": 0.8251,
+      "p95_ms": 1489.39
+    },
+    {
+      "ablation": "baseline v0",
+      "variant": "v0",
+      "persona": "fullstack",
+      "recall@5": 0.0139,
+      "mrr": 0.0305,
+      "ndcg@10": 0.0352,
+      "p95_ms": 671.42
+    },
+    {
+      "ablation": "full",
+      "variant": "ev+v2+v5",
+      "persona": "data",
+      "recall@5": 0.5622,
+      "mrr": 0.9904,
+      "ndcg@10": 0.7409,
+      "p95_ms": 504.02
+    },
+    {
+      "ablation": "-ev (evidence-type routing (proof items only))",
+      "variant": "v2+v5",
+      "persona": "data",
+      "recall@5": 0.0,
+      "mrr": 0.0107,
+      "ndcg@10": 0.0117,
+      "p95_ms": 85.91
+    },
+    {
+      "ablation": "-v2 (hybrid BM25+dense (RRF))",
+      "variant": "ev+v5",
+      "persona": "data",
+      "recall@5": 0.5455,
+      "mrr": 0.9712,
+      "ndcg@10": 0.717,
+      "p95_ms": 241.99
+    },
+    {
+      "ablation": "-v5 (multi-vector items)",
+      "variant": "ev+v2",
+      "persona": "data",
+      "recall@5": 0.5513,
+      "mrr": 0.8981,
+      "ndcg@10": 0.7166,
+      "p95_ms": 1404.4
+    },
+    {
+      "ablation": "baseline v0",
+      "variant": "v0",
+      "persona": "data",
+      "recall@5": 0.0192,
+      "mrr": 0.0626,
+      "ndcg@10": 0.0363,
+      "p95_ms": 603.56
+    }
+  ]
+}

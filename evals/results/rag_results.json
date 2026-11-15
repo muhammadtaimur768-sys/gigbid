@@ -1,0 +1,5896 @@
+{
+  "meta": {
+    "generated_at": "2026-11-15T16:20:53+00:00",
+    "command": "python -m evals.runners.rag_eval",
+    "k": 10,
+    "seed": 42,
+    "n_jobs_per_persona": {
+      "aiml": 60,
+      "fullstack": 60,
+      "data": 60
+    },
+    "max_jobs": 60,
+    "embedding": "BAAI/bge-small-en-v1.5",
+    "reranker": "Xenova/ms-marco-MiniLM-L-6-v2",
+    "query": "job title + description; requirements = skills_required + bullet/cue lines (no LLM)",
+    "level": "item (gold evidence_ids); jobs without gold evidence excluded from R@5/MRR/nDCG",
+    "note": "personas run as parallel processes on a shared, heavily loaded laptop: latencies are inflated"
+  },
+  "overall": [
+    {
+      "variant": "v0",
+      "personas": 3,
+      "recall@5": 0.0121,
+      "mrr": 0.0335,
+      "ndcg@10": 0.0253,
+      "p50_ms": 401.2533,
+      "p95_ms": 622.7133,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.0121,
+      "recall@5_nskills>=4": 0.026,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.0078
+    },
+    {
+      "variant": "v1",
+      "personas": 3,
+      "recall@5": 0.2009,
+      "mrr": 0.4834,
+      "ndcg@10": 0.3069,
+      "p50_ms": 2174.9467,
+      "p95_ms": 3730.34,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.2009,
+      "recall@5_nskills>=4": 0.2697,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.1745
+    },
+    {
+      "variant": "v2",
+      "personas": 3,
+      "recall@5": 0.0012,
+      "mrr": 0.0102,
+      "ndcg@10": 0.0119,
+      "p50_ms": 456.7933,
+      "p95_ms": 781.5,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.0012,
+      "recall@5_nskills>=4": 0.0051,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.0
+    },
+    {
+      "variant": "v0+ev",
+      "personas": 3,
+      "recall@5": 0.5221,
+      "mrr": 0.9468,
+      "ndcg@10": 0.6644,
+      "p50_ms": 598.3167,
+      "p95_ms": 995.77,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5221,
+      "recall@5_nskills>=4": 0.4695,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5503
+    },
+    {
+      "variant": "ev",
+      "personas": 3,
+      "recall@5": 0.5467,
+      "mrr": 0.9091,
+      "ndcg@10": 0.6986,
+      "p50_ms": 626.4833,
+      "p95_ms": 1206.62,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5467,
+      "recall@5_nskills>=4": 0.4581,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5892
+    },
+    {
+      "variant": "ev+v1",
+      "personas": 3,
+      "recall@5": 0.5469,
+      "mrr": 0.8921,
+      "ndcg@10": 0.7062,
+      "p50_ms": 2898.34,
+      "p95_ms": 4474.73,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5469,
+      "recall@5_nskills>=4": 0.5005,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5663
+    },
+    {
+      "variant": "ev+v2",
+      "personas": 3,
+      "recall@5": 0.5941,
+      "mrr": 0.9353,
+      "ndcg@10": 0.7559,
+      "p50_ms": 512.9033,
+      "p95_ms": 1553.44,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5941,
+      "recall@5_nskills>=4": 0.5114,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6206
+    },
+    {
+      "variant": "ev+v3",
+      "personas": 3,
+      "recall@5": 0.5238,
+      "mrr": 0.9258,
+      "ndcg@10": 0.7148,
+      "p50_ms": 4989.72,
+      "p95_ms": 11062.36,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5238,
+      "recall@5_nskills>=4": 0.4517,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5596
+    },
+    {
+      "variant": "ev+v4",
+      "personas": 3,
+      "recall@5": 0.5138,
+      "mrr": 0.7922,
+      "ndcg@10": 0.6502,
+      "p50_ms": 153.3433,
+      "p95_ms": 279.4567,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5138,
+      "recall@5_nskills>=4": 0.4288,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5697
+    },
+    {
+      "variant": "ev+v5",
+      "personas": 3,
+      "recall@5": 0.5639,
+      "mrr": 0.9665,
+      "ndcg@10": 0.7324,
+      "p50_ms": 152.1733,
+      "p95_ms": 266.25,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5639,
+      "recall@5_nskills>=4": 0.4824,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6068
+    },
+    {
+      "variant": "ev+v8",
+      "personas": 3,
+      "recall@5": 0.4488,
+      "mrr": 0.8122,
+      "ndcg@10": 0.5638,
+      "p50_ms": 4104.24,
+      "p95_ms": 8403.6467,
+      "false_refusal_rate": 0.134,
+      "refusal_rate_no_gold": 0.6111,
+      "recall@5_nreq>=4": 0.4488,
+      "recall@5_nskills>=4": 0.3223,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5214
+    },
+    {
+      "variant": "ev+v1+v2",
+      "personas": 3,
+      "recall@5": 0.5824,
+      "mrr": 0.924,
+      "ndcg@10": 0.7382,
+      "p50_ms": 1386.5533,
+      "p95_ms": 2607.75,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5824,
+      "recall@5_nskills>=4": 0.5262,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5955
+    },
+    {
+      "variant": "ev+v2+v4",
+      "personas": 3,
+      "recall@5": 0.5696,
+      "mrr": 0.8194,
+      "ndcg@10": 0.6933,
+      "p50_ms": 338.61,
+      "p95_ms": 509.2733,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5696,
+      "recall@5_nskills>=4": 0.467,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6173
+    },
+    {
+      "variant": "ev+v2+v5",
+      "personas": 3,
+      "recall@5": 0.6054,
+      "mrr": 0.9765,
+      "ndcg@10": 0.7768,
+      "p50_ms": 328.7967,
+      "p95_ms": 586.89,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.6054,
+      "recall@5_nskills>=4": 0.5316,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6329
+    },
+    {
+      "variant": "ev+v2+v3",
+      "personas": 3,
+      "recall@5": 0.5218,
+      "mrr": 0.9253,
+      "ndcg@10": 0.725,
+      "p50_ms": 3906.0867,
+      "p95_ms": 6035.6433,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5218,
+      "recall@5_nskills>=4": 0.4612,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5479
+    },
+    {
+      "variant": "ev+v2+v5+v8",
+      "personas": 3,
+      "recall@5": 0.5093,
+      "mrr": 0.8948,
+      "ndcg@10": 0.64,
+      "p50_ms": 4420.5867,
+      "p95_ms": 9085.0833,
+      "false_refusal_rate": 0.067,
+      "refusal_rate_no_gold": 0.5833,
+      "recall@5_nreq>=4": 0.5093,
+      "recall@5_nskills>=4": 0.4047,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5646
+    }
+  ],
+  "best": "ev+v2+v5",
+  "results": [
+    {
+      "variant": "v0",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.0033,
+      "mrr": 0.0073,
+      "ndcg@10": 0.0045,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 418.69,
+      "p95_ms": 593.16,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.0238,
+          "mrr": 0.0524,
+          "ndcg@10": 0.0321,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.0033,
+          "mrr": 0.0073,
+          "ndcg@10": 0.0045,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.0064,
+          "mrr": 0.0141,
+          "ndcg@10": 0.0086,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v1",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.135,
+      "mrr": 0.5342,
+      "ndcg@10": 0.2592,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 2375.06,
+      "p95_ms": 3718.86,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.125,
+          "mrr": 0.7812,
+          "ndcg@10": 0.3322,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.1667,
+          "mrr": 0.2889,
+          "ndcg@10": 0.169,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.2222,
+          "mrr": 0.8889,
+          "ndcg@10": 0.347,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.1071,
+          "mrr": 0.254,
+          "ndcg@10": 0.1448,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.1667,
+          "mrr": 0.881,
+          "ndcg@10": 0.303,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.0185,
+          "mrr": 0.1552,
+          "ndcg@10": 0.1924,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.1667,
+          "mrr": 0.3214,
+          "ndcg@10": 0.2577,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.135,
+          "mrr": 0.5342,
+          "ndcg@10": 0.2592,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.1603,
+          "mrr": 0.6135,
+          "ndcg@10": 0.2759,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.1076,
+          "mrr": 0.4482,
+          "ndcg@10": 0.241,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v2",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.0,
+      "mrr": 0.002,
+      "ndcg@10": 0.0017,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 480.64,
+      "p95_ms": 779.05,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0111,
+          "ndcg@10": 0.0097,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.0,
+          "mrr": 0.002,
+          "ndcg@10": 0.0017,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.0,
+          "mrr": 0.0042,
+          "ndcg@10": 0.0036,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v0+ev",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.4917,
+      "mrr": 0.9167,
+      "ndcg@10": 0.6401,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 650.39,
+      "p95_ms": 1070.1,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.4271,
+          "mrr": 1.0,
+          "ndcg@10": 0.5836,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.5608,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.75,
+          "mrr": 1.0,
+          "ndcg@10": 0.8289,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.2619,
+          "mrr": 0.7143,
+          "ndcg@10": 0.4105,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5833,
+          "mrr": 1.0,
+          "ndcg@10": 0.6829,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.4074,
+          "mrr": 0.7593,
+          "ndcg@10": 0.5446,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.5476,
+          "mrr": 1.0,
+          "ndcg@10": 0.8055,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.4917,
+          "mrr": 0.9167,
+          "ndcg@10": 0.6401,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.484,
+          "mrr": 0.9615,
+          "ndcg@10": 0.6563,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5,
+          "mrr": 0.8681,
+          "ndcg@10": 0.6225,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.4883,
+      "mrr": 0.9173,
+      "ndcg@10": 0.6595,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 631.72,
+      "p95_ms": 1231.69,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.4688,
+          "mrr": 1.0,
+          "ndcg@10": 0.6438,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.3889,
+          "mrr": 1.0,
+          "ndcg@10": 0.6598,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.75,
+          "mrr": 1.0,
+          "ndcg@10": 0.824,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.2857,
+          "mrr": 0.5524,
+          "ndcg@10": 0.3993,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5595,
+          "mrr": 1.0,
+          "ndcg@10": 0.7008,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.3333,
+          "mrr": 0.8889,
+          "ndcg@10": 0.5833,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.5476,
+          "mrr": 1.0,
+          "ndcg@10": 0.7828,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.4883,
+          "mrr": 0.9173,
+          "ndcg@10": 0.6595,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.4776,
+          "mrr": 0.9295,
+          "ndcg@10": 0.6656,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5,
+          "mrr": 0.9042,
+          "ndcg@10": 0.6529,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v1",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.43,
+      "mrr": 0.9354,
+      "ndcg@10": 0.6689,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 3119.93,
+      "p95_ms": 4467.4,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.4792,
+          "mrr": 1.0,
+          "ndcg@10": 0.5875,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.4444,
+          "mrr": 1.0,
+          "ndcg@10": 0.6673,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.7541,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.2262,
+          "mrr": 0.5383,
+          "ndcg@10": 0.457,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5833,
+          "mrr": 1.0,
+          "ndcg@10": 0.7853,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.3519,
+          "mrr": 1.0,
+          "ndcg@10": 0.6518,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.4286,
+          "mrr": 1.0,
+          "ndcg@10": 0.7709,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.43,
+          "mrr": 0.9354,
+          "ndcg@10": 0.6689,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.4583,
+          "mrr": 0.9279,
+          "ndcg@10": 0.6734,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.3993,
+          "mrr": 0.9435,
+          "ndcg@10": 0.6641,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.5317,
+      "mrr": 0.96,
+      "ndcg@10": 0.7261,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 489.94,
+      "p95_ms": 1766.53,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.5417,
+          "mrr": 1.0,
+          "ndcg@10": 0.737,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.6111,
+          "mrr": 0.8333,
+          "ndcg@10": 0.7212,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.6667,
+          "mrr": 1.0,
+          "ndcg@10": 0.7924,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.4524,
+          "mrr": 1.0,
+          "ndcg@10": 0.6613,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5595,
+          "mrr": 1.0,
+          "ndcg@10": 0.7302,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.3333,
+          "mrr": 0.8333,
+          "ndcg@10": 0.5908,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.619,
+          "mrr": 1.0,
+          "ndcg@10": 0.8654,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.5317,
+          "mrr": 0.96,
+          "ndcg@10": 0.7261,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.5609,
+          "mrr": 0.9808,
+          "ndcg@10": 0.7629,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5,
+          "mrr": 0.9375,
+          "ndcg@10": 0.6864,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v3",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.5,
+      "mrr": 0.9357,
+      "ndcg@10": 0.7012,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 4643.64,
+      "p95_ms": 11095.67,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.4583,
+          "mrr": 1.0,
+          "ndcg@10": 0.7005,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.5,
+          "mrr": 0.75,
+          "ndcg@10": 0.6661,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.6944,
+          "mrr": 1.0,
+          "ndcg@10": 0.7893,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.4286,
+          "mrr": 0.9286,
+          "ndcg@10": 0.6062,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.4881,
+          "mrr": 1.0,
+          "ndcg@10": 0.7347,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.3704,
+          "mrr": 0.837,
+          "ndcg@10": 0.6013,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.5476,
+          "mrr": 0.9286,
+          "ndcg@10": 0.7935,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.5,
+          "mrr": 0.9357,
+          "ndcg@10": 0.7012,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.4904,
+          "mrr": 0.9519,
+          "ndcg@10": 0.7114,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5104,
+          "mrr": 0.9181,
+          "ndcg@10": 0.6902,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v4",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.4517,
+      "mrr": 0.7907,
+      "ndcg@10": 0.6266,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 134.94,
+      "p95_ms": 227.17,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.2604,
+          "mrr": 0.375,
+          "ndcg@10": 0.3965,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.3889,
+          "mrr": 1.0,
+          "ndcg@10": 0.6499,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.75,
+          "mrr": 1.0,
+          "ndcg@10": 0.8229,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.3333,
+          "mrr": 0.7905,
+          "ndcg@10": 0.502,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5357,
+          "mrr": 1.0,
+          "ndcg@10": 0.7564,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.4259,
+          "mrr": 1.0,
+          "ndcg@10": 0.7138,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.381,
+          "mrr": 0.4286,
+          "ndcg@10": 0.5101,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.4517,
+          "mrr": 0.7907,
+          "ndcg@10": 0.6266,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.375,
+          "mrr": 0.6744,
+          "ndcg@10": 0.5578,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5347,
+          "mrr": 0.9167,
+          "ndcg@10": 0.7011,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v5",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.5267,
+      "mrr": 0.97,
+      "ndcg@10": 0.7056,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 146.7,
+      "p95_ms": 278.97,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.4792,
+          "mrr": 1.0,
+          "ndcg@10": 0.6507,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.3889,
+          "mrr": 1.0,
+          "ndcg@10": 0.6598,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.75,
+          "mrr": 1.0,
+          "ndcg@10": 0.8319,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.3571,
+          "mrr": 0.9286,
+          "ndcg@10": 0.5014,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5595,
+          "mrr": 1.0,
+          "ndcg@10": 0.7008,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.4444,
+          "mrr": 0.8889,
+          "ndcg@10": 0.7033,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.5952,
+          "mrr": 1.0,
+          "ndcg@10": 0.8377,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.5267,
+          "mrr": 0.97,
+          "ndcg@10": 0.7056,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.5032,
+          "mrr": 1.0,
+          "ndcg@10": 0.7005,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5521,
+          "mrr": 0.9375,
+          "ndcg@10": 0.7111,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v8",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.42,
+      "mrr": 0.824,
+      "ndcg@10": 0.5608,
+      "false_refusal_rate": 0.12,
+      "p50_ms": 4114.19,
+      "p95_ms": 7965.21,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.5,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.4583,
+          "mrr": 1.0,
+          "ndcg@10": 0.6099,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.2778,
+          "mrr": 0.4167,
+          "ndcg@10": 0.3628,
+          "false_refusal_rate": 0.3333
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.6944,
+          "mrr": 1.0,
+          "ndcg@10": 0.7893,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.4286,
+          "mrr": 0.9286,
+          "ndcg@10": 0.5504,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.4881,
+          "mrr": 1.0,
+          "ndcg@10": 0.7347,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.3519,
+          "mrr": 0.8278,
+          "ndcg@10": 0.5653,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.0952,
+          "mrr": 0.2857,
+          "ndcg@10": 0.1267,
+          "false_refusal_rate": 0.7143
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.42,
+          "mrr": 0.824,
+          "ndcg@10": 0.5608,
+          "false_refusal_rate": 0.12
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.3429,
+          "mrr": 0.7404,
+          "ndcg@10": 0.4826,
+          "false_refusal_rate": 0.2308
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5035,
+          "mrr": 0.9146,
+          "ndcg@10": 0.6456,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v1+v2",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.4683,
+      "mrr": 0.9083,
+      "ndcg@10": 0.6867,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 1477.28,
+      "p95_ms": 2735.36,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.4792,
+          "mrr": 1.0,
+          "ndcg@10": 0.5988,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.7567,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.5,
+          "mrr": 0.7778,
+          "ndcg@10": 0.6479,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.3571,
+          "mrr": 0.631,
+          "ndcg@10": 0.5589,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.631,
+          "mrr": 1.0,
+          "ndcg@10": 0.8503,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.3148,
+          "mrr": 1.0,
+          "ndcg@10": 0.7134,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.5476,
+          "mrr": 1.0,
+          "ndcg@10": 0.7372,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.4683,
+          "mrr": 0.9083,
+          "ndcg@10": 0.6867,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.5224,
+          "mrr": 0.9487,
+          "ndcg@10": 0.7073,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.4097,
+          "mrr": 0.8646,
+          "ndcg@10": 0.6645,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v4",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.5033,
+      "mrr": 0.8633,
+      "ndcg@10": 0.6936,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 342.62,
+      "p95_ms": 502.1,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.4792,
+          "mrr": 0.6875,
+          "ndcg@10": 0.6004,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.5556,
+          "mrr": 0.8333,
+          "ndcg@10": 0.7441,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.6944,
+          "mrr": 1.0,
+          "ndcg@10": 0.7953,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.4286,
+          "mrr": 1.0,
+          "ndcg@10": 0.6937,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5595,
+          "mrr": 1.0,
+          "ndcg@10": 0.7291,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.4444,
+          "mrr": 1.0,
+          "ndcg@10": 0.7092,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.3571,
+          "mrr": 0.4524,
+          "ndcg@10": 0.5919,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.5033,
+          "mrr": 0.8633,
+          "ndcg@10": 0.6936,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.4647,
+          "mrr": 0.7372,
+          "ndcg@10": 0.6529,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5451,
+          "mrr": 1.0,
+          "ndcg@10": 0.7377,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v5",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.565,
+      "mrr": 0.96,
+      "ndcg@10": 0.749,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 316.2,
+      "p95_ms": 444.03,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.5208,
+          "mrr": 1.0,
+          "ndcg@10": 0.7189,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.5556,
+          "mrr": 0.8333,
+          "ndcg@10": 0.7079,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.75,
+          "mrr": 1.0,
+          "ndcg@10": 0.8229,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.4643,
+          "mrr": 1.0,
+          "ndcg@10": 0.6568,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5833,
+          "mrr": 1.0,
+          "ndcg@10": 0.7527,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.4074,
+          "mrr": 0.8333,
+          "ndcg@10": 0.6876,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.6667,
+          "mrr": 1.0,
+          "ndcg@10": 0.8736,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.565,
+          "mrr": 0.96,
+          "ndcg@10": 0.749,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.5801,
+          "mrr": 0.9808,
+          "ndcg@10": 0.7608,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5486,
+          "mrr": 0.9375,
+          "ndcg@10": 0.7363,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v3",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.5183,
+      "mrr": 0.934,
+      "ndcg@10": 0.7247,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 4043.97,
+      "p95_ms": 5641.29,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.5208,
+          "mrr": 1.0,
+          "ndcg@10": 0.6955,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.5556,
+          "mrr": 0.75,
+          "ndcg@10": 0.6692,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.6667,
+          "mrr": 1.0,
+          "ndcg@10": 0.8323,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.5119,
+          "mrr": 0.9286,
+          "ndcg@10": 0.6979,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.4762,
+          "mrr": 1.0,
+          "ndcg@10": 0.7309,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.3519,
+          "mrr": 0.7722,
+          "ndcg@10": 0.569,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.5714,
+          "mrr": 1.0,
+          "ndcg@10": 0.8645,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.5183,
+          "mrr": 0.934,
+          "ndcg@10": 0.7247,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.5321,
+          "mrr": 0.9712,
+          "ndcg@10": 0.7518,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5035,
+          "mrr": 0.8937,
+          "ndcg@10": 0.6954,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v5+v8",
+      "persona": "aiml",
+      "n_jobs": 60,
+      "n": 50,
+      "recall@5": 0.5,
+      "mrr": 0.864,
+      "ndcg@10": 0.6345,
+      "false_refusal_rate": 0.06,
+      "p50_ms": 4357.35,
+      "p95_ms": 11110.89,
+      "n_no_gold": 10,
+      "refusal_rate_no_gold": 0.5,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 8,
+          "recall@5": 0.5208,
+          "mrr": 1.0,
+          "ndcg@10": 0.6558,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "cv_model": {
+          "n": 3,
+          "recall@5": 0.2778,
+          "mrr": 0.4167,
+          "ndcg@10": 0.3628,
+          "false_refusal_rate": 0.3333
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "forecasting": {
+          "n": 9,
+          "recall@5": 0.6944,
+          "mrr": 1.0,
+          "ndcg@10": 0.7922,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 7,
+          "recall@5": 0.4881,
+          "mrr": 0.8571,
+          "ndcg@10": 0.5998,
+          "false_refusal_rate": 0.0
+        },
+        "logo_design": {
+          "n": 0
+        },
+        "mlops": {
+          "n": 7,
+          "recall@5": 0.5238,
+          "mrr": 1.0,
+          "ndcg@10": 0.7982,
+          "false_refusal_rate": 0.0
+        },
+        "mobile_app": {
+          "n": 0
+        },
+        "nlp_pipeline": {
+          "n": 9,
+          "recall@5": 0.463,
+          "mrr": 0.7722,
+          "ndcg@10": 0.6004,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 7,
+          "recall@5": 0.3571,
+          "mrr": 0.7143,
+          "ndcg@10": 0.4384,
+          "false_refusal_rate": 0.2857
+        },
+        "saas_app": {
+          "n": 0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 50,
+          "recall@5": 0.5,
+          "mrr": 0.864,
+          "ndcg@10": 0.6345,
+          "false_refusal_rate": 0.06
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 26,
+          "recall@5": 0.4487,
+          "mrr": 0.8558,
+          "ndcg@10": 0.6046,
+          "false_refusal_rate": 0.1154
+        },
+        "<4": {
+          "n": 24,
+          "recall@5": 0.5556,
+          "mrr": 0.8729,
+          "ndcg@10": 0.6668,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v0",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.0139,
+      "mrr": 0.0305,
+      "ndcg@10": 0.0352,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 389.92,
+      "p95_ms": 671.42,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.125,
+          "mrr": 0.1736,
+          "ndcg@10": 0.1494,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.0238,
+          "mrr": 0.1097,
+          "ndcg@10": 0.1557,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.0139,
+          "mrr": 0.0305,
+          "ndcg@10": 0.0352,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.0606,
+          "mrr": 0.1329,
+          "ndcg@10": 0.1534,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v1",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.2646,
+      "mrr": 0.5177,
+      "ndcg@10": 0.3889,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 2192.79,
+      "p95_ms": 3765.54,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.25,
+          "mrr": 0.425,
+          "ndcg@10": 0.3819,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.6221,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.0,
+          "mrr": 0.1285,
+          "ndcg@10": 0.0964,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.5,
+          "mrr": 0.537,
+          "ndcg@10": 0.4861,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.1118,
+          "ndcg@10": 0.185,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.1778,
+          "mrr": 0.4,
+          "ndcg@10": 0.171,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.5714,
+          "mrr": 1.0,
+          "ndcg@10": 0.7546,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.2646,
+          "mrr": 0.5177,
+          "ndcg@10": 0.3889,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.4545,
+          "mrr": 0.8182,
+          "ndcg@10": 0.6083,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.2081,
+          "mrr": 0.4284,
+          "ndcg@10": 0.3237,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v2",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.0035,
+      "mrr": 0.0202,
+      "ndcg@10": 0.0186,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 443.34,
+      "p95_ms": 714.53,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.0417,
+          "mrr": 0.0917,
+          "ndcg@10": 0.1053,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.0863,
+          "ndcg@10": 0.0672,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.0035,
+          "mrr": 0.0202,
+          "ndcg@10": 0.0186,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.0152,
+          "mrr": 0.0882,
+          "ndcg@10": 0.081,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v0+ev",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.5292,
+      "mrr": 0.9497,
+      "ndcg@10": 0.6763,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 595.73,
+      "p95_ms": 1092.82,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.4583,
+          "mrr": 1.0,
+          "ndcg@10": 0.6256,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.375,
+          "mrr": 1.0,
+          "ndcg@10": 0.5596,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.4744,
+          "mrr": 0.8526,
+          "ndcg@10": 0.6484,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.7222,
+          "mrr": 1.0,
+          "ndcg@10": 0.7958,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.75,
+          "mrr": 0.875,
+          "ndcg@10": 0.8285,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.3,
+          "mrr": 1.0,
+          "ndcg@10": 0.4498,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.5714,
+          "mrr": 1.0,
+          "ndcg@10": 0.7466,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.5292,
+          "mrr": 0.9497,
+          "ndcg@10": 0.6763,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.5152,
+          "mrr": 1.0,
+          "ndcg@10": 0.697,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.5333,
+          "mrr": 0.9347,
+          "ndcg@10": 0.6701,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.5986,
+      "mrr": 0.9479,
+      "ndcg@10": 0.7543,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 592.64,
+      "p95_ms": 1252.72,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.375,
+          "mrr": 0.875,
+          "ndcg@10": 0.6097,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.5833,
+          "mrr": 1.0,
+          "ndcg@10": 0.7777,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.5,
+          "mrr": 0.9615,
+          "ndcg@10": 0.6769,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.7778,
+          "mrr": 0.8333,
+          "ndcg@10": 0.7771,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.3,
+          "mrr": 1.0,
+          "ndcg@10": 0.5565,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.5952,
+          "mrr": 1.0,
+          "ndcg@10": 0.8687,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.5986,
+          "mrr": 0.9479,
+          "ndcg@10": 0.7543,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.5152,
+          "mrr": 1.0,
+          "ndcg@10": 0.7899,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.6234,
+          "mrr": 0.9324,
+          "ndcg@10": 0.7437,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v1",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.6049,
+      "mrr": 0.9583,
+      "ndcg@10": 0.7584,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 2988.39,
+      "p95_ms": 4147.35,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.625,
+          "mrr": 1.0,
+          "ndcg@10": 0.7905,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.625,
+          "mrr": 1.0,
+          "ndcg@10": 0.7695,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.641,
+          "mrr": 1.0,
+          "ndcg@10": 0.8239,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.6667,
+          "mrr": 0.7778,
+          "ndcg@10": 0.7318,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.6575,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.1778,
+          "mrr": 1.0,
+          "ndcg@10": 0.4155,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.6667,
+          "mrr": 1.0,
+          "ndcg@10": 0.8442,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.6049,
+          "mrr": 0.9583,
+          "ndcg@10": 0.7584,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.6061,
+          "mrr": 1.0,
+          "ndcg@10": 0.7771,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.6045,
+          "mrr": 0.9459,
+          "ndcg@10": 0.7528,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.6993,
+      "mrr": 0.9479,
+      "ndcg@10": 0.8251,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 438.43,
+      "p95_ms": 1489.39,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.6643,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.6875,
+          "mrr": 1.0,
+          "ndcg@10": 0.8991,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.641,
+          "mrr": 1.0,
+          "ndcg@10": 0.8395,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.9444,
+          "mrr": 0.9444,
+          "ndcg@10": 0.8719,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.9234,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.4667,
+          "mrr": 0.8333,
+          "ndcg@10": 0.5325,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.6429,
+          "mrr": 0.8571,
+          "ndcg@10": 0.8147,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.6993,
+          "mrr": 0.9479,
+          "ndcg@10": 0.8251,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.5455,
+          "mrr": 0.9091,
+          "ndcg@10": 0.7449,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.745,
+          "mrr": 0.9595,
+          "ndcg@10": 0.8489,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v3",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.5542,
+      "mrr": 0.9549,
+      "ndcg@10": 0.7636,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 4866.05,
+      "p95_ms": 11465.41,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.5,
+          "mrr": 0.875,
+          "ndcg@10": 0.6862,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.6907,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.5769,
+          "mrr": 0.9103,
+          "ndcg@10": 0.7951,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.5556,
+          "mrr": 1.0,
+          "ndcg@10": 0.7284,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.9127,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.5889,
+          "mrr": 1.0,
+          "ndcg@10": 0.7858,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.5238,
+          "mrr": 1.0,
+          "ndcg@10": 0.7833,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.5542,
+          "mrr": 0.9549,
+          "ndcg@10": 0.7636,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.5,
+          "mrr": 0.9545,
+          "ndcg@10": 0.7435,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.5703,
+          "mrr": 0.955,
+          "ndcg@10": 0.7696,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v4",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.5569,
+      "mrr": 0.8333,
+      "ndcg@10": 0.6971,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 130.02,
+      "p95_ms": 248.79,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.4167,
+          "mrr": 0.875,
+          "ndcg@10": 0.6361,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.625,
+          "mrr": 0.9375,
+          "ndcg@10": 0.7793,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.4231,
+          "mrr": 0.9615,
+          "ndcg@10": 0.6909,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.7778,
+          "mrr": 0.5556,
+          "ndcg@10": 0.6535,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.625,
+          "mrr": 0.375,
+          "ndcg@10": 0.531,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.4111,
+          "mrr": 1.0,
+          "ndcg@10": 0.6544,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.5476,
+          "mrr": 1.0,
+          "ndcg@10": 0.819,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.5569,
+          "mrr": 0.8333,
+          "ndcg@10": 0.6971,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.5152,
+          "mrr": 1.0,
+          "ndcg@10": 0.7693,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.5694,
+          "mrr": 0.7838,
+          "ndcg@10": 0.6757,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v5",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.6194,
+      "mrr": 0.9583,
+      "ndcg@10": 0.7746,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 162.04,
+      "p95_ms": 277.79,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.375,
+          "mrr": 0.875,
+          "ndcg@10": 0.5879,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.6042,
+          "mrr": 1.0,
+          "ndcg@10": 0.767,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.5128,
+          "mrr": 1.0,
+          "ndcg@10": 0.7372,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.7778,
+          "mrr": 0.8333,
+          "ndcg@10": 0.7753,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.3556,
+          "mrr": 1.0,
+          "ndcg@10": 0.6026,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.6667,
+          "mrr": 1.0,
+          "ndcg@10": 0.9033,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.6194,
+          "mrr": 0.9583,
+          "ndcg@10": 0.7746,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.5606,
+          "mrr": 1.0,
+          "ndcg@10": 0.8051,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.6369,
+          "mrr": 0.9459,
+          "ndcg@10": 0.7655,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v8",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.4444,
+      "mrr": 0.7986,
+      "ndcg@10": 0.5699,
+      "false_refusal_rate": 0.1667,
+      "p50_ms": 3989.02,
+      "p95_ms": 9052.2,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.5833,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.5,
+          "mrr": 0.875,
+          "ndcg@10": 0.6862,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.2708,
+          "mrr": 1.0,
+          "ndcg@10": 0.4171,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.4872,
+          "mrr": 0.7564,
+          "ndcg@10": 0.6659,
+          "false_refusal_rate": 0.1538
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.5556,
+          "mrr": 1.0,
+          "ndcg@10": 0.6425,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.75,
+          "mrr": 0.75,
+          "ndcg@10": 0.75,
+          "false_refusal_rate": 0.25
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.1667,
+          "mrr": 0.3333,
+          "ndcg@10": 0.2149,
+          "false_refusal_rate": 0.6667
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.3333,
+          "mrr": 0.5714,
+          "ndcg@10": 0.4556,
+          "false_refusal_rate": 0.4286
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.4444,
+          "mrr": 0.7986,
+          "ndcg@10": 0.5699,
+          "false_refusal_rate": 0.1667
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.3333,
+          "mrr": 0.5909,
+          "ndcg@10": 0.4666,
+          "false_refusal_rate": 0.3636
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.4775,
+          "mrr": 0.8604,
+          "ndcg@10": 0.6006,
+          "false_refusal_rate": 0.1081
+        }
+      }
+    },
+    {
+      "variant": "ev+v1+v2",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.6917,
+      "mrr": 1.0,
+      "ndcg@10": 0.8027,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 1593.15,
+      "p95_ms": 2718.69,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.5833,
+          "mrr": 1.0,
+          "ndcg@10": 0.7647,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.6667,
+          "mrr": 1.0,
+          "ndcg@10": 0.7751,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.8077,
+          "mrr": 1.0,
+          "ndcg@10": 0.8903,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.8333,
+          "mrr": 1.0,
+          "ndcg@10": 0.8302,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.6575,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.2889,
+          "mrr": 1.0,
+          "ndcg@10": 0.4427,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.6667,
+          "mrr": 1.0,
+          "ndcg@10": 0.8953,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.6917,
+          "mrr": 1.0,
+          "ndcg@10": 0.8027,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.6061,
+          "mrr": 1.0,
+          "ndcg@10": 0.8039,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.7171,
+          "mrr": 1.0,
+          "ndcg@10": 0.8024,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v4",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.6472,
+      "mrr": 0.8194,
+      "ndcg@10": 0.7449,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 288.16,
+      "p95_ms": 439.5,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.4583,
+          "mrr": 1.0,
+          "ndcg@10": 0.6203,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.6875,
+          "mrr": 0.8542,
+          "ndcg@10": 0.8804,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.6026,
+          "mrr": 1.0,
+          "ndcg@10": 0.8144,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.9444,
+          "mrr": 0.5556,
+          "ndcg@10": 0.6656,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.625,
+          "mrr": 0.375,
+          "ndcg@10": 0.5427,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.4667,
+          "mrr": 1.0,
+          "ndcg@10": 0.6588,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.5,
+          "mrr": 0.8571,
+          "ndcg@10": 0.7861,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.6472,
+          "mrr": 0.8194,
+          "ndcg@10": 0.7449,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.4697,
+          "mrr": 0.9091,
+          "ndcg@10": 0.7179,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.7,
+          "mrr": 0.7928,
+          "ndcg@10": 0.7529,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v5",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.6889,
+      "mrr": 0.9792,
+      "ndcg@10": 0.8405,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 328.24,
+      "p95_ms": 812.62,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.6553,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.6667,
+          "mrr": 1.0,
+          "ndcg@10": 0.8778,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.5897,
+          "mrr": 1.0,
+          "ndcg@10": 0.8472,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.9444,
+          "mrr": 0.9444,
+          "ndcg@10": 0.8654,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9799,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.5222,
+          "mrr": 1.0,
+          "ndcg@10": 0.6353,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.6667,
+          "mrr": 0.9286,
+          "ndcg@10": 0.8676,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.6889,
+          "mrr": 0.9792,
+          "ndcg@10": 0.8405,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.5758,
+          "mrr": 0.9545,
+          "ndcg@10": 0.7883,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.7225,
+          "mrr": 0.9865,
+          "ndcg@10": 0.856,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v3",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.5292,
+      "mrr": 0.9549,
+      "ndcg@10": 0.7691,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 3689.79,
+      "p95_ms": 6272.56,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.4583,
+          "mrr": 0.875,
+          "ndcg@10": 0.6598,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.7227,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.5897,
+          "mrr": 0.9103,
+          "ndcg@10": 0.8484,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.7003,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.875,
+          "mrr": 0.875,
+          "ndcg@10": 0.9013,
+          "false_refusal_rate": 0.0
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.5222,
+          "mrr": 1.0,
+          "ndcg@10": 0.7613,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.5238,
+          "mrr": 1.0,
+          "ndcg@10": 0.7537,
+          "false_refusal_rate": 0.0
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.5292,
+          "mrr": 0.9549,
+          "ndcg@10": 0.7691,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.4848,
+          "mrr": 0.9545,
+          "ndcg@10": 0.7151,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.5423,
+          "mrr": 0.955,
+          "ndcg@10": 0.7852,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v5+v8",
+      "persona": "fullstack",
+      "n_jobs": 60,
+      "n": 48,
+      "recall@5": 0.4868,
+      "mrr": 0.9167,
+      "ndcg@10": 0.6403,
+      "false_refusal_rate": 0.0833,
+      "p50_ms": 4870.5,
+      "p95_ms": 8090.2,
+      "n_no_gold": 12,
+      "refusal_rate_no_gold": 0.5,
+      "by_job_type": {
+        "agent_workflow": {
+          "n": 0
+        },
+        "api_backend": {
+          "n": 4,
+          "recall@5": 0.4583,
+          "mrr": 1.0,
+          "ndcg@10": 0.7179,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "devops_web": {
+          "n": 8,
+          "recall@5": 0.2917,
+          "mrr": 1.0,
+          "ndcg@10": 0.5039,
+          "false_refusal_rate": 0.0
+        },
+        "e2e_testing": {
+          "n": 13,
+          "recall@5": 0.5897,
+          "mrr": 1.0,
+          "ndcg@10": 0.7973,
+          "false_refusal_rate": 0.0
+        },
+        "ecommerce": {
+          "n": 9,
+          "recall@5": 0.5556,
+          "mrr": 1.0,
+          "ndcg@10": 0.6425,
+          "false_refusal_rate": 0.0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "mobile_app": {
+          "n": 4,
+          "recall@5": 0.75,
+          "mrr": 0.75,
+          "ndcg@10": 0.75,
+          "false_refusal_rate": 0.25
+        },
+        "rag_chatbot": {
+          "n": 0
+        },
+        "realtime_app": {
+          "n": 3,
+          "recall@5": 0.3444,
+          "mrr": 1.0,
+          "ndcg@10": 0.4855,
+          "false_refusal_rate": 0.0
+        },
+        "saas_app": {
+          "n": 7,
+          "recall@5": 0.3571,
+          "mrr": 0.5714,
+          "ndcg@10": 0.461,
+          "false_refusal_rate": 0.4286
+        },
+        "ui_design": {
+          "n": 0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "video_editing": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 48,
+          "recall@5": 0.4868,
+          "mrr": 0.9167,
+          "ndcg@10": 0.6403,
+          "false_refusal_rate": 0.0833
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 11,
+          "recall@5": 0.3636,
+          "mrr": 0.7273,
+          "ndcg@10": 0.5264,
+          "false_refusal_rate": 0.2727
+        },
+        "<4": {
+          "n": 37,
+          "recall@5": 0.5234,
+          "mrr": 0.973,
+          "ndcg@10": 0.6742,
+          "false_refusal_rate": 0.027
+        }
+      }
+    },
+    {
+      "variant": "v0",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.0192,
+      "mrr": 0.0626,
+      "ndcg@10": 0.0363,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 395.15,
+      "p95_ms": 603.56,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.1333,
+          "mrr": 0.3528,
+          "ndcg@10": 0.1585,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.0,
+          "mrr": 0.0083,
+          "ndcg@10": 0.0073,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.0,
+          "mrr": 0.0583,
+          "ndcg@10": 0.0406,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.0,
+          "mrr": 0.0125,
+          "ndcg@10": 0.0222,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.0286,
+          "mrr": 0.0921,
+          "ndcg@10": 0.0668,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.0192,
+          "mrr": 0.0626,
+          "ndcg@10": 0.0363,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.0111,
+          "mrr": 0.0506,
+          "ndcg@10": 0.0368,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.0235,
+          "mrr": 0.0689,
+          "ndcg@10": 0.036,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v1",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.2032,
+      "mrr": 0.3983,
+      "ndcg@10": 0.2725,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 1956.99,
+      "p95_ms": 3706.62,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.0667,
+          "mrr": 0.1269,
+          "ndcg@10": 0.2161,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.4306,
+          "mrr": 1.0,
+          "ndcg@10": 0.5529,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.1667,
+          "mrr": 0.4222,
+          "ndcg@10": 0.2574,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.2407,
+          "mrr": 0.387,
+          "ndcg@10": 0.2641,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.25,
+          "mrr": 0.1833,
+          "ndcg@10": 0.2278,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.127,
+          "ndcg@10": 0.1076,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.2032,
+          "mrr": 0.3983,
+          "ndcg@10": 0.2725,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.1944,
+          "mrr": 0.5988,
+          "ndcg@10": 0.3193,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.2078,
+          "mrr": 0.2922,
+          "ndcg@10": 0.2477,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v2",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.0,
+      "mrr": 0.0085,
+      "ndcg@10": 0.0154,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 446.4,
+      "p95_ms": 850.92,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.0,
+          "mrr": 0.0741,
+          "ndcg@10": 0.1334,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.0,
+          "mrr": 0.0085,
+          "ndcg@10": 0.0154,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.0,
+          "mrr": 0.0131,
+          "ndcg@10": 0.0235,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v0+ev",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5455,
+      "mrr": 0.9739,
+      "ndcg@10": 0.6769,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 548.83,
+      "p95_ms": 824.39,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4667,
+          "mrr": 0.8571,
+          "ndcg@10": 0.6558,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.625,
+          "mrr": 1.0,
+          "ndcg@10": 0.7531,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.3667,
+          "mrr": 1.0,
+          "ndcg@10": 0.5768,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5556,
+          "mrr": 1.0,
+          "ndcg@10": 0.727,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.9375,
+          "ndcg@10": 0.9316,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.4767,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2,
+          "mrr": 1.0,
+          "ndcg@10": 0.3726,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.8316,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5455,
+          "mrr": 0.9739,
+          "ndcg@10": 0.6769,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4093,
+          "mrr": 1.0,
+          "ndcg@10": 0.5771,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6176,
+          "mrr": 0.9601,
+          "ndcg@10": 0.7297,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5532,
+      "mrr": 0.8622,
+      "ndcg@10": 0.6821,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 655.09,
+      "p95_ms": 1135.45,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.5333,
+          "mrr": 0.8611,
+          "ndcg@10": 0.7095,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5833,
+          "mrr": 0.9028,
+          "ndcg@10": 0.7391,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4,
+          "mrr": 0.8,
+          "ndcg@10": 0.5878,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5,
+          "mrr": 0.9444,
+          "ndcg@10": 0.6988,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9506,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.4167,
+          "mrr": 0.4583,
+          "ndcg@10": 0.5789,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2,
+          "mrr": 0.7857,
+          "ndcg@10": 0.3308,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.8772,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5532,
+          "mrr": 0.8622,
+          "ndcg@10": 0.6821,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3815,
+          "mrr": 0.8241,
+          "ndcg@10": 0.5461,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6441,
+          "mrr": 0.8824,
+          "ndcg@10": 0.7541,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v1",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.6058,
+      "mrr": 0.7827,
+      "ndcg@10": 0.6912,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 2586.7,
+      "p95_ms": 4809.44,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.6,
+          "mrr": 0.625,
+          "ndcg@10": 0.6421,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.6528,
+          "mrr": 1.0,
+          "ndcg@10": 0.8048,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4667,
+          "mrr": 0.8,
+          "ndcg@10": 0.6746,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5926,
+          "mrr": 0.8889,
+          "ndcg@10": 0.682,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9492,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.5,
+          "mrr": 0.5,
+          "ndcg@10": 0.655,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2,
+          "mrr": 0.2786,
+          "ndcg@10": 0.2551,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9197,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.6058,
+          "mrr": 0.7827,
+          "ndcg@10": 0.6912,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.437,
+          "mrr": 0.7361,
+          "ndcg@10": 0.5806,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6951,
+          "mrr": 0.8074,
+          "ndcg@10": 0.7497,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5513,
+      "mrr": 0.8981,
+      "ndcg@10": 0.7166,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 610.34,
+      "p95_ms": 1404.4,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4,
+          "mrr": 0.8667,
+          "ndcg@10": 0.6198,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5417,
+          "mrr": 0.9583,
+          "ndcg@10": 0.7047,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4333,
+          "mrr": 0.8,
+          "ndcg@10": 0.6801,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 0.9444,
+          "ndcg@10": 0.7648,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.5,
+          "ndcg@10": 0.3867,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.3714,
+          "mrr": 0.9286,
+          "ndcg@10": 0.6084,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5513,
+          "mrr": 0.8981,
+          "ndcg@10": 0.7166,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4278,
+          "mrr": 0.9444,
+          "ndcg@10": 0.65,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6167,
+          "mrr": 0.8735,
+          "ndcg@10": 0.7519,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v3",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5173,
+      "mrr": 0.8869,
+      "ndcg@10": 0.6796,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 5459.47,
+      "p95_ms": 10626.0,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4,
+          "mrr": 0.8667,
+          "ndcg@10": 0.5886,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.4861,
+          "mrr": 0.9583,
+          "ndcg@10": 0.7479,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.2333,
+          "mrr": 0.7167,
+          "ndcg@10": 0.4938,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.7417,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.8846,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.4758,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.4286,
+          "mrr": 0.8333,
+          "ndcg@10": 0.5539,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.8316,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5173,
+          "mrr": 0.8869,
+          "ndcg@10": 0.6796,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3648,
+          "mrr": 0.8981,
+          "ndcg@10": 0.631,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.598,
+          "mrr": 0.8809,
+          "ndcg@10": 0.7054,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v4",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5327,
+      "mrr": 0.7526,
+      "ndcg@10": 0.6268,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 195.07,
+      "p95_ms": 362.41,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.7,
+          "mrr": 0.8667,
+          "ndcg@10": 0.7459,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5417,
+          "mrr": 0.9028,
+          "ndcg@10": 0.7369,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.3667,
+          "mrr": 0.35,
+          "ndcg@10": 0.4638,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 0.9444,
+          "ndcg@10": 0.7032,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.75,
+          "mrr": 0.2687,
+          "ndcg@10": 0.5002,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.5,
+          "mrr": 0.875,
+          "ndcg@10": 0.7106,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2857,
+          "mrr": 1.0,
+          "ndcg@10": 0.479,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 0.2,
+          "ndcg@10": 0.4306,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5327,
+          "mrr": 0.7526,
+          "ndcg@10": 0.6268,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3963,
+          "mrr": 0.8194,
+          "ndcg@10": 0.5749,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6049,
+          "mrr": 0.7172,
+          "ndcg@10": 0.6543,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v5",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5455,
+      "mrr": 0.9712,
+      "ndcg@10": 0.717,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 147.78,
+      "p95_ms": 241.99,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.5667,
+          "mrr": 0.9167,
+          "ndcg@10": 0.7585,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5694,
+          "mrr": 1.0,
+          "ndcg@10": 0.7303,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4,
+          "mrr": 0.8,
+          "ndcg@10": 0.627,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.7305,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.875,
+          "mrr": 1.0,
+          "ndcg@10": 0.9054,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.4167,
+          "mrr": 1.0,
+          "ndcg@10": 0.7168,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2571,
+          "mrr": 1.0,
+          "ndcg@10": 0.4496,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5455,
+          "mrr": 0.9712,
+          "ndcg@10": 0.717,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3833,
+          "mrr": 0.9722,
+          "ndcg@10": 0.5899,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6314,
+          "mrr": 0.9706,
+          "ndcg@10": 0.7842,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v8",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.4821,
+      "mrr": 0.8141,
+      "ndcg@10": 0.5607,
+      "false_refusal_rate": 0.1154,
+      "p50_ms": 4209.51,
+      "p95_ms": 8193.53,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.75,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.3667,
+          "mrr": 0.8333,
+          "ndcg@10": 0.4967,
+          "false_refusal_rate": 0.1667
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.375,
+          "mrr": 0.7917,
+          "ndcg@10": 0.4725,
+          "false_refusal_rate": 0.1667
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.1333,
+          "mrr": 0.4,
+          "ndcg@10": 0.1853,
+          "false_refusal_rate": 0.6
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.6901,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.8846,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.454,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.4571,
+          "mrr": 0.8333,
+          "ndcg@10": 0.5517,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.6131,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.4821,
+          "mrr": 0.8141,
+          "ndcg@10": 0.5607,
+          "false_refusal_rate": 0.1154
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.2907,
+          "mrr": 0.713,
+          "ndcg@10": 0.3984,
+          "false_refusal_rate": 0.2222
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.5833,
+          "mrr": 0.8676,
+          "ndcg@10": 0.6466,
+          "false_refusal_rate": 0.0588
+        }
+      }
+    },
+    {
+      "variant": "ev+v1+v2",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5872,
+      "mrr": 0.8638,
+      "ndcg@10": 0.7253,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 1089.23,
+      "p95_ms": 2369.2,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.5667,
+          "mrr": 0.4028,
+          "ndcg@10": 0.5269,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.6111,
+          "mrr": 1.0,
+          "ndcg@10": 0.7853,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.5333,
+          "mrr": 0.9,
+          "ndcg@10": 0.7472,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.537,
+          "mrr": 0.9444,
+          "ndcg@10": 0.7385,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.375,
+          "mrr": 0.5,
+          "ndcg@10": 0.6369,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2571,
+          "mrr": 0.9286,
+          "ndcg@10": 0.4574,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5872,
+          "mrr": 0.8638,
+          "ndcg@10": 0.7253,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.45,
+          "mrr": 0.9722,
+          "ndcg@10": 0.6718,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6598,
+          "mrr": 0.8064,
+          "ndcg@10": 0.7537,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v4",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5583,
+      "mrr": 0.7756,
+      "ndcg@10": 0.6413,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 385.05,
+      "p95_ms": 586.22,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.5667,
+          "mrr": 0.8889,
+          "ndcg@10": 0.6862,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5278,
+          "mrr": 0.9028,
+          "ndcg@10": 0.6727,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.3,
+          "mrr": 0.3833,
+          "ndcg@10": 0.4678,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.7426,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.3854,
+          "ndcg@10": 0.5786,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.4836,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.5429,
+          "mrr": 1.0,
+          "ndcg@10": 0.7353,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.0,
+          "mrr": 0.1667,
+          "ndcg@10": 0.4228,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5583,
+          "mrr": 0.7756,
+          "ndcg@10": 0.6413,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4667,
+          "mrr": 0.8287,
+          "ndcg@10": 0.628,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6069,
+          "mrr": 0.7475,
+          "ndcg@10": 0.6483,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v5",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5622,
+      "mrr": 0.9904,
+      "ndcg@10": 0.7409,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 341.95,
+      "p95_ms": 504.02,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4,
+          "mrr": 1.0,
+          "ndcg@10": 0.6351,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5278,
+          "mrr": 1.0,
+          "ndcg@10": 0.7244,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4333,
+          "mrr": 0.9,
+          "ndcg@10": 0.6939,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5556,
+          "mrr": 1.0,
+          "ndcg@10": 0.7619,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9392,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.5214,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.4286,
+          "mrr": 1.0,
+          "ndcg@10": 0.7285,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5622,
+          "mrr": 0.9904,
+          "ndcg@10": 0.7409,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4389,
+          "mrr": 1.0,
+          "ndcg@10": 0.6954,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6275,
+          "mrr": 0.9853,
+          "ndcg@10": 0.7651,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v3",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5179,
+      "mrr": 0.8869,
+      "ndcg@10": 0.6811,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 3984.5,
+      "p95_ms": 6193.08,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4,
+          "mrr": 0.8667,
+          "ndcg@10": 0.5893,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.4722,
+          "mrr": 0.9583,
+          "ndcg@10": 0.6894,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.2333,
+          "mrr": 0.7167,
+          "ndcg@10": 0.4633,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.7846,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.8793,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.4723,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.4571,
+          "mrr": 0.8333,
+          "ndcg@10": 0.6419,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.8175,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5179,
+          "mrr": 0.8869,
+          "ndcg@10": 0.6811,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3667,
+          "mrr": 0.8981,
+          "ndcg@10": 0.6073,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.598,
+          "mrr": 0.8809,
+          "ndcg@10": 0.7202,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v5+v8",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.541,
+      "mrr": 0.9038,
+      "ndcg@10": 0.6451,
+      "false_refusal_rate": 0.0577,
+      "p50_ms": 4033.91,
+      "p95_ms": 8054.16,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.75,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4667,
+          "mrr": 1.0,
+          "ndcg@10": 0.6246,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.4583,
+          "mrr": 1.0,
+          "ndcg@10": 0.5865,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.1333,
+          "mrr": 0.4,
+          "ndcg@10": 0.1974,
+          "false_refusal_rate": 0.6
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.537,
+          "mrr": 1.0,
+          "ndcg@10": 0.727,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.8879,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.4669,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.5714,
+          "mrr": 1.0,
+          "ndcg@10": 0.763,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9197,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.541,
+          "mrr": 0.9038,
+          "ndcg@10": 0.6451,
+          "false_refusal_rate": 0.0577
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4019,
+          "mrr": 0.8889,
+          "ndcg@10": 0.5475,
+          "false_refusal_rate": 0.1111
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6147,
+          "mrr": 0.9118,
+          "ndcg@10": 0.6968,
+          "false_refusal_rate": 0.0294
+        }
+      }
+    }
+  ]
+}

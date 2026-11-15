@@ -1,0 +1,91 @@
+# RAG configuration: models, chunking, variant components and verification thresholds.
+# Precedence for the active variant: agent/config.yaml `rag.variant` > rag/shipped_variant.yaml > `default_variant` here.
+# Any key under agent/config.yaml `rag:` overrides the same key here (shallow merge per section).
+
+default_variant: v0
+
+paths:
+  personas_dir: data/personas
+  index_dir: data/processed/index
+  model_cache: data/processed/models
+
+models:
+  embedding: BAAI/bge-small-en-v1.5
+  # bge models expect this instruction in front of short retrieval queries
+  query_prefix: "Represent this sentence for searching relevant passages: "
+  reranker: Xenova/ms-marco-MiniLM-L-6-v2
+
+chunking:
+  fixed:            # used by V0: fixed windows, ignores document structure
+    size_chars: 700
+    overlap_chars: 100
+  structured:       # headings / paragraphs for prose, top-level defs for code
+    max_chars: 900
+    min_chars: 120
+
+proof_types: [case_study, repo]   # item types that count as proof for the `ev` component
+
+retrieval:
+  candidates: 40          # chunk candidates per query before aggregation
+  rrf_k: 60               # reciprocal-rank-fusion constant
+  hybrid_weights: {dense: 1.0, bm25: 1.0}
+  rerank_top_n: 25        # chunks sent to the cross-encoder for the whole-post query
+  rerank_top_n_requirement: 10   # ... and for each decomposed requirement query
+  decompose_whole_query_weight: 3.0   # weight of the whole-post list when fusing requirement lists
+  max_requirements: 8
+  outcome_boost: {won: 0.25, replied: 0.12, ignored: -0.10}
+  outcome_project_boost: 0.5     # x (skill success rate - overall rate) for non-proposal evidence
+  project_expand_decay: 0.5      # V5: score multiplier for sibling items of a matched project
+
+corrective:
+  # Cross-encoder logits (ms-marco MiniLM). Calibrated on 30 shuffled aiml dev jobs (seed 1): best
+  # whole-post logit median -3.1 on jobs with gold evidence vs -7.4 on jobs without; gold chunks p10 -10.1.
+  relevant_threshold: -9.0    # evidence below this is dropped as irrelevant
+  weak_threshold: -5.0        # a query whose best evidence is below this is re-asked
+  refuse_threshold: -6.5      # best evidence overall below this after retries -> refuse (return [])
+  max_retries: 1
+  min_relevant: 1
+
+verify:
+  mode: heuristic               # heuristic | llm
+  supported_rerank: 3.0         # cross-encoder logit for "supported"
+  partly_rerank: -1.0           # cross-encoder logit for "partly supported"
+  supported_overlap: 0.5        # share of claim content words found in the evidence
+  partly_overlap: 0.3
+  evidence_k: 4
+  evidence_types: [case_study, repo, code, review, cv]   # what may support a claim (not past proposals)
+  min_claim_words: 4
+  claim_markers: ["i built", "i have", "i've", "i led", "i delivered", "i designed", "i developed", "i created",
+                  "i implemented", "i shipped", "i worked", "i reduced", "i increased", "i improved", "i migrated",
+                  "i automated", "i deployed", "i trained", "my experience", "my work", "in my last", "previously",
+                  "years of", "for a client", "for a ", "we built", "we delivered", "my project", "i helped",
+                  "i optimized", "i optimised", "i wrote", "i set up", "i ran", "i analysed", "i analyzed"]
+  non_claim_markers: ["i can", "i will", "i'd", "i would", "i could", "let's", "happy to", "looking forward",
+                      "please", "thank", "would you", "do you", "can you", "available", "i propose", "i suggest",
+                      "my plan", "i'll"]
+  llm_prompt: verifier          # agent/prompts/verifier.md (owned by the agent package)
+  llm_node: verifier
+
+variants:
+  # Component flags. `base` applies to every variant except v0.
+  base: {chunking: structured, query: whole, retrieval: dense, rerank: false, outcome: false,
+         multivector: false, corrective: false, dedupe_items: true, proof_only: false}
+  v0: {chunking: fixed, query: whole, retrieval: dense, dedupe_items: false}
+  # evidence-type routing: search only work samples (case studies, repos incl. code) as proof;
+  # past proposals stay available for phrasing / outcome stats via filters={"type": "proposal"}
+  ev: {proof_only: true}
+  v1: {query: decompose}
+  v2: {retrieval: hybrid}
+  v3: {rerank: true}
+  v4: {outcome: true}
+  v5: {multivector: true}
+  v8: {corrective: true, rerank: true}
+
+github:
+  # Official GitHub MCP server (github/github-mcp-server), remote streamable-HTTP endpoint.
+  # Used only when GITHUB_TOKEN is set; otherwise repo ingestion uses the local loader.
+  mcp_url: https://api.githubcopilot.com/mcp/
+  token_env: GITHUB_TOKEN
+  repos_env: GITHUB_REPOS          # comma-separated owner/name list
+  code_ext: [".py", ".ts", ".tsx", ".js", ".sql"]
+  max_code_files: 3

@@ -1,0 +1,181 @@
+{
+  "aiml": {
+    "items_by_type": {
+      "cv": 1,
+      "case_study": 19,
+      "repo": 6,
+      "review": 12,
+      "proposal": 150
+    },
+    "code_files": 12,
+    "proposal_outcomes": {
+      "ignored": 70,
+      "won": 31,
+      "replied": 49
+    },
+    "chunks": {
+      "fixed": 259,
+      "structured": 238,
+      "multivector": 432
+    },
+    "dev_jobs": 200,
+    "dev_actions": {
+      "skip": 73,
+      "bid": 127
+    },
+    "dev_scam": 16,
+    "dev_injection": 16,
+    "dev_job_types": {
+      "llm_finetune": 23,
+      "mlops": 21,
+      "agent_workflow": 27,
+      "forecasting": 20,
+      "rag_chatbot": 23,
+      "ab_test": 1,
+      "bookkeeping": 5,
+      "cv_model": 20,
+      "ecommerce": 1,
+      "warehouse": 2,
+      "realtime_app": 1,
+      "ui_design": 1,
+      "nlp_pipeline": 30,
+      "video_editing": 2,
+      "saas_app": 2,
+      "data_entry": 3,
+      "unity_game": 3,
+      "data_cleaning": 1,
+      "mobile_app": 3,
+      "web_analytics": 1,
+      "blog_writing": 2,
+      "logo_design": 2,
+      "survey": 4,
+      "e2e_testing": 1,
+      "api_backend": 1
+    },
+    "dev_with_gold_evidence": 166,
+    "gold_evidence_per_job_mean": 5.61,
+    "dev_n_req_ge4": 200,
+    "gold_evidence_types": {
+      "case": 616,
+      "repo": 316
+    }
+  },
+  "fullstack": {
+    "items_by_type": {
+      "cv": 1,
+      "case_study": 18,
+      "repo": 7,
+      "review": 12,
+      "proposal": 150
+    },
+    "code_files": 18,
+    "proposal_outcomes": {
+      "ignored": 60,
+      "won": 51,
+      "replied": 39
+    },
+    "chunks": {
+      "fixed": 262,
+      "structured": 243,
+      "multivector": 438
+    },
+    "dev_jobs": 200,
+    "dev_actions": {
+      "bid": 129,
+      "skip": 71
+    },
+    "dev_scam": 16,
+    "dev_injection": 19,
+    "dev_job_types": {
+      "realtime_app": 16,
+      "saas_app": 24,
+      "mobile_app": 20,
+      "ecommerce": 21,
+      "devops_web": 28,
+      "e2e_testing": 35,
+      "warehouse": 4,
+      "unity_game": 5,
+      "bi_dashboard": 1,
+      "forecasting": 4,
+      "api_backend": 20,
+      "bookkeeping": 5,
+      "survey": 3,
+      "rag_chatbot": 1,
+      "mlops": 2,
+      "ui_design": 4,
+      "video_editing": 1,
+      "logo_design": 1,
+      "agent_workflow": 2,
+      "llm_finetune": 1,
+      "data_entry": 2
+    },
+    "dev_with_gold_evidence": 166,
+    "gold_evidence_per_job_mean": 4.96,
+    "dev_n_req_ge4": 200,
+    "gold_evidence_types": {
+      "repo": 322,
+      "case": 502
+    }
+  },
+  "data": {
+    "items_by_type": {
+      "cv": 1,
+      "case_study": 17,
+      "repo": 5,
+      "review": 12,
+      "proposal": 150
+    },
+    "code_files": 14,
+    "proposal_outcomes": {
+      "won": 44,
+      "replied": 36,
+      "ignored": 70
+    },
+    "chunks": {
+      "fixed": 252,
+      "structured": 232,
+      "multivector": 422
+    },
+    "dev_jobs": 200,
+    "dev_actions": {
+      "bid": 136,
+      "skip": 64
+    },
+    "dev_scam": 16,
+    "dev_injection": 15,
+    "dev_job_types": {
+      "sales_forecast": 21,
+      "warehouse": 20,
+      "bi_dashboard": 31,
+      "tableau_dashboard": 23,
+      "data_entry": 4,
+      "data_cleaning": 15,
+      "e2e_testing": 2,
+      "ab_test": 18,
+      "llm_finetune": 3,
+      "cv_model": 2,
+      "bookkeeping": 2,
+      "survey": 22,
+      "api_backend": 2,
+      "mobile_app": 2,
+      "web_analytics": 14,
+      "unity_game": 4,
+      "logo_design": 2,
+      "devops_web": 1,
+      "video_editing": 5,
+      "ecommerce": 2,
+      "blog_writing": 1,
+      "rag_chatbot": 1,
+      "agent_workflow": 1,
+      "nlp_pipeline": 1,
+      "saas_app": 1
+    },
+    "dev_with_gold_evidence": 169,
+    "gold_evidence_per_job_mean": 4.76,
+    "dev_n_req_ge4": 200,
+    "gold_evidence_types": {
+      "case": 617,
+      "repo": 187
+    }
+  }
+}
