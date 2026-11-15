@@ -2,8 +2,7 @@
 #
 # These are declared gate settings, not measured results. Each gate reads one metric from a
 # results JSON that the smoke runners write:
-#   python -m evals.runners.decision_eval --smoke 30 --profile heuristic
-#   python -m evals.runners.rag_eval --smoke 30
+#   python -m evals.runners.smoke --n 30
 #
 # A gate fails when
 #   - the metric is below `min` / above `max` (absolute floor/ceiling), or

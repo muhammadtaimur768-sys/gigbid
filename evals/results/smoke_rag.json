@@ -1,0 +1,6 @@
+{
+  "variant": "ev+v2+v5",
+  "jobs_per_persona": 10,
+  "recall_at_5": 0.5852,
+  "ndcg_at_10": 0.7744
+}

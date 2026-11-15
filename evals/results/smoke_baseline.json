@@ -1,0 +1,7 @@
+{
+  "bid_skip_f1": 1.0,
+  "evidence_recall_at_5": 0.5852,
+  "ndcg_at_10": 0.7744,
+  "scam_recall": 1.0,
+  "unsupported_claims_per_proposal": 0.0
+}

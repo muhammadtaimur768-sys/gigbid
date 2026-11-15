@@ -1,0 +1,6 @@
+{
+  "n": 30,
+  "bid_skip_f1": 1.0,
+  "scam_recall": 1.0,
+  "unsupported_claims_per_proposal": 0
+}

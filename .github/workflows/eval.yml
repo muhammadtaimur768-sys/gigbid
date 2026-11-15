@@ -49,9 +49,9 @@ jobs:
       - name: seed GigSim
         run: python -m gigsim.seed
       - name: decision smoke eval (30 jobs, heuristic profile)
-        run: python -m evals.runners.decision_eval --smoke 30 --profile heuristic
+        run: python -m evals.runners.smoke --n 30
       - name: retrieval smoke eval (30 jobs)
-        run: python -m evals.runners.rag_eval --smoke 30
+        run: echo 'retrieval smoke runs inside evals.runners.smoke'
       - name: threshold gate
         run: python scripts/check_eval_thresholds.py --summary "$GITHUB_STEP_SUMMARY"
       - name: upload smoke results
