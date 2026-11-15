@@ -30,7 +30,7 @@ export function KanbanBoard({ columns }: { columns: Record<string, PipelineCard[
       {STAGES.map((s) => {
         const list = by.get(s)!;
         return (
-          <section key={s} className="kcol" aria-labelledby={`col-${s}`}>
+          <section key={s} className="kcol" data-stage={s} aria-labelledby={`col-${s}`}>
             <h3 id={`col-${s}`}>
               <span>{STAGE_LABEL[s]}</span>
               <span aria-label={`${list.length} cards`}>{list.length}</span>
@@ -44,8 +44,8 @@ export function KanbanBoard({ columns }: { columns: Record<string, PipelineCard[
                     <Link to={s === "drafted" && c.thread_id ? `/studio/${encodeURIComponent(c.thread_id)}` : `/jobs/${encodeURIComponent(c.job_id)}`}>
                       {c.title}
                     </Link>
-                    <div className="row-between small muted" style={{ marginTop: 4 }}>
-                      <span>{c.bid_amount != null ? fmtMoney(c.bid_amount) : ""}</span>
+                    <div className="row-between small muted" style={{ marginTop: 8 }}>
+                      <span>{c.bid_amount != null ? fmtMoney(c.bid_amount) : "No bid yet"}</span>
                       <span>{c.connects_spent != null ? `${c.connects_spent} Connects` : ""}</span>
                     </div>
                     {c.updated_at && <div className="small muted">{timeAgo(c.updated_at)}</div>}

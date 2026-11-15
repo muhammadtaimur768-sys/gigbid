@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { PageHead } from "../components/Layout";
 import { ActionBadge, FitScore, RiskBadges } from "../components/RiskBadge";
+import { Icon } from "../components/Icon";
 import { AsyncView, Empty } from "../components/States";
 import { api, type InboxJob, type JobFilters } from "../lib/api";
+import { useAuth } from "../lib/auth";
 import { fmtMoney, timeAgo, useAsync } from "../lib/useAsync";
 
 function budget(j: InboxJob): string {
@@ -13,10 +15,24 @@ function budget(j: InboxJob): string {
   return fmtMoney(j.budget_max ?? j.budget_min, hourly);
 }
 
+const PENDING = ["drafted", "awaiting_approval"];
+const DASH = "—";
+
+function Kpi({ label, value, meta, accent }: { label: string; value: string; meta?: string; accent?: boolean }) {
+  return (
+    <div className="kpi">
+      <span className="l">{label}</span>
+      <span className={`v ${accent ? "accent" : ""}`}>{value}</span>
+      {meta && <span className="m">{meta}</span>}
+    </div>
+  );
+}
+
 type UIFilters = JobFilters & { hide_risky?: boolean };
 
 export default function Inbox() {
   const nav = useNavigate();
+  const { user } = useAuth();
   const [draft, setDraft] = useState<UIFilters>({ action: "", category: "", q: "" });
   const [filters, setFilters] = useState<UIFilters>({});
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -27,6 +43,21 @@ export default function Inbox() {
   const items = state.data?.items ?? [];
   const sorted = [...items].sort((a, b) => b.fit_score - a.fit_score);
   const categories = Array.from(new Set(items.map((i) => i.category).filter(Boolean))) as string[];
+
+  // KPIs come only from the jobs list and the signed-in user; unknown values show a dash
+  const loaded = !!state.data && !state.error;
+  const weekly = user?.settings?.budgets?.weekly_connects;
+  const bids = items.filter((j) => j.recommended_action === "bid");
+  const bidConnects = bids.reduce((n, j) => n + (j.connects_cost ?? 0), 0);
+  const pending = items.filter((j) => j.thread_id && PENDING.includes(j.status)).length;
+  const kpis = (
+    <section className="kpis" aria-label="Inbox summary" data-testid="kpi-strip">
+      <Kpi label="Jobs in inbox" value={loaded ? String(items.length) : DASH} meta={loaded && state.data?.total != null && state.data.total !== items.length ? `${state.data.total} in total` : undefined} />
+      <Kpi label="Recommended bids" value={loaded ? String(bids.length) : DASH} meta={loaded && bids.length ? `${bidConnects} Connects to bid on all` : undefined} accent={loaded && bids.length > 0} />
+      <Kpi label="Connects left" value={DASH} meta={weekly != null ? `Weekly budget ${weekly}` : "Budget not set"} />
+      <Kpi label="Pending approvals" value={loaded ? String(pending) : DASH} meta={loaded ? (pending ? "Drafts waiting for review" : "Nothing waiting") : undefined} />
+    </section>
+  );
 
   async function skip(j: InboxJob) {
     setBusyId(j.job_id);
@@ -61,10 +92,12 @@ export default function Inbox() {
         sub="New jobs ranked by fit with your portfolio. Risky posts are flagged before you spend Connects."
         actions={
           <button className="btn" onClick={state.reload} disabled={state.loading}>
+            <Icon name="refresh" size="sm" />
             Refresh
           </button>
         }
       />
+      {kpis}
       <form
         className="card filters"
         onSubmit={(e) => {
@@ -100,6 +133,7 @@ export default function Inbox() {
           Hide high risk
         </label>
         <button className="btn primary" type="submit">
+          <Icon name="search" size="sm" />
           Apply
         </button>
       </form>
@@ -133,38 +167,63 @@ export default function Inbox() {
                 <li key={j.job_id} className="card job-row" data-testid="job-row">
                   <FitScore score={j.fit_score} />
                   <div style={{ minWidth: 0 }}>
-                    <h3 style={{ marginBottom: 4 }}>
+                    <h3>
                       <Link to={`/jobs/${encodeURIComponent(j.job_id)}`}>{j.title}</Link>
                     </h3>
-                    <div className="row" style={{ gap: 6, marginBottom: 6 }}>
+                    <div className="job-tags">
                       <ActionBadge action={j.recommended_action} />
                       <RiskBadges flags={j.risk_flags} />
                     </div>
                     <div className="job-meta">
-                      {j.category && <span>{j.category}</span>}
+                      {j.category && (
+                        <span>
+                          <Icon name="tag" size="sm" />
+                          {j.category}
+                        </span>
+                      )}
                       <span>Budget {budget(j)}</span>
-                      <span>Our price {fmtMoney(j.price, j.budget_type === "hourly")}</span>
-                      <span>{j.connects_cost ?? "?"} Connects</span>
-                      {j.proposals_count != null && <span>{j.proposals_count} proposals</span>}
-                      {j.posted_at && <span>{timeAgo(j.posted_at)}</span>}
+                      {j.proposals_count != null && (
+                        <span>
+                          <Icon name="users" size="sm" />
+                          {j.proposals_count} proposals
+                        </span>
+                      )}
+                      {j.posted_at && (
+                        <span>
+                          <Icon name="clock" size="sm" />
+                          {timeAgo(j.posted_at)}
+                        </span>
+                      )}
                     </div>
                   </div>
-                  <div className="job-actions">
-                    {j.thread_id && ["drafted", "awaiting_approval"].includes(j.status) ? (
-                      <Link className="btn primary sm" to={`/studio/${encodeURIComponent(j.thread_id)}`}>
-                        Review draft
+                  <div className="job-side">
+                    <div className="job-figures">
+                      <div>
+                        <span className="l">Our price</span>
+                        <span className="v">{j.price != null ? fmtMoney(j.price, j.budget_type === "hourly") : DASH}</span>
+                      </div>
+                      <div>
+                        <span className="l">Connects</span>
+                        <span className="v">{j.connects_cost ?? DASH}</span>
+                      </div>
+                    </div>
+                    <div className="job-actions">
+                      {j.thread_id && PENDING.includes(j.status) ? (
+                        <Link className="btn primary sm" to={`/studio/${encodeURIComponent(j.thread_id)}`}>
+                          Review draft
+                        </Link>
+                      ) : (
+                        <button className="btn primary sm" onClick={() => analyse(j)} disabled={busyId === j.job_id}>
+                          {j.analysed ? "Re-run" : "Analyse"}
+                        </button>
+                      )}
+                      <Link className="btn sm" to={`/jobs/${encodeURIComponent(j.job_id)}`}>
+                        Open
                       </Link>
-                    ) : (
-                      <button className="btn primary sm" onClick={() => analyse(j)} disabled={busyId === j.job_id}>
-                        {j.analysed ? "Re-run" : "Analyse"}
+                      <button className="btn ghost sm" onClick={() => skip(j)} disabled={busyId === j.job_id} aria-label={`Skip ${j.title}`}>
+                        Skip
                       </button>
-                    )}
-                    <Link className="btn sm" to={`/jobs/${encodeURIComponent(j.job_id)}`}>
-                      Open
-                    </Link>
-                    <button className="btn ghost sm" onClick={() => skip(j)} disabled={busyId === j.job_id} aria-label={`Skip ${j.title}`}>
-                      Skip
-                    </button>
+                    </div>
                   </div>
                 </li>
               ))}

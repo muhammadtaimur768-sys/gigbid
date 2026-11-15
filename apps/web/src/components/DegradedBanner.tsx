@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Icon } from "./Icon";
 import { api, type Health } from "../lib/api";
 
 type Status = { kind: "ok" } | { kind: "degraded"; detail: string } | { kind: "down"; detail: string };
@@ -44,8 +45,11 @@ export function DegradedBanner({ intervalMs = 30000 }: { intervalMs?: number }) 
   if (status.kind === "ok") return null;
   return (
     <div className={`banner ${status.kind === "down" ? "bad" : "warn"}`} role="status" data-testid="degraded-banner">
-      <strong>{status.kind === "down" ? "GigBid API unavailable." : "Marketplace unavailable: degraded mode."}</strong>
-      <span>{status.detail}</span>
+      <Icon name="alert" />
+      <span className="banner-body">
+        <strong>{status.kind === "down" ? "GigBid API unavailable." : "Marketplace unavailable: degraded mode."}</strong>
+        <span>{status.detail}</span>
+      </span>
     </div>
   );
 }

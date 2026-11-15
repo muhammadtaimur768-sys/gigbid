@@ -1,11 +1,15 @@
 import type { ReactNode } from "react";
+import { Icon } from "./Icon";
 
 export function Loading({ label = "Loading", rows = 3 }: { label?: string; rows?: number }) {
   return (
     <div role="status" aria-live="polite" aria-busy="true" className="stack" data-testid="loading">
       <span className="sr-only">{label}…</span>
-      {Array.from({ length: rows }).map((_, i) => (
-        <div key={i} className="skeleton" style={{ width: `${90 - i * 12}%`, height: 16 }} />
+      {Array.from({ length: Math.max(1, Math.ceil(rows / 2)) }).map((_, i) => (
+        <div key={i} className="skeleton-card" aria-hidden="true">
+          <div className="skeleton" style={{ width: `${56 - (i % 3) * 8}%`, height: 16 }} />
+          <div className="skeleton" style={{ width: `${82 - (i % 2) * 14}%`, height: 12 }} />
+        </div>
       ))}
     </div>
   );
@@ -14,6 +18,9 @@ export function Loading({ label = "Loading", rows = 3 }: { label?: string; rows?
 export function Empty({ title, children, action }: { title: string; children?: ReactNode; action?: ReactNode }) {
   return (
     <div className="state" data-testid="empty">
+      <div className="state-icon" aria-hidden="true">
+        <Icon name="empty" />
+      </div>
       <h3>{title}</h3>
       {children && <p>{children}</p>}
       {action}
@@ -25,10 +32,14 @@ export function ErrorState({ error, onRetry }: { error: Error | string; onRetry?
   const msg = typeof error === "string" ? error : error.message;
   return (
     <div className="state error" role="alert" data-testid="error">
+      <div className="state-icon" aria-hidden="true">
+        <Icon name="alert" />
+      </div>
       <h3>Something went wrong</h3>
       <p>{msg}</p>
       {onRetry && (
         <button className="btn" onClick={onRetry}>
+          <Icon name="refresh" size="sm" />
           Try again
         </button>
       )}

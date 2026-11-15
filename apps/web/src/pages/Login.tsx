@@ -1,3 +1,4 @@
+import { BrandMark } from "../components/Layout";
 import { useState, type FormEvent } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
@@ -34,9 +35,7 @@ export default function Login() {
     <div className="auth-wrap">
       <main className="card auth-card">
         <div className="brand" style={{ padding: "0 0 12px" }}>
-          <span className="brand-mark" aria-hidden="true">
-            G
-          </span>
+          <BrandMark />
           GigBid
         </div>
         <h1>{mode === "login" ? "Sign in" : "Create your account"}</h1>

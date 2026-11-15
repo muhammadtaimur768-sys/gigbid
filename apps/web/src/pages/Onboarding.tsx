@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, type Autonomy } from "../lib/api";
+import { api, ApiError, type Autonomy } from "../lib/api";
 import { useAuth } from "../lib/auth";
 
 const PERSONAS = [
@@ -8,6 +8,8 @@ const PERSONAS = [
   { id: "fullstack", title: "Full-stack web developer", desc: "React, Node, Python back ends, deployments." },
   { id: "data", title: "Data analyst", desc: "SQL, dashboards, reporting and analysis." },
 ];
+
+type UploadResult = { name: string; kind: "indexed" | "stored" | "error"; detail: string; file: File };
 
 const STEPS = ["Profile", "Marketplace", "Portfolio", "Rates and filters", "Budget"];
 
@@ -28,7 +30,7 @@ export default function Onboarding() {
   const [mpToken, setMpToken] = useState("");
   const [mpStatus, setMpStatus] = useState<{ ok: boolean; text: string } | null>(null);
   const [files, setFiles] = useState<File[]>([]);
-  const [uploads, setUploads] = useState<{ name: string; ok: boolean; detail: string }[]>([]);
+  const [uploads, setUploads] = useState<UploadResult[]>([]);
   const [floor, setFloor] = useState("45");
   const [target, setTarget] = useState("70");
   const [categories, setCategories] = useState("");
@@ -62,20 +64,35 @@ export default function Onboarding() {
     }
   }
 
+  async function uploadOne(f: File): Promise<UploadResult> {
+    try {
+      const r = await api.uploadPortfolio(f);
+      return r.indexed
+        ? { name: r.filename || f.name, kind: "indexed", detail: r.detail || "", file: f }
+        : { name: r.filename || f.name, kind: "stored", detail: r.detail || "Stored, but not indexed yet.", file: f };
+    } catch (e) {
+      const status = e instanceof ApiError ? e.status : undefined;
+      const msg = e instanceof Error ? e.message : "Upload failed";
+      return { name: f.name, kind: "error", detail: status ? `${msg} (HTTP ${status})` : msg, file: f };
+    }
+  }
+
   async function upload() {
     setBusy(true);
     setError(null);
-    const out: typeof uploads = [];
-    for (const f of files) {
-      try {
-        const r = await api.uploadPortfolio(f);
-        out.push({ name: r.filename, ok: true, detail: r.indexed ? "Indexed" : r.detail || "Stored" });
-      } catch (e) {
-        out.push({ name: f.name, ok: false, detail: e instanceof Error ? e.message : "Upload failed" });
-      }
-    }
+    const out: UploadResult[] = [];
+    for (const f of files) out.push(await uploadOne(f));
     setUploads((u) => [...u, ...out]);
     setFiles([]);
+    setBusy(false);
+  }
+
+  async function retryUpload(index: number) {
+    const prev = uploads[index];
+    if (!prev) return;
+    setBusy(true);
+    const r = await uploadOne(prev.file);
+    setUploads((u) => u.map((x, i) => (i === index ? r : x)));
     setBusy(false);
   }
 
@@ -196,15 +213,42 @@ export default function Onboarding() {
               </button>
             </div>
             {uploads.length > 0 && (
-              <ul className="clean stack" style={{ gap: 4 }} data-testid="upload-list">
+              <ul className="clean stack upload-list" style={{ gap: 6 }} data-testid="upload-list" aria-live="polite">
                 {uploads.map((u, i) => (
-                  <li key={i} className="row">
-                    <span className={`badge ${u.ok ? "ok" : "bad"}`}>{u.ok ? "OK" : "Failed"}</span>
-                    <span className="mono">{u.name}</span>
-                    <span className="small muted">{u.detail}</span>
+                  <li key={i} className={`upload-item ${u.kind}`} data-upload-status={u.kind} role={u.kind === "error" ? "alert" : undefined}>
+                    {u.kind === "indexed" && (
+                      <>
+                        <span className="upload-line">
+                          <span className="badge ok">Indexed</span> Indexed <span className="mono">{u.name}</span>
+                        </span>
+                        {u.detail && <span className="small muted">{u.detail}</span>}
+                      </>
+                    )}
+                    {u.kind === "stored" && (
+                      <>
+                        <span className="upload-line">
+                          <span className="badge warn">Not indexed</span> <span className="mono">{u.name}</span>
+                        </span>
+                        <span className="small">{u.detail}</span>
+                      </>
+                    )}
+                    {u.kind === "error" && (
+                      <>
+                        <span className="upload-line">
+                          <span className="badge bad">Upload failed</span> <span className="mono">{u.name}</span>
+                        </span>
+                        <span className="small">{u.detail}</span>
+                        <button className="btn sm" onClick={() => void retryUpload(i)} disabled={busy}>
+                          Retry upload
+                        </button>
+                      </>
+                    )}
                   </li>
                 ))}
               </ul>
+            )}
+            {uploads.some((u) => u.kind === "error") && (
+              <p className="small muted">The portfolio is optional: you can continue now and upload files later in Settings.</p>
             )}
           </section>
         )}

@@ -44,7 +44,7 @@ export function ApprovalPanel({
   const finalReason = reason === "Other" ? note.trim() : note.trim() ? `${reason}: ${note.trim()}` : reason;
 
   return (
-    <section className="card" aria-labelledby="approval-h">
+    <section className="card approval-card" aria-labelledby="approval-h">
       <div className="card-title">
         <h2 id="approval-h">Approval</h2>
         {dirty && <span className="badge warn">Unsaved edits</span>}
