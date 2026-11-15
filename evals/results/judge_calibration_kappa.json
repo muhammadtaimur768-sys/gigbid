@@ -1,0 +1,24 @@
+{
+  "judge": "groq openai/gpt-oss-120b",
+  "labeler": "Muhammad (author)",
+  "n": 30,
+  "kappa_verdict": 0.0,
+  "raw_agreement_verdict": 0.9667,
+  "kappa_score_bins": -0.0331,
+  "human_mean_score": 2.733,
+  "judge_mean_score": 6.021,
+  "spearman_scores": 0.0959,
+  "human_verdicts": {
+    "pass": 0,
+    "revise": 30
+  },
+  "judge_verdicts": {
+    "pass": 1,
+    "revise": 29
+  },
+  "sources": [
+    "evals/results/judge_calibration_groq.json (judge scores)",
+    "evals/datasets/human_labels.csv (author labels)"
+  ],
+  "note": "Kappa paradox: the author marked all 30 'revise', so verdict kappa is 0 despite 97% raw agreement; the judge scores ~3.3 points more leniently."
+}

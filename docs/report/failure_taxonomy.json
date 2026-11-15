@@ -1,0 +1,3079 @@
+{
+ "counts": {
+  "groq|unsupported claim": 9,
+  "groq|mispriced": 4,
+  "groq|missed evidence": 1,
+  "groq|wrong skip": 1,
+  "groq_small|unsupported claim": 8,
+  "groq_small|mispriced": 4,
+  "groq_small|missed evidence": 1,
+  "groq_small|wrong skip": 1,
+  "heuristic|mispriced": 64,
+  "heuristic|missed evidence": 33,
+  "heuristic|wrong skip": 11,
+  "heuristic|wrong bid": 3,
+  "heuristic|unsupported claim": 24,
+  "ollama_mistral|unsupported claim": 4,
+  "ollama_mistral|mispriced": 1,
+  "ollama_mistral|scam false positive": 1,
+  "ollama_qwen|unsupported claim": 2,
+  "ollama_qwen|mispriced": 1,
+  "ollama_qwen|missed evidence": 1
+ },
+ "failures": [
+  {
+   "config": "groq",
+   "job_id": "d-aiml-091",
+   "job_type": "mlops",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 12690.0,
+   "band": [
+    10540.0,
+    15150.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-aiml-122",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2975.0,
+   "band": [
+    4290,
+    4720.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-data-099",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence",
+    "unsupported claim"
+   ],
+   "price": 1615.0,
+   "band": [
+    1290.0,
+    1860.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-data-036",
+   "job_type": "ab_test",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 37.0,
+   "band": [
+    35,
+    40.7
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-fullstack-138",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "unsupported claim"
+   ],
+   "price": 990.0,
+   "band": [
+    1080,
+    1190.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-fullstack-111",
+   "job_type": "realtime_app",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 60.0,
+   "band": [
+    45,
+    67.1
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-fullstack-136",
+   "job_type": "devops_web",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "unsupported claim"
+   ],
+   "price": 2055.0,
+   "band": [
+    2300,
+    2520.0
+   ],
+   "reason": "",
+   "unsupported_before": 2,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-aiml-088",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 85.0,
+   "band": [
+    58.0,
+    110.5
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-aiml-045",
+   "job_type": "nlp_pipeline",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "unsupported claim"
+   ],
+   "price": 6330.0,
+   "band": [
+    4350.0,
+    6260.0
+   ],
+   "reason": "",
+   "unsupported_before": 3,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-data-128",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 50.0,
+   "band": [
+    35,
+    55.0
+   ],
+   "reason": "",
+   "unsupported_before": 3,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq",
+   "job_id": "d-data-032",
+   "job_type": "survey",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    600,
+    650.0
+   ],
+   "reason": "fixed budget 400 implies under the hourly floor for ~20h of work",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-aiml-186",
+   "job_type": "forecasting",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 85.0,
+   "band": [
+    67.0,
+    110.5
+   ],
+   "reason": "",
+   "unsupported_before": 2,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-aiml-122",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "unsupported claim"
+   ],
+   "price": 2975.0,
+   "band": [
+    4290,
+    4720.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-data-101",
+   "job_type": "bi_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 55.0,
+   "band": [
+    40.0,
+    71.5
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-data-099",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence",
+    "unsupported claim"
+   ],
+   "price": 1615.0,
+   "band": [
+    1290.0,
+    1860.0
+   ],
+   "reason": "",
+   "unsupported_before": 2,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-fullstack-138",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 990.0,
+   "band": [
+    1080,
+    1190.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-fullstack-136",
+   "job_type": "devops_web",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2055.0,
+   "band": [
+    2300,
+    2520.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-aiml-088",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 85.0,
+   "band": [
+    58.0,
+    110.5
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-aiml-045",
+   "job_type": "nlp_pipeline",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 6330.0,
+   "band": [
+    4350.0,
+    6260.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-data-109",
+   "job_type": "survey",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 55.0,
+   "band": [
+    35,
+    62.7
+   ],
+   "reason": "",
+   "unsupported_before": 3,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-data-128",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 50.0,
+   "band": [
+    35,
+    55.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-data-032",
+   "job_type": "survey",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    600,
+    650.0
+   ],
+   "reason": "fixed budget 400 implies under the hourly floor for ~20h of work",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "groq_small",
+   "job_id": "d-fullstack-075",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 55.0,
+   "band": [
+    45,
+    61.6
+   ],
+   "reason": "",
+   "unsupported_before": 3,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-002",
+   "job_type": "mlops",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 90.0,
+   "band": [
+    92.0,
+    110.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-003",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "missed evidence"
+   ],
+   "price": 7485.0,
+   "band": [
+    4830.0,
+    6940.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-004",
+   "job_type": "agent_workflow",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 5470.0,
+   "band": [
+    3260.0,
+    4690.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-007",
+   "job_type": "agent_workflow",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 8700.0,
+   "band": [
+    5030.0,
+    7230.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-022",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 7865.0,
+   "band": [
+    6320.0,
+    9090.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-023",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "missed evidence"
+   ],
+   "price": 5250.0,
+   "band": [
+    2680.0,
+    3850.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-036",
+   "job_type": "nlp_pipeline",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2550.0,
+   "band": [
+    1770.0,
+    2540.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-044",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    3740.0,
+    5380.0
+   ],
+   "reason": "client score 0.11 below minimum",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-045",
+   "job_type": "nlp_pipeline",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 6330.0,
+   "band": [
+    4350.0,
+    6260.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-047",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 13960.0,
+   "band": [
+    9380.0,
+    13490.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-051",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 85.0,
+   "band": [
+    55,
+    105.6
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-057",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 85.0,
+   "band": [
+    55,
+    102.3
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-066",
+   "job_type": "llm_finetune",
+   "gold": "skip",
+   "pred": "bid",
+   "cats": [
+    "wrong bid",
+    "missed evidence"
+   ],
+   "price": 2550.0,
+   "band": [
+    4340,
+    4780.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": "below_floor"
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-071",
+   "job_type": "nlp_pipeline",
+   "gold": "skip",
+   "pred": "bid",
+   "cats": [
+    "wrong bid"
+   ],
+   "price": 2580.0,
+   "band": [
+    4460,
+    4900.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": "below_floor"
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-072",
+   "job_type": "mlops",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 7365.0,
+   "band": [
+    4420.0,
+    6350.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-073",
+   "job_type": "agent_workflow",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 16235.0,
+   "band": [
+    9660.0,
+    13880.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-078",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 3635.0,
+   "band": [
+    2990.0,
+    4300.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-080",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 85.0,
+   "band": [
+    55,
+    96.8
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-085",
+   "job_type": "cv_model",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    7800.0,
+    11210.0
+   ],
+   "reason": "client score 0.19 below minimum",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-093",
+   "job_type": "agent_workflow",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 5830.0,
+   "band": [
+    3600.0,
+    5180.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-098",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 85.0,
+   "band": [
+    55,
+    104.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-100",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 80.0,
+   "band": [
+    55,
+    88.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-116",
+   "job_type": "nlp_pipeline",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 9265.0,
+   "band": [
+    5920.0,
+    8500.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-118",
+   "job_type": "mlops",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    2260,
+    2480.0
+   ],
+   "reason": "fixed budget 1730 implies under the hourly floor for ~60h of work",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-122",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2975.0,
+   "band": [
+    4290,
+    4720.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-123",
+   "job_type": "nlp_pipeline",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 10140.0,
+   "band": [
+    6050.0,
+    8700.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-125",
+   "job_type": "mlops",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 17595.0,
+   "band": [
+    10000.0,
+    14370.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-133",
+   "job_type": "cv_model",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 13790.0,
+   "band": [
+    8360.0,
+    12020.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-136",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 5755.0,
+   "band": [
+    4850.0,
+    6970.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-139",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 85.0,
+   "band": [
+    55,
+    102.3
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-149",
+   "job_type": "cv_model",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 16265.0,
+   "band": [
+    10950.0,
+    15740.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-153",
+   "job_type": "llm_finetune",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 8410.0,
+   "band": [
+    7080.0,
+    10180.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-154",
+   "job_type": "agent_workflow",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 85.0,
+   "band": [
+    87.0,
+    110.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-157",
+   "job_type": "nlp_pipeline",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 4375.0,
+   "band": [
+    2520.0,
+    3620.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-159",
+   "job_type": "agent_workflow",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 19135.0,
+   "band": [
+    10740.0,
+    15440.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-165",
+   "job_type": "agent_workflow",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 8130.0,
+   "band": [
+    5370.0,
+    7720.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-aiml-185",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 85.0,
+   "band": [
+    86.0,
+    110.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-002",
+   "job_type": "realtime_app",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 4750.0,
+   "band": [
+    5220,
+    5740.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-016",
+   "job_type": "api_backend",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 5150.0,
+   "band": [
+    3420.0,
+    4910.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-017",
+   "job_type": "devops_web",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 5675.0,
+   "band": [
+    3140.0,
+    4510.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-018",
+   "job_type": "ecommerce",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    45,
+    69.3
+   ],
+   "reason": "client score 0.18 below minimum",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-019",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 65.0,
+   "band": [
+    45,
+    73.7
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-021",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 2080.0,
+   "band": [
+    1660.0,
+    2390.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-028",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 70.0,
+   "band": [
+    47.0,
+    89.1
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-036",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 2895.0,
+   "band": [
+    2310.0,
+    3330.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-037",
+   "job_type": "ecommerce",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    45,
+    64.9
+   ],
+   "reason": "duplicate of d-fullstack-024",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-040",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 3420.0,
+   "band": [
+    2740.0,
+    3930.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-045",
+   "job_type": "mobile_app",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 7590.0,
+   "band": [
+    4980.0,
+    7160.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-046",
+   "job_type": "saas_app",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 19725.0,
+   "band": [
+    12380.0,
+    17790.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-048",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 55.0,
+   "band": [
+    45,
+    62.7
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-055",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 65.0,
+   "band": [
+    45,
+    70.4
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-057",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 2465.0,
+   "band": [
+    1970.0,
+    2830.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-066",
+   "job_type": "mobile_app",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 12200.0,
+   "band": [
+    7950.0,
+    11430.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-073",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 60.0,
+   "band": [
+    45,
+    67.1
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-075",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 55.0,
+   "band": [
+    45,
+    61.6
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-078",
+   "job_type": "api_backend",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 12960.0,
+   "band": [
+    8790.0,
+    12640.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-082",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 55.0,
+   "band": [
+    45,
+    58.3
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-089",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 3555.0,
+   "band": [
+    2740.0,
+    3940.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-092",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "unsupported claim"
+   ],
+   "price": 3145.0,
+   "band": [
+    2130.0,
+    3060.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-105",
+   "job_type": "saas_app",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 21000.0,
+   "band": [
+    11100.0,
+    15950.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-114",
+   "job_type": "devops_web",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2925.0,
+   "band": [
+    1900.0,
+    2740.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-120",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 55.0,
+   "band": [
+    45,
+    62.7
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-121",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 2100.0,
+   "band": [
+    1680.0,
+    2420.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-122",
+   "job_type": "api_backend",
+   "gold": "skip",
+   "pred": "bid",
+   "cats": [
+    "wrong bid"
+   ],
+   "price": 1960.0,
+   "band": [
+    4900,
+    5400.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": "below_floor"
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-136",
+   "job_type": "devops_web",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2055.0,
+   "band": [
+    2300,
+    2520.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-138",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "unsupported claim"
+   ],
+   "price": 990.0,
+   "band": [
+    1080,
+    1190.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-139",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "unsupported claim"
+   ],
+   "price": 2510.0,
+   "band": [
+    2610,
+    2880.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-145",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 1475.0,
+   "band": [
+    1180.0,
+    1700.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-150",
+   "job_type": "saas_app",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 13925.0,
+   "band": [
+    7450.0,
+    10710.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-156",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 55.0,
+   "band": [
+    45,
+    61.6
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-158",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 3235.0,
+   "band": [
+    2590.0,
+    3720.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-160",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 60.0,
+   "band": [
+    45,
+    68.2
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-161",
+   "job_type": "devops_web",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    1400,
+    1530.0
+   ],
+   "reason": "fixed budget 1060 implies under the hourly floor for ~60h of work",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-163",
+   "job_type": "realtime_app",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2905.0,
+   "band": [
+    3460,
+    3810.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-166",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 955.0,
+   "band": [
+    770.0,
+    1100.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-171",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 2220.0,
+   "band": [
+    1840,
+    2560.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-fullstack-198",
+   "job_type": "e2e_testing",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 1200.0,
+   "band": [
+    950.0,
+    1370.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-003",
+   "job_type": "warehouse",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 4815.0,
+   "band": [
+    3080.0,
+    4430.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-005",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 46.0,
+   "band": [
+    35,
+    50.6
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-007",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    360.0,
+    520.0
+   ],
+   "reason": "fixed budget 410 implies under the hourly floor for ~20h of work",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-009",
+   "job_type": "ab_test",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1455.0,
+   "band": [
+    880.0,
+    1260.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-012",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 55.0,
+   "band": [
+    38.0,
+    71.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-014",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 4345.0,
+   "band": [
+    3520.0,
+    5060.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-016",
+   "job_type": "ab_test",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 735.0,
+   "band": [
+    740,
+    860.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-017",
+   "job_type": "bi_dashboard",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    2770.0,
+    3980.0
+   ],
+   "reason": "client score 0.18 below minimum",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-025",
+   "job_type": "bi_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1585.0,
+   "band": [
+    880.0,
+    1260.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-030",
+   "job_type": "bi_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2310.0,
+   "band": [
+    1410.0,
+    2020.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-032",
+   "job_type": "survey",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    600,
+    650.0
+   ],
+   "reason": "fixed budget 400 implies under the hourly floor for ~20h of work",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-040",
+   "job_type": "ab_test",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1575.0,
+   "band": [
+    1010.0,
+    1450.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-042",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 2690.0,
+   "band": [
+    2180.0,
+    3140.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-052",
+   "job_type": "warehouse",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2750.0,
+   "band": [
+    4060,
+    4470.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-054",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 55.0,
+   "band": [
+    39.0,
+    71.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-063",
+   "job_type": "bi_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 5095.0,
+   "band": [
+    3390.0,
+    4870.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-064",
+   "job_type": "bi_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 5355.0,
+   "band": [
+    2950.0,
+    4240.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-069",
+   "job_type": "warehouse",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 5230.0,
+   "band": [
+    3080.0,
+    4430.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-070",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1200.0,
+   "band": [
+    590.0,
+    850.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-078",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 55.0,
+   "band": [
+    43.0,
+    71.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-083",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 40.0,
+   "band": [
+    35,
+    44.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-087",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "missed evidence"
+   ],
+   "price": 555.0,
+   "band": [
+    700,
+    770.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-096",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 2345.0,
+   "band": [
+    1890.0,
+    2720.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-097",
+   "job_type": "ab_test",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 845.0,
+   "band": [
+    980,
+    1080.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-099",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 1615.0,
+   "band": [
+    1290.0,
+    1860.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-100",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 925.0,
+   "band": [
+    750.0,
+    1080.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-102",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 50.0,
+   "band": [
+    35,
+    57.2
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-105",
+   "job_type": "web_analytics",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 510.0,
+   "band": [
+    520,
+    590.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-106",
+   "job_type": "survey",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1415.0,
+   "band": [
+    970.0,
+    1390.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-110",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 55.0,
+   "band": [
+    39.0,
+    71.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-112",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 55.0,
+   "band": [
+    35,
+    61.6
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-113",
+   "job_type": "sales_forecast",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 3875.0,
+   "band": [
+    2110.0,
+    3040.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-121",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 475.0,
+   "band": [
+    350.0,
+    510.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-123",
+   "job_type": "bi_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 55.0,
+   "band": [
+    35,
+    64.9
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-127",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 5635.0,
+   "band": [
+    3170.0,
+    4550.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-130",
+   "job_type": "warehouse",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    1330,
+    1460.0
+   ],
+   "reason": "fixed budget 870 implies under the hourly floor for ~60h of work",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-131",
+   "job_type": "survey",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 3400.0,
+   "band": [
+    1760.0,
+    2530.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-152",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1650.0,
+   "band": [
+    1140.0,
+    1640.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-156",
+   "job_type": "warehouse",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 6150.0,
+   "band": [
+    4220.0,
+    6070.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-160",
+   "job_type": "web_analytics",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 905.0,
+   "band": [
+    570.0,
+    820.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-164",
+   "job_type": "sales_forecast",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 3725.0,
+   "band": [
+    1830.0,
+    2630.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-165",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 55.0,
+   "band": [
+    35,
+    60.5
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-172",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 6005.0,
+   "band": [
+    3340.0,
+    4810.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-177",
+   "job_type": "ab_test",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 455.0,
+   "band": [
+    660,
+    730.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-180",
+   "job_type": "survey",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1305.0,
+   "band": [
+    880.0,
+    1260.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-184",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 1920.0,
+   "band": [
+    1450.0,
+    2090.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-186",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 44.0,
+   "band": [
+    35,
+    48.4
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-190",
+   "job_type": "sales_forecast",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1305.0,
+   "band": [
+    750.0,
+    1080.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-191",
+   "job_type": "web_analytics",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 1650.0,
+   "band": [
+    1060.0,
+    1520.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-194",
+   "job_type": "bi_dashboard",
+   "gold": "bid",
+   "pred": "skip",
+   "cats": [
+    "wrong skip"
+   ],
+   "price": null,
+   "band": [
+    35,
+    56.1
+   ],
+   "reason": "client score 0.18 below minimum",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "heuristic",
+   "job_id": "d-data-198",
+   "job_type": "tableau_dashboard",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 1680.0,
+   "band": [
+    1580,
+    1960.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "ollama_mistral",
+   "job_id": "d-aiml-091",
+   "job_type": "mlops",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 12690.0,
+   "band": [
+    10540.0,
+    15150.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "ollama_mistral",
+   "job_id": "d-aiml-186",
+   "job_type": "forecasting",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 85.0,
+   "band": [
+    67.0,
+    110.5
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "ollama_mistral",
+   "job_id": "d-aiml-122",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced",
+    "unsupported claim"
+   ],
+   "price": 2975.0,
+   "band": [
+    4290,
+    4720.0
+   ],
+   "reason": "",
+   "unsupported_before": 3,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "ollama_mistral",
+   "job_id": "d-aiml-034",
+   "job_type": "cv_model",
+   "gold": "skip",
+   "pred": "skip",
+   "cats": [
+    "scam false positive"
+   ],
+   "price": null,
+   "band": [
+    10520.0,
+    15120.0
+   ],
+   "reason": "scam signals: low_client_quality, scam",
+   "unsupported_before": null,
+   "unsupported_after": null,
+   "gold_skip_reason": "low_client_quality"
+  },
+  {
+   "config": "ollama_mistral",
+   "job_id": "d-data-099",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 1615.0,
+   "band": [
+    1290.0,
+    1860.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "ollama_qwen",
+   "job_id": "d-aiml-091",
+   "job_type": "mlops",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 12690.0,
+   "band": [
+    10540.0,
+    15150.0
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "ollama_qwen",
+   "job_id": "d-aiml-186",
+   "job_type": "forecasting",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "unsupported claim"
+   ],
+   "price": 85.0,
+   "band": [
+    67.0,
+    110.5
+   ],
+   "reason": "",
+   "unsupported_before": 1,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "ollama_qwen",
+   "job_id": "d-aiml-122",
+   "job_type": "rag_chatbot",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "mispriced"
+   ],
+   "price": 2975.0,
+   "band": [
+    4290,
+    4720.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  },
+  {
+   "config": "ollama_qwen",
+   "job_id": "d-data-099",
+   "job_type": "data_cleaning",
+   "gold": "bid",
+   "pred": "bid",
+   "cats": [
+    "missed evidence"
+   ],
+   "price": 1615.0,
+   "band": [
+    1290.0,
+    1860.0
+   ],
+   "reason": "",
+   "unsupported_before": 0,
+   "unsupported_after": 0,
+   "gold_skip_reason": null
+  }
+ ]
+}

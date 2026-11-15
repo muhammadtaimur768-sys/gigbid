@@ -1,0 +1,409 @@
+{
+  "judge": "groq",
+  "n_proposals": 30,
+  "n_human_labels": 0,
+  "scores": [
+    {
+      "proposal_id": "jp-01",
+      "job_id": "d-aiml-160",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not answer the screening question about availability in the next two weeks.",
+        "Provides no concrete evidence of experience with time series forecasting, Python, or scikit-learn; only vague references and placeholder case IDs.",
+        "Starts with a generic statement rather than directly addressing the client's specific problem of demand forecasting for a nonprofit.",
+        "Lacks clear, concise description of deliverables (forecasting model, backtest report, scheduled retraining job) and how they will be achieved."
+      ],
+      "tokens": 706
+    },
+    {
+      "proposal_id": "jp-02",
+      "job_id": "d-aiml-092",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not answer the screening question about availability in the next two weeks.",
+        "Provides only a vague description of a similar project; lacks concrete details, metrics, and clear relevance to the required mlops, Docker, Kubernetes, and AWS experience.",
+        "No specific evidence or examples demonstrating experience with each must\u2011have requirement (mlops, Docker, Kubernetes, AWS, containerised services, monitoring dashboards, retraining pipeline).",
+        "Opening is generic and does not directly address the client's problem statement."
+      ],
+      "tokens": 742
+    },
+    {
+      "proposal_id": "jp-03",
+      "job_id": "d-aiml-122",
+      "judge_score": 5.81,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with python",
+        "Missing explicit evidence of Python experience; no citation provided for Python work.",
+        "Does not answer the screening question about availability in the next two weeks.",
+        "The response does not directly answer the screening question \"What is your experience with rag?\" but only gives a brief statement without concrete evidence.",
+        "Lacks a concise, client\u2011focused opening; starts with a vague description rather than directly addressing the client's problem."
+      ],
+      "tokens": 723
+    },
+    {
+      "proposal_id": "jp-04",
+      "job_id": "d-data-059",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not provide concrete evidence of experience with Snowflake, SQL, and ETL; only vague references to data sources.",
+        "Fails to detail how dbt models with tests will be built; the screening question is not answered with a clear approach.",
+        "Missing explicit mention of delivering a lineage diagram and a handover session; these must\u2011have deliverables are not addressed.",
+        "The opening is generic and does not directly acknowledge the client's problem of building a small data warehouse."
+      ],
+      "tokens": 712
+    },
+    {
+      "proposal_id": "jp-05",
+      "job_id": "d-data-118",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not answer any of the screening questions (biggest risk, approach to findings report, similar project)",
+        "Provides no concrete evidence linking to the required experience with survey analysis, R, and statistics",
+        "Contains generic language and no specific details about how the findings report will be delivered",
+        "Missing clear description of deliverables (charts, cleaned data) and timeline"
+      ],
+      "tokens": 631
+    },
+    {
+      "proposal_id": "jp-06",
+      "job_id": "d-data-097",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not directly answer the screening questions; the biggest risk is not identified.",
+        "Provides no concrete evidence of experience with A/B testing, statistics, or Python; only vague references like [data-case-03].",
+        "Opening is generic and does not address the specific problem of statistical analysis of a pricing experiment.",
+        "Missing clear, concise description of how the written readout and reproducible notebook will be delivered."
+      ],
+      "tokens": 660
+    },
+    {
+      "proposal_id": "jp-07",
+      "job_id": "d-fullstack-120",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not directly address the client's problem of setting up an end\u2011to\u2011end Playwright test suite, CI integration, and flaky\u2011test reporting.",
+        "Provides no concrete evidence of Playwright, TypeScript, or CI/CD experience; the cited placeholders (e.g., [fullstack-case-08]) are not verifiable evidence.",
+        "Fails to answer the screening questions: it does not identify the biggest risk and gives only a vague statement about Playwright experience.",
+        "Starts with a generic summary rather than a concise, client\u2011focused opening."
+      ],
+      "tokens": 702
+    },
+    {
+      "proposal_id": "jp-08",
+      "job_id": "d-fullstack-049",
+      "judge_score": 5.81,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with postgresql",
+        "Does not explicitly address the biggest risk question; the answer is missing.",
+        "Provides only vague references to past projects without concrete evidence of PostgreSQL experience, which is a must\u2011have requirement.",
+        "The opening is generic and does not directly address the client's problem of delivering a deployed Next.js app with Stripe subscription billing and an admin area.",
+        "No specific evidence is given for each required technology (PostgreSQL, Stripe, admin area, deployment)."
+      ],
+      "tokens": 740
+    },
+    {
+      "proposal_id": "jp-09",
+      "job_id": "d-fullstack-136",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "The proposal does not provide concrete, verifiable evidence for Docker experience; it only mentions a vague fintech case without details.",
+        "CI/CD experience is referenced generically ('playwright testing, ci/cd') without linking to a specific project or outcome.",
+        "AWS experience is mentioned in a fragmented way and lacks clear, measurable results or a direct connection to the required deliverables.",
+        "The opening is not tailored to the client\u2019s problem; it reads like a generic statement rather than addressing the specific request to Dockerize the web app and set up CI/CD on AWS."
+      ],
+      "tokens": 809
+    },
+    {
+      "proposal_id": "jp-10",
+      "job_id": "d-aiml-063",
+      "judge_score": 5.79,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with fastapi",
+        "Does not provide concrete evidence of FastAPI experience; the cited references are placeholders and not verifiable.",
+        "Fails to answer the screening questions: the response to 'What is your experience with langgraph?' is vague and lacks specific examples, and it does not address the biggest risk or detail the approach",
+        "Contains a generic opening and does not directly address the client's problem statement.",
+        "Makes unsupported claims about using langgraph without verifiable evidence."
+      ],
+      "tokens": 722
+    },
+    {
+      "proposal_id": "jp-11",
+      "job_id": "d-aiml-136",
+      "judge_score": 5.75,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with pytorch",
+        "The draft does not provide any evidence of experience with PyTorch, which is a must\u2011have requirement.",
+        "It fails to explicitly answer the screening question \"What is your experience with llm fine-tuning?\" with a clear, concise response.",
+        "The proposal contains generic statements and does not directly reference the required deliverables (fine\u2011tuned checkpoint, training notebook, benchmark) with concrete evidence.",
+        "No specific examples or links to past work are provided for the required skills, making the claims unsupported."
+      ],
+      "tokens": 715
+    },
+    {
+      "proposal_id": "jp-12",
+      "job_id": "d-data-172",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "The draft does not provide concrete evidence of Tableau experience; it only mentions a vague case without linking to a specific project or outcome.",
+        "SQL experience is listed as a string of keywords without any demonstrable project or result that satisfies the requirement.",
+        "Dashboard design experience is described in a generic way and lacks specific examples or metrics that show competence.",
+        "The biggest risk question is not answered; the response \"the part that decides success is usually tableau\" is vague and does not identify a clear risk."
+      ],
+      "tokens": 773
+    },
+    {
+      "proposal_id": "jp-13",
+      "job_id": "d-data-156",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not answer the screening questions about snowflake experience and two\u2011week availability",
+        "Provides no concrete evidence or examples for the required Snowflake, SQL, and ETL experience",
+        "Opening is generic and does not directly address the client's problem statement",
+        "Proposal is vague about deliverables (e.g., no detail on dbt model tests, lineage diagram, handover session)"
+      ],
+      "tokens": 711
+    },
+    {
+      "proposal_id": "jp-14",
+      "job_id": "d-fullstack-114",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not directly answer the screening questions: no answer to 'What is your experience with docker?' beyond a vague story, no answer to 'Which part of this project do you see as the biggest risk?', a",
+        "The draft provides no concrete, verifiable evidence for the required Docker, CI/CD, and AWS experience; the referenced case identifiers are not explained or linked to specific achievements.",
+        "The opening is generic and does not immediately address the client's problem of moving deploys to GitHub Actions.",
+        "The proposal is overly informal and does not clearly outline deliverables (Dockerfiles, compose setup, CI/CD pipeline, runbook) in a concise manner."
+      ],
+      "tokens": 795
+    },
+    {
+      "proposal_id": "jp-15",
+      "job_id": "d-fullstack-111",
+      "judge_score": 6.5,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "The draft does not directly answer the screening questions; it provides vague statements instead of a clear description of websocket experience and a concrete approach to real-time messaging.",
+        "Evidence citations are vague (e.g., [fullstack-case-03]) and do not explicitly demonstrate experience with websockets, redis, and react as required.",
+        "The proposal lacks specific details on how presence indicators will be implemented and how load testing will be performed.",
+        "The opening is generic and does not immediately address the client's problem of live collaboration features."
+      ],
+      "tokens": 704
+    },
+    {
+      "proposal_id": "jp-16",
+      "job_id": "d-aiml-188",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not describe a concrete, similar project delivered; only vague references to 'a complaint' and generic mentions of huggingface and python.",
+        "The biggest risk is not identified; the draft never answers the screening question about the biggest risk.",
+        "No specific evidence is provided for each must\u2011have requirement (nlp experience, huggingface transformers, python, extraction pipeline, labelled evaluation data, short report).",
+        "Opening is generic and does not directly address the client's problem of extracting entities from nonprofit contracts."
+      ],
+      "tokens": 708
+    },
+    {
+      "proposal_id": "jp-17",
+      "job_id": "d-aiml-179",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not directly answer the screening question \"Which part of this project do you see as the biggest risk?\"",
+        "Provides a vague answer to \"What is your experience with langchain?\" without concrete examples or evidence from the supplied data.",
+        "Mentions langchain, python, fastapi but gives no specific evidence linking to the required experience (e.g., no project names, dates, or outcomes).",
+        "Contains a generic opening and does not explicitly address each must\u2011have requirement (agent workflow, approval steps, API endpoint, deployment notes)."
+      ],
+      "tokens": 722
+    },
+    {
+      "proposal_id": "jp-18",
+      "job_id": "d-data-186",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not answer the screening question about availability in the next two weeks.",
+        "Does not answer the screening question about how to approach a published Tableau workbook.",
+        "Opening is vague and does not directly address the client\u2019s specific problem of delivering a legal operations Tableau workbook.",
+        "Provides no concrete evidence linking the freelancer\u2019s experience to the required Tableau, SQL, and dashboard design skills."
+      ],
+      "tokens": 689
+    },
+    {
+      "proposal_id": "jp-19",
+      "job_id": "d-data-161",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not answer the screening question about availability in the next two weeks.",
+        "Provides no concrete, verifiable evidence for experience with A/B testing, statistics, or Python; uses placeholders like [removed] and [data-case-03] which are not usable evidence.",
+        "Starts with a vague summary instead of directly addressing the client's problem; lacks a clear, concise opening that references the specific task.",
+        "Makes unsupported claims (e.g., \"used regression to separate ... from noise\") without linking to any supplied evidence."
+      ],
+      "tokens": 684
+    },
+    {
+      "proposal_id": "jp-20",
+      "job_id": "d-data-036",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not directly address the client's problem of statistical analysis of a pricing experiment; it talks about a \"boring\" version and unrelated data cases.",
+        "Provides no concrete evidence of experience with a/b testing, statistics, or Python; the bracketed references (e.g., [data-case-03]) are not explained and cannot be verified.",
+        "Lacks a clear, concise description of deliverables (written readout and reproducible notebook) and how they will be produced.",
+        "No specific plan or timeline for the written readout and notebook; only a vague \"first working version early\" statement."
+      ],
+      "tokens": 736
+    },
+    {
+      "proposal_id": "jp-21",
+      "job_id": "d-fullstack-147",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not directly address the client's problem; the opening is vague and does not mention delivering iOS and Android builds or Google login.",
+        "Provides no concrete evidence of experience with React Native, TypeScript, or OAuth; references placeholder tags like [fullstack-case-05] instead of real examples.",
+        "Fails to answer the screening questions about availability in the next two weeks and the biggest project risk.",
+        "Uses generic language and does not specify how the deliverables (store submission, builds) will be handled."
+      ],
+      "tokens": 711
+    },
+    {
+      "proposal_id": "jp-22",
+      "job_id": "d-fullstack-087",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not answer the screening question about availability in the next two weeks.",
+        "Uses vague references (e.g., [fullstack-case-16]) that are not concrete evidence of required experience.",
+        "Fails to provide specific evidence of React Native, TypeScript, and OAuth experience relevant to the job.",
+        "Contains a generic opening and does not directly address the client\u2019s problem of a hospitality app."
+      ],
+      "tokens": 658
+    },
+    {
+      "proposal_id": "jp-23",
+      "job_id": "d-aiml-018",
+      "judge_score": 5.79,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with fastapi",
+        "Does not provide concrete evidence of FastAPI experience, which is a must-have requirement.",
+        "Fails to answer the screening question about availability in the next two weeks.",
+        "The response to the LangGraph experience is vague and lacks specific evidence.",
+        "Missing a clear, concise opening that directly addresses the client's problem."
+      ],
+      "tokens": 672
+    },
+    {
+      "proposal_id": "jp-24",
+      "job_id": "d-aiml-184",
+      "judge_score": 7.31,
+      "judge_verdict": "pass",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with python",
+        "Add concrete evidence of Python experience, e.g., specific projects or code samples.",
+        "Provide evidence for prompt engineering experience, which is a required skill but not mentioned.",
+        "Include a brief, direct answer to the screening question \"What is your experience with rag?\" rather than a narrative.",
+        "Remove the generic opening phrase and start with a concise statement of how you will meet the client's needs."
+      ],
+      "tokens": 723
+    },
+    {
+      "proposal_id": "jp-25",
+      "job_id": "d-data-022",
+      "judge_score": 5.79,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with excel",
+        "Does not provide evidence of experience with Excel, which is a must-have requirement.",
+        "Fails to answer the screening question about availability in the next two weeks.",
+        "The answer to 'What is your experience with Power BI?' is vague and lacks concrete examples.",
+        "While it outlines an approach, it does not directly answer the 'How would you approach a Power BI report?' question in detail."
+      ],
+      "tokens": 694
+    },
+    {
+      "proposal_id": "jp-26",
+      "job_id": "d-data-099",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not answer any of the screening questions (availability, similar project description, approach to cleaned master file).",
+        "Evidence for required skills is vague and not tied to the specific must\u2011have requirements; references like \"[data-cv]\" are not concrete proof of Excel, data cleaning, or pandas experience.",
+        "Starts with a generic statement rather than directly addressing the client's problem of deduplication and standardisation.",
+        "The proposal is not concise; it includes unnecessary filler and does not clearly outline deliverables or a concrete plan."
+      ],
+      "tokens": 671
+    },
+    {
+      "proposal_id": "jp-27",
+      "job_id": "d-data-177",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not directly answer the screening questions: availability, approach to written readout, and specific experience with A/B testing are missing or vague.",
+        "Provides no concrete evidence or examples of past work that demonstrate experience with A/B testing, statistics, or Python; only vague references to removed data.",
+        "Starts with a generic statement rather than a focused opening that addresses the client's problem of analyzing A/B test results.",
+        "The proposed plan is overly high\u2011level and lacks detail about how the written readout will be structured or how the reproducible notebook will be delivered."
+      ],
+      "tokens": 717
+    },
+    {
+      "proposal_id": "jp-28",
+      "job_id": "d-fullstack-032",
+      "judge_score": 6.0,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Does not directly answer the screening question \"How would you approach real-time messaging?\" \u2013 only mentions generic tools.",
+        "Does not answer the screening question \"Which part of this project do you see as the biggest risk?\" at all.",
+        "Provides no concrete evidence of experience with WebSockets, Redis, Node.js, or React; only vague references like \"[fullstack-case-03]\" which are not actual proof.",
+        "Starts with a vague statement rather than a focused opening that addresses the client's problem."
+      ],
+      "tokens": 714
+    },
+    {
+      "proposal_id": "jp-29",
+      "job_id": "d-fullstack-046",
+      "judge_score": 5.79,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with postgresql",
+        "Missing specific evidence for Experience with postgresql; the draft only references generic cases for react, typescript, and stripe.",
+        "No mention of any postgresql projects or details, which is a must\u2011have requirement.",
+        "The opening is vague and does not directly address the client\u2019s problem of delivering a deployed web app with Stripe subscription billing and an admin area.",
+        "No concrete milestones or deliverables are outlined beyond a vague \"first working version\"."
+      ],
+      "tokens": 652
+    },
+    {
+      "proposal_id": "jp-30",
+      "job_id": "d-aiml-004",
+      "judge_score": 6.29,
+      "judge_verdict": "revise",
+      "judge_reasons": [
+        "Address these must-have requirements with evidence: Experience with fastapi",
+        "Does not provide concrete evidence of FastAPI experience, which is a must\u2011have requirement.",
+        "The opening is generic and does not directly address the client\u2019s problem of a LangGraph agent for hospitality back\u2011office work.",
+        "Screening question about the biggest risk is not answered at all.",
+        "Mentions vague references like \"[aiml-case-13]\" without explaining what they are, which is unsupported evidence."
+      ],
+      "tokens": 694
+    }
+  ],
+  "kappa_verdict": null,
+  "kappa_score_bins": null,
+  "note": "kappa is computed only from author-provided labels in evals/datasets/human_labels.csv"
+}
