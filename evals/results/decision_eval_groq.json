@@ -1,0 +1,151 @@
+{
+  "config": "groq",
+  "description": "B: gpt-oss-20b cheap nodes + gpt-oss-120b writer/critic (Groq)",
+  "models": {
+    "analyst": "openai/gpt-oss-20b",
+    "risk": "openai/gpt-oss-20b",
+    "writer": "openai/gpt-oss-120b",
+    "critic": "openai/gpt-oss-120b"
+  },
+  "n_jobs": 40,
+  "subset": true,
+  "seed": 7,
+  "wall_s": 1728.3,
+  "metrics": {
+    "n": 40,
+    "n_errors": 0,
+    "accuracy_bid_vs_not": 0.975,
+    "bid": {
+      "precision": 1.0,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "tp": 14,
+      "fp": 0,
+      "fn": 1
+    },
+    "skip": {
+      "precision": 0.9615,
+      "recall": 1.0,
+      "f1": 0.9804,
+      "tp": 25,
+      "fp": 1,
+      "fn": 0
+    },
+    "macro_f1_bid_skip": 0.9729,
+    "watch_count": 0,
+    "skip_recall_by_reason": {
+      "off_profile": {
+        "n": 10,
+        "skipped": 10
+      },
+      "low_client_quality": {
+        "n": 5,
+        "skipped": 5
+      },
+      "below_floor": {
+        "n": 5,
+        "skipped": 5
+      },
+      "scam": {
+        "n": 5,
+        "skipped": 5
+      }
+    },
+    "scam": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 5,
+      "fp": 0,
+      "fn": 0
+    },
+    "injection": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 8,
+      "fp": 0,
+      "fn": 0
+    },
+    "price_in_band": {
+      "n": 14,
+      "in_band": 10,
+      "rate": 0.7143
+    },
+    "evidence_recall_mean": 0.675,
+    "proposals": 14,
+    "unsupported_claims_per_proposal_before": 1,
+    "unsupported_claims_per_proposal_after": 0,
+    "claims_per_proposal": 3.786,
+    "critic_rounds_mean": 2.071,
+    "latency_s": {
+      "p50": 19.684,
+      "p95": 142.7368
+    },
+    "latency_s_proposals": {
+      "p50": 41.179,
+      "p95": 272.8514
+    },
+    "tokens_per_job": {
+      "mean": 3340.3,
+      "p50": 1255.0,
+      "p95": 10230.1
+    },
+    "tokens_per_proposal_mean": 7751.6,
+    "llm_calls_per_job_mean": 3.8,
+    "cost_usd_total": 0.035679,
+    "cost_usd_per_job": 0.000892,
+    "cost_usd_per_proposal": 0.002147
+  },
+  "gigsim_outcomes": {
+    "n": 14,
+    "reply_rate": 0.4286,
+    "interview_rate": 0.2857,
+    "hire_rate": 0.2143,
+    "mean_reply_prob": 0.5657
+  },
+  "llm_usage_by_node": {
+    "risk": {
+      "calls": 40,
+      "tokens_in": 13643,
+      "tokens_out": 2478,
+      "cost_usd": 0.0026033000000000007,
+      "latency_ms": 792895.9734631353,
+      "failures": 8
+    },
+    "analyst": {
+      "calls": 40,
+      "tokens_in": 14239,
+      "tokens_out": 9613,
+      "cost_usd": 0.0062304,
+      "latency_ms": 752608.3706650243,
+      "failures": 6
+    },
+    "writer": {
+      "calls": 29,
+      "tokens_in": 44953,
+      "tokens_out": 14579,
+      "cost_usd": 0.017677199999999997,
+      "latency_ms": 46861.66745412629,
+      "failures": 0
+    },
+    "critic": {
+      "calls": 29,
+      "tokens_in": 19627,
+      "tokens_out": 6608,
+      "cost_usd": 0.00790005,
+      "latency_ms": 32993.38887297199,
+      "failures": 0
+    },
+    "compliance": {
+      "calls": 39,
+      "tokens_in": 13035,
+      "tokens_out": 2689,
+      "cost_usd": 0.0026479999999999997,
+      "latency_ms": 534203.9339990297,
+      "failures": 4
+    }
+  },
+  "output_tokens_per_s": 16.65,
+  "hardware": null
+}

@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 from ..auth.security import get_current_user
 from ..db import Approval, Run, User, get_db
 from ..deps import marketplace_token, trace_id
-from ..graphs import runtime, thread_config
+from ..graphs import get_snapshot, runtime, thread_config
 from ..schemas import (MessageOut, PendingApprovalOut, ReplyDecisionIn, ResumeOut, RunOut, ThreadDetailOut,
                        ThreadOut, ThreadsOut)
 from ..services import marketplace
@@ -48,7 +48,7 @@ async def thread_detail(mp_thread_id: str, user: User = Depends(get_current_user
     run = latest_conv_run(db, user, mp_thread_id)
     pending, reply = None, None
     if run and runtime.conversation_graph is not None:
-        snap = await runtime.conversation_graph.aget_state(
+        snap = await get_snapshot(runtime.conversation_graph, 
             thread_config(run.thread_id, user.id, run.trace_id, user.persona))
         intr = pending_interrupts(snap)
         if intr:
@@ -81,7 +81,7 @@ async def decide_reply(mp_thread_id: str, body: ReplyDecisionIn, request: Reques
     run = latest_conv_run(db, user, mp_thread_id)
     if run is None or runtime.conversation_graph is None:
         raise HTTPException(404, "No suggested reply for this thread")
-    snap = await runtime.conversation_graph.aget_state(
+    snap = await get_snapshot(runtime.conversation_graph, 
         thread_config(run.thread_id, user.id, run.trace_id, user.persona))
     intr = pending_interrupts(snap)
     if not intr:

@@ -4,10 +4,13 @@ host can serve the whole system."""
 from __future__ import annotations
 
 import logging
-from contextlib import AsyncExitStack, asynccontextmanager
+import os
+import threading
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.concurrency import run_in_threadpool
 from sqlalchemy import select
 
 from .auth.security import hash_password
@@ -59,22 +62,50 @@ def _mount_optional(app: FastAPI) -> None:
                 log.exception("mounting MCP server %s failed", name)
 
 
+_init_lock = threading.Lock()
+_initialised = False
+
+
+def ensure_ready() -> None:
+    """Idempotent, synchronous initialisation (tables, reviewer seed, checkpointer/store, graphs).
+    Runs once per process, on first request when the host skips lifespan; holds no asyncio tasks."""
+    global _initialised
+    if _initialised:
+        return
+    with _init_lock:
+        if _initialised:
+            return
+        configure_logging()
+        init_db()
+        seed_reviewer()
+        open_runtime()
+        _initialised = True
+
+
+def reset_ready() -> None:
+    global _initialised
+    _initialised = False
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    configure_logging()
-    init_db()
-    seed_reviewer()
-    async with AsyncExitStack() as stack:
-        await open_runtime(stack)
-        for name, sub in _mounted.items():  # mounted sub-apps' lifespans (MCP session managers)
-            ctx = getattr(getattr(sub, "router", None), "lifespan_context", None)
-            if ctx is not None:
-                try:
-                    await stack.enter_async_context(ctx(sub))
-                except Exception:  # noqa: BLE001
-                    log.exception("lifespan for %s failed", name)
-        app.state.runtime = runtime
-        yield
+    # No long-lived background tasks here: serverless invocations must be able to finish.
+    if not os.getenv("VERCEL"):
+        await run_in_threadpool(ensure_ready)
+    app.state.runtime = runtime
+    yield
+
+
+class ReadyMiddleware:
+    """Pure ASGI middleware: lazily initialise on the first /api request (threadpool, not the loop)."""
+
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] == "http" and not _initialised and scope.get("path", "").startswith("/api"):
+            await run_in_threadpool(ensure_ready)
+        await self.app(scope, receive, send)
 
 
 def create_app() -> FastAPI:
@@ -83,6 +114,7 @@ def create_app() -> FastAPI:
                   description="Human-in-the-loop freelance bidding agent API.",
                   generate_unique_id_function=lambda r: f"{r.tags[0] if r.tags else 'api'}_{r.name}")
     app.add_middleware(TraceIdMiddleware)
+    app.add_middleware(ReadyMiddleware)
     app.add_middleware(CORSMiddleware, allow_origins=s.cors_origins, allow_credentials=True,
                        allow_methods=["*"], allow_headers=["*"], expose_headers=["X-Trace-Id", "X-Marketplace"])
     for r in (auth.router, oauth.router, jobs.router, proposals.router, proposals.pipeline_router,

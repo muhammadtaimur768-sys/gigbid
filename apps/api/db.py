@@ -199,6 +199,9 @@ def get_engine():
             if path and path != ":memory:":
                 Path(path).parent.mkdir(parents=True, exist_ok=True)
             kwargs["connect_args"] = {"check_same_thread": False, "timeout": 30}
+        else:  # pooled Postgres (pgbouncer): no server-side prepared statements; recycle before idle cutoffs
+            kwargs.update(connect_args={"prepare_threshold": None, "connect_timeout": 10}, pool_recycle=240,
+                          pool_size=5, max_overflow=5)
         _engine = create_engine(url, **kwargs)
         _Session = sessionmaker(bind=_engine, expire_on_commit=False)
     return _engine

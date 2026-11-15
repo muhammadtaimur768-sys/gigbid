@@ -1,0 +1,67 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	scout_intake(scout_intake)
+	analyst(analyst)
+	risk(risk)
+	matcher(matcher)
+	decide(decide)
+	pricing(pricing)
+	writer(writer)
+	verifier(verifier)
+	critic(critic)
+	compliance(compliance)
+	preview(preview)
+	approval(approval)
+	submit(submit)
+	needs_attention(needs_attention)
+	dead_letter(dead_letter)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> scout_intake;
+	analyst --> decide;
+	approval -.-> __end__;
+	approval -.-> dead_letter;
+	approval -.-> needs_attention;
+	approval -.-> submit;
+	compliance -.-> dead_letter;
+	compliance -.-> needs_attention;
+	compliance -.-> preview;
+	critic -.-> compliance;
+	critic -.-> dead_letter;
+	critic -.-> needs_attention;
+	critic -.-> writer;
+	decide -.-> __end__;
+	decide -.-> dead_letter;
+	decide -.-> needs_attention;
+	decide -.-> pricing;
+	matcher --> decide;
+	preview -.-> approval;
+	preview -.-> dead_letter;
+	preview -.-> needs_attention;
+	pricing -.-> dead_letter;
+	pricing -.-> needs_attention;
+	pricing -.-> writer;
+	risk --> decide;
+	scout_intake -.-> analyst;
+	scout_intake -.-> dead_letter;
+	scout_intake -.-> matcher;
+	scout_intake -.-> needs_attention;
+	scout_intake -.-> risk;
+	submit -.-> __end__;
+	submit -.-> dead_letter;
+	submit -.-> needs_attention;
+	verifier -.-> critic;
+	verifier -.-> dead_letter;
+	verifier -.-> needs_attention;
+	writer -.-> dead_letter;
+	writer -.-> needs_attention;
+	writer -.-> verifier;
+	dead_letter --> __end__;
+	needs_attention --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

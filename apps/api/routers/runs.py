@@ -11,7 +11,7 @@ from sse_starlette.sse import EventSourceResponse
 from ..auth.security import get_current_user
 from ..config import get_settings
 from ..db import Run, RunEvent, User, get_db, get_engine
-from ..graphs import runtime, thread_config
+from ..graphs import get_snapshot, runtime, thread_config
 from ..integrations import optional
 from ..schemas import PendingApprovalOut, RunDetailOut, RunEventOut, RunOut, TraceEventOut, TraceOut
 from ..services.runs import execute, pending_interrupts, retry_pending
@@ -63,7 +63,7 @@ async def run_detail(thread_id: str, user: User = Depends(get_current_user), db:
     pending = None
     graph = runtime.graph_for(r.kind)
     if graph is not None and r.status not in ("queued", "running"):
-        snap = await graph.aget_state(thread_config(thread_id, user.id, r.trace_id, user.persona))
+        snap = await get_snapshot(graph, thread_config(thread_id, user.id, r.trace_id, user.persona))
         intr = pending_interrupts(snap)
         if intr:
             pending = PendingApprovalOut(interrupt_id=intr[0]["id"], payload=intr[0]["value"])

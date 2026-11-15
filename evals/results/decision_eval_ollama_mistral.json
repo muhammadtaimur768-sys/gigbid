@@ -1,0 +1,157 @@
+{
+  "config": "ollama_mistral",
+  "description": "local mistral:7b-instruct-v0.3-q4_K_M (Ollama)",
+  "models": {
+    "analyst": "mistral:7b-instruct-v0.3-q4_K_M",
+    "risk": "mistral:7b-instruct-v0.3-q4_K_M",
+    "writer": "mistral:7b-instruct-v0.3-q4_K_M",
+    "critic": "mistral:7b-instruct-v0.3-q4_K_M"
+  },
+  "n_jobs": 10,
+  "subset": true,
+  "seed": 7,
+  "wall_s": 836.4,
+  "metrics": {
+    "n": 10,
+    "n_errors": 0,
+    "accuracy_bid_vs_not": 1.0,
+    "bid": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 5,
+      "fp": 0,
+      "fn": 0
+    },
+    "skip": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 5,
+      "fp": 0,
+      "fn": 0
+    },
+    "macro_f1_bid_skip": 1.0,
+    "watch_count": 0,
+    "skip_recall_by_reason": {
+      "off_profile": {
+        "n": 2,
+        "skipped": 2
+      },
+      "low_client_quality": {
+        "n": 1,
+        "skipped": 1
+      },
+      "below_floor": {
+        "n": 1,
+        "skipped": 1
+      },
+      "scam": {
+        "n": 1,
+        "skipped": 1
+      }
+    },
+    "scam": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0
+    },
+    "injection": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    "price_in_band": {
+      "n": 5,
+      "in_band": 4,
+      "rate": 0.8
+    },
+    "evidence_recall_mean": 0.6833,
+    "proposals": 5,
+    "unsupported_claims_per_proposal_before": 1.2,
+    "unsupported_claims_per_proposal_after": 0,
+    "claims_per_proposal": 4.2,
+    "critic_rounds_mean": 1,
+    "latency_s": {
+      "p50": 61.7315,
+      "p95": 202.8914
+    },
+    "latency_s_proposals": {
+      "p50": 140.65,
+      "p95": 219.8534
+    },
+    "tokens_per_job": {
+      "mean": 2759.8,
+      "p50": 2667.5,
+      "p95": 4631.85
+    },
+    "tokens_per_proposal_mean": 4374.2,
+    "llm_calls_per_job_mean": 3.5,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_job": 0.0,
+    "cost_usd_per_proposal": 0.0
+  },
+  "gigsim_outcomes": {
+    "n": 5,
+    "reply_rate": 0.6,
+    "interview_rate": 0.4,
+    "hire_rate": 0.4,
+    "mean_reply_prob": 0.6049
+  },
+  "llm_usage_by_node": {
+    "risk": {
+      "calls": 10,
+      "tokens_in": 4230,
+      "tokens_out": 650,
+      "cost_usd": 0.0,
+      "latency_ms": 117483.84558400721,
+      "failures": 0
+    },
+    "analyst": {
+      "calls": 10,
+      "tokens_in": 4186,
+      "tokens_out": 2436,
+      "cost_usd": 0.0,
+      "latency_ms": 271772.8468309797,
+      "failures": 0
+    },
+    "writer": {
+      "calls": 5,
+      "tokens_in": 8404,
+      "tokens_out": 1898,
+      "cost_usd": 0.0,
+      "latency_ms": 362271.3692499965,
+      "failures": 1
+    },
+    "critic": {
+      "calls": 5,
+      "tokens_in": 2833,
+      "tokens_out": 632,
+      "cost_usd": 0.0,
+      "latency_ms": 90925.66204202012,
+      "failures": 1
+    },
+    "compliance": {
+      "calls": 16,
+      "tokens_in": 4759,
+      "tokens_out": 718,
+      "cost_usd": 0.0,
+      "latency_ms": 104898.58116596588,
+      "failures": 0
+    }
+  },
+  "output_tokens_per_s": 6.69,
+  "hardware": {
+    "machine": "arm64",
+    "system": "Darwin",
+    "python": "3.11.18",
+    "cpu": "Apple M4",
+    "mem_gb": 16.0
+  }
+}

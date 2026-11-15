@@ -166,8 +166,13 @@ def _graph_input(run: Run, user: User):
             "persona": persona, "trace_id": run.trace_id, "options": options, "status": "running"}
 
 
-async def execute(thread_id: str, mirror: asyncio.Queue | None = None) -> str:
-    """Claim and run one graph segment. Returns the resulting run status."""
+async def execute(thread_id: str) -> str:
+    """Claim and run one graph segment in a worker thread. Returns the resulting run status."""
+    import anyio
+    return await anyio.to_thread.run_sync(execute_sync, thread_id)
+
+
+def execute_sync(thread_id: str) -> str:
     db = SessionLocal()
     try:
         res = db.execute(update(Run).where(Run.thread_id == thread_id, Run.status.in_(["queued", "pending_retry"]))
@@ -178,44 +183,40 @@ async def execute(thread_id: str, mirror: asyncio.Queue | None = None) -> str:
         run = db.get(Run, thread_id)
         user = db.get(User, run.user_id)
         graph = runtime.graph_for(run.kind)
-        emit = persist_emitter(thread_id, run.user_id, mirror)
+        emit = persist_emitter(thread_id, run.user_id)
         token = trace_id_var.set(run.trace_id)
         if graph is None:
-            await emit("error", {"message": f"{run.kind} graph unavailable", "degraded": False})
+            emit("error", {"message": f"{run.kind} graph unavailable", "degraded": False})
             _set(db, run, "error", error="graph unavailable")
-            await emit("done", {"status": "error"})
+            emit("done", {"status": "error"})
             return "error"
-        config = thread_config(thread_id, run.user_id, run.trace_id, user.persona,
-                               marketplace_token=None)
+        config = thread_config(thread_id, run.user_id, run.trace_id, user.persona)
         try:
             pi = run.pending_input or {}
-            await emit("progress", {"stage": "run_start", "trace_id": run.trace_id,
-                                    "resume": pi.get("type") == "resume",
-                                    "request_trace_id": pi.get("request_trace_id")})
-            await bridge(graph, _graph_input(run, user), config, emit)
-            snapshot = await graph.aget_state(config)
+            emit("progress", {"stage": "run_start", "trace_id": run.trace_id, "resume": pi.get("type") == "resume",
+                              "request_trace_id": pi.get("request_trace_id")})
+            bridge(graph, _graph_input(run, user), config, emit)
+            snapshot = graph.get_state(config)
             interrupts = pending_interrupts(snapshot)
-            if interrupts:
-                status = "interrupted"
-            else:
-                status = "done"
+            status = "interrupted" if interrupts else "done"
             _set(db, run, status, outcome=_outcome(snapshot.values))
             sync_from_state(db, run, snapshot.values, interrupted=bool(interrupts))
-            await emit("done", {"status": status, "outcome": run.outcome})
+            emit("done", {"status": status, "outcome": run.outcome})
             return status
         except Exception as exc:  # noqa: BLE001
             log.exception("run %s failed", thread_id)
+            db.rollback()
             if _is_unavailable(exc):
                 _set(db, run, "pending_retry", error=str(exc)[:500])
                 db.add(PendingWork(user_id=run.user_id, kind="execute", payload={"thread_id": thread_id},
                                    next_attempt_at=utcnow() + dt.timedelta(seconds=30)))
                 db.commit()
-                await emit("error", {"message": "Marketplace unavailable; run queued for retry", "degraded": True})
-                await emit("done", {"status": "pending_retry"})
+                emit("error", {"message": "Marketplace unavailable; run queued for retry", "degraded": True})
+                emit("done", {"status": "pending_retry"})
                 return "pending_retry"
             _set(db, run, "error", error=f"{type(exc).__name__}: {exc}"[:1000])
-            await emit("error", {"message": f"{type(exc).__name__}: {exc}"[:500], "degraded": False})
-            await emit("done", {"status": "error"})
+            emit("error", {"message": f"{type(exc).__name__}: {exc}"[:500], "degraded": False})
+            emit("done", {"status": "error"})
             return "error"
         finally:
             trace_id_var.reset(token)

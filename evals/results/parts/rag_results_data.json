@@ -1,0 +1,2101 @@
+{
+  "meta": {
+    "generated_at": "2026-11-15T16:19:55+00:00",
+    "command": "python -m evals.runners.rag_eval",
+    "k": 10,
+    "seed": 42,
+    "n_jobs_per_persona": {
+      "data": 60
+    },
+    "max_jobs": 60,
+    "embedding": "BAAI/bge-small-en-v1.5",
+    "reranker": "Xenova/ms-marco-MiniLM-L-6-v2",
+    "query": "job title + description; requirements = skills_required + bullet/cue lines (no LLM)",
+    "level": "item (gold evidence_ids); jobs without gold evidence excluded from R@5/MRR/nDCG"
+  },
+  "overall": [
+    {
+      "variant": "v0",
+      "personas": 1,
+      "recall@5": 0.0192,
+      "mrr": 0.0626,
+      "ndcg@10": 0.0363,
+      "p50_ms": 395.15,
+      "p95_ms": 603.56,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.0192,
+      "recall@5_nskills>=4": 0.0111,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.0235
+    },
+    {
+      "variant": "v1",
+      "personas": 1,
+      "recall@5": 0.2032,
+      "mrr": 0.3983,
+      "ndcg@10": 0.2725,
+      "p50_ms": 1956.99,
+      "p95_ms": 3706.62,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.2032,
+      "recall@5_nskills>=4": 0.1944,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.2078
+    },
+    {
+      "variant": "v2",
+      "personas": 1,
+      "recall@5": 0.0,
+      "mrr": 0.0085,
+      "ndcg@10": 0.0154,
+      "p50_ms": 446.4,
+      "p95_ms": 850.92,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.0,
+      "recall@5_nskills>=4": 0.0,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.0
+    },
+    {
+      "variant": "v0+ev",
+      "personas": 1,
+      "recall@5": 0.5455,
+      "mrr": 0.9739,
+      "ndcg@10": 0.6769,
+      "p50_ms": 548.83,
+      "p95_ms": 824.39,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5455,
+      "recall@5_nskills>=4": 0.4093,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6176
+    },
+    {
+      "variant": "ev",
+      "personas": 1,
+      "recall@5": 0.5532,
+      "mrr": 0.8622,
+      "ndcg@10": 0.6821,
+      "p50_ms": 655.09,
+      "p95_ms": 1135.45,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5532,
+      "recall@5_nskills>=4": 0.3815,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6441
+    },
+    {
+      "variant": "ev+v1",
+      "personas": 1,
+      "recall@5": 0.6058,
+      "mrr": 0.7827,
+      "ndcg@10": 0.6912,
+      "p50_ms": 2586.7,
+      "p95_ms": 4809.44,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.6058,
+      "recall@5_nskills>=4": 0.437,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6951
+    },
+    {
+      "variant": "ev+v2",
+      "personas": 1,
+      "recall@5": 0.5513,
+      "mrr": 0.8981,
+      "ndcg@10": 0.7166,
+      "p50_ms": 610.34,
+      "p95_ms": 1404.4,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5513,
+      "recall@5_nskills>=4": 0.4278,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6167
+    },
+    {
+      "variant": "ev+v3",
+      "personas": 1,
+      "recall@5": 0.5173,
+      "mrr": 0.8869,
+      "ndcg@10": 0.6796,
+      "p50_ms": 5459.47,
+      "p95_ms": 10626.0,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5173,
+      "recall@5_nskills>=4": 0.3648,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.598
+    },
+    {
+      "variant": "ev+v4",
+      "personas": 1,
+      "recall@5": 0.5327,
+      "mrr": 0.7526,
+      "ndcg@10": 0.6268,
+      "p50_ms": 195.07,
+      "p95_ms": 362.41,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5327,
+      "recall@5_nskills>=4": 0.3963,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6049
+    },
+    {
+      "variant": "ev+v5",
+      "personas": 1,
+      "recall@5": 0.5455,
+      "mrr": 0.9712,
+      "ndcg@10": 0.717,
+      "p50_ms": 147.78,
+      "p95_ms": 241.99,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5455,
+      "recall@5_nskills>=4": 0.3833,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6314
+    },
+    {
+      "variant": "ev+v8",
+      "personas": 1,
+      "recall@5": 0.4821,
+      "mrr": 0.8141,
+      "ndcg@10": 0.5607,
+      "p50_ms": 4209.51,
+      "p95_ms": 8193.53,
+      "false_refusal_rate": 0.1154,
+      "refusal_rate_no_gold": 0.75,
+      "recall@5_nreq>=4": 0.4821,
+      "recall@5_nskills>=4": 0.2907,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.5833
+    },
+    {
+      "variant": "ev+v1+v2",
+      "personas": 1,
+      "recall@5": 0.5872,
+      "mrr": 0.8638,
+      "ndcg@10": 0.7253,
+      "p50_ms": 1089.23,
+      "p95_ms": 2369.2,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5872,
+      "recall@5_nskills>=4": 0.45,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6598
+    },
+    {
+      "variant": "ev+v2+v4",
+      "personas": 1,
+      "recall@5": 0.5583,
+      "mrr": 0.7756,
+      "ndcg@10": 0.6413,
+      "p50_ms": 385.05,
+      "p95_ms": 586.22,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5583,
+      "recall@5_nskills>=4": 0.4667,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6069
+    },
+    {
+      "variant": "ev+v2+v5",
+      "personas": 1,
+      "recall@5": 0.5622,
+      "mrr": 0.9904,
+      "ndcg@10": 0.7409,
+      "p50_ms": 341.95,
+      "p95_ms": 504.02,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5622,
+      "recall@5_nskills>=4": 0.4389,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6275
+    },
+    {
+      "variant": "ev+v2+v3",
+      "personas": 1,
+      "recall@5": 0.5179,
+      "mrr": 0.8869,
+      "ndcg@10": 0.6811,
+      "p50_ms": 3984.5,
+      "p95_ms": 6193.08,
+      "false_refusal_rate": 0.0,
+      "refusal_rate_no_gold": 0.0,
+      "recall@5_nreq>=4": 0.5179,
+      "recall@5_nskills>=4": 0.3667,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.598
+    },
+    {
+      "variant": "ev+v2+v5+v8",
+      "personas": 1,
+      "recall@5": 0.541,
+      "mrr": 0.9038,
+      "ndcg@10": 0.6451,
+      "p50_ms": 4033.91,
+      "p95_ms": 8054.16,
+      "false_refusal_rate": 0.0577,
+      "refusal_rate_no_gold": 0.75,
+      "recall@5_nreq>=4": 0.541,
+      "recall@5_nskills>=4": 0.4019,
+      "recall@5_nreq<4": null,
+      "recall@5_nskills<4": 0.6147
+    }
+  ],
+  "best": "ev+v2+v5",
+  "results": [
+    {
+      "variant": "v0",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.0192,
+      "mrr": 0.0626,
+      "ndcg@10": 0.0363,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 395.15,
+      "p95_ms": 603.56,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.1333,
+          "mrr": 0.3528,
+          "ndcg@10": 0.1585,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.0,
+          "mrr": 0.0083,
+          "ndcg@10": 0.0073,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.0,
+          "mrr": 0.0583,
+          "ndcg@10": 0.0406,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.0,
+          "mrr": 0.0125,
+          "ndcg@10": 0.0222,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.0286,
+          "mrr": 0.0921,
+          "ndcg@10": 0.0668,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.0192,
+          "mrr": 0.0626,
+          "ndcg@10": 0.0363,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.0111,
+          "mrr": 0.0506,
+          "ndcg@10": 0.0368,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.0235,
+          "mrr": 0.0689,
+          "ndcg@10": 0.036,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v1",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.2032,
+      "mrr": 0.3983,
+      "ndcg@10": 0.2725,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 1956.99,
+      "p95_ms": 3706.62,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.0667,
+          "mrr": 0.1269,
+          "ndcg@10": 0.2161,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.4306,
+          "mrr": 1.0,
+          "ndcg@10": 0.5529,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.1667,
+          "mrr": 0.4222,
+          "ndcg@10": 0.2574,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.2407,
+          "mrr": 0.387,
+          "ndcg@10": 0.2641,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.25,
+          "mrr": 0.1833,
+          "ndcg@10": 0.2278,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.127,
+          "ndcg@10": 0.1076,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.2032,
+          "mrr": 0.3983,
+          "ndcg@10": 0.2725,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.1944,
+          "mrr": 0.5988,
+          "ndcg@10": 0.3193,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.2078,
+          "mrr": 0.2922,
+          "ndcg@10": 0.2477,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v2",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.0,
+      "mrr": 0.0085,
+      "ndcg@10": 0.0154,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 446.4,
+      "p95_ms": 850.92,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.0,
+          "mrr": 0.0741,
+          "ndcg@10": 0.1334,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.0,
+          "mrr": 0.0085,
+          "ndcg@10": 0.0154,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@10": 0.0,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.0,
+          "mrr": 0.0131,
+          "ndcg@10": 0.0235,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "v0+ev",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5455,
+      "mrr": 0.9739,
+      "ndcg@10": 0.6769,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 548.83,
+      "p95_ms": 824.39,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4667,
+          "mrr": 0.8571,
+          "ndcg@10": 0.6558,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.625,
+          "mrr": 1.0,
+          "ndcg@10": 0.7531,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.3667,
+          "mrr": 1.0,
+          "ndcg@10": 0.5768,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5556,
+          "mrr": 1.0,
+          "ndcg@10": 0.727,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.9375,
+          "ndcg@10": 0.9316,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.4767,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2,
+          "mrr": 1.0,
+          "ndcg@10": 0.3726,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.8316,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5455,
+          "mrr": 0.9739,
+          "ndcg@10": 0.6769,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4093,
+          "mrr": 1.0,
+          "ndcg@10": 0.5771,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6176,
+          "mrr": 0.9601,
+          "ndcg@10": 0.7297,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5532,
+      "mrr": 0.8622,
+      "ndcg@10": 0.6821,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 655.09,
+      "p95_ms": 1135.45,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.5333,
+          "mrr": 0.8611,
+          "ndcg@10": 0.7095,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5833,
+          "mrr": 0.9028,
+          "ndcg@10": 0.7391,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4,
+          "mrr": 0.8,
+          "ndcg@10": 0.5878,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5,
+          "mrr": 0.9444,
+          "ndcg@10": 0.6988,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9506,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.4167,
+          "mrr": 0.4583,
+          "ndcg@10": 0.5789,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2,
+          "mrr": 0.7857,
+          "ndcg@10": 0.3308,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.8772,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5532,
+          "mrr": 0.8622,
+          "ndcg@10": 0.6821,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3815,
+          "mrr": 0.8241,
+          "ndcg@10": 0.5461,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6441,
+          "mrr": 0.8824,
+          "ndcg@10": 0.7541,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v1",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.6058,
+      "mrr": 0.7827,
+      "ndcg@10": 0.6912,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 2586.7,
+      "p95_ms": 4809.44,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.6,
+          "mrr": 0.625,
+          "ndcg@10": 0.6421,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.6528,
+          "mrr": 1.0,
+          "ndcg@10": 0.8048,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4667,
+          "mrr": 0.8,
+          "ndcg@10": 0.6746,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5926,
+          "mrr": 0.8889,
+          "ndcg@10": 0.682,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9492,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.5,
+          "mrr": 0.5,
+          "ndcg@10": 0.655,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2,
+          "mrr": 0.2786,
+          "ndcg@10": 0.2551,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9197,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.6058,
+          "mrr": 0.7827,
+          "ndcg@10": 0.6912,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.437,
+          "mrr": 0.7361,
+          "ndcg@10": 0.5806,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6951,
+          "mrr": 0.8074,
+          "ndcg@10": 0.7497,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5513,
+      "mrr": 0.8981,
+      "ndcg@10": 0.7166,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 610.34,
+      "p95_ms": 1404.4,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4,
+          "mrr": 0.8667,
+          "ndcg@10": 0.6198,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5417,
+          "mrr": 0.9583,
+          "ndcg@10": 0.7047,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4333,
+          "mrr": 0.8,
+          "ndcg@10": 0.6801,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 0.9444,
+          "ndcg@10": 0.7648,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.5,
+          "ndcg@10": 0.3867,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.3714,
+          "mrr": 0.9286,
+          "ndcg@10": 0.6084,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5513,
+          "mrr": 0.8981,
+          "ndcg@10": 0.7166,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4278,
+          "mrr": 0.9444,
+          "ndcg@10": 0.65,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6167,
+          "mrr": 0.8735,
+          "ndcg@10": 0.7519,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v3",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5173,
+      "mrr": 0.8869,
+      "ndcg@10": 0.6796,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 5459.47,
+      "p95_ms": 10626.0,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4,
+          "mrr": 0.8667,
+          "ndcg@10": 0.5886,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.4861,
+          "mrr": 0.9583,
+          "ndcg@10": 0.7479,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.2333,
+          "mrr": 0.7167,
+          "ndcg@10": 0.4938,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.7417,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.8846,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.4758,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.4286,
+          "mrr": 0.8333,
+          "ndcg@10": 0.5539,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.8316,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5173,
+          "mrr": 0.8869,
+          "ndcg@10": 0.6796,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3648,
+          "mrr": 0.8981,
+          "ndcg@10": 0.631,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.598,
+          "mrr": 0.8809,
+          "ndcg@10": 0.7054,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v4",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5327,
+      "mrr": 0.7526,
+      "ndcg@10": 0.6268,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 195.07,
+      "p95_ms": 362.41,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.7,
+          "mrr": 0.8667,
+          "ndcg@10": 0.7459,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5417,
+          "mrr": 0.9028,
+          "ndcg@10": 0.7369,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.3667,
+          "mrr": 0.35,
+          "ndcg@10": 0.4638,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 0.9444,
+          "ndcg@10": 0.7032,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.75,
+          "mrr": 0.2687,
+          "ndcg@10": 0.5002,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.5,
+          "mrr": 0.875,
+          "ndcg@10": 0.7106,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2857,
+          "mrr": 1.0,
+          "ndcg@10": 0.479,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 0.2,
+          "ndcg@10": 0.4306,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5327,
+          "mrr": 0.7526,
+          "ndcg@10": 0.6268,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3963,
+          "mrr": 0.8194,
+          "ndcg@10": 0.5749,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6049,
+          "mrr": 0.7172,
+          "ndcg@10": 0.6543,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v5",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5455,
+      "mrr": 0.9712,
+      "ndcg@10": 0.717,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 147.78,
+      "p95_ms": 241.99,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.5667,
+          "mrr": 0.9167,
+          "ndcg@10": 0.7585,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5694,
+          "mrr": 1.0,
+          "ndcg@10": 0.7303,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4,
+          "mrr": 0.8,
+          "ndcg@10": 0.627,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.7305,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 0.875,
+          "mrr": 1.0,
+          "ndcg@10": 0.9054,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.4167,
+          "mrr": 1.0,
+          "ndcg@10": 0.7168,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2571,
+          "mrr": 1.0,
+          "ndcg@10": 0.4496,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5455,
+          "mrr": 0.9712,
+          "ndcg@10": 0.717,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3833,
+          "mrr": 0.9722,
+          "ndcg@10": 0.5899,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6314,
+          "mrr": 0.9706,
+          "ndcg@10": 0.7842,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v8",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.4821,
+      "mrr": 0.8141,
+      "ndcg@10": 0.5607,
+      "false_refusal_rate": 0.1154,
+      "p50_ms": 4209.51,
+      "p95_ms": 8193.53,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.75,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.3667,
+          "mrr": 0.8333,
+          "ndcg@10": 0.4967,
+          "false_refusal_rate": 0.1667
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.375,
+          "mrr": 0.7917,
+          "ndcg@10": 0.4725,
+          "false_refusal_rate": 0.1667
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.1333,
+          "mrr": 0.4,
+          "ndcg@10": 0.1853,
+          "false_refusal_rate": 0.6
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.6901,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.8846,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.454,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.4571,
+          "mrr": 0.8333,
+          "ndcg@10": 0.5517,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.6131,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.4821,
+          "mrr": 0.8141,
+          "ndcg@10": 0.5607,
+          "false_refusal_rate": 0.1154
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.2907,
+          "mrr": 0.713,
+          "ndcg@10": 0.3984,
+          "false_refusal_rate": 0.2222
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.5833,
+          "mrr": 0.8676,
+          "ndcg@10": 0.6466,
+          "false_refusal_rate": 0.0588
+        }
+      }
+    },
+    {
+      "variant": "ev+v1+v2",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5872,
+      "mrr": 0.8638,
+      "ndcg@10": 0.7253,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 1089.23,
+      "p95_ms": 2369.2,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.5667,
+          "mrr": 0.4028,
+          "ndcg@10": 0.5269,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.6111,
+          "mrr": 1.0,
+          "ndcg@10": 0.7853,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.5333,
+          "mrr": 0.9,
+          "ndcg@10": 0.7472,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.537,
+          "mrr": 0.9444,
+          "ndcg@10": 0.7385,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.375,
+          "mrr": 0.5,
+          "ndcg@10": 0.6369,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.2571,
+          "mrr": 0.9286,
+          "ndcg@10": 0.4574,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5872,
+          "mrr": 0.8638,
+          "ndcg@10": 0.7253,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.45,
+          "mrr": 0.9722,
+          "ndcg@10": 0.6718,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6598,
+          "mrr": 0.8064,
+          "ndcg@10": 0.7537,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v4",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5583,
+      "mrr": 0.7756,
+      "ndcg@10": 0.6413,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 385.05,
+      "p95_ms": 586.22,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.5667,
+          "mrr": 0.8889,
+          "ndcg@10": 0.6862,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5278,
+          "mrr": 0.9028,
+          "ndcg@10": 0.6727,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.3,
+          "mrr": 0.3833,
+          "ndcg@10": 0.4678,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.7426,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.3854,
+          "ndcg@10": 0.5786,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.4836,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.5429,
+          "mrr": 1.0,
+          "ndcg@10": 0.7353,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.0,
+          "mrr": 0.1667,
+          "ndcg@10": 0.4228,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5583,
+          "mrr": 0.7756,
+          "ndcg@10": 0.6413,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4667,
+          "mrr": 0.8287,
+          "ndcg@10": 0.628,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6069,
+          "mrr": 0.7475,
+          "ndcg@10": 0.6483,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v5",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5622,
+      "mrr": 0.9904,
+      "ndcg@10": 0.7409,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 341.95,
+      "p95_ms": 504.02,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4,
+          "mrr": 1.0,
+          "ndcg@10": 0.6351,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.5278,
+          "mrr": 1.0,
+          "ndcg@10": 0.7244,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.4333,
+          "mrr": 0.9,
+          "ndcg@10": 0.6939,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5556,
+          "mrr": 1.0,
+          "ndcg@10": 0.7619,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9392,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 1.0,
+          "ndcg@10": 0.5214,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.4286,
+          "mrr": 1.0,
+          "ndcg@10": 0.7285,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 1.0,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5622,
+          "mrr": 0.9904,
+          "ndcg@10": 0.7409,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4389,
+          "mrr": 1.0,
+          "ndcg@10": 0.6954,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6275,
+          "mrr": 0.9853,
+          "ndcg@10": 0.7651,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v3",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.5179,
+      "mrr": 0.8869,
+      "ndcg@10": 0.6811,
+      "false_refusal_rate": 0.0,
+      "p50_ms": 3984.5,
+      "p95_ms": 6193.08,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.0,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4,
+          "mrr": 0.8667,
+          "ndcg@10": 0.5893,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.4722,
+          "mrr": 0.9583,
+          "ndcg@10": 0.6894,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.2333,
+          "mrr": 0.7167,
+          "ndcg@10": 0.4633,
+          "false_refusal_rate": 0.0
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.5185,
+          "mrr": 1.0,
+          "ndcg@10": 0.7846,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.8793,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.4723,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.4571,
+          "mrr": 0.8333,
+          "ndcg@10": 0.6419,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@10": 0.8175,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.5179,
+          "mrr": 0.8869,
+          "ndcg@10": 0.6811,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.3667,
+          "mrr": 0.8981,
+          "ndcg@10": 0.6073,
+          "false_refusal_rate": 0.0
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.598,
+          "mrr": 0.8809,
+          "ndcg@10": 0.7202,
+          "false_refusal_rate": 0.0
+        }
+      }
+    },
+    {
+      "variant": "ev+v2+v5+v8",
+      "persona": "data",
+      "n_jobs": 60,
+      "n": 52,
+      "recall@5": 0.541,
+      "mrr": 0.9038,
+      "ndcg@10": 0.6451,
+      "false_refusal_rate": 0.0577,
+      "p50_ms": 4033.91,
+      "p95_ms": 8054.16,
+      "n_no_gold": 8,
+      "refusal_rate_no_gold": 0.75,
+      "by_job_type": {
+        "ab_test": {
+          "n": 6,
+          "recall@5": 0.4667,
+          "mrr": 1.0,
+          "ndcg@10": 0.6246,
+          "false_refusal_rate": 0.0
+        },
+        "bi_dashboard": {
+          "n": 12,
+          "recall@5": 0.4583,
+          "mrr": 1.0,
+          "ndcg@10": 0.5865,
+          "false_refusal_rate": 0.0
+        },
+        "bookkeeping": {
+          "n": 0
+        },
+        "data_cleaning": {
+          "n": 5,
+          "recall@5": 0.1333,
+          "mrr": 0.4,
+          "ndcg@10": 0.1974,
+          "false_refusal_rate": 0.6
+        },
+        "data_entry": {
+          "n": 0
+        },
+        "e2e_testing": {
+          "n": 0
+        },
+        "llm_finetune": {
+          "n": 0
+        },
+        "sales_forecast": {
+          "n": 9,
+          "recall@5": 0.537,
+          "mrr": 1.0,
+          "ndcg@10": 0.727,
+          "false_refusal_rate": 0.0
+        },
+        "survey": {
+          "n": 8,
+          "recall@5": 1.0,
+          "mrr": 0.875,
+          "ndcg@10": 0.8879,
+          "false_refusal_rate": 0.0
+        },
+        "tableau_dashboard": {
+          "n": 4,
+          "recall@5": 0.3333,
+          "mrr": 0.75,
+          "ndcg@10": 0.4669,
+          "false_refusal_rate": 0.0
+        },
+        "unity_game": {
+          "n": 0
+        },
+        "warehouse": {
+          "n": 7,
+          "recall@5": 0.5714,
+          "mrr": 1.0,
+          "ndcg@10": 0.763,
+          "false_refusal_rate": 0.0
+        },
+        "web_analytics": {
+          "n": 1,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@10": 0.9197,
+          "false_refusal_rate": 0.0
+        }
+      },
+      "by_n_requirements": {
+        ">=4": {
+          "n": 52,
+          "recall@5": 0.541,
+          "mrr": 0.9038,
+          "ndcg@10": 0.6451,
+          "false_refusal_rate": 0.0577
+        },
+        "<4": {
+          "n": 0
+        }
+      },
+      "by_n_skills": {
+        ">=4": {
+          "n": 18,
+          "recall@5": 0.4019,
+          "mrr": 0.8889,
+          "ndcg@10": 0.5475,
+          "false_refusal_rate": 0.1111
+        },
+        "<4": {
+          "n": 34,
+          "recall@5": 0.6147,
+          "mrr": 0.9118,
+          "ndcg@10": 0.6968,
+          "false_refusal_rate": 0.0294
+        }
+      }
+    }
+  ]
+}

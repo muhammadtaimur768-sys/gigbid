@@ -1,0 +1,66 @@
+{
+  "experiment": "proposal strategy A vs B",
+  "config": "heuristic",
+  "metric": "replied",
+  "strategies": {
+    "A": {
+      "name": "evidence_first",
+      "opening": "problem_restatement",
+      "evidence_items": 3,
+      "length": "medium"
+    },
+    "B": {
+      "name": "short_direct",
+      "opening": "question",
+      "evidence_items": 1,
+      "length": "short"
+    }
+  },
+  "n_jobs_per_arm": 147,
+  "successes": {
+    "A": 106,
+    "B": 81
+  },
+  "two_proportion_z_test": {
+    "p_A": 0.7211,
+    "p_B": 0.551,
+    "diff_A_minus_B": 0.1701,
+    "z": 3.0304,
+    "p_value": 0.002442,
+    "ci95_diff": [
+      0.0618,
+      0.2783
+    ]
+  },
+  "mcnemar_exact": {
+    "A_only": 45,
+    "B_only": 20,
+    "p_value": 0.002626
+  },
+  "mean_reply_prob": {
+    "A": 0.6458,
+    "B": 0.5182
+  },
+  "mean_chars": {
+    "A": 737.7,
+    "B": 402.9
+  },
+  "arm_summaries": {
+    "A": {
+      "n": 147,
+      "reply_rate": 0.7211,
+      "interview_rate": 0.5034,
+      "hire_rate": 0.2789,
+      "mean_reply_prob": 0.6458
+    },
+    "B": {
+      "n": 147,
+      "reply_rate": 0.551,
+      "interview_rate": 0.381,
+      "hire_rate": 0.1633,
+      "mean_reply_prob": 0.5182
+    }
+  },
+  "alpha": 0.05,
+  "significant": true
+}

@@ -67,8 +67,8 @@ async def record_edit(store, user_id: str, before: str, after: str, context: dic
             return {"handled_by": None, "patterns": patterns, "error": f"{type(exc).__name__}: {exc}"[:300]}
     if store is not None:  # agent memory module missing: keep the raw observation for later promotion
         import uuid
-        await store.aput(("edits", user_id), uuid.uuid4().hex, {"before": before[:4000], "after": after[:4000],
-                                                               "context": ctx})
+        await asyncio.to_thread(store.put, ("edits", user_id), uuid.uuid4().hex,
+                                {"before": before[:4000], "after": after[:4000], "context": ctx})
     return {"handled_by": "api.fallback", "patterns": patterns, "promoted": []}
 
 
@@ -93,20 +93,18 @@ def _arity(fn) -> int:
         return 3
 
 
-async def list_memory(store, user_id: str) -> list[dict]:
-    if store is None:
-        return []
+def _list_memory_sync(store, user_id: str) -> list[dict]:
     out: list[dict] = []
     for kind in KINDS:
         try:
-            namespaces = await store.alist_namespaces(prefix=(kind, user_id), limit=200)
+            namespaces = store.list_namespaces(prefix=(kind, user_id), limit=200)
         except Exception:
             namespaces = [(kind, user_id)]
         if (kind, user_id) not in namespaces:
             namespaces = [(kind, user_id), *namespaces]
         for ns in namespaces:
             try:
-                items = await store.asearch(ns, limit=200)
+                items = store.search(ns, limit=200)
             except Exception:
                 continue
             for it in items:
@@ -118,13 +116,21 @@ async def list_memory(store, user_id: str) -> list[dict]:
     return out
 
 
+async def list_memory(store, user_id: str) -> list[dict]:
+    import asyncio
+    if store is None:
+        return []
+    return await asyncio.to_thread(_list_memory_sync, store, user_id)
+
+
 async def delete_memory(store, user_id: str, namespace: list[str], key: str) -> bool:
+    import asyncio
     if store is None or len(namespace) < 2 or namespace[1] != user_id or namespace[0] not in KINDS:
         return False  # tenant scope: a user may only delete their own namespaces
-    existing = await store.aget(tuple(namespace), key)
+    existing = await asyncio.to_thread(store.get, tuple(namespace), key)
     if existing is None:
         return False
-    await store.adelete(tuple(namespace), key)
+    await asyncio.to_thread(store.delete, tuple(namespace), key)
     return True
 
 

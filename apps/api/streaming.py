@@ -14,14 +14,14 @@ from __future__ import annotations
 
 import asyncio
 import json
-from typing import Any, AsyncIterator, Awaitable, Callable
+from typing import Any, AsyncIterator, Callable
 
 from pydantic import BaseModel
 from sqlalchemy import select
 
 from .db import Run, RunEvent, SessionLocal
 
-Emit = Callable[[str, dict], Awaitable[None]]
+Emit = Callable[[str, dict], None]
 TERMINAL_EVENTS = {"done", "error"}
 STREAM_MODES = ["updates", "custom", "messages", "tasks"]
 
@@ -60,34 +60,34 @@ def _summary(update: Any) -> tuple[list[str], dict]:
     return keys, small
 
 
-async def bridge(graph, graph_input: Any, config: dict, emit: Emit) -> None:
-    """Run the graph and translate its multi-mode stream into UI events (without 'done')."""
+def bridge(graph, graph_input: Any, config: dict, emit: Emit) -> None:
+    """Run the graph (synchronously, in a worker thread) and translate its multi-mode stream into
+    UI events (without 'done')."""
     token_buf: dict[str, str] = {}
 
-    async def flush(node: str | None = None):
+    def flush(node: str | None = None):
         for n in [node] if node else list(token_buf):
             if n in token_buf and token_buf[n]:
-                await emit("token", {"node": n, "text": token_buf.pop(n)})
+                emit("token", {"node": n, "text": token_buf.pop(n)})
 
-    async for item in graph.astream(graph_input, config, stream_mode=STREAM_MODES, subgraphs=False):
+    for item in graph.stream(graph_input, config, stream_mode=STREAM_MODES, subgraphs=False):
         mode, chunk = item if isinstance(item, tuple) and len(item) == 2 else ("updates", item)
         if mode == "tasks":
             if isinstance(chunk, dict) and "input" in chunk and "result" not in chunk:
-                await emit("node_start", {"node": chunk.get("name"), "task_id": chunk.get("id")})
+                emit("node_start", {"node": chunk.get("name"), "task_id": chunk.get("id")})
             elif isinstance(chunk, dict) and chunk.get("error"):
-                await emit("progress", {"node": chunk.get("name"), "error": str(chunk.get("error"))[:500]})
+                emit("progress", {"node": chunk.get("name"), "error": str(chunk.get("error"))[:500]})
         elif mode == "updates":
             if not isinstance(chunk, dict):
                 continue
             for node, update in chunk.items():
                 if node == "__interrupt__":
-                    await flush()
-                    payload = to_jsonable(update)
-                    await emit("interrupt", {"payload": payload})
+                    flush()
+                    emit("interrupt", {"payload": to_jsonable(update)})
                     continue
-                await flush(node)
+                flush(node)
                 keys, summary = _summary(update)
-                await emit("node_end", {"node": node, "keys": keys, "summary": summary})
+                emit("node_end", {"node": node, "keys": keys, "summary": summary})
         elif mode == "messages":
             try:
                 msg, meta = chunk
@@ -100,59 +100,62 @@ async def bridge(graph, graph_input: Any, config: dict, emit: Emit) -> None:
             if text:
                 token_buf[node] = token_buf.get(node, "") + text
                 if len(token_buf[node]) >= 120:
-                    await flush(node)
+                    flush(node)
         elif mode == "custom":
             data = to_jsonable(chunk)
-            await emit("progress", data if isinstance(data, dict) else {"value": data})
-    await flush()
+            emit("progress", data if isinstance(data, dict) else {"value": data})
+    flush()
 
 
-def persist_emitter(thread_id: str, user_id: str, mirror: asyncio.Queue | None = None) -> Emit:
-    async def emit(event: str, data: dict) -> None:
+def persist_emitter(thread_id: str, user_id: str) -> Emit:
+    """Synchronous emitter: each event is one short DB insert (called from the graph's worker thread)."""
+    def emit(event: str, data: dict) -> None:
         db = SessionLocal()
         try:
-            row = RunEvent(thread_id=thread_id, user_id=user_id, event=event, data=to_jsonable(data))
-            db.add(row)
+            db.add(RunEvent(thread_id=thread_id, user_id=user_id, event=event, data=to_jsonable(data)))
             db.commit()
-            if mirror is not None:
-                await mirror.put({"id": row.id, "event": event, "data": row.data})
         finally:
             db.close()
     return emit
+
+
+def _poll(thread_id: str, user_id: str, last: int) -> tuple[list[tuple[int, str, dict]], str | None]:
+    db = SessionLocal()
+    try:
+        rows = [(r.id, r.event, r.data) for r in db.scalars(select(RunEvent).where(
+            RunEvent.thread_id == thread_id, RunEvent.user_id == user_id, RunEvent.id > last
+        ).order_by(RunEvent.id))]
+        run = db.get(Run, thread_id)
+        return rows, (run.status if run else None)
+    finally:
+        db.close()
 
 
 def _fmt(row_id: int, event: str, data: dict) -> dict:
     return {"id": str(row_id), "event": event, "data": json.dumps(data, default=str)}
 
 
-async def sse_events(thread_id: str, user_id: str, after: int = 0, poll_s: float = 0.25,
-                     max_wait_s: float = 600.0) -> AsyncIterator[dict]:
-    """Replay persisted events after `after`, then tail until a terminal event for a non-running run."""
+async def sse_events(thread_id: str, user_id: str, after: int = 0, poll_s: float = 0.4,
+                     max_wait_s: float = 280.0) -> AsyncIterator[dict]:
+    """Replay persisted events after `after`, then tail until a terminal event for a settled run.
+    DB polling runs in the threadpool so the event loop never blocks on the database."""
+    from starlette.concurrency import run_in_threadpool
     waited = 0.0
+    idle = 0.0
     last = after
+    last_event = None
     while True:
-        db = SessionLocal()
-        try:
-            rows = list(db.scalars(select(RunEvent).where(
-                RunEvent.thread_id == thread_id, RunEvent.user_id == user_id, RunEvent.id > last
-            ).order_by(RunEvent.id)))
-            run = db.get(Run, thread_id)
-            status = run.status if run else None
-        finally:
-            db.close()
-        terminal_seen = False
-        for r in rows:
-            last = r.id
-            yield _fmt(r.id, r.event, r.data)
-            if r.event in TERMINAL_EVENTS:
-                terminal_seen = True
-        if terminal_seen and status not in ("queued", "running"):
+        rows, status = await run_in_threadpool(_poll, thread_id, user_id, last)
+        for rid, event, data in rows:
+            last, last_event = rid, event
+            yield _fmt(rid, event, data)
+        idle = 0.0 if rows else idle + poll_s
+        settled = status not in ("queued", "running")
+        if settled and last_event in TERMINAL_EVENTS:
             return
-        if not rows and status in ("done", "error", "interrupted", "pending_retry") and last > 0 and after >= 0:
-            # nothing new and run already settled: close so EventSource doesn't spin
-            if waited > 1.0:
-                return
-        if run is None and waited > 5.0:
+        if settled and idle >= 5.0:
+            return  # settled run with nothing more to send (e.g. reconnect after the final event)
+        if status is None and waited > 5.0:
             yield _fmt(0, "error", {"message": "run not found"})
             return
         await asyncio.sleep(poll_s)

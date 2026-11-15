@@ -1,0 +1,42 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	read_messages(read_messages)
+	classify_intent(classify_intent)
+	draft_reply(draft_reply)
+	compliance(compliance)
+	approval(approval)
+	send(send)
+	needs_attention(needs_attention)
+	dead_letter(dead_letter)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> read_messages;
+	approval -.-> __end__;
+	approval -.-> dead_letter;
+	approval -.-> needs_attention;
+	approval -.-> send;
+	classify_intent -.-> __end__;
+	classify_intent -.-> dead_letter;
+	classify_intent -.-> draft_reply;
+	classify_intent -.-> needs_attention;
+	compliance -.-> approval;
+	compliance -.-> dead_letter;
+	compliance -.-> needs_attention;
+	draft_reply -.-> compliance;
+	draft_reply -.-> dead_letter;
+	draft_reply -.-> needs_attention;
+	read_messages -.-> classify_intent;
+	read_messages -.-> dead_letter;
+	read_messages -.-> needs_attention;
+	send -.-> __end__;
+	send -.-> dead_letter;
+	send -.-> needs_attention;
+	dead_letter --> __end__;
+	needs_attention --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

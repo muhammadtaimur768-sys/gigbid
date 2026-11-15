@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from ..auth.security import get_current_user
 from ..db import Approval, InboxItem, Proposal, Run, User, get_db
 from ..deps import marketplace_token, trace_id
-from ..graphs import runtime, thread_config
+from ..graphs import get_snapshot, runtime, thread_config
 from ..integrations import first_attr
 from ..schemas import (ApprovalOut, ApproveIn, EditIn, PendingApprovalOut, PipelineCard, PipelineOut, ProposalOut,
                        RegenerateIn, RegenerateOut, RejectIn, ResumeOut, StateViewOut)
@@ -37,7 +37,7 @@ async def snapshot(run: Run, user: User):
     graph = runtime.graph_for(run.kind)
     if graph is None:
         raise HTTPException(503, f"{run.kind} graph unavailable")
-    return await graph.aget_state(thread_config(run.thread_id, user.id, run.trace_id, user.persona))
+    return await get_snapshot(graph, thread_config(run.thread_id, user.id, run.trace_id, user.persona))
 
 
 def approvals_for(db: Session, user: User, thread_id: str) -> list[ApprovalOut]:

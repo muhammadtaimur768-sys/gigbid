@@ -1,0 +1,82 @@
+{
+  "groq": {
+    "agent": {
+      "n": 14,
+      "reply_rate": 0.4286,
+      "interview_rate": 0.2857,
+      "hire_rate": 0.2143,
+      "mean_reply_prob": 0.5657
+    },
+    "generic_template_baseline": {
+      "n": 14,
+      "reply_rate": 0.4286,
+      "interview_rate": 0.2857,
+      "hire_rate": 0.2143,
+      "mean_reply_prob": 0.3328
+    }
+  },
+  "groq_small": {
+    "agent": {
+      "n": 14,
+      "reply_rate": 0.3571,
+      "interview_rate": 0.2143,
+      "hire_rate": 0.1429,
+      "mean_reply_prob": 0.6036
+    },
+    "generic_template_baseline": {
+      "n": 14,
+      "reply_rate": 0.4286,
+      "interview_rate": 0.2857,
+      "hire_rate": 0.2143,
+      "mean_reply_prob": 0.3328
+    }
+  },
+  "heuristic": {
+    "agent": {
+      "n": 384,
+      "reply_rate": 0.6641,
+      "interview_rate": 0.4792,
+      "hire_rate": 0.2682,
+      "mean_reply_prob": 0.6334
+    },
+    "generic_template_baseline": {
+      "n": 384,
+      "reply_rate": 0.3203,
+      "interview_rate": 0.1719,
+      "hire_rate": 0.0859,
+      "mean_reply_prob": 0.3282
+    }
+  },
+  "ollama_mistral": {
+    "agent": {
+      "n": 5,
+      "reply_rate": 0.6,
+      "interview_rate": 0.4,
+      "hire_rate": 0.4,
+      "mean_reply_prob": 0.6049
+    },
+    "generic_template_baseline": {
+      "n": 5,
+      "reply_rate": 0.8,
+      "interview_rate": 0.6,
+      "hire_rate": 0.4,
+      "mean_reply_prob": 0.2949
+    }
+  },
+  "ollama_qwen": {
+    "agent": {
+      "n": 5,
+      "reply_rate": 0.8,
+      "interview_rate": 0.6,
+      "hire_rate": 0.2,
+      "mean_reply_prob": 0.6049
+    },
+    "generic_template_baseline": {
+      "n": 5,
+      "reply_rate": 0.8,
+      "interview_rate": 0.6,
+      "hire_rate": 0.4,
+      "mean_reply_prob": 0.2949
+    }
+  }
+}

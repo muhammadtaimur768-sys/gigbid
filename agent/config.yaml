@@ -1,0 +1,289 @@
+# GigBid agent configuration. Every model, threshold and budget lives here, never in code.
+# LLM_PROVIDER env overrides the provider for all nodes: heuristic | ollama | groq | openrouter.
+profile: open
+
+# Node groups: cheap nodes run on the small model, strong nodes on the best affordable model.
+node_groups:
+  cheap: [scout, analyst, risk, matcher, pricing, verifier, compliance, intent, decide]
+  strong: [writer, critic, liaison]
+
+profiles:
+  open:
+    # Local, open-weight models served by Ollama.
+    defaults: &open_cheap
+      provider: ollama
+      model: qwen2.5:7b-instruct-q4_K_M
+      base_url_env: OLLAMA_BASE_URL
+      base_url_default: http://localhost:11434
+      temperature: 0.1
+      timeout_s: 120
+      max_tokens: 700
+      fallback: null
+    nodes:
+      scout: *open_cheap
+      analyst: *open_cheap
+      risk: *open_cheap
+      matcher: *open_cheap
+      pricing: *open_cheap
+      verifier: *open_cheap
+      compliance: *open_cheap
+      intent: *open_cheap
+      decide: *open_cheap
+      writer: &open_strong
+        provider: ollama
+        model: qwen2.5:7b-instruct-q4_K_M
+        base_url_env: OLLAMA_BASE_URL
+        base_url_default: http://localhost:11434
+        temperature: 0.4
+        timeout_s: 180
+        max_tokens: 900
+        fallback: null
+      critic: *open_strong
+      liaison: *open_strong
+  open_mistral:
+    # Second open configuration used for the model comparison (decision_eval).
+    defaults: &mis
+      provider: ollama
+      model: mistral:7b-instruct-v0.3-q4_K_M
+      base_url_env: OLLAMA_BASE_URL
+      base_url_default: http://localhost:11434
+      temperature: 0.2
+      timeout_s: 180
+      max_tokens: 900
+      fallback: null
+    nodes:
+      scout: *mis
+      analyst: *mis
+      risk: *mis
+      matcher: *mis
+      pricing: *mis
+      verifier: *mis
+      compliance: *mis
+      intent: *mis
+      decide: *mis
+      writer: *mis
+      critic: *mis
+      liaison: *mis
+  paid:
+    # Optional. Any API model; used only where it beats the open profile enough to justify cost.
+    defaults: &paid_cheap
+      provider: openai_compat
+      model: gpt-4o-mini
+      base_url_env: OPENAI_BASE_URL
+      base_url_default: https://api.openai.com/v1
+      api_key_env: OPENAI_API_KEY
+      temperature: 0.1
+      timeout_s: 60
+      max_tokens: 700
+      fallback: null
+    nodes:
+      scout: *paid_cheap
+      analyst: *paid_cheap
+      risk: *paid_cheap
+      matcher: *paid_cheap
+      pricing: *paid_cheap
+      verifier: *paid_cheap
+      compliance: *paid_cheap
+      intent: *paid_cheap
+      decide: *paid_cheap
+      writer: &paid_strong
+        provider: openai_compat
+        model: gpt-4o
+        base_url_env: OPENAI_BASE_URL
+        base_url_default: https://api.openai.com/v1
+        api_key_env: OPENAI_API_KEY
+        temperature: 0.4
+        timeout_s: 90
+        max_tokens: 900
+        fallback: {provider: openai_compat, model: gpt-4o-mini}
+      critic: *paid_strong
+      liaison: *paid_strong
+
+# Deploy overrides selected by env LLM_PROVIDER (hosted open-weight providers, no GPU needed).
+deploy_overrides:
+  groq:
+    provider: openai_compat
+    base_url_default: https://api.groq.com/openai/v1
+    base_url_env: GROQ_BASE_URL
+    api_key_env: GROQ_API_KEY
+    cheap_model: openai/gpt-oss-20b
+    strong_model: openai/gpt-oss-120b
+    # cheap nodes fall back to the small model; strong nodes fall back to the small model too
+    fallback_model: openai/gpt-oss-20b
+    timeout_s: 45
+    max_tokens: 2000
+    reasoning_effort: low
+  groq_small:
+    # Comparison config A: gpt-oss-20b everywhere (cheap and strong nodes).
+    provider: openai_compat
+    base_url_default: https://api.groq.com/openai/v1
+    base_url_env: GROQ_BASE_URL
+    api_key_env: GROQ_API_KEY
+    cheap_model: openai/gpt-oss-20b
+    strong_model: openai/gpt-oss-20b
+    fallback_model: openai/gpt-oss-20b
+    timeout_s: 45
+    max_tokens: 2000
+    reasoning_effort: low
+  groq_big:
+    # gpt-oss-120b on every node (architecture comparison: same model for all three designs).
+    provider: openai_compat
+    base_url_default: https://api.groq.com/openai/v1
+    base_url_env: GROQ_BASE_URL
+    api_key_env: GROQ_API_KEY
+    cheap_model: openai/gpt-oss-120b
+    strong_model: openai/gpt-oss-120b
+    fallback_model: openai/gpt-oss-120b
+    timeout_s: 60
+    max_tokens: 2000
+    reasoning_effort: low
+  groq_qwen:
+    # Single-model config used for the architecture comparison (separate Groq quota from gpt-oss).
+    provider: openai_compat
+    base_url_default: https://api.groq.com/openai/v1
+    base_url_env: GROQ_BASE_URL
+    api_key_env: GROQ_API_KEY
+    cheap_model: qwen/qwen3.8-27b
+    strong_model: qwen/qwen3.8-27b
+    fallback_model: qwen/qwen3.8-27b
+    timeout_s: 60
+    max_tokens: 1500
+    reasoning_effort: none
+  openrouter:
+    provider: openai_compat
+    base_url_default: https://openrouter.ai/api/v1
+    base_url_env: OPENROUTER_BASE_URL
+    api_key_env: OPENROUTER_API_KEY
+    cheap_model: openai/gpt-oss-20b
+    strong_model: openai/gpt-oss-120b
+    fallback_model: openai/gpt-oss-20b
+    timeout_s: 60
+  ollama:
+    provider: ollama
+  heuristic:
+    provider: heuristic
+
+# USD per 1M tokens (input, output). Local models cost 0 USD (hardware reported separately).
+# Hosted list prices: check the provider's pricing page before relying on these values.
+pricing_usd_per_mtok:
+  "openai/gpt-oss-20b": [0.10, 0.50]
+  "openai/gpt-oss-120b": [0.15, 0.75]
+  "gpt-4o-mini": [0.15, 0.60]
+  "gpt-4o": [2.50, 10.00]
+  default_local: [0.0, 0.0]
+
+rag:
+  variant: null          # null -> the RAG package default (chosen by evals/results/rag_*.json)
+  k_per_requirement: 3
+  strong_coverage: 0.75  # share of requirement terms found in the best evidence → "strong"
+  partial_coverage: 0.4
+  max_requirements: 8
+
+thresholds:
+  min_skill_overlap: 0.6 # share of listed job skills in the profile; below -> skip (off-profile)
+  fit_bid: 0.45          # fit_score >= fit_bid -> bid
+  fit_watch: 0.30        # fit_watch <= fit_score < fit_bid -> watch
+  client_score_min: 0.25 # below this client score -> skip
+  min_hourly_ratio_of_floor: 1.0  # hourly budget_max below floor * ratio -> skip
+  min_fixed_budget: 150  # fixed jobs with budget_max below this -> skip
+  fixed_floor_ratio: 0.6 # fixed budget_max < est_hours * hourly_floor * ratio -> skip (below floor)
+  scam_flag_high_blocks: true
+
+pricing:
+  llm_rationale: false
+  # scoping estimate of effort from the posted timeline (hours), used for fixed-price jobs
+  hours_by_duration: {"less than 1 month": 20, "1 to 3 months": 60, "3 to 6 months": 180, "more than 6 months": 400}
+  hours_range_by_duration: {"less than 1 month": [5, 30], "1 to 3 months": [30, 120], "3 to 6 months": [120, 300], "more than 6 months": [300, 800]}
+  fixed_cap_ratio: 1.1   # stay within budget_max * ratio unless the floor for the estimated effort is higher
+
+matcher:
+  llm_judge: false
+  proof_types: [case_study, repo, code, review, cv]   # past proposals are not proof of experience
+  skill_overlap_weight: 0.5       # optional LLM strength judgement for borderline requirements
+
+scout:
+  llm_summary: false     # one-line inbox summary by LLM (off: first sentence of the post)
+
+# Provider rate-limit politeness for hosted free tiers (seconds between calls, retries on 429).
+rate_limit:
+  min_interval_s: {groq: 0.5, groq_small: 0.5, groq_qwen: 0.5, groq_big: 0.5, openrouter: 0.5}
+  max_429_retries: 4
+  backoff_s: 4.0
+
+risk:
+  # Scam heuristics (job-side). Injection and marketplace-rule patterns come from data/policy_pack/rules.yaml.
+  scam_patterns:
+    scam: ['receive payments? on (our|my|their) behalf', 'using your (id|identity|passport)', 'id card', 'bank details', 'send (me )?your (full name|home address|address|id|passport|ssn|social security)', 'easy job!?.{0,40}\$\d+', '\$\d{2,}/hr for only', 'pay (a|an) (small )?(registration|onboarding|equipment) fee']
+    free_work: ['free (sample|test|trial) (work|task|project)', 'unpaid (test|trial|sample)', 'test task.{0,30}(unpaid|free)', 'complete a (small )?free']
+    off_platform_contact: ['telegram', 'whatsapp', 'wechat', 'signal app', 'skype me', 'contact me (directly )?(at|on|via)', 'text me']
+    off_platform_payment: ['outside (of )?(upwork|the platform)', 'pay (you )?(via|through|by) (crypto|bitcoin|usdt|paypal|wire|gift ?card)', 'bank transfer', 'crypto', 'western union', 'gift ?card']
+    unrealistic_budget: ['earn \$?\d{3,}.{0,10}(per|a) (day|week)', 'easy money', 'no experience (needed|required).{0,40}\$\d{3,}', 'guaranteed (income|pay)']
+  scam_min_high_flags: 1
+  low_client:
+    min_avg_rating: 3.5
+    require_payment_verified: true
+  injection_fallback_patterns: ['ignore (all )?(previous|prior|above) instructions', 'disregard (the )?(previous|above|system)', 'you are now', 'system prompt', 'include your (email|phone|whatsapp|telegram)']
+
+writer:
+  max_chars: 2400        # stays under the policy-pack character limit
+  min_chars: 450
+  strategies:
+    A: {name: evidence_first, opening: problem_restatement, evidence_items: 3, length: medium}
+    B: {name: short_direct, opening: question, evidence_items: 1, length: short}
+  default_strategy: A
+  banned_openings: ['dear sir', 'dear hiring manager', 'i am a passionate', 'hi, i read your job', 'hello, i read your job', 'to whom it may concern', 'greetings']
+
+critic:
+  max_rounds: 2
+  min_score: 7.0
+
+budgets:
+  max_steps: 40          # node executions per thread
+  max_tokens: 60000      # LLM tokens per thread
+  conversation_max_steps: 20
+  conversation_max_tokens: 20000
+
+retry:
+  max_attempts: 3
+  initial_interval: 0.2
+  backoff_factor: 2.0
+  max_interval: 5.0
+
+autonomy:
+  default: suggest       # suggest | auto_skip  (auto-send is never allowed)
+  levels: [suggest, auto_skip]
+  auto_skip_below_fit: 0.2
+
+memory:
+  style:
+    min_occurrences: 2   # an edit pattern must appear in >= 2 edits before promotion
+    watch_words: [passionate, guru, ninja, rockstar, "dear sir", "hope this finds you well", "i am confident"]
+    shorten_ratio: 0.8   # edited length <= 0.8 * original counts as "prefer_shorter"
+  outcome:
+    min_positive_events: 3   # replied+interview+hired events per category before promotion
+
+tools:
+  # Per-agent MCP tool allowlists (least privilege).
+  allowlist:
+    scout: [search_jobs, get_job, get_client_history]
+    risk: [get_client_history]
+    matcher: [search_evidence, get_case_study, list_skills]
+    pricing: [get_market_stats, get_connects_balance]
+    preview: [submit_proposal, create_proposal_draft, get_connects_balance]
+    submit: [submit_proposal]
+    liaison: [list_threads, list_messages, send_message, free_slots, create_interview_hold, create_email_draft]
+    outcomes: [list_proposals]
+    react_baseline: [search_jobs, get_job, get_client_history, get_market_stats, search_evidence, get_case_study]
+  servers:
+    portfolio: {url_env: MCP_PORTFOLIO_URL, module: mcp_servers.portfolio.server}
+    marketplace: {url_env: MCP_MARKETPLACE_URL, module: mcp_servers.marketplace.server, token_env: MCP_MARKETPLACE_TOKEN}
+    workspace: {url_env: MCP_WORKSPACE_URL, module: mcp_servers.workspace.server}
+
+policy:
+  rules_path: data/policy_pack/rules.yaml
+  updates_dir: data/policy_pack/updates
+
+personas:
+  default: aiml
+  freelancer_ids: {aiml: fl-aiml, fullstack: fl-fullstack, data: fl-data}
+  tokens: {aiml: gs-aiml-token, fullstack: gs-fullstack-token, data: gs-data-token}

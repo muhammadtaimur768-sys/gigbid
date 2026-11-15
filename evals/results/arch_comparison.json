@@ -1,0 +1,63 @@
+{
+  "provider": "groq_big",
+  "n_jobs": 8,
+  "job_ids": [
+    "d-aiml-139",
+    "d-aiml-130",
+    "d-aiml-122",
+    "d-aiml-020",
+    "d-aiml-174",
+    "d-aiml-031",
+    "d-aiml-131",
+    "d-aiml-001"
+  ],
+  "results": {
+    "a_react_single_agent": {
+      "n": 8,
+      "errors": 1,
+      "bid_skip_accuracy": 0.8571,
+      "scam_recall": 1.0,
+      "proposals": 1,
+      "unsupported_claims_per_proposal_sent": 2,
+      "compliance_violations_caught": 0,
+      "compliance_violations_in_sent_text": 0,
+      "gigsim_reply_rate": 0.0,
+      "gigsim_n_scored": 1,
+      "tokens_per_job_mean": 2915.9,
+      "latency_s_p50": 12.74,
+      "latency_s_p95": 33.5
+    },
+    "b_langgraph_supervisor": {
+      "n": 8,
+      "errors": 1,
+      "bid_skip_accuracy": 1.0,
+      "scam_recall": 1.0,
+      "proposals": 2,
+      "unsupported_claims_per_proposal_sent": 0.5,
+      "compliance_violations_caught": 0,
+      "compliance_violations_in_sent_text": 0,
+      "gigsim_reply_rate": 0.5,
+      "gigsim_n_scored": 2,
+      "tokens_per_job_mean": 4216.6,
+      "latency_s_p50": 35.72,
+      "latency_s_p95": 64.855
+    },
+    "c_hand_built_graph": {
+      "n": 8,
+      "errors": 0,
+      "bid_skip_accuracy": 1.0,
+      "scam_recall": 1.0,
+      "proposals": 3,
+      "unsupported_claims_per_proposal_sent": 0,
+      "compliance_violations_caught": 0,
+      "compliance_violations_in_sent_text": 0,
+      "gigsim_reply_rate": 0.6667,
+      "gigsim_n_scored": 3,
+      "tokens_per_job_mean": 650.5,
+      "latency_s_p50": 61.654,
+      "latency_s_p95": 355.4219
+    }
+  },
+  "model": "openai/gpt-oss-120b",
+  "notes": "n=8 jobs (fixed stratified subset, seed 31), Groq free tier, gpt-oss-120b for every arm because the gpt-oss-20b daily token quota was exhausted by earlier runs and qwen/qwen3.8-27b failed tool-call validation. Per-call LLM failures were not recorded for arm (c); its low token count and p95 latency suggest some nodes hit the 120b quota and used their deterministic fallback. Treat as indicative only."
+}

@@ -1,0 +1,110 @@
+{
+  "config": "heuristic",
+  "description": "deterministic fallbacks, no LLM",
+  "models": {
+    "analyst": null,
+    "risk": null,
+    "writer": null,
+    "critic": null
+  },
+  "n_jobs": 600,
+  "subset": false,
+  "seed": 7,
+  "wall_s": 729.3,
+  "metrics": {
+    "n": 600,
+    "n_errors": 0,
+    "accuracy_bid_vs_not": 0.9767,
+    "bid": {
+      "precision": 0.9922,
+      "recall": 0.9719,
+      "f1": 0.982,
+      "tp": 381,
+      "fp": 3,
+      "fn": 11
+    },
+    "skip": {
+      "precision": 0.9491,
+      "recall": 0.9856,
+      "f1": 0.967,
+      "tp": 205,
+      "fp": 11,
+      "fn": 3
+    },
+    "macro_f1_bid_skip": 0.9745,
+    "watch_count": 0,
+    "skip_recall_by_reason": {
+      "scam": {
+        "n": 48,
+        "skipped": 48
+      },
+      "below_floor": {
+        "n": 38,
+        "skipped": 35
+      },
+      "off_profile": {
+        "n": 108,
+        "skipped": 108
+      },
+      "low_client_quality": {
+        "n": 14,
+        "skipped": 14
+      }
+    },
+    "scam": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 48,
+      "fp": 0,
+      "fn": 0
+    },
+    "injection": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 50,
+      "fp": 0,
+      "fn": 0
+    },
+    "price_in_band": {
+      "n": 384,
+      "in_band": 317,
+      "rate": 0.8255
+    },
+    "evidence_recall_mean": 0.7072,
+    "proposals": 384,
+    "unsupported_claims_per_proposal_before": 0.0625,
+    "unsupported_claims_per_proposal_after": 0,
+    "claims_per_proposal": 2.034,
+    "critic_rounds_mean": 1,
+    "latency_s": {
+      "p50": 0.8585,
+      "p95": 3.5045
+    },
+    "latency_s_proposals": {
+      "p50": 1.354,
+      "p95": 3.8398
+    },
+    "tokens_per_job": {
+      "mean": 0,
+      "p50": 0.0,
+      "p95": 0.0
+    },
+    "tokens_per_proposal_mean": 0,
+    "llm_calls_per_job_mean": 0,
+    "cost_usd_total": 0.0,
+    "cost_usd_per_job": 0.0,
+    "cost_usd_per_proposal": 0.0
+  },
+  "gigsim_outcomes": {
+    "n": 384,
+    "reply_rate": 0.6641,
+    "interview_rate": 0.4792,
+    "hire_rate": 0.2682,
+    "mean_reply_prob": 0.6334
+  },
+  "llm_usage_by_node": {},
+  "output_tokens_per_s": null,
+  "hardware": null
+}

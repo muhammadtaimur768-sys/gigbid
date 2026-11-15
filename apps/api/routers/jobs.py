@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 from ..auth.security import get_current_user
 from ..db import InboxItem, Run, User, get_db, utcnow
 from ..deps import marketplace_token, trace_id, user_settings
-from ..graphs import runtime, thread_config
+from ..graphs import get_snapshot, runtime, thread_config
 from ..schemas import AnalyseOut, InboxItemOut, InboxOut, JobDetailOut, OkOut, SkipIn, StateViewOut
 from ..services import marketplace
 from ..services.fit import quick_fit
@@ -127,7 +127,7 @@ async def job_detail(job_id: str, user: User = Depends(get_current_user), db: Se
     run = db.scalar(select(Run).where(Run.user_id == user.id, Run.job_id == job_id, Run.kind == "bid"))
     analysis = None
     if run and runtime.bid_graph is not None:
-        snap = await runtime.bid_graph.aget_state(thread_config(run.thread_id, user.id, run.trace_id, user.persona))
+        snap = await get_snapshot(runtime.bid_graph, thread_config(run.thread_id, user.id, run.trace_id, user.persona))
         analysis = StateViewOut(**state_view(snap.values if snap else {}))
     return JobDetailOut(job=job, inbox=item_out(it) if it else None, client=client, analysis=analysis,
                         run_status=run.status if run else None, thread_id=run.thread_id if run else None)
