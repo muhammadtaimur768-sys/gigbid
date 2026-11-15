@@ -1,0 +1,22 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd apps/web && npm ci && npm run build",
+  "outputDirectory": "apps/web/dist",
+  "installCommand": "echo skip-root-install",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 300,
+      "memory": 1024,
+      "excludeFiles": "{.venv/**,apps/web/node_modules/**,tests/**,evals/results/**,data/processed/models/**,**/__pycache__/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index.py" },
+    { "source": "/gigsim/:path*", "destination": "/api/index.py" },
+    { "source": "/mcp/:path*", "destination": "/api/index.py" },
+    { "source": "/((?!assets/).*)", "destination": "/index.html" }
+  ],
+  "crons": [
+    { "path": "/api/cron/scout", "schedule": "0 */6 * * *" }
+  ]
+}
