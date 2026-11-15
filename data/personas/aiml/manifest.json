@@ -1,0 +1,2903 @@
+[
+  {
+    "id": "aiml-case-01",
+    "title": "Claims Triage Assistant",
+    "project": "claims-triage-assistant",
+    "skills": [
+      "rag",
+      "python"
+    ],
+    "date": "2025-02",
+    "client_industry": "insurance",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-01.md"
+  },
+  {
+    "id": "aiml-case-02",
+    "title": "Support Copilot for a SaaS Help Desk",
+    "project": "support-copilot",
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases"
+    ],
+    "date": "2023-07",
+    "client_industry": "saas",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-02.md"
+  },
+  {
+    "id": "aiml-case-03",
+    "title": "Contract Clause Extraction",
+    "project": "contract-clause-extractor",
+    "skills": [
+      "nlp",
+      "huggingface transformers"
+    ],
+    "date": "2023-07",
+    "client_industry": "legal",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-03.md"
+  },
+  {
+    "id": "aiml-case-04",
+    "title": "Weld Defect Detection on the Line",
+    "project": "weld-defect-detection",
+    "skills": [
+      "computer vision",
+      "pytorch"
+    ],
+    "date": "2025-05",
+    "client_industry": "manufacturing",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-04.md"
+  },
+  {
+    "id": "aiml-case-05",
+    "title": "Store-Level Demand Forecasting",
+    "project": "retail-demand-forecast",
+    "skills": [
+      "time series forecasting",
+      "python"
+    ],
+    "date": "2024-10",
+    "client_industry": "retail",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-05.md"
+  },
+  {
+    "id": "aiml-case-06",
+    "title": "Brand-Voice Fine-Tune for Marketing Copy",
+    "project": "llm-tone-finetune",
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers"
+    ],
+    "date": "2023-01",
+    "client_industry": "marketing",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-06.md"
+  },
+  {
+    "id": "aiml-case-07",
+    "title": "KYC Review Agent with Human Approval",
+    "project": "kyc-agent",
+    "skills": [
+      "langgraph",
+      "langchain"
+    ],
+    "date": "2026-07",
+    "client_industry": "fintech",
+    "outcome": "extended",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-07.md"
+  },
+  {
+    "id": "aiml-case-08",
+    "title": "Radiology Report Structuring",
+    "project": "radiology-report-nlp",
+    "skills": [
+      "nlp",
+      "python"
+    ],
+    "date": "2023-02",
+    "client_industry": "healthcare",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-08.md"
+  },
+  {
+    "id": "aiml-case-09",
+    "title": "Subscriber Churn Prediction",
+    "project": "churn-model",
+    "skills": [
+      "scikit-learn",
+      "python"
+    ],
+    "date": "2022-12",
+    "client_industry": "media",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-09.md"
+  },
+  {
+    "id": "aiml-case-10",
+    "title": "MLOps Platform Migration",
+    "project": "mlops-platform",
+    "skills": [
+      "mlops",
+      "kubernetes"
+    ],
+    "date": "2025-07",
+    "client_industry": "logistics",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-10.md"
+  },
+  {
+    "id": "aiml-case-11",
+    "title": "Semantic Product Search",
+    "project": "product-search-embeddings",
+    "skills": [
+      "vector databases",
+      "huggingface transformers"
+    ],
+    "date": "2024-05",
+    "client_industry": "ecommerce",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-11.md"
+  },
+  {
+    "id": "aiml-case-12",
+    "title": "Invoice Data Extraction",
+    "project": "invoice-extraction",
+    "skills": [
+      "computer vision",
+      "nlp"
+    ],
+    "date": "2024-05",
+    "client_industry": "accounting",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-12.md"
+  },
+  {
+    "id": "aiml-case-13",
+    "title": "Sales Research Agent",
+    "project": "sales-email-agent",
+    "skills": [
+      "langgraph",
+      "prompt engineering"
+    ],
+    "date": "2026-03",
+    "client_industry": "saas",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-13.md"
+  },
+  {
+    "id": "aiml-case-14",
+    "title": "Real-Time Fraud Scoring API",
+    "project": "fraud-scoring",
+    "skills": [
+      "fastapi",
+      "scikit-learn"
+    ],
+    "date": "2026-02",
+    "client_industry": "fintech",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-14.md"
+  },
+  {
+    "id": "aiml-case-15",
+    "title": "Drone Imagery Crop Health",
+    "project": "crop-yield-cv",
+    "skills": [
+      "computer vision",
+      "aws"
+    ],
+    "date": "2024-07",
+    "client_industry": "agriculture",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-15.md"
+  },
+  {
+    "id": "aiml-case-16",
+    "title": "Grid Load Forecasting",
+    "project": "energy-load-forecast",
+    "skills": [
+      "time series forecasting",
+      "mlops"
+    ],
+    "date": "2026-03",
+    "client_industry": "energy",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-16.md"
+  },
+  {
+    "id": "aiml-case-17",
+    "title": "HR Policy Assistant",
+    "project": "hr-policy-chatbot",
+    "skills": [
+      "rag",
+      "prompt engineering"
+    ],
+    "date": "2023-07",
+    "client_industry": "manufacturing",
+    "outcome": "extended",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-17.md"
+  },
+  {
+    "id": "aiml-case-18",
+    "title": "LLM Evaluation Harness",
+    "project": "eval-harness",
+    "skills": [
+      "model evaluation",
+      "python"
+    ],
+    "date": "2023-01",
+    "client_industry": "saas",
+    "outcome": "extended",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-18.md"
+  },
+  {
+    "id": "aiml-case-19",
+    "title": "Multilingual Ticket Classifier",
+    "project": "multilingual-classifier",
+    "skills": [
+      "huggingface transformers",
+      "llm fine-tuning"
+    ],
+    "date": "2023-11",
+    "client_industry": "travel",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/aiml-case-19.md"
+  },
+  {
+    "id": "aiml-repo-01",
+    "type": "repo",
+    "title": "doc-sieve",
+    "project": "doc-sieve",
+    "skills": [
+      "rag",
+      "python"
+    ],
+    "date": "2025-02",
+    "client_industry": "insurance",
+    "outcome": null,
+    "path": "repos/aiml-repo-01",
+    "files": [
+      "README.md",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "aiml-repo-02",
+    "type": "repo",
+    "title": "clausewise",
+    "project": "clausewise",
+    "skills": [
+      "nlp"
+    ],
+    "date": "2023-07",
+    "client_industry": "legal",
+    "outcome": null,
+    "path": "repos/aiml-repo-02",
+    "files": [
+      "README.md",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "aiml-repo-03",
+    "type": "repo",
+    "title": "weldscope",
+    "project": "weldscope",
+    "skills": [
+      "computer vision"
+    ],
+    "date": "2025-05",
+    "client_industry": "manufacturing",
+    "outcome": null,
+    "path": "repos/aiml-repo-03",
+    "files": [
+      "README.md",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "aiml-repo-04",
+    "type": "repo",
+    "title": "kyc-graph",
+    "project": "kyc-graph",
+    "skills": [
+      "langgraph"
+    ],
+    "date": "2026-07",
+    "client_industry": "fintech",
+    "outcome": null,
+    "path": "repos/aiml-repo-04",
+    "files": [
+      "README.md",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "aiml-repo-05",
+    "type": "repo",
+    "title": "model-hangar",
+    "project": "model-hangar",
+    "skills": [
+      "mlops",
+      "kubernetes"
+    ],
+    "date": "2025-07",
+    "client_industry": "logistics",
+    "outcome": null,
+    "path": "repos/aiml-repo-05",
+    "files": [
+      "README.md",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "aiml-repo-06",
+    "type": "repo",
+    "title": "evalkit",
+    "project": "evalkit",
+    "skills": [
+      "model evaluation"
+    ],
+    "date": "2023-01",
+    "client_industry": "saas",
+    "outcome": null,
+    "path": "repos/aiml-repo-06",
+    "files": [
+      "README.md",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "aiml-cv",
+    "type": "cv",
+    "title": "CV of Amina Okafor",
+    "project": null,
+    "skills": [
+      "python",
+      "pytorch",
+      "llm fine-tuning",
+      "rag",
+      "langchain",
+      "langgraph",
+      "vector databases",
+      "computer vision",
+      "nlp",
+      "mlops",
+      "docker",
+      "fastapi",
+      "aws",
+      "huggingface transformers"
+    ],
+    "date": "2026-10",
+    "client_industry": null,
+    "outcome": null,
+    "path": "cv.md"
+  },
+  {
+    "id": "aiml-review-01",
+    "type": "review",
+    "title": "Review by Marcus Brown",
+    "project": "Grid Load Forecasting",
+    "skills": [],
+    "date": "2026-03",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-02",
+    "type": "review",
+    "title": "Review by Elena Kim",
+    "project": "Semantic Product Search",
+    "skills": [],
+    "date": "2024-05",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-03",
+    "type": "review",
+    "title": "Review by Mila Fischer",
+    "project": "Sales Research Agent",
+    "skills": [],
+    "date": "2026-03",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-04",
+    "type": "review",
+    "title": "Review by Victor Haddad",
+    "project": "Drone Imagery Crop Health",
+    "skills": [],
+    "date": "2024-07",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-05",
+    "type": "review",
+    "title": "Review by Omar Schmidt",
+    "project": "Support Copilot for a SaaS Help Desk",
+    "skills": [],
+    "date": "2023-07",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-06",
+    "type": "review",
+    "title": "Review by Sofia Fischer",
+    "project": "Invoice Data Extraction",
+    "skills": [],
+    "date": "2024-05",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-07",
+    "type": "review",
+    "title": "Review by Ravi Novak",
+    "project": "HR Policy Assistant",
+    "skills": [],
+    "date": "2023-07",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-08",
+    "type": "review",
+    "title": "Review by Marcus Tanaka",
+    "project": "Weld Defect Detection on the Line",
+    "skills": [],
+    "date": "2025-05",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-09",
+    "type": "review",
+    "title": "Review by Grace Berg",
+    "project": "Store-Level Demand Forecasting",
+    "skills": [],
+    "date": "2024-10",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-10",
+    "type": "review",
+    "title": "Review by Maya Haddad",
+    "project": "Brand-Voice Fine-Tune for Marketing Copy",
+    "skills": [],
+    "date": "2023-01",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-11",
+    "type": "review",
+    "title": "Review by Elena Fischer",
+    "project": "LLM Evaluation Harness",
+    "skills": [],
+    "date": "2023-01",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-review-12",
+    "type": "review",
+    "title": "Review by Victor Berg",
+    "project": "MLOps Platform Migration",
+    "skills": [],
+    "date": "2025-07",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "aiml-prop-001",
+    "type": "proposal",
+    "title": "Build an internal Q&A assistant for fintech policies",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2026-05-22",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-002",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2026-09-06",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-003",
+    "type": "proposal",
+    "title": "Document question-answering bot with citations",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2024-04-03",
+    "client_industry": "travel",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-004",
+    "type": "proposal",
+    "title": "LangGraph agent to automate saas back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2025-08-10",
+    "client_industry": "saas",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-005",
+    "type": "proposal",
+    "title": "Object detection for warehouse camera feeds",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2026-09-06",
+    "client_industry": "travel",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-006",
+    "type": "proposal",
+    "title": "RAG chatbot over our media documents",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2024-09-13",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-007",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2024-12-10",
+    "client_industry": "fintech",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-008",
+    "type": "proposal",
+    "title": "Document question-answering bot with citations",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2025-12-11",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-009",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2026-03-20",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-010",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2026-02-11",
+    "client_industry": "energy",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-011",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2024-07-16",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-012",
+    "type": "proposal",
+    "title": "Build an internal Q&A assistant for real estate policies",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2024-03-05",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-013",
+    "type": "proposal",
+    "title": "SEO blog articles about healthcare",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2025-07-14",
+    "client_industry": "healthcare",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-014",
+    "type": "proposal",
+    "title": "Fine-tune an open LLM for retail text classification",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2024-01-17",
+    "client_industry": "retail",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-015",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2026-09-09",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-016",
+    "type": "proposal",
+    "title": "Fine-tune an open LLM for retail text classification",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2025-12-05",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-017",
+    "type": "proposal",
+    "title": "Computer vision model for healthcare defect detection",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2024-12-22",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-018",
+    "type": "proposal",
+    "title": "Data entry from PDFs into spreadsheets",
+    "project": null,
+    "skills": [
+      "data entry",
+      "virtual assistance",
+      "customer support"
+    ],
+    "date": "2026-09-16",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-019",
+    "type": "proposal",
+    "title": "Demand forecasting model for our healthcare business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2024-07-12",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-020",
+    "type": "proposal",
+    "title": "Demand forecasting model for our nonprofit business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2024-12-07",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-021",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-10-25",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-022",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-06-01",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-023",
+    "type": "proposal",
+    "title": "RAG chatbot over our media documents",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2025-10-06",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-024",
+    "type": "proposal",
+    "title": "LangGraph agent to automate media back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2024-07-22",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-025",
+    "type": "proposal",
+    "title": "RAG chatbot over our fintech documents",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2025-10-12",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-026",
+    "type": "proposal",
+    "title": "NLP pipeline to extract entities from media contracts",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2026-01-12",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-027",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2026-05-28",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-028",
+    "type": "proposal",
+    "title": "Object detection for warehouse camera feeds",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2024-12-17",
+    "client_industry": "ecommerce",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-029",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2024-10-11",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-030",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-08-04",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-031",
+    "type": "proposal",
+    "title": "LangGraph agent to automate hospitality back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2026-07-09",
+    "client_industry": "hospitality",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-032",
+    "type": "proposal",
+    "title": "Demand forecasting model for our hospitality business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-10-13",
+    "client_industry": "hospitality",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-033",
+    "type": "proposal",
+    "title": "Build an internal Q&A assistant for education policies",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2024-04-01",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-034",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2025-02-09",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-035",
+    "type": "proposal",
+    "title": "Unity developer for a mobile puzzle game",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2025-05-27",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-036",
+    "type": "proposal",
+    "title": "Multi-step AI agent with human approval for healthcare",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2025-01-18",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-037",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-09-17",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-038",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2024-11-09",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-039",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2025-09-07",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-040",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2026-02-04",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-041",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-12-08",
+    "client_industry": "saas",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-042",
+    "type": "proposal",
+    "title": "Build a 2D game prototype in Unity",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2025-03-27",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-043",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-07-05",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-044",
+    "type": "proposal",
+    "title": "Build an executive sales dashboard in Power BI",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-04-05",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-045",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2026-08-13",
+    "client_industry": "fintech",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-046",
+    "type": "proposal",
+    "title": "Image classification model for product photos",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2025-04-08",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-047",
+    "type": "proposal",
+    "title": "NLP pipeline to extract entities from hospitality contracts",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-05-24",
+    "client_industry": "hospitality",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-048",
+    "type": "proposal",
+    "title": "Deploy our ML models to production on AWS",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2025-04-04",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-049",
+    "type": "proposal",
+    "title": "Deploy our ML models to production on AWS",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2025-07-05",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-050",
+    "type": "proposal",
+    "title": "Demand forecasting model for our insurance business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-01-16",
+    "client_industry": "insurance",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-051",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2025-03-08",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-052",
+    "type": "proposal",
+    "title": "SEO blog articles about real estate",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2025-02-24",
+    "client_industry": "real estate",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-053",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2024-08-10",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-054",
+    "type": "proposal",
+    "title": "RAG chatbot over our real estate documents",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2025-09-15",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-055",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2024-07-01",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-056",
+    "type": "proposal",
+    "title": "LangGraph agent to automate education back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2026-08-19",
+    "client_industry": "education",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-057",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2025-04-10",
+    "client_industry": "fintech",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-058",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-11-05",
+    "client_industry": "healthcare",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-059",
+    "type": "proposal",
+    "title": "Multi-step AI agent with human approval for logistics",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2025-04-24",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-060",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2024-01-10",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-061",
+    "type": "proposal",
+    "title": "Image classification model for product photos",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2025-12-06",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-062",
+    "type": "proposal",
+    "title": "RAG chatbot over our travel documents",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2024-06-22",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-063",
+    "type": "proposal",
+    "title": "LangGraph agent to automate media back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2025-05-28",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-064",
+    "type": "proposal",
+    "title": "Edit YouTube videos for our logistics channel",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-04-11",
+    "client_industry": "logistics",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-065",
+    "type": "proposal",
+    "title": "Monthly bookkeeping in QuickBooks",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2026-03-04",
+    "client_industry": "insurance",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-066",
+    "type": "proposal",
+    "title": "Monthly bookkeeping in QuickBooks",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2025-05-14",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-067",
+    "type": "proposal",
+    "title": "Logo and brand identity for a ecommerce startup",
+    "project": null,
+    "skills": [
+      "logo design",
+      "adobe illustrator",
+      "branding"
+    ],
+    "date": "2024-08-11",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-068",
+    "type": "proposal",
+    "title": "Demand forecasting model for our real estate business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2026-05-10",
+    "client_industry": "real estate",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-069",
+    "type": "proposal",
+    "title": "Build an internal Q&A assistant for legal policies",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2025-09-02",
+    "client_industry": "legal",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-070",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2024-09-06",
+    "client_industry": "legal",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-071",
+    "type": "proposal",
+    "title": "Image classification model for product photos",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2024-01-03",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-072",
+    "type": "proposal",
+    "title": "Demand forecasting model for our ecommerce business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2024-08-15",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-073",
+    "type": "proposal",
+    "title": "Deploy our ML models to production on AWS",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2026-09-08",
+    "client_industry": "real estate",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-074",
+    "type": "proposal",
+    "title": "LangGraph agent to automate energy back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2024-07-07",
+    "client_industry": "energy",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-075",
+    "type": "proposal",
+    "title": "Deploy our ML models to production on AWS",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2026-08-03",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-076",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our insurance app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-02-22",
+    "client_industry": "insurance",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-077",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-02-04",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-078",
+    "type": "proposal",
+    "title": "LangGraph agent to automate media back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2026-08-06",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-079",
+    "type": "proposal",
+    "title": "Unity developer for a mobile puzzle game",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2025-07-25",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-080",
+    "type": "proposal",
+    "title": "Computer vision model for travel defect detection",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2026-08-27",
+    "client_industry": "travel",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-081",
+    "type": "proposal",
+    "title": "Build an internal Q&A assistant for logistics policies",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2026-08-16",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-082",
+    "type": "proposal",
+    "title": "Demand forecasting model for our nonprofit business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2024-06-03",
+    "client_industry": "nonprofit",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-083",
+    "type": "proposal",
+    "title": "Demand forecasting model for our retail business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2024-10-19",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-084",
+    "type": "proposal",
+    "title": "Deploy our ML models to production on AWS",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2024-01-25",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-085",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2024-09-07",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-086",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2026-03-20",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-087",
+    "type": "proposal",
+    "title": "Demand forecasting model for our education business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2024-07-11",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-088",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-09-09",
+    "client_industry": "fintech",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-089",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2026-09-06",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-090",
+    "type": "proposal",
+    "title": "Demand forecasting model for our hospitality business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-04-18",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-091",
+    "type": "proposal",
+    "title": "NLP pipeline to extract entities from logistics contracts",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-11-15",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-092",
+    "type": "proposal",
+    "title": "LangGraph agent to automate fintech back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2025-02-02",
+    "client_industry": "fintech",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-093",
+    "type": "proposal",
+    "title": "NLP pipeline to extract entities from energy contracts",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-06-02",
+    "client_industry": "energy",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-094",
+    "type": "proposal",
+    "title": "Deploy our ML models to production on AWS",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2024-04-02",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-095",
+    "type": "proposal",
+    "title": "Demand forecasting model for our saas business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-07-27",
+    "client_industry": "saas",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-096",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-09-06",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-097",
+    "type": "proposal",
+    "title": "Object detection for warehouse camera feeds",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2024-10-01",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-098",
+    "type": "proposal",
+    "title": "Multi-step AI agent with human approval for fintech",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2025-09-12",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-099",
+    "type": "proposal",
+    "title": "Multi-step AI agent with human approval for retail",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2024-07-19",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-100",
+    "type": "proposal",
+    "title": "Computer vision model for fintech defect detection",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2024-09-22",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-101",
+    "type": "proposal",
+    "title": "Build an internal Q&A assistant for saas policies",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2025-10-19",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-102",
+    "type": "proposal",
+    "title": "Reconcile our accounts for year end",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2025-05-10",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-103",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-09-04",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-104",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2026-08-12",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-105",
+    "type": "proposal",
+    "title": "Fix our GA4 conversion tracking",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2026-10-26",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-106",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2026-04-16",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-107",
+    "type": "proposal",
+    "title": "Image classification model for product photos",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2026-09-24",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-108",
+    "type": "proposal",
+    "title": "Time series forecasting for weekly sales",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-02-25",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-109",
+    "type": "proposal",
+    "title": "NLP pipeline to extract entities from logistics contracts",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2024-04-06",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-110",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2026-01-03",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-111",
+    "type": "proposal",
+    "title": "NLP pipeline to extract entities from manufacturing contracts",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2024-10-24",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-112",
+    "type": "proposal",
+    "title": "Modern logo redesign",
+    "project": null,
+    "skills": [
+      "logo design",
+      "adobe illustrator",
+      "branding"
+    ],
+    "date": "2025-02-09",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-113",
+    "type": "proposal",
+    "title": "LangGraph agent to automate manufacturing back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2026-02-19",
+    "client_industry": "manufacturing",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-114",
+    "type": "proposal",
+    "title": "Fine-tune an open LLM for manufacturing text classification",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2026-04-14",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-115",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-04-18",
+    "client_industry": "manufacturing",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-116",
+    "type": "proposal",
+    "title": "Document question-answering bot with citations",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2024-09-25",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-117",
+    "type": "proposal",
+    "title": "Fine-tune an open LLM for media text classification",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2024-05-18",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-118",
+    "type": "proposal",
+    "title": "Deploy our ML models to production on AWS",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2025-03-28",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-119",
+    "type": "proposal",
+    "title": "Demand forecasting model for our retail business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-01-17",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-120",
+    "type": "proposal",
+    "title": "LangGraph agent to automate ecommerce back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2026-06-27",
+    "client_industry": "ecommerce",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-121",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2024-11-23",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-122",
+    "type": "proposal",
+    "title": "NLP pipeline to extract entities from energy contracts",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2024-12-06",
+    "client_industry": "energy",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-123",
+    "type": "proposal",
+    "title": "Add real-time chat to our web app",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2025-07-17",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-124",
+    "type": "proposal",
+    "title": "Landing page design in Figma",
+    "project": null,
+    "skills": [
+      "figma",
+      "ui design",
+      "prototyping"
+    ],
+    "date": "2026-02-06",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-125",
+    "type": "proposal",
+    "title": "Object detection for warehouse camera feeds",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2025-10-18",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-126",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2025-04-20",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-127",
+    "type": "proposal",
+    "title": "LangGraph agent to automate fintech back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2025-09-20",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-128",
+    "type": "proposal",
+    "title": "Demand forecasting model for our saas business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2026-10-12",
+    "client_industry": "saas",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-129",
+    "type": "proposal",
+    "title": "LangGraph agent to automate media back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2025-04-24",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-130",
+    "type": "proposal",
+    "title": "Image classification model for product photos",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2025-05-24",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-131",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2024-11-05",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-132",
+    "type": "proposal",
+    "title": "Demand forecasting model for our insurance business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2026-08-15",
+    "client_industry": "insurance",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-133",
+    "type": "proposal",
+    "title": "LangGraph agent to automate healthcare back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2024-07-08",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-134",
+    "type": "proposal",
+    "title": "Edit YouTube videos for our manufacturing channel",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-08-20",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-135",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-06-15",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-136",
+    "type": "proposal",
+    "title": "Long-form content writer for our travel blog",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2026-02-19",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-137",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2025-03-09",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-138",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2025-04-14",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-139",
+    "type": "proposal",
+    "title": "Image classification model for product photos",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2025-05-02",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-140",
+    "type": "proposal",
+    "title": "Text classification for customer feedback",
+    "project": null,
+    "skills": [
+      "nlp",
+      "huggingface transformers",
+      "python"
+    ],
+    "date": "2026-10-22",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-141",
+    "type": "proposal",
+    "title": "Computer vision model for nonprofit defect detection",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2025-03-18",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-142",
+    "type": "proposal",
+    "title": "Object detection for warehouse camera feeds",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2025-07-22",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-143",
+    "type": "proposal",
+    "title": "Sales forecast for next quarter",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-06-10",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-144",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2025-02-07",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-145",
+    "type": "proposal",
+    "title": "RAG chatbot over our nonprofit documents",
+    "project": null,
+    "skills": [
+      "rag",
+      "langchain",
+      "vector databases",
+      "python",
+      "prompt engineering"
+    ],
+    "date": "2026-06-19",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-146",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2025-07-16",
+    "client_industry": "travel",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-147",
+    "type": "proposal",
+    "title": "Computer vision model for ecommerce defect detection",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2024-01-28",
+    "client_industry": "ecommerce",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-148",
+    "type": "proposal",
+    "title": "Computer vision model for manufacturing defect detection",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2026-02-23",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-149",
+    "type": "proposal",
+    "title": "LangGraph agent to automate education back-office work",
+    "project": null,
+    "skills": [
+      "langgraph",
+      "langchain",
+      "python",
+      "fastapi"
+    ],
+    "date": "2026-05-04",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "aiml-prop-150",
+    "type": "proposal",
+    "title": "Set up MLOps: model registry, monitoring and retraining",
+    "project": null,
+    "skills": [
+      "mlops",
+      "docker",
+      "kubernetes",
+      "aws",
+      "fastapi"
+    ],
+    "date": "2024-12-03",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  }
+]

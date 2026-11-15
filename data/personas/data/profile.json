@@ -1,0 +1,32 @@
+{
+  "persona": "data",
+  "name": "Priya Raman",
+  "title": "Data Analyst (SQL, Power BI, dbt)",
+  "hourly_floor": 35,
+  "hourly_target": 55,
+  "skills": [
+    "sql",
+    "python",
+    "pandas",
+    "power bi",
+    "tableau",
+    "excel",
+    "dbt",
+    "snowflake",
+    "bigquery",
+    "google analytics",
+    "a/b testing",
+    "statistics",
+    "looker studio",
+    "etl",
+    "data cleaning",
+    "forecasting",
+    "airflow",
+    "r",
+    "survey analysis",
+    "dashboard design"
+  ],
+  "bio": "Data analyst who turns messy exports into dashboards people actually open. SQL first, then Power BI, Tableau or Looker Studio depending on what the team already pays for. I have built warehouses in dbt and Snowflake, run pricing experiments and cleaned more spreadsheets than I can count.",
+  "category": "Data Analytics",
+  "freelancer_id": "fl-data"
+}

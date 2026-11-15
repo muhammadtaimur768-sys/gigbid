@@ -1,0 +1,98 @@
+[
+  {
+    "id": "aiml-review-01",
+    "client": "Marcus Brown",
+    "rating": 5,
+    "text": "Very knowledgeable. Took a vague idea (a load forecast for an energy retailer) and turned it into something we use every day.",
+    "project": "Grid Load Forecasting",
+    "date": "2026-03"
+  },
+  {
+    "id": "aiml-review-02",
+    "client": "Elena Kim",
+    "rating": 5,
+    "text": "Great to work with. The a smarter search bar for an online store project landed on time and our team can maintain it.",
+    "project": "Semantic Product Search",
+    "date": "2024-05"
+  },
+  {
+    "id": "aiml-review-03",
+    "client": "Mila Fischer",
+    "rating": 3,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for a research agent for a B2B sales team.",
+    "project": "Sales Research Agent",
+    "date": "2026-03"
+  },
+  {
+    "id": "aiml-review-04",
+    "client": "Victor Haddad",
+    "rating": 4,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for drone-photo analysis for an agritech company.",
+    "project": "Drone Imagery Crop Health",
+    "date": "2024-07"
+  },
+  {
+    "id": "aiml-review-05",
+    "client": "Omar Schmidt",
+    "rating": 5,
+    "text": "Solid work on an answer bot for a help desk. A couple of delays on our side, handled patiently.",
+    "project": "Support Copilot for a SaaS Help Desk",
+    "date": "2023-07"
+  },
+  {
+    "id": "aiml-review-06",
+    "client": "Sofia Fischer",
+    "rating": 5,
+    "text": "Solid work on an invoice-reading pipeline for an accounting firm. A couple of delays on our side, handled patiently.",
+    "project": "Invoice Data Extraction",
+    "date": "2024-05"
+  },
+  {
+    "id": "aiml-review-07",
+    "client": "Ravi Novak",
+    "rating": 4,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for an HR question bot for a manufacturer.",
+    "project": "HR Policy Assistant",
+    "date": "2023-07"
+  },
+  {
+    "id": "aiml-review-08",
+    "client": "Marcus Tanaka",
+    "rating": 4,
+    "text": "Solid work on a camera QA system for a metal fabricator. A couple of delays on our side, handled patiently.",
+    "project": "Weld Defect Detection on the Line",
+    "date": "2025-05"
+  },
+  {
+    "id": "aiml-review-09",
+    "client": "Grace Berg",
+    "rating": 5,
+    "text": "Great to work with. The a demand forecast for a grocery chain project landed on time and our team can maintain it.",
+    "project": "Store-Level Demand Forecasting",
+    "date": "2024-10"
+  },
+  {
+    "id": "aiml-review-10",
+    "client": "Maya Haddad",
+    "rating": 3,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for a fine-tuned writing model for a marketing agency.",
+    "project": "Brand-Voice Fine-Tune for Marketing Copy",
+    "date": "2023-01"
+  },
+  {
+    "id": "aiml-review-11",
+    "client": "Elena Fischer",
+    "rating": 3,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for an evaluation suite for an AI startup's chatbot.",
+    "project": "LLM Evaluation Harness",
+    "date": "2023-01"
+  },
+  {
+    "id": "aiml-review-12",
+    "client": "Victor Berg",
+    "rating": 4,
+    "text": "Amina delivered an ML platform rebuild for a logistics company and it just works. Communication was clear throughout.",
+    "project": "MLOps Platform Migration",
+    "date": "2025-07"
+  }
+]

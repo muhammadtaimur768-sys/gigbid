@@ -1,0 +1,23 @@
+[
+  {
+    "id": "fl-aiml",
+    "persona": "aiml",
+    "name": "Amina Okafor",
+    "balance": 104,
+    "weekly_spent": 36
+  },
+  {
+    "id": "fl-fullstack",
+    "persona": "fullstack",
+    "name": "Diego Martins",
+    "balance": 108,
+    "weekly_spent": 32
+  },
+  {
+    "id": "fl-data",
+    "persona": "data",
+    "name": "Priya Raman",
+    "balance": 120,
+    "weekly_spent": 20
+  }
+]

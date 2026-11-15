@@ -1,0 +1,98 @@
+[
+  {
+    "id": "data-review-01",
+    "client": "Tom Sato",
+    "rating": 5,
+    "text": "Priya delivered an exam results study for a school district and it just works. Communication was clear throughout.",
+    "project": "School Results Analysis",
+    "date": "2023-11"
+  },
+  {
+    "id": "data-review-02",
+    "client": "Elena Sato",
+    "rating": 4,
+    "text": "Priya delivered a supplier analysis for a manufacturer and it just works. Communication was clear throughout.",
+    "project": "Supplier Lead-Time Analysis",
+    "date": "2026-05"
+  },
+  {
+    "id": "data-review-03",
+    "client": "Yara Kowalski",
+    "rating": 5,
+    "text": "Priya delivered a bed-occupancy report for a hospital and it just works. Communication was clear throughout.",
+    "project": "Hospital Operations Workbook",
+    "date": "2025-06"
+  },
+  {
+    "id": "data-review-04",
+    "client": "Ravi Kowalski",
+    "rating": 5,
+    "text": "Priya delivered a churn study for a gym chain and it just works. Communication was clear throughout.",
+    "project": "Subscriber Churn Analysis",
+    "date": "2024-03"
+  },
+  {
+    "id": "data-review-05",
+    "client": "Sofia Chen",
+    "rating": 3,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for a sales report for a retail chain's leadership.",
+    "project": "Executive Sales Dashboard",
+    "date": "2022-11"
+  },
+  {
+    "id": "data-review-06",
+    "client": "Ravi Kim",
+    "rating": 4,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for a pricing test readout for a subscription box.",
+    "project": "Pricing Experiment Analysis",
+    "date": "2025-01"
+  },
+  {
+    "id": "data-review-07",
+    "client": "Hana Sato",
+    "rating": 5,
+    "text": "Priya delivered a data sync for an insurance broker and it just works. Communication was clear throughout.",
+    "project": "Nightly CRM-to-Warehouse Pipeline",
+    "date": "2025-05"
+  },
+  {
+    "id": "data-review-08",
+    "client": "Nadia Mensah",
+    "rating": 5,
+    "text": "Solid work on a survey analysis for a telecom. A couple of delays on our side, handled patiently.",
+    "project": "Customer Satisfaction Survey Study",
+    "date": "2025-04"
+  },
+  {
+    "id": "data-review-09",
+    "client": "Maya Silva",
+    "rating": 3,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for a CRM clean-up for a B2B distributor.",
+    "project": "CRM Deduplication and Clean-Up",
+    "date": "2023-06"
+  },
+  {
+    "id": "data-review-10",
+    "client": "Maya Fischer",
+    "rating": 5,
+    "text": "Priya delivered a warehouse rebuild for a DTC brand and it just works. Communication was clear throughout.",
+    "project": "Warehouse Rebuild in dbt and Snowflake",
+    "date": "2025-02"
+  },
+  {
+    "id": "data-review-11",
+    "client": "Aiko Chen",
+    "rating": 3,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for an impact report for a charity.",
+    "project": "Programme Impact Report",
+    "date": "2023-06"
+  },
+  {
+    "id": "data-review-12",
+    "client": "Arjun Iyer",
+    "rating": 4,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for an ad-spend report for a travel agency.",
+    "project": "Marketing Spend Dashboard",
+    "date": "2025-09"
+  }
+]

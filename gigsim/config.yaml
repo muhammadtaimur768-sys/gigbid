@@ -1,0 +1,47 @@
+# GigSim runtime configuration. Environment variables override where noted.
+rate_limit_per_minute: 60          # env GIGSIM_RATE_LIMIT
+error_rate_default: 0.02           # env GIGSIM_ERROR_RATE
+admin_key: gigsim-admin            # env GIGSIM_ADMIN_KEY
+start_balance: 140
+tick:
+  hours_per_tick: 1
+  jobs_per_tick: 20
+  close_after_days: 14
+policy_update:                     # env GIGSIM_POLICY_UPDATE=1 (default) activates the 2026-11-02 update
+  effective: "2026-11-02T00:00:00Z"
+  early_bird_surcharge_connects: 2
+  early_bird_window_minutes: 60
+  max_proposal_chars: 2500
+client_model:                      # deterministic simulated-client scoring
+  base: 0.18
+  must_have_weight: 0.30           # times the fraction of must-have skills mentioned
+  within_ceiling_bonus: 0.12
+  over_ceiling_penalty: 0.35       # scaled by how far over the ceiling the bid is (capped at 1x)
+  generic_opening_penalty_disliked: 0.22
+  generic_opening_penalty: 0.06
+  long_words: 260                  # word count considered long
+  long_penalty_if_prefers_short: 0.12
+  short_words: 50
+  too_short_penalty: 0.10
+  title_overlap_bonus: 0.08
+  screening_answered_bonus: 0.04
+  min_prob: 0.02
+  max_prob: 0.92
+  interview_given_reply: 0.65      # multiplied by reply_prob for the interview draw
+  hire_given_interview: 0.55
+  generic_openers:
+    - "dear sir"
+    - "dear madam"
+    - "dear sir/madam"
+    - "dear hiring manager"
+    - "i am a passionate"
+    - "i am a hardworking"
+    - "hi, i read your job"
+    - "hello dear"
+    - "i can do this job perfectly"
+    - "to whom it may concern"
+  llm:                             # optional, env GIGSIM_CLIENT_LLM=1
+    base_url_env: OLLAMA_BASE_URL
+    base_url_default: http://localhost:11434
+    model: qwen2.5:7b-instruct-q4_K_M
+    weight: 0.5                    # blend: (1-w)*deterministic + w*llm

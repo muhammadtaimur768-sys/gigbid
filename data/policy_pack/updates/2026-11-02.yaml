@@ -1,0 +1,23 @@
+id: policy-update-2026-11-02
+effective: '2026-11-02T00:00:00Z'
+title: 'Platform policy update: early-bird Connects surcharge and proposal length limit'
+changes:
+- type: connects_surcharge
+  id: early_bird_surcharge
+  description: Connects cost +2 for jobs posted less than 1 hour ago
+  connects: 2
+  window_minutes: 60
+  applies_when: now - job.posted_at < 60 minutes
+- type: new_rule
+  id: max_proposal_length
+  description: Proposals must not exceed 2,500 characters
+  max_chars: 2500
+  action: block
+  api_error:
+    status: 422
+    code: proposal_too_long
+bidding_overrides:
+  max_proposal_chars: 2500
+  early_bird_surcharge:
+    connects: 2
+    window_minutes: 60

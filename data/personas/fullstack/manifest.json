@@ -1,0 +1,2865 @@
+[
+  {
+    "id": "fullstack-case-01",
+    "title": "Invoicing SaaS from Zero to Paying Customers",
+    "project": "invoicing-saas",
+    "skills": [
+      "next.js",
+      "stripe"
+    ],
+    "date": "2025-02",
+    "client_industry": "saas",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-01.md"
+  },
+  {
+    "id": "fullstack-case-02",
+    "title": "Clinic Booking Portal",
+    "project": "clinic-booking",
+    "skills": [
+      "react",
+      "node.js"
+    ],
+    "date": "2023-04",
+    "client_industry": "healthcare",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-02.md"
+  },
+  {
+    "id": "fullstack-case-03",
+    "title": "Real-Time Collaboration Board",
+    "project": "realtime-kanban",
+    "skills": [
+      "react",
+      "websockets"
+    ],
+    "date": "2022-02",
+    "client_industry": "agency",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-03.md"
+  },
+  {
+    "id": "fullstack-case-04",
+    "title": "Shopify Wholesale Portal",
+    "project": "shopify-wholesale",
+    "skills": [
+      "shopify",
+      "react"
+    ],
+    "date": "2024-04",
+    "client_industry": "ecommerce",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-04.md"
+  },
+  {
+    "id": "fullstack-case-05",
+    "title": "Courier Tracking Mobile App",
+    "project": "delivery-tracking-app",
+    "skills": [
+      "react native",
+      "node.js"
+    ],
+    "date": "2025-05",
+    "client_industry": "logistics",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-05.md"
+  },
+  {
+    "id": "fullstack-case-06",
+    "title": "Course Platform for an Online School",
+    "project": "lms-platform",
+    "skills": [
+      "next.js",
+      "stripe"
+    ],
+    "date": "2023-11",
+    "client_industry": "education",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-06.md"
+  },
+  {
+    "id": "fullstack-case-07",
+    "title": "GraphQL API for a Rental Marketplace",
+    "project": "marketplace-api",
+    "skills": [
+      "graphql",
+      "node.js"
+    ],
+    "date": "2026-09",
+    "client_industry": "real estate",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-07.md"
+  },
+  {
+    "id": "fullstack-case-08",
+    "title": "jQuery to React Migration",
+    "project": "legacy-migration",
+    "skills": [
+      "react",
+      "typescript"
+    ],
+    "date": "2025-01",
+    "client_industry": "insurance",
+    "outcome": "extended",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-08.md"
+  },
+  {
+    "id": "fullstack-case-09",
+    "title": "CI/CD and Containerisation",
+    "project": "devops-pipeline",
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-04",
+    "client_industry": "fintech",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-09.md"
+  },
+  {
+    "id": "fullstack-case-10",
+    "title": "Restaurant Online Ordering",
+    "project": "restaurant-ordering",
+    "skills": [
+      "next.js",
+      "stripe"
+    ],
+    "date": "2024-11",
+    "client_industry": "hospitality",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-10.md"
+  },
+  {
+    "id": "fullstack-case-11",
+    "title": "Internal CRM Dashboard",
+    "project": "crm-dashboard",
+    "skills": [
+      "react",
+      "express"
+    ],
+    "date": "2023-02",
+    "client_industry": "energy",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-11.md"
+  },
+  {
+    "id": "fullstack-case-12",
+    "title": "Event Ticketing with QR Check-In",
+    "project": "event-ticketing",
+    "skills": [
+      "node.js",
+      "stripe",
+      "redis"
+    ],
+    "date": "2024-06",
+    "client_industry": "events",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-12.md"
+  },
+  {
+    "id": "fullstack-case-13",
+    "title": "Donation Platform for a Charity",
+    "project": "nonprofit-donations",
+    "skills": [
+      "next.js",
+      "stripe"
+    ],
+    "date": "2024-07",
+    "client_industry": "nonprofit",
+    "outcome": "extended",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-13.md"
+  },
+  {
+    "id": "fullstack-case-14",
+    "title": "Headless Product Catalogue",
+    "project": "headless-catalog",
+    "skills": [
+      "mongodb",
+      "express"
+    ],
+    "date": "2024-05",
+    "client_industry": "retail",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-14.md"
+  },
+  {
+    "id": "fullstack-case-15",
+    "title": "SSO and Auth Overhaul",
+    "project": "auth-overhaul",
+    "skills": [
+      "oauth",
+      "node.js"
+    ],
+    "date": "2023-02",
+    "client_industry": "saas",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-15.md"
+  },
+  {
+    "id": "fullstack-case-16",
+    "title": "Fitness Coaching App",
+    "project": "fitness-app",
+    "skills": [
+      "react native",
+      "typescript"
+    ],
+    "date": "2023-09",
+    "client_industry": "fitness",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-16.md"
+  },
+  {
+    "id": "fullstack-case-17",
+    "title": "Embeddable Analytics Widget",
+    "project": "analytics-widget",
+    "skills": [
+      "react",
+      "typescript"
+    ],
+    "date": "2024-01",
+    "client_industry": "saas",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-17.md"
+  },
+  {
+    "id": "fullstack-case-18",
+    "title": "End-to-End Test Suite",
+    "project": "e2e-test-suite",
+    "skills": [
+      "playwright testing",
+      "ci/cd"
+    ],
+    "date": "2023-10",
+    "client_industry": "travel",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/fullstack-case-18.md"
+  },
+  {
+    "id": "fullstack-repo-01",
+    "type": "repo",
+    "title": "billbird",
+    "project": "billbird",
+    "skills": [
+      "next.js",
+      "stripe"
+    ],
+    "date": "2025-02",
+    "client_industry": "saas",
+    "outcome": null,
+    "path": "repos/fullstack-repo-01",
+    "files": [
+      "README.md",
+      "src/client.ts",
+      "src/models.sql",
+      "src/server.ts"
+    ]
+  },
+  {
+    "id": "fullstack-repo-02",
+    "type": "repo",
+    "title": "pinboard-live",
+    "project": "pinboard-live",
+    "skills": [
+      "react"
+    ],
+    "date": "2022-02",
+    "client_industry": "agency",
+    "outcome": null,
+    "path": "repos/fullstack-repo-02",
+    "files": [
+      "README.md",
+      "src/client.ts",
+      "src/server.ts"
+    ]
+  },
+  {
+    "id": "fullstack-repo-03",
+    "type": "repo",
+    "title": "rentql",
+    "project": "rentql",
+    "skills": [
+      "graphql",
+      "node.js"
+    ],
+    "date": "2026-09",
+    "client_industry": "real estate",
+    "outcome": null,
+    "path": "repos/fullstack-repo-03",
+    "files": [
+      "README.md",
+      "src/client.ts",
+      "src/models.sql",
+      "src/server.ts"
+    ]
+  },
+  {
+    "id": "fullstack-repo-04",
+    "type": "repo",
+    "title": "shipyard",
+    "project": "shipyard",
+    "skills": [
+      "docker",
+      "ci/cd"
+    ],
+    "date": "2025-04",
+    "client_industry": "fintech",
+    "outcome": null,
+    "path": "repos/fullstack-repo-04",
+    "files": [
+      "README.md",
+      "src/client.ts",
+      "src/models.sql",
+      "src/server.ts"
+    ]
+  },
+  {
+    "id": "fullstack-repo-05",
+    "type": "repo",
+    "title": "gatepass",
+    "project": "gatepass",
+    "skills": [
+      "node.js",
+      "stripe"
+    ],
+    "date": "2024-06",
+    "client_industry": "events",
+    "outcome": null,
+    "path": "repos/fullstack-repo-05",
+    "files": [
+      "README.md",
+      "src/client.ts",
+      "src/server.ts"
+    ]
+  },
+  {
+    "id": "fullstack-repo-06",
+    "type": "repo",
+    "title": "keyring",
+    "project": "keyring",
+    "skills": [
+      "oauth"
+    ],
+    "date": "2023-02",
+    "client_industry": "saas",
+    "outcome": null,
+    "path": "repos/fullstack-repo-06",
+    "files": [
+      "README.md",
+      "src/client.ts",
+      "src/models.sql",
+      "src/server.ts"
+    ]
+  },
+  {
+    "id": "fullstack-repo-07",
+    "type": "repo",
+    "title": "safetynet",
+    "project": "safetynet",
+    "skills": [
+      "playwright testing"
+    ],
+    "date": "2023-10",
+    "client_industry": "travel",
+    "outcome": null,
+    "path": "repos/fullstack-repo-07",
+    "files": [
+      "README.md",
+      "src/client.ts",
+      "src/server.ts"
+    ]
+  },
+  {
+    "id": "fullstack-cv",
+    "type": "cv",
+    "title": "CV of Diego Martins",
+    "project": null,
+    "skills": [
+      "react",
+      "typescript",
+      "next.js",
+      "node.js",
+      "express",
+      "postgresql",
+      "graphql",
+      "tailwind css",
+      "stripe",
+      "aws",
+      "docker",
+      "redis",
+      "websockets",
+      "playwright testing"
+    ],
+    "date": "2026-10",
+    "client_industry": null,
+    "outcome": null,
+    "path": "cv.md"
+  },
+  {
+    "id": "fullstack-review-01",
+    "type": "review",
+    "title": "Review by Kwame Fischer",
+    "project": "Course Platform for an Online School",
+    "skills": [],
+    "date": "2023-11",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-02",
+    "type": "review",
+    "title": "Review by Pedro Kowalski",
+    "project": "CI/CD and Containerisation",
+    "skills": [],
+    "date": "2025-04",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-03",
+    "type": "review",
+    "title": "Review by Lena Duarte",
+    "project": "Real-Time Collaboration Board",
+    "skills": [],
+    "date": "2022-02",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-04",
+    "type": "review",
+    "title": "Review by Jonas Garcia",
+    "project": "SSO and Auth Overhaul",
+    "skills": [],
+    "date": "2023-02",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-05",
+    "type": "review",
+    "title": "Review by Theo Sato",
+    "project": "Courier Tracking Mobile App",
+    "skills": [],
+    "date": "2025-05",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-06",
+    "type": "review",
+    "title": "Review by Pedro Iyer",
+    "project": "Invoicing SaaS from Zero to Paying Customers",
+    "skills": [],
+    "date": "2025-02",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-07",
+    "type": "review",
+    "title": "Review by Omar Duarte",
+    "project": "Headless Product Catalogue",
+    "skills": [],
+    "date": "2024-05",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-08",
+    "type": "review",
+    "title": "Review by Kwame Ahmed",
+    "project": "GraphQL API for a Rental Marketplace",
+    "skills": [],
+    "date": "2026-09",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-09",
+    "type": "review",
+    "title": "Review by Lena Tanaka",
+    "project": "Donation Platform for a Charity",
+    "skills": [],
+    "date": "2024-07",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-10",
+    "type": "review",
+    "title": "Review by Hana Okoro",
+    "project": "Internal CRM Dashboard",
+    "skills": [],
+    "date": "2023-02",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-11",
+    "type": "review",
+    "title": "Review by Elena Ahmed",
+    "project": "Restaurant Online Ordering",
+    "skills": [],
+    "date": "2024-11",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-review-12",
+    "type": "review",
+    "title": "Review by Victor Silva",
+    "project": "Fitness Coaching App",
+    "skills": [],
+    "date": "2023-09",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "fullstack-prop-001",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-09-25",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-002",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-09-16",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-003",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2026-08-06",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-004",
+    "type": "proposal",
+    "title": "REST API backend with Postgres",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-12-14",
+    "client_industry": "insurance",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-005",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2024-05-18",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-006",
+    "type": "proposal",
+    "title": "REST API backend with Postgres",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2024-09-11",
+    "client_industry": "insurance",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-007",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-12-10",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-008",
+    "type": "proposal",
+    "title": "Data entry from PDFs into spreadsheets",
+    "project": null,
+    "skills": [
+      "data entry",
+      "virtual assistance",
+      "customer support"
+    ],
+    "date": "2025-01-03",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-009",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2025-08-11",
+    "client_industry": "healthcare",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-010",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2026-03-17",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-011",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-09-20",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-012",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-01-20",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-013",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2024-08-20",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-014",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-04-22",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-015",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-01-16",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-016",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-10-15",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-017",
+    "type": "proposal",
+    "title": "Next.js SaaS dashboard with Stripe billing",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2025-10-17",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-018",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-04-22",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-019",
+    "type": "proposal",
+    "title": "REST API backend with Postgres",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-06-11",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-020",
+    "type": "proposal",
+    "title": "Build the MVP of our energy SaaS",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2026-08-15",
+    "client_industry": "energy",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-021",
+    "type": "proposal",
+    "title": "Build the MVP of our logistics SaaS",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2026-04-10",
+    "client_industry": "logistics",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-022",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-06-15",
+    "client_industry": "insurance",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-023",
+    "type": "proposal",
+    "title": "Long-form content writer for our fintech blog",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2026-03-24",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-024",
+    "type": "proposal",
+    "title": "Subscription web app with user accounts and payments",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2025-02-01",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-025",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our travel app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2024-04-25",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-026",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2024-11-18",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-027",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2024-12-24",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-028",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2026-10-24",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-029",
+    "type": "proposal",
+    "title": "Add real-time chat to our web app",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-08-16",
+    "client_industry": "travel",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-030",
+    "type": "proposal",
+    "title": "Build the MVP of our legal SaaS",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2025-12-01",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-031",
+    "type": "proposal",
+    "title": "Long-form content writer for our saas blog",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2026-04-26",
+    "client_industry": "saas",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-032",
+    "type": "proposal",
+    "title": "Subscription web app with user accounts and payments",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2026-01-15",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-033",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2024-06-24",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-034",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-09-19",
+    "client_industry": "insurance",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-035",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-03-11",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-036",
+    "type": "proposal",
+    "title": "Subscription web app with user accounts and payments",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2026-10-08",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-037",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our healthcare app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2024-10-04",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-038",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our legal app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-02-10",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-039",
+    "type": "proposal",
+    "title": "Dockerize our web app and set up CI/CD on AWS",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-11-27",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-040",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2024-08-11",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-041",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-04-16",
+    "client_industry": "travel",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-042",
+    "type": "proposal",
+    "title": "Build the MVP of our media SaaS",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2024-04-28",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-043",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2026-06-22",
+    "client_industry": "retail",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-044",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2024-12-20",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-045",
+    "type": "proposal",
+    "title": "Dockerize our web app and set up CI/CD on AWS",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-09-26",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-046",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2026-04-17",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-047",
+    "type": "proposal",
+    "title": "React Native app for our healthcare customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2025-11-27",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-048",
+    "type": "proposal",
+    "title": "React Native app for our fintech customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2024-09-03",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-049",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our insurance app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2024-01-11",
+    "client_industry": "insurance",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-050",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-03-17",
+    "client_industry": "saas",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-051",
+    "type": "proposal",
+    "title": "Data entry from PDFs into spreadsheets",
+    "project": null,
+    "skills": [
+      "data entry",
+      "virtual assistance",
+      "customer support"
+    ],
+    "date": "2026-05-07",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-052",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-11-08",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-053",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-09-14",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-054",
+    "type": "proposal",
+    "title": "Build the MVP of our legal SaaS",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2025-11-13",
+    "client_industry": "legal",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-055",
+    "type": "proposal",
+    "title": "Build the MVP of our legal SaaS",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2025-02-25",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-056",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our saas app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-11-06",
+    "client_industry": "saas",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-057",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-03-10",
+    "client_industry": "education",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-058",
+    "type": "proposal",
+    "title": "Figma UI design for our fintech app",
+    "project": null,
+    "skills": [
+      "figma",
+      "ui design",
+      "prototyping"
+    ],
+    "date": "2026-08-08",
+    "client_industry": "fintech",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-059",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2026-04-07",
+    "client_industry": "energy",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-060",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our nonprofit app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2026-06-06",
+    "client_industry": "nonprofit",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-061",
+    "type": "proposal",
+    "title": "Modern logo redesign",
+    "project": null,
+    "skills": [
+      "logo design",
+      "adobe illustrator",
+      "branding"
+    ],
+    "date": "2025-02-22",
+    "client_industry": "retail",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-062",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2024-07-06",
+    "client_industry": "manufacturing",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-063",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2026-10-18",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-064",
+    "type": "proposal",
+    "title": "Reconcile our accounts for year end",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2026-06-21",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-065",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-03-18",
+    "client_industry": "fintech",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-066",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2025-06-01",
+    "client_industry": "fintech",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-067",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2026-10-21",
+    "client_industry": "hospitality",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-068",
+    "type": "proposal",
+    "title": "Add real-time chat to our web app",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2026-08-26",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-069",
+    "type": "proposal",
+    "title": "Data entry from PDFs into spreadsheets",
+    "project": null,
+    "skills": [
+      "data entry",
+      "virtual assistance",
+      "customer support"
+    ],
+    "date": "2025-01-13",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-070",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our energy app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-03-22",
+    "client_industry": "energy",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-071",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our logistics app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2026-03-11",
+    "client_industry": "logistics",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-072",
+    "type": "proposal",
+    "title": "React Native app for our retail customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2025-07-01",
+    "client_industry": "retail",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-073",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-08-19",
+    "client_industry": "manufacturing",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-074",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-09-23",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-075",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-11-08",
+    "client_industry": "fintech",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-076",
+    "type": "proposal",
+    "title": "Next.js SaaS dashboard with Stripe billing",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2025-04-03",
+    "client_industry": "insurance",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-077",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2026-05-04",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-078",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our retail app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-11-09",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-079",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2026-06-03",
+    "client_industry": "real estate",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-080",
+    "type": "proposal",
+    "title": "Reconcile our accounts for year end",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2025-04-23",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-081",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2026-09-18",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-082",
+    "type": "proposal",
+    "title": "React Native app for our ecommerce customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2025-09-10",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-083",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our manufacturing app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-12-23",
+    "client_industry": "manufacturing",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-084",
+    "type": "proposal",
+    "title": "Subscription web app with user accounts and payments",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2026-02-13",
+    "client_industry": "fintech",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-085",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2025-09-27",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-086",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2026-10-09",
+    "client_industry": "legal",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-087",
+    "type": "proposal",
+    "title": "REST API backend with Postgres",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-09-11",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-088",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2026-04-04",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-089",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2025-03-12",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-090",
+    "type": "proposal",
+    "title": "Reconcile our accounts for year end",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2025-11-16",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-091",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2026-01-05",
+    "client_industry": "healthcare",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-092",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-09-14",
+    "client_industry": "fintech",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-093",
+    "type": "proposal",
+    "title": "React Native app for our energy customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2025-08-21",
+    "client_industry": "energy",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-094",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2025-02-22",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-095",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2026-03-11",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-096",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2026-05-28",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-097",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-12-27",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-098",
+    "type": "proposal",
+    "title": "Image classification model for product photos",
+    "project": null,
+    "skills": [
+      "computer vision",
+      "pytorch",
+      "python",
+      "docker"
+    ],
+    "date": "2025-05-26",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-099",
+    "type": "proposal",
+    "title": "React Native app for our travel customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2024-08-26",
+    "client_industry": "travel",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-100",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2026-06-12",
+    "client_industry": "logistics",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-101",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-09-22",
+    "client_industry": "education",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-102",
+    "type": "proposal",
+    "title": "REST API backend with Postgres",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-11-22",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-103",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-11-17",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-104",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2024-07-11",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-105",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2026-05-24",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-106",
+    "type": "proposal",
+    "title": "Dockerize our web app and set up CI/CD on AWS",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-09-12",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-107",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-04-17",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-108",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-09-26",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-109",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2026-09-25",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-110",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2024-03-27",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-111",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-09-13",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-112",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2024-03-25",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-113",
+    "type": "proposal",
+    "title": "Move our deploys to GitHub Actions",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2024-06-07",
+    "client_industry": "saas",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-114",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2025-06-24",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-115",
+    "type": "proposal",
+    "title": "Edit YouTube videos for our healthcare channel",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-11-02",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-116",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-10-11",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-117",
+    "type": "proposal",
+    "title": "Reconcile our accounts for year end",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2024-08-21",
+    "client_industry": "energy",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-118",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2024-01-19",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-119",
+    "type": "proposal",
+    "title": "React Native app for our hospitality customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2026-01-17",
+    "client_industry": "hospitality",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-120",
+    "type": "proposal",
+    "title": "Build a 2D game prototype in Unity",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2025-04-18",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-121",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-02-10",
+    "client_industry": "fintech",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-122",
+    "type": "proposal",
+    "title": "Add real-time chat to our web app",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2025-06-22",
+    "client_industry": "ecommerce",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-123",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2024-10-05",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-124",
+    "type": "proposal",
+    "title": "Landing page design in Figma",
+    "project": null,
+    "skills": [
+      "figma",
+      "ui design",
+      "prototyping"
+    ],
+    "date": "2025-11-16",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-125",
+    "type": "proposal",
+    "title": "React Native app for our real estate customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2024-07-03",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-126",
+    "type": "proposal",
+    "title": "Add real-time chat to our web app",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-03-06",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-127",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2024-10-19",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-128",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2026-04-06",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-129",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2025-11-24",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-130",
+    "type": "proposal",
+    "title": "Node.js GraphQL API for our media app",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2026-10-03",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-131",
+    "type": "proposal",
+    "title": "Custom Shopify storefront features",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2025-11-05",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-132",
+    "type": "proposal",
+    "title": "Add real-time chat to our web app",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2025-10-22",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-133",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-06-20",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-134",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2026-03-10",
+    "client_industry": "legal",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-135",
+    "type": "proposal",
+    "title": "Subscription web app with user accounts and payments",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2024-07-17",
+    "client_industry": "legal",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-136",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2026-06-21",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-137",
+    "type": "proposal",
+    "title": "REST API backend with Postgres",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-06-22",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-138",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2024-05-10",
+    "client_industry": "ecommerce",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-139",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-09-22",
+    "client_industry": "ecommerce",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-140",
+    "type": "proposal",
+    "title": "Cross-platform mobile app MVP",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2026-04-22",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-141",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-01-09",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-142",
+    "type": "proposal",
+    "title": "Monthly bookkeeping in QuickBooks",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2025-05-19",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-143",
+    "type": "proposal",
+    "title": "Shopify app to sync inventory with our warehouse",
+    "project": null,
+    "skills": [
+      "shopify",
+      "react",
+      "graphql"
+    ],
+    "date": "2026-02-10",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-144",
+    "type": "proposal",
+    "title": "Dockerize our web app and set up CI/CD on AWS",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2025-07-10",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-145",
+    "type": "proposal",
+    "title": "REST API backend with Postgres",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-04-28",
+    "client_industry": "travel",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-146",
+    "type": "proposal",
+    "title": "React Native app for our saas customers",
+    "project": null,
+    "skills": [
+      "react native",
+      "typescript",
+      "oauth"
+    ],
+    "date": "2025-02-14",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-147",
+    "type": "proposal",
+    "title": "Virtual assistant for inbox and calendar",
+    "project": null,
+    "skills": [
+      "data entry",
+      "virtual assistance",
+      "customer support"
+    ],
+    "date": "2025-01-17",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-148",
+    "type": "proposal",
+    "title": "Long-form content writer for our travel blog",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2026-07-11",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-149",
+    "type": "proposal",
+    "title": "REST API backend with Postgres",
+    "project": null,
+    "skills": [
+      "node.js",
+      "express",
+      "graphql",
+      "postgresql"
+    ],
+    "date": "2025-03-08",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "fullstack-prop-150",
+    "type": "proposal",
+    "title": "Set up automated browser testing",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-02-02",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  }
+]

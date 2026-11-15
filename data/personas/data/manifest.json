@@ -1,0 +1,2775 @@
+[
+  {
+    "id": "data-case-01",
+    "title": "Executive Sales Dashboard",
+    "project": "exec-sales-dashboard",
+    "skills": [
+      "power bi",
+      "sql"
+    ],
+    "date": "2022-11",
+    "client_industry": "retail",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/data-case-01.md"
+  },
+  {
+    "id": "data-case-02",
+    "title": "Warehouse Rebuild in dbt and Snowflake",
+    "project": "dbt-warehouse",
+    "skills": [
+      "dbt",
+      "snowflake"
+    ],
+    "date": "2025-02",
+    "client_industry": "ecommerce",
+    "outcome": "extended",
+    "type": "case_study",
+    "path": "case_studies/data-case-02.md"
+  },
+  {
+    "id": "data-case-03",
+    "title": "Pricing Experiment Analysis",
+    "project": "pricing-ab-test",
+    "skills": [
+      "a/b testing",
+      "statistics"
+    ],
+    "date": "2025-01",
+    "client_industry": "consumer",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/data-case-03.md"
+  },
+  {
+    "id": "data-case-04",
+    "title": "GA4 Tracking Rebuild",
+    "project": "ga4-migration",
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2024-09",
+    "client_industry": "media",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/data-case-04.md"
+  },
+  {
+    "id": "data-case-05",
+    "title": "Hospital Operations Workbook",
+    "project": "hospital-ops-tableau",
+    "skills": [
+      "tableau",
+      "sql"
+    ],
+    "date": "2025-06",
+    "client_industry": "healthcare",
+    "outcome": "extended",
+    "type": "case_study",
+    "path": "case_studies/data-case-05.md"
+  },
+  {
+    "id": "data-case-06",
+    "title": "Customer Satisfaction Survey Study",
+    "project": "customer-survey",
+    "skills": [
+      "survey analysis",
+      "r"
+    ],
+    "date": "2025-04",
+    "client_industry": "telecom",
+    "outcome": "extended",
+    "type": "case_study",
+    "path": "case_studies/data-case-06.md"
+  },
+  {
+    "id": "data-case-07",
+    "title": "CRM Deduplication and Clean-Up",
+    "project": "crm-cleanup",
+    "skills": [
+      "data cleaning",
+      "python"
+    ],
+    "date": "2023-06",
+    "client_industry": "wholesale",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/data-case-07.md"
+  },
+  {
+    "id": "data-case-08",
+    "title": "Quarterly Revenue Forecast",
+    "project": "revenue-forecast",
+    "skills": [
+      "forecasting",
+      "python"
+    ],
+    "date": "2023-03",
+    "client_industry": "saas",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/data-case-08.md"
+  },
+  {
+    "id": "data-case-09",
+    "title": "Marketing Spend Dashboard",
+    "project": "marketing-attribution",
+    "skills": [
+      "looker studio",
+      "bigquery"
+    ],
+    "date": "2025-09",
+    "client_industry": "travel",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/data-case-09.md"
+  },
+  {
+    "id": "data-case-10",
+    "title": "Inventory Planning Model",
+    "project": "inventory-excel-model",
+    "skills": [
+      "excel",
+      "forecasting"
+    ],
+    "date": "2024-08",
+    "client_industry": "wholesale",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/data-case-10.md"
+  },
+  {
+    "id": "data-case-11",
+    "title": "Nightly CRM-to-Warehouse Pipeline",
+    "project": "etl-pipeline",
+    "skills": [
+      "etl",
+      "airflow"
+    ],
+    "date": "2025-05",
+    "client_industry": "insurance",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/data-case-11.md"
+  },
+  {
+    "id": "data-case-12",
+    "title": "Subscriber Churn Analysis",
+    "project": "churn-analysis",
+    "skills": [
+      "statistics",
+      "sql"
+    ],
+    "date": "2024-03",
+    "client_industry": "fitness",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/data-case-12.md"
+  },
+  {
+    "id": "data-case-13",
+    "title": "Finance KPI Pack",
+    "project": "finance-kpi-powerbi",
+    "skills": [
+      "power bi",
+      "excel"
+    ],
+    "date": "2022-12",
+    "client_industry": "construction",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/data-case-13.md"
+  },
+  {
+    "id": "data-case-14",
+    "title": "Supplier Lead-Time Analysis",
+    "project": "supply-chain-sql",
+    "skills": [
+      "sql",
+      "pandas"
+    ],
+    "date": "2026-05",
+    "client_industry": "manufacturing",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/data-case-14.md"
+  },
+  {
+    "id": "data-case-15",
+    "title": "School Results Analysis",
+    "project": "school-results",
+    "skills": [
+      "r",
+      "statistics"
+    ],
+    "date": "2023-11",
+    "client_industry": "education",
+    "outcome": "paused",
+    "type": "case_study",
+    "path": "case_studies/data-case-15.md"
+  },
+  {
+    "id": "data-case-16",
+    "title": "E-Commerce Funnel Analysis",
+    "project": "ecommerce-funnel",
+    "skills": [
+      "google analytics",
+      "sql"
+    ],
+    "date": "2025-07",
+    "client_industry": "ecommerce",
+    "outcome": "delivered",
+    "type": "case_study",
+    "path": "case_studies/data-case-16.md"
+  },
+  {
+    "id": "data-case-17",
+    "title": "Programme Impact Report",
+    "project": "nonprofit-impact",
+    "skills": [
+      "tableau",
+      "survey analysis"
+    ],
+    "date": "2023-06",
+    "client_industry": "nonprofit",
+    "outcome": "handed over",
+    "type": "case_study",
+    "path": "case_studies/data-case-17.md"
+  },
+  {
+    "id": "data-repo-01",
+    "type": "repo",
+    "title": "lakehouse-lite",
+    "project": "lakehouse-lite",
+    "skills": [
+      "dbt"
+    ],
+    "date": "2025-02",
+    "client_industry": "ecommerce",
+    "outcome": null,
+    "path": "repos/data-repo-01",
+    "files": [
+      "README.md",
+      "src/models.sql",
+      "src/pipeline.py",
+      "src/queries.sql"
+    ]
+  },
+  {
+    "id": "data-repo-02",
+    "type": "repo",
+    "title": "price-lab",
+    "project": "price-lab",
+    "skills": [
+      "a/b testing"
+    ],
+    "date": "2025-01",
+    "client_industry": "consumer",
+    "outcome": null,
+    "path": "repos/data-repo-02",
+    "files": [
+      "README.md",
+      "src/models.sql",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "data-repo-03",
+    "type": "repo",
+    "title": "dedupe-crm",
+    "project": "dedupe-crm",
+    "skills": [
+      "data cleaning"
+    ],
+    "date": "2023-06",
+    "client_industry": "wholesale",
+    "outcome": null,
+    "path": "repos/data-repo-03",
+    "files": [
+      "README.md",
+      "src/models.sql",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "data-repo-04",
+    "type": "repo",
+    "title": "forecastly",
+    "project": "forecastly",
+    "skills": [
+      "forecasting"
+    ],
+    "date": "2023-03",
+    "client_industry": "saas",
+    "outcome": null,
+    "path": "repos/data-repo-04",
+    "files": [
+      "README.md",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "data-repo-05",
+    "type": "repo",
+    "title": "nightly-sync",
+    "project": "nightly-sync",
+    "skills": [
+      "etl"
+    ],
+    "date": "2025-05",
+    "client_industry": "insurance",
+    "outcome": null,
+    "path": "repos/data-repo-05",
+    "files": [
+      "README.md",
+      "src/models.sql",
+      "src/pipeline.py",
+      "src/service.py"
+    ]
+  },
+  {
+    "id": "data-cv",
+    "type": "cv",
+    "title": "CV of Priya Raman",
+    "project": null,
+    "skills": [
+      "sql",
+      "python",
+      "pandas",
+      "power bi",
+      "tableau",
+      "excel",
+      "dbt",
+      "snowflake",
+      "bigquery",
+      "google analytics",
+      "a/b testing",
+      "statistics",
+      "looker studio",
+      "etl"
+    ],
+    "date": "2026-10",
+    "client_industry": null,
+    "outcome": null,
+    "path": "cv.md"
+  },
+  {
+    "id": "data-review-01",
+    "type": "review",
+    "title": "Review by Tom Sato",
+    "project": "School Results Analysis",
+    "skills": [],
+    "date": "2023-11",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-02",
+    "type": "review",
+    "title": "Review by Elena Sato",
+    "project": "Supplier Lead-Time Analysis",
+    "skills": [],
+    "date": "2026-05",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-03",
+    "type": "review",
+    "title": "Review by Yara Kowalski",
+    "project": "Hospital Operations Workbook",
+    "skills": [],
+    "date": "2025-06",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-04",
+    "type": "review",
+    "title": "Review by Ravi Kowalski",
+    "project": "Subscriber Churn Analysis",
+    "skills": [],
+    "date": "2024-03",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-05",
+    "type": "review",
+    "title": "Review by Sofia Chen",
+    "project": "Executive Sales Dashboard",
+    "skills": [],
+    "date": "2022-11",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-06",
+    "type": "review",
+    "title": "Review by Ravi Kim",
+    "project": "Pricing Experiment Analysis",
+    "skills": [],
+    "date": "2025-01",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-07",
+    "type": "review",
+    "title": "Review by Hana Sato",
+    "project": "Nightly CRM-to-Warehouse Pipeline",
+    "skills": [],
+    "date": "2025-05",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-08",
+    "type": "review",
+    "title": "Review by Nadia Mensah",
+    "project": "Customer Satisfaction Survey Study",
+    "skills": [],
+    "date": "2025-04",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-09",
+    "type": "review",
+    "title": "Review by Maya Silva",
+    "project": "CRM Deduplication and Clean-Up",
+    "skills": [],
+    "date": "2023-06",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-10",
+    "type": "review",
+    "title": "Review by Maya Fischer",
+    "project": "Warehouse Rebuild in dbt and Snowflake",
+    "skills": [],
+    "date": "2025-02",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-11",
+    "type": "review",
+    "title": "Review by Aiko Chen",
+    "project": "Programme Impact Report",
+    "skills": [],
+    "date": "2023-06",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-review-12",
+    "type": "review",
+    "title": "Review by Arjun Iyer",
+    "project": "Marketing Spend Dashboard",
+    "skills": [],
+    "date": "2025-09",
+    "client_industry": null,
+    "outcome": null,
+    "path": "reviews.json"
+  },
+  {
+    "id": "data-prop-001",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2025-01-28",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-002",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-06-22",
+    "client_industry": "travel",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-003",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-11-12",
+    "client_industry": "insurance",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-004",
+    "type": "proposal",
+    "title": "Fix our GA4 conversion tracking",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2025-07-28",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-005",
+    "type": "proposal",
+    "title": "Build an executive sales dashboard in Power BI",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-06-22",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-006",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-11-26",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-007",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-09-01",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-008",
+    "type": "proposal",
+    "title": "Virtual assistant for inbox and calendar",
+    "project": null,
+    "skills": [
+      "data entry",
+      "virtual assistance",
+      "customer support"
+    ],
+    "date": "2024-07-22",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-009",
+    "type": "proposal",
+    "title": "Build an executive sales dashboard in Power BI",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2024-08-06",
+    "client_industry": "insurance",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-010",
+    "type": "proposal",
+    "title": "Tableau workbook for retail operations",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-02-03",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-011",
+    "type": "proposal",
+    "title": "Build a small data warehouse with dbt",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2025-09-12",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-012",
+    "type": "proposal",
+    "title": "Unity developer for a mobile puzzle game",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2025-06-27",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-013",
+    "type": "proposal",
+    "title": "Power BI dashboard for legal KPIs",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-07-14",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-014",
+    "type": "proposal",
+    "title": "Sales forecast for next quarter",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2024-07-21",
+    "client_industry": "manufacturing",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-015",
+    "type": "proposal",
+    "title": "Deduplicate and standardise CRM exports",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-08-27",
+    "client_industry": "logistics",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-016",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2024-10-21",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-017",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-04-02",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-018",
+    "type": "proposal",
+    "title": "Sales forecast for next quarter",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-09-15",
+    "client_industry": "fintech",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-019",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-04-23",
+    "client_industry": "travel",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-020",
+    "type": "proposal",
+    "title": "Analyse our customer survey results",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2024-11-23",
+    "client_industry": "saas",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-021",
+    "type": "proposal",
+    "title": "Edit YouTube videos for our real estate channel",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-03-14",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-022",
+    "type": "proposal",
+    "title": "Analyse our customer survey results",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2024-03-23",
+    "client_industry": "insurance",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-023",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2025-12-24",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-024",
+    "type": "proposal",
+    "title": "Build an executive sales dashboard in Power BI",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-01-17",
+    "client_industry": "travel",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-025",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-10-23",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-026",
+    "type": "proposal",
+    "title": "Logo and brand identity for a ecommerce startup",
+    "project": null,
+    "skills": [
+      "logo design",
+      "adobe illustrator",
+      "branding"
+    ],
+    "date": "2025-08-21",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-027",
+    "type": "proposal",
+    "title": "Fix our GA4 conversion tracking",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2025-10-14",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-028",
+    "type": "proposal",
+    "title": "Power BI dashboard for saas KPIs",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2026-08-15",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-029",
+    "type": "proposal",
+    "title": "Playwright end-to-end tests for our checkout",
+    "project": null,
+    "skills": [
+      "playwright testing",
+      "typescript",
+      "ci/cd"
+    ],
+    "date": "2025-01-07",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-030",
+    "type": "proposal",
+    "title": "Fix our GA4 conversion tracking",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2026-02-16",
+    "client_industry": "insurance",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-031",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-07-19",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-032",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-01-22",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-033",
+    "type": "proposal",
+    "title": "Build a small data warehouse with dbt",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2025-09-07",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-034",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-10-21",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-035",
+    "type": "proposal",
+    "title": "Build a small data warehouse with dbt",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2025-05-11",
+    "client_industry": "real estate",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-036",
+    "type": "proposal",
+    "title": "Data entry from PDFs into spreadsheets",
+    "project": null,
+    "skills": [
+      "data entry",
+      "virtual assistance",
+      "customer support"
+    ],
+    "date": "2026-10-23",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-037",
+    "type": "proposal",
+    "title": "Power BI dashboard for insurance KPIs",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-11-06",
+    "client_industry": "insurance",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-038",
+    "type": "proposal",
+    "title": "Google Analytics 4 audit and Looker Studio report",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2024-07-18",
+    "client_industry": "hospitality",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-039",
+    "type": "proposal",
+    "title": "Fix our GA4 conversion tracking",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2025-05-14",
+    "client_industry": "insurance",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-040",
+    "type": "proposal",
+    "title": "Power BI dashboard for education KPIs",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-05-24",
+    "client_industry": "education",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-041",
+    "type": "proposal",
+    "title": "SEO blog articles about legal",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2025-11-14",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-042",
+    "type": "proposal",
+    "title": "Tableau workbook for nonprofit operations",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2024-03-06",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-043",
+    "type": "proposal",
+    "title": "Reconcile our accounts for year end",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2025-01-08",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-044",
+    "type": "proposal",
+    "title": "Google Analytics 4 audit and Looker Studio report",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2026-06-26",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-045",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-02-26",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-046",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2026-10-06",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-047",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-12-21",
+    "client_industry": "energy",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-048",
+    "type": "proposal",
+    "title": "Tableau workbook for real estate operations",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2024-03-22",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-049",
+    "type": "proposal",
+    "title": "Unity developer for a mobile puzzle game",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2026-01-15",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-050",
+    "type": "proposal",
+    "title": "Google Analytics 4 audit and Looker Studio report",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2026-07-26",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-051",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2024-08-22",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-052",
+    "type": "proposal",
+    "title": "Logo and brand identity for a saas startup",
+    "project": null,
+    "skills": [
+      "logo design",
+      "adobe illustrator",
+      "branding"
+    ],
+    "date": "2026-09-20",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-053",
+    "type": "proposal",
+    "title": "Tableau workbook for retail operations",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-07-26",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-054",
+    "type": "proposal",
+    "title": "Dockerize our web app and set up CI/CD on AWS",
+    "project": null,
+    "skills": [
+      "docker",
+      "ci/cd",
+      "aws"
+    ],
+    "date": "2024-10-09",
+    "client_industry": "real estate",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-055",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-09-28",
+    "client_industry": "retail",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-056",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-03-12",
+    "client_industry": "saas",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-057",
+    "type": "proposal",
+    "title": "dbt models on Snowflake for our hospitality data",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2025-12-22",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-058",
+    "type": "proposal",
+    "title": "Statistical analysis of a pricing experiment",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2024-08-26",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-059",
+    "type": "proposal",
+    "title": "SEO blog articles about manufacturing",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2026-09-04",
+    "client_industry": "manufacturing",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-060",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2024-11-17",
+    "client_industry": "energy",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-061",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2025-02-18",
+    "client_industry": "travel",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-062",
+    "type": "proposal",
+    "title": "Unity developer for a mobile puzzle game",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2026-10-09",
+    "client_industry": "hospitality",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-063",
+    "type": "proposal",
+    "title": "Power BI dashboard for logistics KPIs",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-03-28",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-064",
+    "type": "proposal",
+    "title": "Build a small data warehouse with dbt",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2024-03-26",
+    "client_industry": "energy",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-065",
+    "type": "proposal",
+    "title": "Google Analytics 4 audit and Looker Studio report",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2025-07-16",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-066",
+    "type": "proposal",
+    "title": "Monthly bookkeeping in QuickBooks",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2025-02-02",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-067",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2025-12-18",
+    "client_industry": "ecommerce",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-068",
+    "type": "proposal",
+    "title": "Demand forecasting model for our legal business",
+    "project": null,
+    "skills": [
+      "time series forecasting",
+      "python",
+      "scikit-learn"
+    ],
+    "date": "2025-06-07",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-069",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-01-10",
+    "client_industry": "education",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-070",
+    "type": "proposal",
+    "title": "Sales forecast for next quarter",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2024-06-16",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-071",
+    "type": "proposal",
+    "title": "Modern logo redesign",
+    "project": null,
+    "skills": [
+      "logo design",
+      "adobe illustrator",
+      "branding"
+    ],
+    "date": "2026-08-03",
+    "client_industry": "manufacturing",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-072",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2024-09-14",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-073",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-09-09",
+    "client_industry": "logistics",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-074",
+    "type": "proposal",
+    "title": "Fix our GA4 conversion tracking",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2026-09-20",
+    "client_industry": "real estate",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-075",
+    "type": "proposal",
+    "title": "Build a 2D game prototype in Unity",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2025-03-06",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-076",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-08-10",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-077",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-01-23",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-078",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-02-25",
+    "client_industry": "travel",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-079",
+    "type": "proposal",
+    "title": "Build a small data warehouse with dbt",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2025-02-28",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-080",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2025-04-27",
+    "client_industry": "energy",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-081",
+    "type": "proposal",
+    "title": "dbt models on Snowflake for our media data",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2024-01-26",
+    "client_industry": "media",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-082",
+    "type": "proposal",
+    "title": "Sales forecast for next quarter",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2024-11-25",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-083",
+    "type": "proposal",
+    "title": "Build a small data warehouse with dbt",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2026-03-20",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-084",
+    "type": "proposal",
+    "title": "Monthly bookkeeping in QuickBooks",
+    "project": null,
+    "skills": [
+      "quickbooks",
+      "bookkeeping",
+      "reconciliation"
+    ],
+    "date": "2025-03-23",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-085",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-11-11",
+    "client_industry": "travel",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-086",
+    "type": "proposal",
+    "title": "Build an executive sales dashboard in Power BI",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-12-19",
+    "client_industry": "fintech",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-087",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2025-06-17",
+    "client_industry": "travel",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-088",
+    "type": "proposal",
+    "title": "Build a 2D game prototype in Unity",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2024-07-28",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-089",
+    "type": "proposal",
+    "title": "Google Analytics 4 audit and Looker Studio report",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2025-05-13",
+    "client_industry": "healthcare",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-090",
+    "type": "proposal",
+    "title": "dbt models on Snowflake for our media data",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2025-12-06",
+    "client_industry": "media",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-091",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-09-02",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-092",
+    "type": "proposal",
+    "title": "Google Analytics 4 audit and Looker Studio report",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2024-08-14",
+    "client_industry": "logistics",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-093",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2024-05-28",
+    "client_industry": "media",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-094",
+    "type": "proposal",
+    "title": "Deduplicate and standardise CRM exports",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-12-20",
+    "client_industry": "hospitality",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-095",
+    "type": "proposal",
+    "title": "dbt models on Snowflake for our media data",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2025-01-13",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-096",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-01-21",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-097",
+    "type": "proposal",
+    "title": "Build an executive sales dashboard in Power BI",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-02-03",
+    "client_industry": "manufacturing",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-098",
+    "type": "proposal",
+    "title": "Analyse our customer survey results",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2026-01-01",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-099",
+    "type": "proposal",
+    "title": "Logo and brand identity for a ecommerce startup",
+    "project": null,
+    "skills": [
+      "logo design",
+      "adobe illustrator",
+      "branding"
+    ],
+    "date": "2026-06-02",
+    "client_industry": "ecommerce",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-100",
+    "type": "proposal",
+    "title": "Build an executive sales dashboard in Power BI",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-10-13",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-101",
+    "type": "proposal",
+    "title": "Build an executive sales dashboard in Power BI",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-08-12",
+    "client_industry": "hospitality",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-102",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-07-04",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-103",
+    "type": "proposal",
+    "title": "Tableau workbook for media operations",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-11-07",
+    "client_industry": "media",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-104",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-04-26",
+    "client_industry": "healthcare",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-105",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-03-08",
+    "client_industry": "media",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-106",
+    "type": "proposal",
+    "title": "Analyse our customer survey results",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-05-05",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-107",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2024-05-23",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-108",
+    "type": "proposal",
+    "title": "Analyse our A/B test results",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2024-12-17",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-109",
+    "type": "proposal",
+    "title": "Google Analytics 4 audit and Looker Studio report",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2024-12-07",
+    "client_industry": "legal",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-110",
+    "type": "proposal",
+    "title": "Survey data analysis and report in R",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-05-05",
+    "client_industry": "saas",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-111",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-09-22",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-112",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-06-16",
+    "client_industry": "healthcare",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-113",
+    "type": "proposal",
+    "title": "Google Analytics 4 audit and Looker Studio report",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2024-10-01",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-114",
+    "type": "proposal",
+    "title": "Deduplicate and standardise CRM exports",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-06-19",
+    "client_industry": "legal",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-115",
+    "type": "proposal",
+    "title": "Sales forecast for next quarter",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-02-26",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-116",
+    "type": "proposal",
+    "title": "Analyse our customer survey results",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2024-11-21",
+    "client_industry": "retail",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-117",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-01-02",
+    "client_industry": "media",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-118",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-12-10",
+    "client_industry": "fintech",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-119",
+    "type": "proposal",
+    "title": "Power BI dashboard for ecommerce KPIs",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-12-06",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-120",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2024-05-26",
+    "client_industry": "healthcare",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-121",
+    "type": "proposal",
+    "title": "Build a small data warehouse with dbt",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2024-09-08",
+    "client_industry": "logistics",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-122",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2024-07-01",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-123",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2026-03-09",
+    "client_industry": "retail",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-124",
+    "type": "proposal",
+    "title": "Virtual assistant for inbox and calendar",
+    "project": null,
+    "skills": [
+      "data entry",
+      "virtual assistance",
+      "customer support"
+    ],
+    "date": "2025-07-21",
+    "client_industry": "fintech",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-125",
+    "type": "proposal",
+    "title": "Fix our GA4 conversion tracking",
+    "project": null,
+    "skills": [
+      "google analytics",
+      "looker studio"
+    ],
+    "date": "2025-06-02",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-126",
+    "type": "proposal",
+    "title": "Unity developer for a mobile puzzle game",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2026-05-10",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-127",
+    "type": "proposal",
+    "title": "Long-form content writer for our manufacturing blog",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2025-10-09",
+    "client_industry": "manufacturing",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-128",
+    "type": "proposal",
+    "title": "Long-form content writer for our saas blog",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2024-11-27",
+    "client_industry": "saas",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-129",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2024-12-03",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-130",
+    "type": "proposal",
+    "title": "Build a small data warehouse with dbt",
+    "project": null,
+    "skills": [
+      "dbt",
+      "snowflake",
+      "sql",
+      "etl"
+    ],
+    "date": "2025-04-14",
+    "client_industry": "education",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-131",
+    "type": "proposal",
+    "title": "Deduplicate and standardise CRM exports",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-07-09",
+    "client_industry": "nonprofit",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-132",
+    "type": "proposal",
+    "title": "Power BI dashboard for nonprofit KPIs",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2025-09-01",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-133",
+    "type": "proposal",
+    "title": "Tableau workbook for logistics operations",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-05-19",
+    "client_industry": "logistics",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-134",
+    "type": "proposal",
+    "title": "LoRA fine-tune of a 7B model on our support data",
+    "project": null,
+    "skills": [
+      "llm fine-tuning",
+      "huggingface transformers",
+      "pytorch",
+      "model evaluation"
+    ],
+    "date": "2025-01-18",
+    "client_industry": "real estate",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-135",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2024-08-02",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-136",
+    "type": "proposal",
+    "title": "Tableau workbook for nonprofit operations",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-08-21",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-137",
+    "type": "proposal",
+    "title": "Power BI dashboard for nonprofit KPIs",
+    "project": null,
+    "skills": [
+      "power bi",
+      "sql",
+      "dashboard design",
+      "excel"
+    ],
+    "date": "2026-06-18",
+    "client_industry": "nonprofit",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-138",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-12-25",
+    "client_industry": "media",
+    "outcome": "replied",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-139",
+    "type": "proposal",
+    "title": "Live collaboration features with WebSockets",
+    "project": null,
+    "skills": [
+      "websockets",
+      "redis",
+      "node.js",
+      "react"
+    ],
+    "date": "2024-01-08",
+    "client_industry": "legal",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-140",
+    "type": "proposal",
+    "title": "SEO blog articles about education",
+    "project": null,
+    "skills": [
+      "seo writing",
+      "copywriting",
+      "blog writing"
+    ],
+    "date": "2025-01-17",
+    "client_industry": "education",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-141",
+    "type": "proposal",
+    "title": "Tableau workbook for insurance operations",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2026-02-02",
+    "client_industry": "insurance",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-142",
+    "type": "proposal",
+    "title": "Build a 2D game prototype in Unity",
+    "project": null,
+    "skills": [
+      "unity",
+      "c#",
+      "game design"
+    ],
+    "date": "2024-05-11",
+    "client_industry": "hospitality",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-143",
+    "type": "proposal",
+    "title": "Statistical analysis of a pricing experiment",
+    "project": null,
+    "skills": [
+      "a/b testing",
+      "statistics",
+      "python"
+    ],
+    "date": "2024-11-02",
+    "client_industry": "logistics",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-144",
+    "type": "proposal",
+    "title": "Subscription web app with user accounts and payments",
+    "project": null,
+    "skills": [
+      "next.js",
+      "react",
+      "typescript",
+      "stripe",
+      "postgresql"
+    ],
+    "date": "2025-05-07",
+    "client_industry": "retail",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-145",
+    "type": "proposal",
+    "title": "Tableau dashboards from our SQL database",
+    "project": null,
+    "skills": [
+      "tableau",
+      "sql",
+      "dashboard design"
+    ],
+    "date": "2025-06-15",
+    "client_industry": "hospitality",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-146",
+    "type": "proposal",
+    "title": "Deduplicate and standardise CRM exports",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2024-08-08",
+    "client_industry": "saas",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-147",
+    "type": "proposal",
+    "title": "Revenue forecasting model in Python",
+    "project": null,
+    "skills": [
+      "forecasting",
+      "python",
+      "pandas"
+    ],
+    "date": "2025-07-17",
+    "client_industry": "ecommerce",
+    "outcome": "won",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-148",
+    "type": "proposal",
+    "title": "Clean and consolidate our sales spreadsheets",
+    "project": null,
+    "skills": [
+      "excel",
+      "data cleaning",
+      "python",
+      "pandas"
+    ],
+    "date": "2026-05-10",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-149",
+    "type": "proposal",
+    "title": "Short-form video editing for reels",
+    "project": null,
+    "skills": [
+      "video editing",
+      "after effects",
+      "premiere pro"
+    ],
+    "date": "2025-12-12",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  },
+  {
+    "id": "data-prop-150",
+    "type": "proposal",
+    "title": "Analyse our customer survey results",
+    "project": null,
+    "skills": [
+      "survey analysis",
+      "r",
+      "statistics"
+    ],
+    "date": "2025-04-28",
+    "client_industry": "healthcare",
+    "outcome": "ignored",
+    "path": "proposals.jsonl"
+  }
+]

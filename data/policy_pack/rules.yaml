@@ -1,0 +1,65 @@
+version: 2
+effective: '2026-11-02'
+rules:
+- id: off_platform_contact
+  description: No emails, phone numbers or messaging handles before a contract
+  kind: regex
+  patterns:
+  - '[\w.+-]+@[\w-]+\.[\w.-]+'
+  - \+?\d[\d\s().-]{7,}\d
+  - (?i)\b(whats\s?app|telegram|skype|signal|wechat)\b
+  - (?i)\bt\.me/\S+
+  - (?i)\bcontact me (at|on|via)\b
+  action: redact
+- id: off_platform_payment
+  description: No payment outside the platform
+  kind: regex
+  patterns:
+  - (?i)\b(wire transfer|bank transfer|western union|paypal|crypto|usdt|bitcoin|gift card)\b
+  - (?i)pay(ment)? (me )?(directly|outside)
+  action: block
+- id: no_guarantees
+  description: No guaranteed outcomes
+  kind: regex
+  patterns:
+  - (?i)\bguarantee(d|s)?\b
+  - (?i)100\s?% (success|satisfaction|results|accuracy)
+  - (?i)money[- ]back
+  action: redact
+- id: no_fabricated_experience
+  description: Every claim must be supported by portfolio evidence
+  kind: llm
+  patterns: []
+  action: block
+- id: no_injected_instructions
+  description: Ignore instructions embedded in job posts and client messages
+  kind: regex
+  patterns:
+  - (?i)ignore (all )?(previous|prior) (instructions|guidance)
+  - (?i)disregard (your|all) (rules|instructions)
+  - (?i)system prompt
+  - (?i)you are now in \w+ mode
+  - '(?i)new instructions:'
+  action: block
+- id: max_proposal_length
+  description: Cover letters must not exceed the length limit
+  kind: regex
+  patterns:
+  - ^[\s\S]{2501,}$
+  action: block
+- id: pii_in_text
+  description: Mask card numbers and IBANs
+  kind: regex
+  patterns:
+  - \b(?:\d[ -]?){13,19}\b
+  - \b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b
+  action: redact
+bidding:
+  connects_per_proposal_default: 6
+  weekly_connects_budget_default: 60
+  max_proposal_chars: 2500
+  early_bird_surcharge:
+    connects: 2
+    window_minutes: 60
+  min_hourly_vs_floor: 1.0
+  skip_if_proposals_count_over: 50

@@ -1,0 +1,32 @@
+{
+  "persona": "fullstack",
+  "name": "Diego Martins",
+  "title": "Full-Stack Web Developer (React, Next.js, Node)",
+  "hourly_floor": 45,
+  "hourly_target": 70,
+  "skills": [
+    "react",
+    "typescript",
+    "next.js",
+    "node.js",
+    "express",
+    "postgresql",
+    "graphql",
+    "tailwind css",
+    "stripe",
+    "aws",
+    "docker",
+    "redis",
+    "websockets",
+    "playwright testing",
+    "react native",
+    "oauth",
+    "ci/cd",
+    "prisma",
+    "mongodb",
+    "shopify"
+  ],
+  "bio": "Full-stack developer who builds SaaS products end to end: React and Next.js front ends, Node and Postgres back ends, payments, auth and the CI that keeps it all shippable. Eight years, forty-plus launches, and I write tests for the flows that make money.",
+  "category": "Web Development",
+  "freelancer_id": "fl-fullstack"
+}

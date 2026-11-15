@@ -1,0 +1,32 @@
+{
+  "persona": "aiml",
+  "name": "Amina Okafor",
+  "title": "AI/ML Engineer (LLM apps, RAG, computer vision)",
+  "hourly_floor": 55,
+  "hourly_target": 85,
+  "skills": [
+    "python",
+    "pytorch",
+    "llm fine-tuning",
+    "rag",
+    "langchain",
+    "langgraph",
+    "vector databases",
+    "computer vision",
+    "nlp",
+    "mlops",
+    "docker",
+    "fastapi",
+    "aws",
+    "huggingface transformers",
+    "time series forecasting",
+    "prompt engineering",
+    "model evaluation",
+    "kubernetes",
+    "scikit-learn",
+    "airflow"
+  ],
+  "bio": "Machine learning engineer with seven years of experience shipping models into production: LLM assistants grounded in company documents, vision models for manufacturing QA and forecasting for retail. I care about evaluation first and like to leave clients with systems their own team can run.",
+  "category": "AI & Machine Learning",
+  "freelancer_id": "fl-aiml"
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "fullstack-review-01",
+    "client": "Kwame Fischer",
+    "rating": 5,
+    "text": "Diego delivered a course site for an online coding school and it just works. Communication was clear throughout.",
+    "project": "Course Platform for an Online School",
+    "date": "2023-11"
+  },
+  {
+    "id": "fullstack-review-02",
+    "client": "Pedro Kowalski",
+    "rating": 5,
+    "text": "Solid work on a deployment pipeline for a fintech startup. A couple of delays on our side, handled patiently.",
+    "project": "CI/CD and Containerisation",
+    "date": "2025-04"
+  },
+  {
+    "id": "fullstack-review-03",
+    "client": "Lena Duarte",
+    "rating": 5,
+    "text": "Very knowledgeable. Took a vague idea (a live planning board for a remote agency) and turned it into something we use every day.",
+    "project": "Real-Time Collaboration Board",
+    "date": "2022-02"
+  },
+  {
+    "id": "fullstack-review-04",
+    "client": "Jonas Garcia",
+    "rating": 5,
+    "text": "Great to work with. The a login rebuild for a B2B SaaS project landed on time and our team can maintain it.",
+    "project": "SSO and Auth Overhaul",
+    "date": "2023-02"
+  },
+  {
+    "id": "fullstack-review-05",
+    "client": "Theo Sato",
+    "rating": 3,
+    "text": "Great to work with. The a driver app for a courier company project landed on time and our team can maintain it.",
+    "project": "Courier Tracking Mobile App",
+    "date": "2025-05"
+  },
+  {
+    "id": "fullstack-review-06",
+    "client": "Pedro Iyer",
+    "rating": 4,
+    "text": "Diego delivered an invoicing app for freelancers and it just works. Communication was clear throughout.",
+    "project": "Invoicing SaaS from Zero to Paying Customers",
+    "date": "2025-02"
+  },
+  {
+    "id": "fullstack-review-07",
+    "client": "Omar Duarte",
+    "rating": 4,
+    "text": "Diego delivered a product catalogue backend for a furniture retailer and it just works. Communication was clear throughout.",
+    "project": "Headless Product Catalogue",
+    "date": "2024-05"
+  },
+  {
+    "id": "fullstack-review-08",
+    "client": "Kwame Ahmed",
+    "rating": 4,
+    "text": "Diego delivered the API behind a rental marketplace and it just works. Communication was clear throughout.",
+    "project": "GraphQL API for a Rental Marketplace",
+    "date": "2026-09"
+  },
+  {
+    "id": "fullstack-review-09",
+    "client": "Lena Tanaka",
+    "rating": 3,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for a donations site for a charity.",
+    "project": "Donation Platform for a Charity",
+    "date": "2024-07"
+  },
+  {
+    "id": "fullstack-review-10",
+    "client": "Hana Okoro",
+    "rating": 3,
+    "text": "Diego delivered a sales dashboard for a solar installer and it just works. Communication was clear throughout.",
+    "project": "Internal CRM Dashboard",
+    "date": "2023-02"
+  },
+  {
+    "id": "fullstack-review-11",
+    "client": "Elena Ahmed",
+    "rating": 5,
+    "text": "Very knowledgeable. Took a vague idea (an ordering site for a restaurant group) and turned it into something we use every day.",
+    "project": "Restaurant Online Ordering",
+    "date": "2024-11"
+  },
+  {
+    "id": "fullstack-review-12",
+    "client": "Victor Silva",
+    "rating": 4,
+    "text": "Good result overall, though the first milestone needed a second pass. Would hire again for a workout app for a personal trainer.",
+    "project": "Fitness Coaching App",
+    "date": "2023-09"
+  }
+]

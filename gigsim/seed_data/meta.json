@@ -1,0 +1,39 @@
+{
+  "seed": 42,
+  "sim_start": "2026-11-03T09:00:00Z",
+  "release_per_tick": 20,
+  "counts": {
+    "aiml": {
+      "case_studies": 19,
+      "repos": 6,
+      "proposals": 150,
+      "reviews": 12,
+      "dev_jobs": 200,
+      "dev_skip": 73
+    },
+    "fullstack": {
+      "case_studies": 18,
+      "repos": 7,
+      "proposals": 150,
+      "reviews": 12,
+      "dev_jobs": 200,
+      "dev_skip": 71
+    },
+    "data": {
+      "case_studies": 17,
+      "repos": 5,
+      "proposals": 150,
+      "reviews": 12,
+      "dev_jobs": 200,
+      "dev_skip": 64
+    },
+    "historical_jobs": 1500,
+    "stream_jobs": 600,
+    "stream_initial_open": 120,
+    "stream_scams": 50,
+    "stream_injections": 39,
+    "stream_duplicates": 30,
+    "clients": 500,
+    "tool_tasks": 40
+  }
+}

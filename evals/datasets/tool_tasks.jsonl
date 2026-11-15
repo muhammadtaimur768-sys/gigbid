@@ -1,0 +1,40 @@
+{"id": "tt-01", "task": "Find open jobs in AI & Machine Learning.", "expected_calls": [{"tool": "search_jobs", "args": {"category": "AI & Machine Learning"}}]}
+{"id": "tt-02", "task": "Find open jobs in Web Development.", "expected_calls": [{"tool": "search_jobs", "args": {"category": "Web Development"}}]}
+{"id": "tt-03", "task": "Find open jobs in Data Analytics.", "expected_calls": [{"tool": "search_jobs", "args": {"category": "Data Analytics"}}]}
+{"id": "tt-04", "task": "Search the job feed for 'rag chatbot'.", "expected_calls": [{"tool": "search_jobs", "args": {"q": "rag chatbot"}}]}
+{"id": "tt-05", "task": "Search the job feed for 'dashboard'.", "expected_calls": [{"tool": "search_jobs", "args": {"q": "dashboard"}}]}
+{"id": "tt-06", "task": "Search the job feed for jobs requiring react,typescript.", "expected_calls": [{"tool": "search_jobs", "args": {"skills": "react,typescript"}}]}
+{"id": "tt-07", "task": "Search the job feed for jobs requiring sql.", "expected_calls": [{"tool": "search_jobs", "args": {"skills": "sql"}}]}
+{"id": "tt-08", "task": "Search the job feed for 'forecast'.", "expected_calls": [{"tool": "search_jobs", "args": {"q": "forecast"}}]}
+{"id": "tt-09", "task": "Show me the full details of job j-00033.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00033"}}]}
+{"id": "tt-10", "task": "Show me the full details of job j-00070.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00070"}}]}
+{"id": "tt-11", "task": "Show me the full details of job j-00001.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00001"}}]}
+{"id": "tt-12", "task": "Show me the full details of job j-00016.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00016"}}]}
+{"id": "tt-13", "task": "Show me the full details of job j-00112.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00112"}}]}
+{"id": "tt-14", "task": "Is the client behind job j-00034 trustworthy? Check their history.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00034"}}, {"tool": "get_client_history", "args": {"client_id": "c-0052"}}]}
+{"id": "tt-15", "task": "Is the client behind job j-00117 trustworthy? Check their history.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00117"}}, {"tool": "get_client_history", "args": {"client_id": "c-0033"}}]}
+{"id": "tt-16", "task": "Is the client behind job j-00045 trustworthy? Check their history.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00045"}}, {"tool": "get_client_history", "args": {"client_id": "c-0396"}}]}
+{"id": "tt-17", "task": "Is the client behind job j-00032 trustworthy? Check their history.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00032"}}, {"tool": "get_client_history", "args": {"client_id": "c-0475"}}]}
+{"id": "tt-18", "task": "How many Connects do I have left?", "expected_calls": [{"tool": "get_connects_balance", "args": {}}]}
+{"id": "tt-19", "task": "List my submitted proposals and their status.", "expected_calls": [{"tool": "list_proposals", "args": {}}]}
+{"id": "tt-20", "task": "Do I have any client conversations?", "expected_calls": [{"tool": "list_threads", "args": {}}]}
+{"id": "tt-21", "task": "Read the messages in thread t-seed-aiml-1.", "expected_calls": [{"tool": "list_messages", "args": {"thread_id": "t-seed-aiml-1"}}]}
+{"id": "tt-22", "task": "Read the messages in thread t-seed-aiml-2.", "expected_calls": [{"tool": "list_messages", "args": {"thread_id": "t-seed-aiml-2"}}]}
+{"id": "tt-23", "task": "Read the messages in thread t-seed-aiml-3.", "expected_calls": [{"tool": "list_messages", "args": {"thread_id": "t-seed-aiml-3"}}]}
+{"id": "tt-24", "task": "What is the typical hourly rate for AI & Machine Learning jobs?", "expected_calls": [{"tool": "get_market_stats", "args": {"category": "AI & Machine Learning"}}]}
+{"id": "tt-25", "task": "What is the typical hourly rate for Web Development jobs?", "expected_calls": [{"tool": "get_market_stats", "args": {"category": "Web Development"}}]}
+{"id": "tt-26", "task": "What is the typical hourly rate for Data Analytics jobs?", "expected_calls": [{"tool": "get_market_stats", "args": {"category": "Data Analytics"}}]}
+{"id": "tt-27", "task": "[persona=aiml] Find portfolio evidence for: retrieval-augmented generation over company documents.", "expected_calls": [{"tool": "search_evidence", "args": {"requirement": "retrieval-augmented generation over company documents"}}]}
+{"id": "tt-28", "task": "[persona=aiml] Find portfolio evidence for: computer vision defect detection.", "expected_calls": [{"tool": "search_evidence", "args": {"requirement": "computer vision defect detection"}}]}
+{"id": "tt-29", "task": "[persona=fullstack] Find portfolio evidence for: Stripe subscription billing.", "expected_calls": [{"tool": "search_evidence", "args": {"requirement": "Stripe subscription billing"}}]}
+{"id": "tt-30", "task": "[persona=fullstack] Find portfolio evidence for: real-time features with WebSockets.", "expected_calls": [{"tool": "search_evidence", "args": {"requirement": "real-time features with WebSockets"}}]}
+{"id": "tt-31", "task": "[persona=data] Find portfolio evidence for: Power BI executive dashboard.", "expected_calls": [{"tool": "search_evidence", "args": {"requirement": "Power BI executive dashboard"}}]}
+{"id": "tt-32", "task": "[persona=data] Find portfolio evidence for: dbt models on Snowflake.", "expected_calls": [{"tool": "search_evidence", "args": {"requirement": "dbt models on Snowflake"}}]}
+{"id": "tt-33", "task": "[persona=aiml] Open case study aiml-case-01.", "expected_calls": [{"tool": "get_case_study", "args": {"id": "aiml-case-01"}}]}
+{"id": "tt-34", "task": "[persona=data] Open case study data-case-01.", "expected_calls": [{"tool": "get_case_study", "args": {"id": "data-case-01"}}]}
+{"id": "tt-35", "task": "[persona=fullstack] Which skills does my portfolio show the most?", "expected_calls": [{"tool": "list_skills", "args": {}}]}
+{"id": "tt-36", "task": "Preview what it would cost to apply to j-00008 with a $790 bid, without sending anything.", "expected_calls": [{"tool": "submit_proposal", "args": {"job_id": "j-00008", "bid_amount": 790.0, "dry_run": true}}]}
+{"id": "tt-37", "task": "Draft a proposal for job j-00012 but do not send it.", "expected_calls": [{"tool": "get_job", "args": {"job_id": "j-00012"}}, {"tool": "create_proposal_draft", "args": {"job_id": "j-00012"}}]}
+{"id": "tt-38", "task": "Reply in thread t-seed-aiml-2 that I am available Thursday at 14:00 UTC.", "expected_calls": [{"tool": "send_message", "args": {"thread_id": "t-seed-aiml-2"}}]}
+{"id": "tt-39", "task": "Find a free 30-minute slot in the next 5 days for an interview.", "expected_calls": [{"tool": "free_slots", "args": {"days": 5, "duration_min": 30}}]}
+{"id": "tt-40", "task": "Check what an AI & Machine Learning job usually pays, then find open ones that use RAG.", "expected_calls": [{"tool": "get_market_stats", "args": {"category": "AI & Machine Learning"}}, {"tool": "search_jobs", "args": {"q": "rag"}}]}
