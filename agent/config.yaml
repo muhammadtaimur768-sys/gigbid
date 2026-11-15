@@ -207,8 +207,8 @@ scout:
 # Provider rate-limit politeness for hosted free tiers (seconds between calls, retries on 429).
 rate_limit:
   min_interval_s: {groq: 0.5, groq_small: 0.5, groq_qwen: 0.5, groq_big: 0.5, openrouter: 0.5}
-  max_429_retries: 4
-  backoff_s: 4.0
+  max_429_retries: 1   # fail fast to the deterministic fallback; long waits exceed serverless request limits
+  backoff_s: 2.0
 
 risk:
   # Scam heuristics (job-side). Injection and marketplace-rule patterns come from data/policy_pack/rules.yaml.
