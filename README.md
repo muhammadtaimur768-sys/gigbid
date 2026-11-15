@@ -179,6 +179,9 @@ Method: [docs/EXTENSION.md](docs/EXTENSION.md).
 - Crash and resume: _to be added_
 <!-- /TRACES -->
 
+
+> **CI status:** the workflows in `.github/workflows/` (`ci.yml`: lint, unit, contract, guards, Playwright; `eval.yml`: 30-job smoke eval with thresholds) are committed, but GitHub Actions could not start jobs on this account at submission time (account billing lock, not a test failure). Every check they run passes locally: `make test`, `make lint` and `make guards`.
+
 ## Run it
 
 ```bash
