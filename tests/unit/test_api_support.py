@@ -109,8 +109,7 @@ def make_client(tmp_path, monkeypatch, use_fake_graph: bool = True, fake_marketp
     config.get_settings.cache_clear()
     db.reset_engine()
     from apps.api import graphs
-    graphs.runtime.bid_graph = None
-    graphs.runtime.conversation_graph = None
+    graphs.close_runtime()
     graphs.runtime.errors.clear()
     from apps.api.services import fit, marketplace
     if fake_marketplace:
@@ -137,7 +136,9 @@ def make_client(tmp_path, monkeypatch, use_fake_graph: bool = True, fake_marketp
         marketplace.force_status(None)
     if use_fake_graph:
         monkeypatch.setattr(graphs, "build_graphs", lambda: None)
+    monkeypatch.delenv("VERCEL", raising=False)
     main = importlib.import_module("apps.api.main")
+    main.reset_ready()
     client = TestClient(main.app)
     client.__enter__()
     if use_fake_graph:

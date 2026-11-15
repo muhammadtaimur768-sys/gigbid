@@ -7,30 +7,24 @@ from __future__ import annotations
 
 import logging
 import os
-from contextlib import AsyncExitStack
 
 from arq import cron
 from arq.connections import RedisSettings
 
 from apps.api.db import SavedSearch, SessionLocal, User, init_db
-from apps.api.graphs import open_runtime, runtime
+from apps.api.graphs import close_runtime, open_runtime
 
 log = logging.getLogger("gigbid.worker")
 
 
 async def startup(ctx: dict) -> None:
+    import asyncio
     init_db()
-    stack = AsyncExitStack()
-    await stack.__aenter__()
-    await open_runtime(stack)
-    ctx["stack"] = stack
-    ctx["runtime"] = runtime
+    ctx["runtime"] = await asyncio.to_thread(open_runtime)
 
 
 async def shutdown(ctx: dict) -> None:
-    stack = ctx.get("stack")
-    if stack is not None:
-        await stack.__aexit__(None, None, None)
+    close_runtime()
 
 
 async def execute_run(ctx: dict, thread_id: str) -> str:

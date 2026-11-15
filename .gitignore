@@ -39,3 +39,5 @@ apps/web/.vite/
 .vscode/*
 !.vscode/extensions.json
 .DS_Store
+.vercel
+.env*

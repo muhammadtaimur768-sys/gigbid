@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import threading
 import os
 from functools import lru_cache
 from pathlib import Path
@@ -86,19 +87,47 @@ def database_url() -> str:
 
 
 _engines: dict[str, sa.Engine] = {}
+_engine_lock = threading.Lock()
+_SEED_LOCK_ID = 4815162342  # pg advisory lock id: only one process seeds a fresh database
 
 
 def get_engine(url: str | None = None) -> sa.Engine:
+    """Engine for the GigSim DB; creates tables and seeds an empty DB exactly once.
+    The engine is published only after seeding finishes, and on Postgres the check-and-seed runs
+    under an advisory lock so concurrent serverless instances never seed twice or deadlock."""
     url = url or database_url()
-    if url not in _engines:
-        kwargs = {"connect_args": {"check_same_thread": False}} if url.startswith("sqlite") else {"pool_pre_ping": True}
+    eng = _engines.get(url)
+    if eng is not None:
+        return eng
+    with _engine_lock:
+        if url in _engines:
+            return _engines[url]
+        if url.startswith("sqlite"):
+            kwargs = {"connect_args": {"check_same_thread": False}}
+        else:
+            kwargs = {"pool_pre_ping": True, "pool_recycle": 240}
         eng = sa.create_engine(url, future=True, **kwargs)
-        metadata.create_all(eng)
+        _ensure_seeded(eng)
         _engines[url] = eng
+    return eng
+
+
+def _ensure_seeded(eng: sa.Engine) -> None:
+    if eng.dialect.name == "postgresql":
         with eng.begin() as conn:
+            conn.execute(sa.text("SELECT pg_advisory_xact_lock(:k)"), {"k": _SEED_LOCK_ID})
+            metadata.create_all(conn)
             if conn.execute(sa.select(sa.func.count()).select_from(gs_jobs)).scalar() == 0:
-                seed(eng)
-    return _engines[url]
+                for t in reversed(metadata.sorted_tables):  # clear any half-seeded leftovers
+                    conn.execute(t.delete())
+                _insert_seed(conn)
+        return
+    metadata.create_all(eng)
+    with eng.connect() as conn:
+        empty = conn.execute(sa.select(sa.func.count()).select_from(gs_jobs)).scalar() == 0
+    if empty:
+        with eng.begin() as conn:
+            _insert_seed(conn)
 
 
 def _load(name: str):
@@ -106,37 +135,46 @@ def _load(name: str):
 
 
 def seed(engine: sa.Engine | None = None) -> dict:
-    """Drop and recreate all gs_ tables, then load gigsim/seed_data/*.json."""
+    """Drop and recreate all gs_ tables, then load gigsim/seed_data/*.json (bulk inserts, one transaction)."""
     engine = engine or get_engine()
     metadata.drop_all(engine)
     metadata.create_all(engine)
+    with engine.begin() as conn:
+        return _insert_seed(conn)
+
+
+def _insert_seed(conn) -> dict:
     hidden = _load("hidden.json")
     meta = _load("meta.json")
     cfg = config()
-    with engine.begin() as conn:
-        conn.execute(gs_clients.insert(), [dict(id=c["id"], data=c, hidden=hidden["clients"].get(c["id"], {})) for c in _load("clients.json")])
-        rows = []
-        for j in _load("jobs_historical.json"):
-            rows.append(dict(id=j["id"], pool="historical", status="closed", release_order=None, category=j["category"],
-                             posted_at=j["posted_at"], data=j, hidden={}))
-        for n, s in enumerate(_load("jobs_stream.json")):
-            j = s["job"]
-            rows.append(dict(id=j["id"], pool="stream", status="open" if s["release_tick"] == 0 else "pending", release_order=n,
-                             category=j["category"], posted_at=j["posted_at"], data=j, hidden=hidden["jobs"].get(j["id"], {})))
-        for j in _load("jobs_dev.json"):
-            rows.append(dict(id=j["id"], pool="dev", status="open", release_order=None, category=j["category"],
-                             posted_at=j["posted_at"], data=j, hidden=hidden["jobs"].get(j["id"], {})))
-        conn.execute(gs_jobs.insert(), rows)
-        conn.execute(gs_freelancers.insert(), _load("freelancers.json"))
-        threads = _load("threads.json")
-        for p in threads["proposals"]:
-            conn.execute(gs_proposals.insert().values(**p, updated_at=p["created_at"], decision={"frozen": True}))
-        for t in threads["threads"]:
-            msgs = [m for m in threads["messages"] if m["thread_id"] == t["thread_id"]]
-            conn.execute(gs_threads.insert().values(**t, last_message_at=max(m["created_at"] for m in msgs), unread=1))
+    conn.execute(gs_clients.insert(), [dict(id=c["id"], data=c, hidden=hidden["clients"].get(c["id"], {})) for c in _load("clients.json")])
+    rows = []
+    for j in _load("jobs_historical.json"):
+        rows.append(dict(id=j["id"], pool="historical", status="closed", release_order=None, category=j["category"],
+                         posted_at=j["posted_at"], data=j, hidden={}))
+    for n, s in enumerate(_load("jobs_stream.json")):
+        j = s["job"]
+        rows.append(dict(id=j["id"], pool="stream", status="open" if s["release_tick"] == 0 else "pending", release_order=n,
+                         category=j["category"], posted_at=j["posted_at"], data=j, hidden=hidden["jobs"].get(j["id"], {})))
+    for j in _load("jobs_dev.json"):
+        rows.append(dict(id=j["id"], pool="dev", status="open", release_order=None, category=j["category"],
+                         posted_at=j["posted_at"], data=j, hidden=hidden["jobs"].get(j["id"], {})))
+    conn.execute(gs_jobs.insert(), rows)
+    conn.execute(gs_freelancers.insert(), _load("freelancers.json"))
+    threads = _load("threads.json")
+    if threads["proposals"]:
+        conn.execute(gs_proposals.insert(), [dict(**p, updated_at=p["created_at"], decision={"frozen": True})
+                                             for p in threads["proposals"]])
+    trows = []
+    for t in threads["threads"]:
+        msgs = [m for m in threads["messages"] if m["thread_id"] == t["thread_id"]]
+        trows.append(dict(**t, last_message_at=max(m["created_at"] for m in msgs), unread=1))
+    if trows:
+        conn.execute(gs_threads.insert(), trows)
+    if threads["messages"]:
         conn.execute(gs_messages.insert(), threads["messages"])
-        conn.execute(gs_state.insert(), [dict(key="sim_now", value=meta["sim_start"]), dict(key="tick", value="0"),
-                                         dict(key="start_balance", value=str(cfg["start_balance"]))])
+    conn.execute(gs_state.insert(), [dict(key="sim_now", value=meta["sim_start"]), dict(key="tick", value="0"),
+                                     dict(key="start_balance", value=str(cfg["start_balance"]))])
     return meta["counts"]
 
 
