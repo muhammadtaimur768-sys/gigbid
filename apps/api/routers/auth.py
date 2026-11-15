@@ -1,6 +1,7 @@
 """Register/login/logout/me plus onboarding (persona, rates, filters, budget, marketplace, portfolio)."""
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 
@@ -113,9 +114,12 @@ async def upload_portfolio(file: UploadFile = File(...), user: User = Depends(ge
     name = _SAFE.sub("_", Path(file.filename or "upload.md").name)[:120]
     if not name.lower().endswith((".md", ".txt", ".pdf", ".json")):
         raise HTTPException(415, "Upload .md, .txt, .pdf or .json")
-    dest = ROOT / "data" / "uploads" / user.id
-    dest.mkdir(parents=True, exist_ok=True)
-    (dest / name).write_bytes(raw)
+    dest = Path(os.getenv("UPLOAD_DIR") or (ROOT / "data" / "uploads")) / user.id
+    try:
+        dest.mkdir(parents=True, exist_ok=True)
+        (dest / name).write_bytes(raw)
+    except OSError as exc:
+        raise HTTPException(507, f"Could not store the upload: {exc.strerror}") from exc
     text = ""
     if name.lower().endswith(".pdf"):
         try:
@@ -132,8 +136,12 @@ async def upload_portfolio(file: UploadFile = File(...), user: User = Depends(ge
                                   detail="stored; retrieval index unavailable")
     try:
         r = get_retriever(user.persona or "aiml")
-        r.add_document(text=text, item_id=f"upload-{user.id[:8]}-{Path(name).stem}"[:64], type="upload",
-                       source=name, user_id=user.id)
-        return PortfolioUploadOut(filename=name, bytes=len(raw), indexed=True)
+        if not text.strip():
+            return PortfolioUploadOut(filename=name, bytes=len(raw), indexed=False,
+                                      detail="stored; no extractable text (scanned PDF?)")
+        info = r.add_document(text=text, item_id=f"upload-{user.id[:8]}-{Path(name).stem}"[:64], type="upload",
+                              source=name, user_id=user.id)
+        detail = "" if info.get("persisted", True) else "indexed for this server instance (index storage is read-only here)"
+        return PortfolioUploadOut(filename=name, bytes=len(raw), indexed=True, detail=detail)
     except Exception as exc:  # noqa: BLE001
         return PortfolioUploadOut(filename=name, bytes=len(raw), indexed=False, detail=f"stored; indexing failed: {exc}"[:300])

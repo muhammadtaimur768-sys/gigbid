@@ -164,27 +164,36 @@ class Retriever:
         with _LOCK:
             items = load_items(self.persona)
             items[item_id] = it
-            up = _index_dir(self.persona, "uploads")
-            up.mkdir(parents=True, exist_ok=True)
-            upath = up / "items.jsonl"
-            prev = [Item.model_validate_json(x) for x in upath.read_text().splitlines() if x.strip()] if upath.exists() else []
-            uploaded = [i for i in prev if i.item_id != item_id] + [it]
-            upath.write_text("\n".join(i.model_dump_json() for i in uploaded) + "\n")
+            persisted = True
+            try:
+                up = _index_dir(self.persona, "uploads")
+                up.mkdir(parents=True, exist_ok=True)
+                upath = up / "items.jsonl"
+                prev = [Item.model_validate_json(x) for x in upath.read_text().splitlines() if x.strip()] if upath.exists() else []
+                uploaded = [i for i in prev if i.item_id != item_id] + [it]
+                upath.write_text("\n".join(i.model_dump_json() for i in uploaded) + "\n")
+            except OSError:  # read-only filesystem (serverless): keep the item in the in-memory index only
+                persisted = False
             n = 0
             for (persona, chunking), store in list(_STORES.items()):
                 if persona != self.persona:
                     continue
                 chunks = chunk_item(it, chunking, self.cfg)
                 store.add(chunks)
-                store.save()
                 n = len(chunks) if store is self.store else n
-                mpath = store.path / "manifest.json"
-                write_manifest(store.path, {"persona": persona, "chunking": chunking,
-                                            "signature": _corpus_signature(persona), "n_items": len(items),
-                                            "n_chunks": len(store.chunks), "embedding": self.cfg["models"]["embedding"],
-                                            "incremental": True}) if mpath.exists() else None
+                if not persisted:
+                    continue
+                try:
+                    store.save()
+                    mpath = store.path / "manifest.json"
+                    write_manifest(store.path, {"persona": persona, "chunking": chunking,
+                                                "signature": _corpus_signature(persona), "n_items": len(items),
+                                                "n_chunks": len(store.chunks), "embedding": self.cfg["models"]["embedding"],
+                                                "incremental": True}) if mpath.exists() else None
+                except OSError:
+                    persisted = False
             self._build_pipeline()
-        return {"item_id": item_id, "chunks": n, "total_chunks": len(self.store.chunks)}
+        return {"item_id": item_id, "chunks": n, "total_chunks": len(self.store.chunks), "persisted": persisted}
 
 
 _RETRIEVERS: dict[tuple[str, str], Retriever] = {}
